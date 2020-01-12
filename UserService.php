@@ -20,6 +20,13 @@ class UserService extends DB {
             } 
     }
     
+    //Sorry to put it at the top here, but it's just to test the ticket pull system
+    public function getTicketById($id)
+    {   
+        $resultTicket = $this->connect()->query("SELECT * FROM tickets WHERE ticket_id = '"$id"' ;");
+        return $resultTicket;
+    }
+
     public function checkUserExistence($email, $password) //used to check user existence and cross-checks passwords while password reset
     {  
         if($this->verifyUserCredentials($email,$password)==TRUE)
