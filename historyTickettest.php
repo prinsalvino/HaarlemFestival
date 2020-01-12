@@ -26,8 +26,8 @@ require(DB.php);
 $input = $_GET["id"];
 
 //use the id to find the right one in the database.
-$dal = NEW DAL();
-$result = $dal->getThisticket($ticketId);
+$dal = NEW DB();
+$result = $dal->getTicketById($ticketId);
 
 //For now, since I don't know how to make models, I made this to display the correct one. Plz forgive me.
 while($row = mysqli_fetch_array($result))
