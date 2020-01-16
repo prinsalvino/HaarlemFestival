@@ -17,6 +17,7 @@ html {
 
 header {
     background-image: url("../img/trasnparentBG.png");
+    margin-bottom: 12vw;
 }
 
 .headerRow {
