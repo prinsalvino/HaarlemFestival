@@ -37,7 +37,7 @@ session_start();
   </div>
 </div>  
 
-<nav class="navigbar">
+<nav class="navigbar" style=" margin-bottom:2vw">
 	<ul> 	
         <li><b>   <a class="navilink" href=""> Home  </a>   </b></li> 
         <li><b>   <a class="navilink" href=""> Jazz  </a>   </b></li> 	
