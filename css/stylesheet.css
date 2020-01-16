@@ -7,14 +7,11 @@
 html {
     background-image: url("../img/jazzBG1.jpg");
     color: #1E1E1E;
-    /* background-repeat:no-repeat;  */
     width: 100%;
-    /* height: 163px; */
     background-size: cover;
 }
 
 .headerRow {
-    /* background-color: #fff; */
     background-image: url("../img/trasnparentBG.png");
     margin: 0;
     padding: 0;
@@ -24,9 +21,6 @@ html {
     float: left;
     width: 33.33%;
 }
-
-
-/* Clear floats after the columns */
 
 .headerRow:after {
     content: "";
@@ -38,9 +32,6 @@ html {
     float: left;
     width: 50%;
 }
-
-
-/* Clear floats after the columns */
 
 .rowLoginCart:after {
     content: "";
