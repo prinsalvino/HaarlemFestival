@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     font-family: "Georgia Pro", Times New Roman, Times, serif;
+    font-size: 1.5vw;
 }
 
 html {
@@ -11,8 +12,14 @@ html {
     background-size: cover;
 }
 
-.headerRow {
+
+/* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
+
+header {
     background-image: url("../img/trasnparentBG.png");
+}
+
+.headerRow {
     margin: 0;
     padding: 0;
 }
@@ -42,6 +49,33 @@ html {
 .cartImg {
     float: left;
 }
+
+
+/* navigation bar styling started */
+
+a.cartlink,
+a.translink {
+    color: #1E1E1E;
+    text-decoration: none;
+}
+
+a.navilink {
+    color: #1E1E1E;
+    text-decoration: none;
+    margin: 0px 20px 0px 20px;
+}
+
+ul li {
+    list-style: none;
+    display: inline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+
+/* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
 
 #qty1 {
     width: 30px;
