@@ -118,6 +118,23 @@ a:hover {
   margin: 20px;
 }
 
+.danceTicketRow{
+    float: left;
+    width: 20.5%;
+    background-color: #ccc;
+    border: 2px solid #fff;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 2vw;
+}
+
+.danceTicketColumn::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 
 /* ----------------------------------------------------------Footer styling----------------------------------------------------------------------- */
 
