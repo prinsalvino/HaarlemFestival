@@ -11,9 +11,10 @@
     width: 100%;
     background-size: cover;
 }
-.Food{
-	background-image: url("../img/1.jpg");
-	color: #1E1E1E;
+
+.Food {
+    background-image: url("../img/1.jpg");
+    color: #1E1E1E;
     width: 100%;
     background-size: cover;
 }
@@ -95,13 +96,14 @@ footer {
     font-size: 2vw;
     background-image: url("../img/trasnparentBG.png");
     /* background-color: #fff; */
-    /*padding-top: 0.5em;
-    padding-bottom: 0.5em;*/
-	/*put footer at the bottom --just delete it if you dont want -prins*/
+    padding-top: 0.5vw;
+    padding-bottom: 0.vw;
+    /*put footer at the bottom --just delete it if you dont want -prins*/
+    /* i kinda like the padding - muskan*/
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;   
+    height: 2.5rem;
 }
 
 .clearfix {
