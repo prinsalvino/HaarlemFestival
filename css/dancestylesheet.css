@@ -1,9 +1,20 @@
+.danceDescriptionHome{
+    background-color: #ccc;
+    width: 400px;
+    padding: 25px;
+    margin: 25px;
+    align-content:center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
 
 
-
-.danceMenu {
+/* .danceMenu {
 	position: absolute;
-    top: 50px;
+    top: 100px;
     right: 0px;
 	background-color: #ccc;
 }
@@ -22,9 +33,9 @@
 .danceMenuItem a:hover {
   background-color: #555;
   color: white;
-  }
+  } */
 
-/* .danceTicketColumn{
+.danceTicketColumn{
     float: left;
     width: 20.5%;
     background-color: #ccc;
@@ -34,8 +45,12 @@
     margin: 2vw;
 }
 
+.danceTicketColumn tr:hover {
+    background-color: #ffff99;
+  }
+
 .danceTicketRow:after {
     content: "";
     display: table;
     clear: both;
-} */
+} 
