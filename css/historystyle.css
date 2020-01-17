@@ -1,5 +1,5 @@
 body{
-	background-image: url("background.jpg");
+	background-image: url("../img/background.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -75,7 +75,7 @@ html { overflow-y: scroll; overflow-x:hidden; }
 }
 
 #detailButton{
-	background-color: DEDEDE;
+	background-color: #DEDEDE;
 	float: right;
 	margin-right: 7%;
 	margin-bottom: 10%;
@@ -84,6 +84,7 @@ html { overflow-y: scroll; overflow-x:hidden; }
 .poort{
 	border-style: solid;
 	border-radius: 25px;
+	border-color: black;
 	width: 1600px;
 	height: 1000px;
 	margin-left: 7%;
@@ -97,7 +98,7 @@ html { overflow-y: scroll; overflow-x:hidden; }
 }
 
 #goBack{
-	background-color: DEDEDE;
+	background-color: #DEDEDE;
 	width: 200px;
 	height: 50px;
 	font-size: 20px;
