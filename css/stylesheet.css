@@ -13,11 +13,11 @@
 }
 
 .dance {
-    background: url("../img/Dance_HomeBG.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../img/Dance_HomeBG.jpg");
     width: 100%;
     background-size: cover;
-  }
+  
+}
 
 .Food {
     background-image: url("../img/1.jpg");
