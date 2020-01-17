@@ -12,22 +12,19 @@
     background-size: cover;
 }
 
-<<<<<<< HEAD
 .dance {
     background: url("../img/Dance_HomeBG.jpg");
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
   }
-=======
+
 .Food {
     background-image: url("../img/1.jpg");
     color: #1E1E1E;
     width: 100%;
     background-size: cover;
 }
->>>>>>> 3754f79132e2ca707457a0ea49f40d3015c3c552
-
 
 /* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
 
