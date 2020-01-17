@@ -13,7 +13,7 @@
 }
 
 .dance {
-    background: url("../img/Dance_HomeBG.jpg");
+    background-image: url("../img/Dance_HomeBG.jpg");
     width: 100%;
     background-size: cover;
   }
