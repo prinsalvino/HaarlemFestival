@@ -2,6 +2,9 @@
 	<header>
 		<link rel="stylesheet" href="css/historystyle.css">
 	</header>
+	<?php
+	include ("header.php");
+	?>
     <body>
 		<div>
 		<div class="frontImage">
@@ -35,5 +38,8 @@
 		
 		<img src="img/poort.jpg" alt="poort" align="middle"; class="poort">
 		</div>
-    </body>
+	</body>
+	<?php
+	include ("footer.php");
+	?>
 </html>
