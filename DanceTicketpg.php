@@ -14,6 +14,7 @@ session_start();
 </head>
 <body>
 <?php include "header.php";?>
+
 <nav>
 <ul class='danceMenu'>
 <li class='danceMenuItem'><a href ="">3 days</a></li>
