@@ -4,7 +4,7 @@ declare(strict_types=1);
 session_start();
 
 ?>  
-<html>
+<html class = "jazz">
 <head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
