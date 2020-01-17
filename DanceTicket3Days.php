@@ -26,26 +26,33 @@ session_start();
 </nav> -->
 
 <div class="danceTicketRow">
-          <a class="DanceD1" href="DanceTicket3Days.php">    
-          <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-              3 days  
-          </div>
+  <a class="DanceTicket3Days" href="DanceTicket3Days.php">    
+  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
+    3 days  
+  </div>
+  </a>
 
-          <a class="DanceD1" href="DanceTicketFriday.php"> 
-          <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-              Friday
-          </div>
+  <a class="DanceTicketFriday" href="DanceTicketFriday.php"> 
+  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
+    Friday
+  </div>
+  </a>
 
-          <a class="DanceD1" href="DanceTicketSaturday.php">
-          <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-               Saturday  
-          </div>
+  <a class="DanceTicketSaturday" href="DanceTicketSaturday.php">
+  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
+    Saturday  
+  </div>
+  </a>
 
-          <a class="DanceD1" href="DanceTicketSunday.php">
-          <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-                Sunday
-          </div>
-  </div> 
+  <a class="DanceTicketSunday" href="DanceTicketSunday.php">
+  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
+    Sunday
+  </div>
+  </a>
+</div> 
+
+<h1>this is 3 days ticket</h1>
+  
 
 <?php include "footer.php";?> 
 
