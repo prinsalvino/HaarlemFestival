@@ -128,7 +128,7 @@ a:hover {
     margin: 2vw;
 }
 
-.danceTicketColumn::after {
+.danceTicketColumn:after {
     content: "";
     display: table;
     clear: both;
