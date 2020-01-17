@@ -5,6 +5,13 @@
     font-size: 1.5vw;
 }
 
+.homepage {
+    background-image: url("../img/sampleBG.jpg");
+    color: #1E1E1E;
+    width: 100%;
+    background-size: cover;
+}
+
 .jazz {
     background-image: url("../img/jazzBG1.jpg");
     color: #1E1E1E;
@@ -118,7 +125,7 @@ a:hover {
   margin: 20px;
 }
 
-.danceTicketRow{
+.danceTicketColumn{
     float: left;
     width: 20.5%;
     background-color: #ccc;
@@ -128,7 +135,7 @@ a:hover {
     margin: 2vw;
 }
 
-.danceTicketColumn:after {
+.danceTicketRow:after {
     content: "";
     display: table;
     clear: both;
