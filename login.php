@@ -29,16 +29,16 @@ if (isset($_POST["login"]))
             $_SESSION['userType'] = "volunteer";
         }
 
-        header("location: homepage.php?Login=Successful"); //to go the home page
+        header("location: homepageLogin.php?Login=Successful"); //to go the home page
     }
     else
     {
-        header("Location: index.php?Login=Unsuccessful");//to go back to the index page/login 
+        header("Location: indexLogin.php?Login=Unsuccessful");//to go back to the index page/login 
     }
 }
 else
 {
-    header("Location: index.php");//to go to the index page/login 
+    header("Location: indexLogin.php");//to go to the index page/login 
 }
 
 

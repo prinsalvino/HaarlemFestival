@@ -7,7 +7,7 @@
 
  if(isset($_SESSION['email']))
  {
-     header("Location: homepage.php"); //if user is logged in, redirect to homepage
+     header("Location: homepageLogin.php"); //if user is logged in, redirect to homepageLogin.php
  }
  ?>
  <!DOCTYPE html>
@@ -39,7 +39,7 @@
                 Sign Up
             </button>
             <br><br>
-            <a href="index.php" >
+            <a href="indexLogin.php" >
                 Already a user? Log in !!
             </a>
 

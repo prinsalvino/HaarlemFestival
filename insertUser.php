@@ -59,13 +59,13 @@ if (isset($_POST["signUp"]))
         else if($_GET["user"]=="customer")  //if the credentials belong to a customer
         {
             $users->addNewCustomer($name, $email, $password);
-            header("location: index.php?SignUp=Successful"); //to go the index page to login with new account
+            header("location: indexLogin.php?SignUp=Successful"); //to go the index page to login with new account
         }
         else if($_GET["user"]=="volunteer") 
         {
             //if the credentials belong to a volunteer
             $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
-            header("location: homepage.php?volunteerSignUp=Successful"); 
+            header("location: homepageLogin?volunteerSignUp=Successful"); 
         }
 }
 else
