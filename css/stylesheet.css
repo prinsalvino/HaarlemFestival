@@ -19,16 +19,6 @@
   
 }
 
-.danceDescriptionHome{
-    background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-}
-
-
-
 .Food {
     background-image: url("../img/1.jpg");
     color: #1E1E1E;
@@ -118,6 +108,14 @@ a:hover {
 
 #qty1 {
     width: 30px;
+}
+
+.danceDescriptionHome{
+    background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
 }
 
 
