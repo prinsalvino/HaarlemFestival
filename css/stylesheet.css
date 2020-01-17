@@ -93,7 +93,7 @@ a:hover {
 .scheduleColumn {
     float: left;
     width: 20.5%;
-    background-color: grey;
+    background-color: #ccc;
     border: 2px solid #fff;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;

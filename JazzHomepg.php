@@ -16,70 +16,206 @@ session_start();
 <?php include "header.php";?> 
 
 <p> 
-Note: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
 
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
-
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
-Note: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
-
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
-
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
-
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property f
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
-
-Property Values
-Value	Description	Play it
-length	Defines the shape of the top-right corner. Read about length units	
-%	Defines the shape of the top-right corner in %	
-initial	Sets this property to its default value. Read about initial	
-inherit	Inherits this property f
 </p>
 
 <div class="scheduleRow">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
-              1    
+          <table style="width:100%;text-align: center;">
+              <tr>
+                <th>
+                  Day 1 <br>
+                  July 26,2020
+                  <br>
+                  Thursday<br>
+                  The Patronaat
+                </th>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>
+                  <b> Artist Line Up </b>
+                </td>
+              </tr>
+
+              </tr> 
+              <td>Gumbo Kings</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Evolve</td>
+              </tr>
+
+              <tr>
+                <td>Ntjam Rosie</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Wicked Jazz Sounds</td>
+              </tr>
+
+              <tr>
+                <td>Tom Thomsom Assemble</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Joanna Frazer</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <b> View Tickets and Schedule </b>
+                </td>
+              </tr>
+         </table>
+
           </div>
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
-              2
+            <table style="width:100%;text-align: center;">
+              <tr>
+                <th>
+                  Day 2 <br>
+                  July 27,2020
+                  <br>
+                  Friday<br>
+                  The Patronaat
+                </th>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>
+                  <b> Artist Line Up </b>
+                </td>
+              </tr>
+
+              </tr> 
+              <td>Fox & The Mayors</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Uncle Sue</td>
+              </tr>
+
+              <tr>
+                <td>Chris Allen</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Myles Sanko</td>
+              </tr>
+
+              <tr>
+                <td>Ruis Soundsystem</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>The Family XL</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <b> View Tickets and Schedule </b>
+                </td>
+              </tr>
+         </table>
           </div>
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
-                3  
+          <table style="width:100%;text-align: center;">
+              <tr>
+                <th>
+                  Day 3 <br>
+                  July 28,2020
+                  <br>
+                  Saturday<br>
+                  The Patronaat
+                </th>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>
+                  <b> Artist Line Up </b>
+                </td>
+              </tr>
+
+              </tr> 
+              <td>Gare du Nord</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Rilan & The Bombardiers</td>
+              </tr>
+
+              <tr>
+                <td>Soul Six</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Han Bennink</td>
+              </tr>
+
+              <tr>
+                <td>The Nordanians</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Lilith Merlot</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <b> View Tickets and Schedule </b>
+                </td>
+              </tr>
+         </table> 
           </div>
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
-              4
+          <table style="width:100%;text-align: center;">
+              <tr>
+                <th>
+                  Day 4 <br>
+                  July 28,2020
+                  <br>
+                  Saturday<br>
+                  Grote Markt
+                </th>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>
+                  <b> Artist Line Up </b>
+                </td>
+              </tr>
+
+              </tr> 
+              <td>Ruis Soundsystem</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Wicked Jazz Sounds</td>
+              </tr>
+
+              <tr>
+                <td>Evolve</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>The Nordanians</td>
+              </tr>
+
+              <tr>
+                <td>Gumbo Kings</td>
+              </tr>
+
+              <tr style=" background-color: #fff">
+                <td>Gare du Nord</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <b> View Schedule </b>
+                </td>
+              </tr>
+         </table>
           </div>
   </div>
 
