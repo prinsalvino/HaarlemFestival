@@ -9,9 +9,9 @@
     <div class="headerColumn" >      
       <div class="rowLoginCart">
           <div class="columnLoginCart" style=" text-align: center; margin-top:1vw">
-                  <b><a class="cartlink" href=""> Log in </a>
+                  <b><a class="cartlink" href="indexLogin.php"> Log in </a>
                   <br> Or <br> 
-                  <a class="cartlink" href=""> Sign up  </a></b>
+                  <a class="cartlink" href="signUpCustomer.php"> Sign up  </a></b>
           </div>
           <div class="columnLoginCart" style=" margin-top:1vw">
               <p> 
