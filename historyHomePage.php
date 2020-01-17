@@ -1,6 +1,7 @@
 <html>
 	<header>
 		<link rel="stylesheet" href="css/historystyle.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
 	</header>
 	<?php
 	include ("header.php");
