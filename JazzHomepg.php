@@ -23,6 +23,7 @@ session_start();
 </p>
 
 <div class="scheduleRow">
+          <a class="D1" href="JazzD1.php">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -70,9 +71,11 @@ session_start();
                   <b> View Tickets and Schedule </b>
                 </td>
               </tr>
-         </table>
-
+         </table>   
           </div>
+          </a>
+
+          <a class="D2" href="JazzD2.php">
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
             <table style="width:100%;text-align: center;">
               <tr>
@@ -122,6 +125,9 @@ session_start();
               </tr>
          </table>
           </div>
+          </a>
+
+          <a class="D3" href="JazzD3.php">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -171,6 +177,9 @@ session_start();
               </tr>
          </table> 
           </div>
+        </a>
+
+        <a class="D4" href="JazzD4.php">
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -220,6 +229,7 @@ session_start();
               </tr>
          </table>
           </div>
+        </a>
   </div>
 
 <?php include "footer.php";?> 
