@@ -8,7 +8,7 @@
 	include ("header.php");
 	?>
     <body>
-		<p class="header" id="detailHeader">Your historical guide through the city of Haarlem<button class="button" id="goBack" onclick="location.href='historyHomePage.php'">Go back</button></p>
+		<p class="header" id="detailHeader">Your historical guide through the city of Haarlem <button class="button" id="goBack" onclick="location.href='historyHomePage.php'">Go back</button></p>
 		
 		<section class="location">
 			<img src="img/kerk.jpg" alt="bavo kerk" width="400px" height="300px" id="locationpic" >
