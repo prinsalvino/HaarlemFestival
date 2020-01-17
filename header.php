@@ -26,8 +26,8 @@
 
   <nav class="navigbar" >
     <ul> 	
-          <li><b>   <a class="navilink" href=""> Home  </a>   </b></li> 
-          <li><b>   <a class="navilink" href=""> Jazz  </a>   </b></li> 	
+          <li><b>   <a class="navilink" href="index.php"> Home  </a>   </b></li> 
+          <li><b>   <a class="navilink" href="JazzHomepg.php"> Jazz  </a>   </b></li> 	
           <li><b>   <a class="navilink" href=""> Dance </a>   </b></li> 
           <li><b>   <a class="navilink" href=""> Food  </a>   </b></li> 	
           <li><b>   <a class="navilink" href=""> Historic Tour </a>   </b></li> 
