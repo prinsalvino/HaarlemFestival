@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<header>
 		<link rel="stylesheet" href="css/historystyle.css">
