@@ -17,7 +17,6 @@ html {
 
 header {
     background-image: url("../img/trasnparentBG.png");
-    margin-bottom: 12vw;
 }
 
 .headerRow {
@@ -81,3 +80,85 @@ a:hover {
 #qty1 {
     width: 30px;
 }
+
+
+/* ----------------------------------------------------------Footer styling----------------------------------------------------------------------- */
+
+footer {
+    color: #1e1e1e;
+    font-size: 2vw;
+    background-image: url("../img/trasnparentBG.png");
+    /* background-color: #fff; */
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.clearfix {
+    float: right;
+    text-align: left;
+    overflow: auto;
+    border: 2px solid #fff;
+    padding: 0.5vw;
+    width: 20%;
+    margin-right: 0.5vw;
+}
+
+.icon {
+    float: right;
+}
+
+.labelfooter {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* Style all font awesome icons */
+
+.fa {
+    padding: 0.5vw;
+    font-size: 1.5vw;
+    width: 2vw;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* Facebook */
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+
+/*Insta*/
+
+.fa-instagram {
+    BACKGROUND: LINEAR-GRADIENT(45DEG, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+/* ----------------------------------------------------------Footer styling----------------------------------------------------------------------- */

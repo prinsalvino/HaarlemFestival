@@ -8,6 +8,8 @@ session_start();
 <head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jazzScript.js" ></script>  
 </head>
 <body>
@@ -47,9 +49,28 @@ session_start();
         <li><b>   <a class="navilink" href=""> Contact Us </a>   </b></li> 
      </ul>
  </nav> 
+ <br>
 </header>
 
+iets..
 
-
+<footer>
+  <div class="clearfix">
+    <!-- Add font awesome icons -->
+    <a href="#" class="fa fa-facebook icon"></a>
+    <a href="#" class="fa fa-instagram icon "></a>
+    <a href="#" class="fa fa-twitter icon"></a>
+    Follow us on: 
+  </div>
+  <!-- <br>
+  <br>
+  <br> -->
+  <div class = "labelfooter">
+    <b>
+    HAARLEM FESTIVAL 2020 <BR>
+    &copy; FINAL DRAFT
+    </b>
+</div>
+</footer>
 </body>
 </html>
