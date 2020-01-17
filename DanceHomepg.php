@@ -8,7 +8,7 @@ session_start();
 <head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<link rel="stylesheet" type="text/css" href="css/jazzstylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/dancestylesheet.css">
 </head>
 <body>
 <?php include "header.php";?>
