@@ -5,6 +5,13 @@
     font-size: 1.5vw;
 }
 
+.homepage {
+    background-image: url("../img/sampleBG.jpg");
+    color: #1E1E1E;
+    width: 100%;
+    background-size: cover;
+}
+
 .jazz {
     background-image: url("../img/jazzBG1.jpg");
     color: #1E1E1E;
@@ -118,7 +125,29 @@ a:hover {
   margin: 20px;
 }
 
-.danceTicketRow{
+.danceMenu {
+	position: absolute;
+    top: 50px;
+    right: 0px;
+	background-color: #ccc;
+}
+
+.danceMenuItem {
+	display: block;
+	margin: 0% 1%;
+	text-transform: uppercase;
+	font-size: 150%;
+}
+
+.danceMenuItem a {
+	color: #FFF200;
+	text-decoration: none;
+}
+.danceMenuItem a:hover {
+  background-color: #555;
+  color: white;
+  }
+/* .danceTicketColumn{
     float: left;
     width: 20.5%;
     background-color: #ccc;
@@ -128,11 +157,11 @@ a:hover {
     margin: 2vw;
 }
 
-.danceTicketColumn:after {
+.danceTicketRow:after {
     content: "";
     display: table;
     clear: both;
-}
+} */
 
 
 

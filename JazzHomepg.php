@@ -11,6 +11,9 @@ session_start();
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jazzScript.js" ></script>  
+    <title>
+            Jazz || Haarlem Festival
+    </title> 
 </head>
 <body>
 <?php include "header.php";?> 
@@ -20,6 +23,7 @@ session_start();
 </p>
 
 <div class="scheduleRow">
+          <a class="D1" href="JazzD1.php">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -67,9 +71,11 @@ session_start();
                   <b> View Tickets and Schedule </b>
                 </td>
               </tr>
-         </table>
-
+         </table>   
           </div>
+          </a>
+
+          <a class="D2" href="JazzD2.php">
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
             <table style="width:100%;text-align: center;">
               <tr>
@@ -119,6 +125,9 @@ session_start();
               </tr>
          </table>
           </div>
+          </a>
+
+          <a class="D3" href="JazzD3.php">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -168,6 +177,9 @@ session_start();
               </tr>
          </table> 
           </div>
+        </a>
+
+        <a class="D4" href="JazzD4.php">
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -217,6 +229,7 @@ session_start();
               </tr>
          </table>
           </div>
+        </a>
   </div>
 
 <?php include "footer.php";?> 
