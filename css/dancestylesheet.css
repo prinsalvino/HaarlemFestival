@@ -44,7 +44,8 @@
     border-bottom-right-radius: 25px;
     margin: 2vw;
 }
-tr:hover {
+
+.danceTicketColumn tr:hover {
     background-color: #ffff99;
   }
 
