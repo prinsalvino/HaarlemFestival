@@ -11,11 +11,11 @@ session_start();
 </head>
 <body>
 <?php include "header.php";?>
-<header>
-    <h3 class= "haarlemDance">Haarlem Dance</h3>
-    <h2 class= "danceDate">27-28 April 2020</h2>
-    <h1 class = "danceAge">18+</h1>
-</header>
+
+<div class = "danceDescriptionHome"> Don't miss this exciting chance to eperience 
+    a special three-day programme in Haarlem City!
+    Catch Martin Garrix, Hardwell, Armin van Buuren, Tiesto, Nicky Romero, 
+    and Afrojack in Haarlem Dance! Buy your tickets now! </div>
 
 <?php include "footer.php";?> 
 

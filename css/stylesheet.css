@@ -16,11 +16,15 @@
     background-image: url("../img/Dance_HomeBG.jpg");
     width: 100%;
     background-size: cover; 
-    
+  
 }
 
-.haarlemDance{
-    color: #1E1E1E;
+.danceDescriptionHome{
+    background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
 }
 
 
