@@ -43,14 +43,21 @@
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
     margin: 2vw;
+    color:yellow;
 }
 
-.danceTicketColumn tr:hover {
+.danceTicketRow :hover{
     background-color: #ffff99;
-  }
+      
+}
+
 
 .danceTicketRow:after {
     content: "";
     display: table;
     clear: both;
 } 
+
+#qty1 {
+    width: 30px;
+}
