@@ -26,18 +26,21 @@ session_start();
 </nav> -->
 
 <div class="danceTicketRow">
-            <a class="DanceD1" href="DanceTicket3Days.php">    
+          <a class="DanceD1" href="DanceTicket3Days.php">    
           <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
               3 days  
           </div>
+
           <a class="DanceD1" href="DanceTicketFriday.php"> 
           <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
               Friday
           </div>
+
           <a class="DanceD1" href="DanceTicketSaturday.php">
           <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
                Saturday  
           </div>
+
           <a class="DanceD1" href="DanceTicketSunday.php">
           <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
                 Sunday
