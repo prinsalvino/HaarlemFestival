@@ -12,6 +12,9 @@ session_start();
 <body>
 <?php include "header.php";?>
 
+<h1 class= "haarlemDance">Haarlem Dance</h1>
+<h1 class= "headerDate">27-28 April 2020</h1>
+<h1 class= "danceAge">18+</h1>
 
 <?php include "footer.php";?> 
 
