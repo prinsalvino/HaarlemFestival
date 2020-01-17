@@ -5,11 +5,10 @@
    padding: 25px;
    margin: 25px;
    align-content:center;
-   position: fixed;
    top: 50%;
    left: 50%;
    margin-top: -50px;
-   margin-left: -100px;
+   margin-left: -50px;
 }
 
 .danceMenu {
