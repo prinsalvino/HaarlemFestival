@@ -1,12 +1,209 @@
-html {
-    background-image: url("img/Wings.png");
-    color: grey;
-    /* background-repeat:no-repeat;  */
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Georgia Pro", Times New Roman, Times, serif;
+    font-size: 1.5vw;
+}
+
+.jazz {
+    background-image: url("../img/jazzBG1.jpg");
+    color: #1E1E1E;
     width: 100%;
-    /* height: 163px; */
     background-size: cover;
+}
+
+.dance {
+    background-image: url("../img/Dance_HomeBG.jpg");
+    width: 100%;
+    background-size: cover; 
+  
+}
+
+.danceDescriptionHome{
+    background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+
+
+.Food {
+    background-image: url("../img/1.jpg");
+    color: #1E1E1E;
+    width: 100%;
+    background-size: cover;
+}
+
+/* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
+
+header {
+    background-image: url("../img/trasnparentBG.png");
+}
+
+.headerRow {
+    margin: 0;
+    padding: 0;
+}
+
+.headerColumn {
+    float: left;
+    width: 33.33%;
+}
+
+.headerRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.columnLoginCart {
+    float: left;
+    width: 50%;
+}
+
+.rowLoginCart:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.cartImg {
+    float: left;
+}
+
+
+/* navigation bar styling started */
+
+a.cartlink,
+a.translink {
+    color: #1E1E1E;
+    text-decoration: none;
+}
+
+a.navilink {
+    color: #1E1E1E;
+    text-decoration: none;
+    margin: 0px 20px 0px 20px;
+}
+
+ul li {
+    list-style: none;
+    display: inline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+
+/* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
+
+.scheduleColumn {
+    float: left;
+    width: 20.5%;
+    background-color: grey;
+    border: 2px solid #fff;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 2vw;
+}
+
+.scheduleRow:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 #qty1 {
     width: 30px;
 }
+
+
+/* ----------------------------------------------------------Footer styling----------------------------------------------------------------------- */
+
+footer {
+    color: #1e1e1e;
+    font-size: 2vw;
+    background-image: url("../img/trasnparentBG.png");
+    /* background-color: #fff; */
+    padding-top: 0.5vw;
+    padding-bottom: 0.vw;
+    /*put footer at the bottom --just delete it if you dont want -prins*/
+    /* i kinda like the padding - muskan*/
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    height: 2.5rem;
+}
+
+.clearfix {
+    float: right;
+    text-align: left;
+    overflow: auto;
+    border: 2px solid #fff;
+    padding: 0.5vw;
+    width: 20%;
+    margin-right: 0.5vw;
+}
+
+.icon {
+    float: right;
+}
+
+.labelfooter {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* Style all font awesome icons */
+
+.fa {
+    padding: 0.5vw;
+    font-size: 1.5vw;
+    width: 2vw;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* Facebook */
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+
+/*Insta*/
+
+.fa-instagram {
+    BACKGROUND: LINEAR-GRADIENT(45DEG, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+/* ----------------------------------------------------------Footer styling----------------------------------------------------------------------- */
