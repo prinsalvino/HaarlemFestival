@@ -122,8 +122,8 @@ footer {
     padding-bottom: 0.vw;
     /*put footer at the bottom --just delete it if you dont want -prins*/
     /* i kinda like the padding - muskan*/
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     width: 100%;
     height: 2.5rem;
 }

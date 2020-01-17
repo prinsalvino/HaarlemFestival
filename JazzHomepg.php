@@ -15,6 +15,59 @@ session_start();
 <body>
 <?php include "header.php";?> 
 
+<p> 
+Note: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+Note: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property f
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property fNote: If you set two values, the first one is for the top border, and the second one for the right border. If the second value is omitted, it is copied from the first. If either length is zero, the corner is square, not rounded.
+
+Property Values
+Value	Description	Play it
+length	Defines the shape of the top-right corner. Read about length units	
+%	Defines the shape of the top-right corner in %	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property f
+</p>
+
 <div class="scheduleRow">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
               1    
@@ -28,7 +81,7 @@ session_start();
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
               4
           </div>
-      </div>
+  </div>
 
 <?php include "footer.php";?> 
 </body>
