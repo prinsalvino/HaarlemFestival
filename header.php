@@ -1,4 +1,4 @@
-<header>
+<header>  
   <div class="headerRow">
     <div class="headerColumn">
       <img src="../img/BetterLogo.png" title="Haarlem festival" style="width:8vw; Height:8vw; margin-left:1vw">
