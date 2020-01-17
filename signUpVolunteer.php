@@ -7,11 +7,11 @@
 
  if(!isset($_SESSION['email']) )
  {
-     header("Location: index.php"); //if user is logged in, redirect to homepage
+     header("Location: indexLogin.php"); //if user is logged in, redirect to indexLogin
  }
  else if(!$_GET['isSuperadmin']==1)
  {
-    header("Location: homepage.php"); //if user is logged in, redirect to homepage
+    header("Location: homepageLogin.php"); //if user is logged in, redirect to homepageLogin
  }
  ?>
  <!DOCTYPE html>
@@ -52,7 +52,7 @@
                 Sign Up
             </button>
             <br><br>
-            <a href="homepage.php" >
+            <a href="homepageLogin.php" >
                 Back
             </a>
 
