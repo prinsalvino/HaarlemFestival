@@ -15,9 +15,15 @@
 .dance {
     background-image: url("../img/Dance_HomeBG.jpg");
     width: 100%;
-    background-size: cover;
-  
+    background-size: cover; 
+    
 }
+
+.haarlemDance{
+    color: #1E1E1E;
+}
+
+
 
 .Food {
     background-image: url("../img/1.jpg");
