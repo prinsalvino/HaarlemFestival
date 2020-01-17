@@ -1,6 +1,7 @@
 <!doctype html>
 	<html>
 	<header>
+		<link rel="stylesheet" href="css/stylesheet.css">
 		<link rel="stylesheet" href="css/historystyle.css">
 	</header>
 	<?php
