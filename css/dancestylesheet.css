@@ -1,0 +1,52 @@
+
+.danceDescriptionHome{
+    background-color: #ccc;
+   width: 400px;
+   padding: 25px;
+   margin: 25px;
+   align-content:center;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   margin-top: -50px;
+   margin-left: -100px;
+}
+
+.danceMenu {
+	position: absolute;
+    top: 50px;
+    right: 0px;
+	background-color: #ccc;
+}
+
+.danceMenuItem {
+	display: block;
+	margin: 0% 1%;
+	text-transform: uppercase;
+	font-size: 150%;
+}
+
+.danceMenuItem a {
+	color: #FFF200;
+	text-decoration: none;
+}
+.danceMenuItem a:hover {
+  background-color: #555;
+  color: white;
+  }
+  
+/* .danceTicketColumn{
+    float: left;
+    width: 20.5%;
+    background-color: #ccc;
+    border: 2px solid #fff;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 2vw;
+}
+
+.danceTicketRow:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
