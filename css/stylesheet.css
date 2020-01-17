@@ -118,11 +118,16 @@ a:hover {
 }
 
 .danceDescriptionHome{
-    background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
+    background-color: #ccc;
+   width: 400px;
+   padding: 25px;
+   margin: 25px;
+   align-content:center;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   margin-top: -50px;
+   margin-left: -100px;
 }
 
 .danceMenu {
