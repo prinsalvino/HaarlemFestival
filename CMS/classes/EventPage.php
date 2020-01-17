@@ -95,7 +95,7 @@ if ( isset($params['dates']) ) {
     
       public function update() {
     
-        // Same check as before, checking if event exists with id
+        // checking if event exists with id
         if ( is_null( $this->ticket_id ) ) trigger_error ( "Eventupdate(): Failed to update an Event that has no ID.", E_USER_ERROR );
        
         // Update the Event

@@ -14,7 +14,16 @@ session_start();
 </head>
 <body>
 <?php include "header.php";?>
-<div class="danceTicketRow">
+<nav>
+<ul class='danceMenu'>
+<li class='danceMenuItem'><a href ="">3 days</a></li>
+<li class='danceMenuItem'><a href ="">Friday</a></li>
+<li class='danceMenuItem'><a href ="">Saturday</a></li>
+<li class='danceMenuItem'><a href ="">Sunday</a></li>
+</ul>
+</nav>
+
+<!-- <div class="danceTicketRow">
           <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
               3 days  
           </div>
@@ -27,7 +36,7 @@ session_start();
           <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
                 Sunday
           </div>
-  </div>
+  </div> -->
 
 <?php include "footer.php";?> 
 
