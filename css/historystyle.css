@@ -1,0 +1,89 @@
+body{
+	background-image: url("background.jpg");
+	background-size: auto 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: Georgia;
+}
+
+html { overflow-y: scroll; overflow-x:hidden; }
+
+.frontImage {
+	position: relative;
+	text-align: center;
+	color: white;
+	text-shadow: 4px 4px 2px black; 
+	left: 0px;
+}
+
+/* Bottom left text */
+.bottom-left {
+	position: absolute;
+	bottom: 10%;
+	margin-left: 7%;
+	font-size: 130px;
+}
+
+/* Top left text */
+.center-left {
+	position: absolute;
+	bottom: 30%;
+	margin-left: 7%;
+	font-size: 110px;
+}
+
+.header {
+	border-left-style: solid;
+	border-color: red;
+}
+
+.infoText{
+	margin-left: 7%;
+	margin-right: 7%;
+	font-size: 50px;
+}
+
+.hofjes {
+	right: 200px;
+	border-style: solid;
+	border-radius: 25px;
+	margin-left: 5%;
+	margin-top: 5%;
+	height: 500px;
+	width: 800px;
+}
+
+.list {
+	float: left;
+	list-style: none;
+	font-size: 40px;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+
+.button {
+	background-color: #169BD5;
+	border-style: solid;
+	border-radius: 25px;
+	border-color: 333333;
+	width: 570px;
+	height: 120px;
+	margin-left: 7%;
+	font-size: 40px;
+}
+
+#detailButton{
+	background-color: DEDEDE;
+	margin-left: 24%;
+}
+
+.poort{
+	margin-top: 10%;
+	border-style: solid;
+	border-radius: 25px;
+	width: 1600px;
+	height: 1000px;
+	margin-left: 7%;
+	margin-bottom: 10%;
+}
