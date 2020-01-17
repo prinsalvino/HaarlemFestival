@@ -89,6 +89,22 @@ a:hover {
 
 /* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
 
+.scheduleColumn {
+    float: left;
+    width: 20.5%;
+    background-color: grey;
+    border: 2px solid #fff;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 2vw;
+}
+
+.scheduleRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 #qty1 {
     width: 30px;
 }
