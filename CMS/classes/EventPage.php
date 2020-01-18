@@ -61,7 +61,42 @@ if ( isset($params['dates']) ) {
         if ( $records ) return new Eventpage( $records );
     }
 
-       
+    /*
+    public static function getList( $numRows=1000 ) { //make sure everything gets listed
+      $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+      $sql = "SELECT SQL_CALC_FOUND_ROWS *, dates AS dates FROM tickets
+              ORDER BY ticket_id DESC LIMIT :numRows";
+  
+      $bind = $conn->prepare( $sql );
+      $bind->bindValue( ":numRows", $numRows, PDO::PARAM_INT );
+      $bind->execute();
+      $list = array();
+  
+      while ( $row = $st->fetch() ) {
+        $event = new EventPage( $row );
+        $list[] = $event;
+      }
+  
+      // Total number of articles that matched the criteria
+      $sql = "SELECT FOUND_ROWS() AS totalRows";
+      $totalRows = $conn->query( $sql )->fetch();
+      $conn = null;
+      return ( array ( "results" => $list, "totalRows" => $totalRows[0] ) );
+      }   
+      */
+
+
+
+
+
+
+
+
+
+
+
+
+
     
       //Inserts the current Event into the database, and sets its ID.
       
