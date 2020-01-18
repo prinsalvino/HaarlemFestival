@@ -1,3 +1,13 @@
+.jazzD1 {
+    background-image: url("../img/jazzD1bg.jpg");
+    color: #1E1E1E;
+    width: 100%;
+    background-size: cover;
+}
+
+
+/* homepage css */
+
 .scheduleColumn {
     float: left;
     width: 20.5%;
@@ -14,6 +24,52 @@
     clear: both;
 }
 
+
+/* ticket page css */
+
+.inner {
+    display: inline-block;
+    text-align: left;
+    color: #fff;
+}
+
+.columnTicketpg {
+    float: left;
+    margin: 2vw;
+}
+
+.rowTicketpg:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* tickets/ tickets page */
+
+.columnTickets {
+    float: left;
+    width: 45%;
+    background-color: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1vw;
+    margin-bottom: 0.5vw;
+}
+
+.rowTickets:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* .qtyBtns {
+    background-color: #ccc;
+    border-radius: 25px;
+} */
+
 #qty1 {
     width: 30px;
+    background-color: #ccc;
 }
