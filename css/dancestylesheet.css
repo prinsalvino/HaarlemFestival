@@ -55,6 +55,8 @@ table {
     opacity: 0.8;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    margin-left:15%; 
+    margin-right:15%;
   }
   
   td, th {
