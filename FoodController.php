@@ -19,7 +19,7 @@ class FoodController
 	public function showAllRestaurant() 
 	{ 
         $datas = $this->FoodService->getAllRestaurant(); 
-		foreach ($datas as $data) 
+		foreach ($datas as $data)  
 		{
 			echo "Date : ".$data['date']."<br>"; 
 			echo "Time : ".$data['time']."<br>"; 
