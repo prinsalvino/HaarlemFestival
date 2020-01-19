@@ -76,6 +76,21 @@
     column-count: 2;
     column-gap: 20px;
 }
+
+.danceFaqs{
+    background-color: #ccc;
+    margin-top: 0px;
+    width: 700px;
+    margin-left:33%; 
+    margin-right:35%;
+    align-content:center;
+    opacity: 0.8;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: 20px ;
+}
 .danceDescriptionInfo{
     background-color: #ccc;
     margin-top: 40px;

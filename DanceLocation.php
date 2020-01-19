@@ -16,7 +16,7 @@ session_start();
 <div class="danceTicketRow">
   <a class="DanceAbout" href="DanceInfo.php">    
   <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    About Haarlem Dance
+    Haarlem Dance
   </div>
   </a>
 
@@ -35,27 +35,27 @@ session_start();
 
 <div class = "danceLocation">
 
-    Caprera Openluchttheater <br></br>
+    <b>Caprera Openluchttheater</b> <br></br>
     Hoge Duin en Daalseweg 2 <br></br>
     2061 AG Bloemendaal <br></br>
 
-    Club Ruis <br></br>
+    <b>Club Ruis</b><br></br>
     Smedestraat 31 <br></br>
     2011 RE Haarlem <br></br>
 
-    Club Stalker <br></br>
+    <b>Club Stalker</b> <br></br>
     Kromme Elleboogsteeg 20 <br></br>
     2011 TS Haarlem <br></br>
 
-    Jopenkerk  <br></br>
+    <b>Jopenkerk</b>  <br></br>
     Gedempte Voldersgracht 2  <br></br>
     2011 WD Haarlem <br></br>
 
-    Lichtfabriek <br></br>
+    <b>Lichtfabriek</b> <br></br>
     Minckelersweg 2 <br></br>
     2031 EM Haarlem <br></br>
 
-    XO the Club  <br></br>
+    <b>XO the Club </b>  <br></br>
     Grote Markt 8 <br></br>
     2011 RD Haarlem <br></br>
 
