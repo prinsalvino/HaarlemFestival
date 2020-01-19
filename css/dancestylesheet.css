@@ -53,6 +53,21 @@
     font-size: 30px ;
 }
 
+.danceDescriptionInfo{
+    background-color: #ccc;
+    margin-top: 90px;
+    width: 700px;
+    margin-left:33%; 
+    margin-right:35%;
+    align-content:center;
+    opacity: 0.8;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: 30px ;
+}
+
 .danceHomeColumn{
     float: left;
     width: 23%;

@@ -32,7 +32,7 @@ session_start();
   </div>
   </a>
 
-  <a class="DanceInfo" href="DanceTicketSaturday.php">
+  <a class="DanceInfo" href="DanceInfo.php">
   <div class="danceHomeColumn" style=" text-align: center; margin-top:1vw">
     Info
   </div>
