@@ -37,9 +37,13 @@ session_start();
   </a>
 </div> 
 
-<div class = "danceBuyTicketBtn">
-    Buy your tickets here! 
-</div>
+<div class="danceBuyTicketRow">
+  <a class="DanceTickets" href="DanceTicket3Days.php">    
+  <div class="danceBuyTicketColumn" style=" text-align: center; margin-top:1vw">
+    Buy your tickets here!
+  </div>
+  </a>
+
 
 <table>
   <tr>
