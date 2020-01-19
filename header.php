@@ -30,7 +30,7 @@
     <ul> 	
           <li><b>   <a class="navilink" href="index.php"> Home  </a>   </b></li> 
           <li><b>   <a class="navilink" href="JazzHomepg.php"> Jazz  </a>   </b></li> 	
-          <li><b>   <a class="navilink" href=""> Dance </a>   </b></li> 
+          <li><b>   <a class="navilink" href="DanceHomepg.php"> Dance </a>   </b></li> 
           <li><b>   <a class="navilink" href=""> Food  </a>   </b></li> 	
           <li><b>   <a class="navilink" href="historyHomePage.php"> Historic Tour </a>   </b></li> 
           <li><b>   <a class="navilink" href="shoppingCart.php"> Contact Us </a>   </b></li> 
