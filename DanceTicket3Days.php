@@ -44,6 +44,24 @@ session_start();
 </div> 
 
 <h1>this is 3 days ticket</h1>
+
+<table>
+  <tr>
+    <th>     </th>
+    <th>     </th>
+    <th>     </th>
+  </tr>
+  <tr>
+    <td>3 Days: All Artists </td>
+    <td>€ 250.00</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>      </td>
+    <td>      </td>
+    <td>      </td>
+  </tr>
+</table>
   
 
 <?php include "footer.php";?> 

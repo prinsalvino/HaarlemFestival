@@ -25,30 +25,6 @@
     margin-left: -100px;
 }
 
-
-/* .danceMenu {
-	position: absolute;
-    top: 100px;
-    right: 0px;
-	background-color: #ccc;
-}
-
-.danceMenuItem {
-	display: block;
-	margin: 0% 1%;
-	text-transform: uppercase;
-	font-size: 150%;
-}
-
-.danceMenuItem a {
-	color: #FFF200;
-	text-decoration: none;
-}
-.danceMenuItem a:hover {
-  background-color: #555;
-  color: white;
-  } */
-
 .danceTicketColumn{
     float: left;
     width: 20.5%;
@@ -71,6 +47,23 @@
     display: table;
     clear: both;
 } 
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #ccc;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #000000 ;
+    color: red;
+  }
 
 #qty1 {
     width: 30px;
