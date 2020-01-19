@@ -26,14 +26,11 @@
         <?php
         include "shoppingCartDB.php";
         $records = $this->ShopDB->getAllOrders();
-        if ($records->num_rows>0){
-            echo "Got it!";
-            $i = 1;
-            while ($result = $records->fetch_object()) {
-                $customer_id = $result->customer_id;
-                $ticket_id = $result->ticket_id;
-                $qty = $result->qty;
-                $price = $result->price;?>
+        foreach ($records as $result){
+                $customer_id = $result["customer_id"];
+                $ticket_id = $result["ticket_id"];
+                $qty = $result["qty"];
+                $price = $result["price"];?>
                 <tr>
                     <td><?php echo $customer_id;?></td>
                     <td><?php echo $ticket_id;?></td>
@@ -41,9 +38,7 @@
                     <td><?php echo $price;?></td>
                     <td><a href="shoppingCartDelete.php?customer_id=<?php echo $customer_id?>" class="btn btn-danger btn-sm">Delete</a> </td>
                 </tr>
-                <?php
-                $i++;
-            }
+        <?php
         }
         ?>
         </tbody>
