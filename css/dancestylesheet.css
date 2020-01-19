@@ -23,8 +23,6 @@
 }
 
 .danceLocation{
-    column-count: 2;
-    column-gap: 35px;
     background-color: #ccc;
     margin-top: 40px;
     width: 700px;
