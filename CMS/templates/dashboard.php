@@ -1,11 +1,10 @@
+<!doctype html>
+<html>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">   
 <?php include "CMS/templates/include/cmsheader.php" 
       include "CMS/config.php"  
         ?>
-
-      <ul id="dashboard">
-          
-<!doctype html>
-<html>
 <body>
     <section class="page_section">
         <section id="Title">

@@ -1,4 +1,4 @@
-<header>  
+<header>
   <div class="headerRow">
     <div class="headerColumn">
       <img src="../img/BetterLogo.png" title="Haarlem festival" style="width:8vw; Height:8vw; margin-left:1vw">
@@ -15,8 +15,10 @@
           </div>
           <div class="columnLoginCart" style=" margin-top:1vw">
               <p> 
-                  <img class=cartImg src="../img/shopping-cart.png" align="top" title="cart/basket" style="width:5vw; Height:5vw">
-                  <br><br><br><br>
+              <a class="cart" href="" style="text-decoration: none">
+                <img class=cartImg src="../img/shopping-cart.png" align="top" title="cart/basket" style="width:5vw; Height:5vw">
+              </a>  
+                <br><br><br><br>
                   <b><a class="translink" href=""> NL/EN </a></b> 
               </p>
           </div>
@@ -29,11 +31,10 @@
           <li><b>   <a class="navilink" href="index.php"> Home  </a>   </b></li> 
           <li><b>   <a class="navilink" href="JazzHomepg.php"> Jazz  </a>   </b></li> 	
           <li><b>   <a class="navilink" href="DanceHomepg.php"> Dance </a>   </b></li> 
-          <li><b>   <a class="navilink" href=""> Food  </a>   </b></li> 	
+          <li><b>   <a class="navilink" href="foodhome.php"> Food  </a>   </b></li> 	
           <li><b>   <a class="navilink" href="historyHomePage.php"> Historic Tour </a>   </b></li> 
-          <li><b>   <a class="navilink" href=""> Contact Us </a>   </b></li> 
+          <li><b>   <a class="navilink" href="shoppingCart.php"> Contact Us </a>   </b></li> 
       </ul>
   </nav> 
   <br>
 </header>
-
