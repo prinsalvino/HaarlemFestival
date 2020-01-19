@@ -37,9 +37,7 @@ border: 1px solid black;
   margin: 10px;
 }
 
-li{
-    background-color: grey;
-}
+
 
 .navigation
 {
@@ -60,7 +58,7 @@ a.cmsnavilink
 {
     color: #1E1E1E;
     text-decoration: none;
-    margin: 10px;
+   
     border: 1px solid black;
     background-color: white;
     padding: 13px;
@@ -72,4 +70,51 @@ a.cmsnavilink
 }
 
     
-    
+.title_box { 
+    background-color: grey;
+}
+
+.title_box #title { 
+    position: relative; 
+    top : -0.5em;
+    margin-left: 1em;
+    display: inline; 
+    background-color: white; 
+}
+div#title
+{
+    background-color: grey;
+    color: white;
+    position: relative;
+    right: 20px;
+    bottom: 19.6px;
+    width:inherit;
+}
+
+.Statistics_box
+{
+    position: relative;
+    left: 1009px;
+    bottom: 578px;
+    width: 373px;
+    height: 400px;
+}
+
+.Sales_box
+{
+    position: relative;
+    left: 750px;
+    bottom: 412px;
+    width: 600px;
+}
+
+.message_box
+{
+    position: relative;
+    left: 200px;
+    bottom: 848px;
+    width: 750px;
+    height: 239px;
+}
+/**.title_box #content {
+} **  

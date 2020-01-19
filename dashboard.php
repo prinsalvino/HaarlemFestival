@@ -22,27 +22,42 @@
         </section>
         
             <nav class="navigation"> 
-            <ul>
-                <li><b><a class="cmsnavilink" href="dashboard.php">Dashboard</a></b></li>
-                <li><b><a class="cmsnavilink" href="products.php"style="padding-right: 48px;">Products</a></b></li>
-                <li><b><a class="cmsnavilink" href="homepageLogin.php"style="padding-right: 66px;">Logout</a></b></li>
+            <ul style="background-color: white;
+">
+                <li style="background-color: grey;"><b style="background-color: grey;"><a class="cmsnavilink" href="dashboard.php">Dashboard</a></b></li>
+                <li><b><a class="cmsnavilink" href="products.php"style="padding-right: 51px;">Products</a></b></li>
+                <li><b><a class="cmsnavilink" href="homepageLogin.php"style="padding-right: 73px;">Logout</a></b></li>
             </ul>
             </nav>
 
-
+            <div class="Sales_box" id="sales">
+                <div id="title">Sales</div>
+                <div id="amountsales">
+                    Stuff goes here.<br>
+                    For example, a bill-to address
+                </div>
+            </div>
             
+            <div class="Statistics_box" id="stats">
+                <div id="title">Statistics</div>
+                <div id="statsis">
+                    View over past month.<br>
+                    Sales over past month.<br>
+                    Items sold past month.
+                </div>
+            </div>
 
-        <section id="Sales">
-        <h2>"Sales"</h2>
-        </section>
+            <div class="message_box" id="messages">
+                <div id="title">Messages</div>
+                <div id="mails">
+                    Stuff goes here.<br>
+                    For example, a bill-to address
+                </div>
+            </div>
 
-        <section id="Statistics">
-        <h2>"Statistics"</h2>
-        </section>
+        
 
-        <section id="Messages">
-        <h2>"Messages"</h2>
-        </section>
+        
     
     
     </section>
