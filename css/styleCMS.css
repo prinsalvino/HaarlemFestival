@@ -1,0 +1,178 @@
+*
+{
+    font-size: 1.1vw;
+}
+
+
+.page_section
+{
+    
+    width: 100%;
+    background-color: darkgrey;
+    max-width: 1200px;
+}
+
+.dashboard
+{
+    background-color: darkgrey;
+}
+title
+{
+    background-color: darkgrey;
+
+}
+h1
+{
+    font-size: 1em;
+    text-align: left;
+    color: black;
+}
+
+div
+{
+border: 1px solid black;
+  background-color: white;
+  width: max-width;                 
+  padding: 10px;
+  margin: 10px;
+}
+
+
+
+.navigation
+{
+    width: 175px;
+}
+ul
+{
+    border: 1px solid black;
+    height: 400px;
+    width: 180px;
+}
+body ul li
+{
+    display:flex;
+    padding-top: 25px;
+}
+a.cmsnavilink
+{
+    color: #1E1E1E;
+    text-decoration: none;
+   
+    border: 1px solid black;
+    background-color: white;
+    padding: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top-style: outset;
+    position: relative;
+    top: 40px;
+}
+
+    
+.title_box { 
+    background-color: grey;
+}
+
+.title_box #title { 
+    position: relative; 
+    top : -0.5em;
+    margin-left: 1em;
+    display: inline; 
+    background-color: white; 
+}
+div#title
+{
+    background-color: grey;
+    color: white;
+    position: relative;
+    right: 20px;
+    bottom: 19.6px;
+    width:inherit;
+}
+
+.Statistics_box
+{
+    position: relative;
+    left: 1009px;
+    bottom: 570px;
+    width: 373px;
+    height: 400px;
+}
+
+.Sales_box
+{
+    position: relative;
+    left: 201px;
+    bottom: 412px;
+    width: 748px;
+}
+
+.message_box
+{
+    position: relative;
+    left: 200px;
+    bottom: 848px;
+    width: 750px;
+    height: 239px;
+}
+.statsis
+{
+    text-align:center;
+}
+
+/* //////////////////////////SIDE NAV////////////////    */
+ /* Fixed sidenav, full height */
+.sidenav {
+    height: 370px;
+    width: 177px;
+    position: inherit;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 7px 8px 6px 7px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    border: 1px solid black;
+    background: none;    
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: rgb(144, 206, 241);
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: rgb(34, 34, 34);
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). */
+  .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+  
+  /**.title_box #content {
+} **  

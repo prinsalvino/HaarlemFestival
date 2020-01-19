@@ -30,7 +30,7 @@ function editExisting() {
 }
 
 function dashboard() {
-        require( TEMPLATE_PATH . "/homepage.php" );
+        require( TEMPLATE_PATH . "dashboard.php" );
         //figure out how to makes views/sales and orders appear here along with messages.
   }
    
