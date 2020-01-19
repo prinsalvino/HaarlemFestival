@@ -4,7 +4,7 @@ declare(strict_types=1);
 session_start();
 
 ?>  
-<html class = "danceHomepage">
+<html class = "danceInfo">
 <head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">

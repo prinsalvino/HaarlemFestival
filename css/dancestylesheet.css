@@ -16,6 +16,12 @@
     background-size: cover;
 }
 
+.danceInfo{
+    background-image: url("../img/Dance_InfoBG.jpg");
+    width: 100%;
+    background-size: cover;
+}
+
 .btnBuyTicket {
     background-color: #ccc;
     border: none;
