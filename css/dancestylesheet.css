@@ -22,6 +22,29 @@
     opacity: 0.8;
 }
 
+.danceColumn{
+    float: left;
+    width: 20.5%;
+    background-color: #ccc;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 2vw;
+    color:#000000;
+    border-style: solid;
+    border-color: #000000;
+}
+
+
+
+.danceRow:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
+
 .danceTicketColumn{
     float: left;
     width: 20.5%;
