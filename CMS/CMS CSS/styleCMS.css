@@ -21,4 +21,11 @@ border: 1px solid black;
   padding: 10px;
   margin: 10px;
 }
+body ul li
+{
+    display:flex;
+}
 
+
+    
+    
