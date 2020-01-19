@@ -25,12 +25,12 @@
     margin-right:35%;
     align-content: center;
     opacity: 0.8;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 35px;
 }
 
 .danceDescriptionHome{
