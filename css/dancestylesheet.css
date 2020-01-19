@@ -22,7 +22,7 @@
     opacity: 0.8;
 }
 
-.danceColumn{
+.danceHomeColumn{
     float: left;
     width: 20.5%;
     background-color: #ccc;
@@ -38,7 +38,7 @@
 
 
 
-.danceRow:after {
+.danceHomeRow:after {
     content: "";
     display: table;
     clear: both;
