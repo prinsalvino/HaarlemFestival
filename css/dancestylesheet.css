@@ -14,12 +14,12 @@
 
 .danceDescriptionHome{
     background-color: #ccc;
-    margin-top: 90px;
-    width: 450px;
+    margin-top: 105px;
+    width: 500px;
     margin-left:35%; 
     margin-right:35%;
     align-content:center;
-    
+    opacity: 0.8;
 }
 
 .danceTicketColumn{
