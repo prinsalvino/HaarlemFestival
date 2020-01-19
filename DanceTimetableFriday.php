@@ -37,6 +37,10 @@ session_start();
   </a>
 </div> 
 
+<div class = "danceBuyTicketBtn">
+    Buy your tickets here! 
+</div>
+
 <table>
   <tr>
     <td>Artist </td>

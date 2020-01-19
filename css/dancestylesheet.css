@@ -19,16 +19,15 @@
 
 .danceBuyTicketBtn{
     background-color: #ccc;
-    margin-top: 50px;
-    width: 200px;
+    width: 300px;
     margin-left:33%; 
     margin-right:35%;
     align-content:center;
     opacity: 0.8;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .danceDescriptionHome{
