@@ -13,22 +13,42 @@
     <section class="page_section">
         <section id="Title">
     
-            <div>         
+        <div style="width: 1388px;">              
                 Dashboard
-            </div>
-
-
-            
+            </div>            
         </section>
         
-            <nav class="navigation"> 
-            <ul style="background-color: white;
-">
-                <li style="background-color: grey;"><b style="background-color: grey;"><a class="cmsnavilink" href="dashboard.php">Dashboard</a></b></li>
-                <li><b><a class="cmsnavilink" href="products.php"style="padding-right: 51px;">Products</a></b></li>
-                <li><b><a class="cmsnavilink" href="homepageLogin.php"style="padding-right: 73px;">Logout</a></b></li>
-            </ul>
-            </nav>
+
+         
+  
+  <div class="sidenav">
+        <a href="dashboard.php">Dashboard</a>
+        <button class="dropdown-btn" style="width: 170px;">Products</button>
+        <div class="dropdown-container">
+            <a href="#" style="background-color: slategrey;">Add New</a>
+            <a href="editEvents.php" style="background-color: slategrey;">Edit Existing</a>    
+        </div>
+        <a href="homepageLogin.php">Logout</a>     
+    </div>
+
+    <script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "contents") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "contents";
+    }
+    });
+    }
+    </script>
+
 
             <div class="Sales_box" id="sales">
                 <div id="title">Sales</div>
@@ -41,10 +61,19 @@
             <div class="Statistics_box" id="stats">
                 <div id="title">Statistics</div>
                 <div id="statsis">
-                    View over past month.<br>
-                    Sales over past month.<br>
-                    Items sold past month.
+                    View over past month.<br>    
+                    INSERT VIEWS                
                 </div>
+                <div id="statsis">
+                    Sales over past month.<br>   
+                    INSERT SALES                 
+                </div>
+                <div id="statsis">
+                    Items sold past month. 
+                    INSERT ORDERS               
+                </div>
+                
+                    
             </div>
 
             <div class="message_box" id="messages">
