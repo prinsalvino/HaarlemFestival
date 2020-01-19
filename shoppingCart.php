@@ -1,30 +1,33 @@
+<!doctype html>
 <html>
-    <heaer>
+    <header>
     <?php include "header.php";?>
+    <link rel="stylesheet" href="css/stylesheet.css">
     </header>
     <body>
         <table>
             <tr>
-                <th>ID</th>
-                <th>Date</th>
-                <th>Event</th>
-                <th>Price</th>
+                <th>ticket_id</th>
+                <th>date</th>
+                <th>event</th>
+                <th>price</th>
             </tr>
             <?php
                 require "shoppingCartDB.php";
 
-                public function getAllTickets()
+                $result = $this->shoppingCartDB->getAllTickets();
+                if ($result->num_rows > 0) 
                 {
-                    return $this->shoppingCartDB->getAllTickets();
+                    while ($row = $result->fetch_assoc()) 
+                    { 
+                        echo "<tr><td>". $row["ticket_id"] ."</td><td>". $row["date"] ."</td><td>". $row["event"] ."</td><td>". $row["price"] ."</td></tr>"; 
+                    } 
+                    echo "</table>";   
                 }
-
-                $result = getAllTickets();
-                foreach($result as $ticket)
+                else
                 {
-                    echo "<tr><td>". $row["ticket_id"] ."</td><td>". $row["date"] ."</td><td>".
-                     $row["event"] ."</td><td>". $row["price"] ."</td></tr>"; 
+                    echo "No data found";
                 }
-                echo "</table>"
                 ?>
         </table>
     </body>
