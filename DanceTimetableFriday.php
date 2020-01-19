@@ -37,7 +37,7 @@ session_start();
   </a>
 </div> 
 
-<a href="#" class="button">Link Button</a>
+<a href="DanceTicket3Days.php" class="btnBuyTicket">Buy Tickets here!</a>
 
 <table>
   <tr>

@@ -37,23 +37,6 @@
     color: #000000;
   } 
 
-/* .danceBuyTicketColumn{
-    background-color: #ccc;
-    width: 400px;
-    height: 45px;
-    margin-left:33%; 
-    margin-right:35%;
-    align-content: center;
-    opacity: 0.8;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    text-align: center;
-    font-size: 30px;
-} */
-
-
 
 .danceDescriptionHome{
     background-color: #ccc;
@@ -103,6 +86,7 @@
     border-bottom-left-radius: 25px;
     margin: 2vw;
     color:yellow;
+    font-size: 25px ;
 }
 
 

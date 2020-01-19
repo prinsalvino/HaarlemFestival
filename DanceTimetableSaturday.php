@@ -37,6 +37,9 @@ session_start();
   </a>
 </div> 
 
+
+<a href="DanceTicket3Days.php" class="btnBuyTicket">Buy Tickets here!</a>
+
 <table>
   <tr>
     <td>Artist </td>
