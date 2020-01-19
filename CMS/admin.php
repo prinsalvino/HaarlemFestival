@@ -162,9 +162,9 @@ function newEvent() {
     }
   
     require( TEMPLATE_PATH . "/admin/listEventPage.php" );
-    */
+    
   }
-  
+  */
 
 
 
