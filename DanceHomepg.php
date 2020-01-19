@@ -18,7 +18,7 @@ session_start();
     a special three-day programme in Haarlem City!
 </br> Catch Martin Garrix, Hardwell, Armin van Buuren, Tiesto, Nicky Romero, 
     and Afrojack in Haarlem Dance! Buy your tickets now! </br>
-    <brr> </br>
+    <br> </br>
     <div class="danceHomeRow">
   <a class="DanceTickets" href="DanceTicket3Days.php">    
   <div class="danceHomeColumn" style=" text-align: center; margin-top:1vw">
@@ -26,13 +26,13 @@ session_start();
   </div>
   </a>
 
-  <a class="DanceTimetable" href="DanceTicketFriday.php"> 
+  <a class="DanceTimetable" href="DanceTimetableFriday.php"> 
   <div class="danceHomeColumn" style=" text-align: center;margin-top:1vw">
     Timetable
   </div>
   </a>
 
-  <a class="DanceInfo" href="DanceTicketSaturday.php">
+  <a class="DanceInfo" href="DanceInfo.php">
   <div class="danceHomeColumn" style=" text-align: center; margin-top:1vw">
     Info
   </div>
