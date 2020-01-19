@@ -33,7 +33,7 @@ session_start();
   </a>
 </div> 
 
-<div class = "danceLocation">
+<div class = "danceDescriptionInfo">
     Since there will be different DJs that will perform, the location will be at
     some of the famous clubs or event place in haarlem. the address are listed below:
     <br> </br>
