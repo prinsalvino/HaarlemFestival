@@ -43,6 +43,7 @@ session_start();
     Buy your tickets here!
   </div>
   </a>
+</div>
 
 
 <table>

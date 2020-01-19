@@ -33,6 +33,12 @@
     font-size: 30px;
 }
 
+.danceBuyTicketRow:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
 .danceDescriptionHome{
     background-color: #ccc;
     margin-top: 105px;
