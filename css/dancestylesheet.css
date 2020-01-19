@@ -29,17 +29,15 @@
     float: left;
     width: 20.5%;
     background-color: #ccc;
-    border: 2px solid #fff;
+    opacity: 0.9 ;
     border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     margin: 2vw;
     color:yellow;
 }
 
-.danceTicketRow :hover{
-    background-color: #ffff99;
-      
-}
 
 
 .danceTicketRow:after {

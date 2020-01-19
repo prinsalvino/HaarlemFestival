@@ -43,7 +43,58 @@ session_start();
   </a>
 </div> 
 
-<h1>this is saturday ticket</h1>
+<table>
+  <tr>
+    <td>Saturday: All Artists </td>
+    <td>€ 150.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Hardwell/ Martin Garrix/ <br> Armin van Buuren </br></td>
+    <td>€ 110.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Afrojack </td>
+    <td>€ 60.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Tiësto </td>
+    <td>€ 75.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Nicky Romero </td>
+    <td>€ 60.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+</table>
   
 <?php include "footer.php";?> 
 
