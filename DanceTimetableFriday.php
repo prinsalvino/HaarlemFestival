@@ -37,7 +37,7 @@ session_start();
   </a>
 </div> 
 
-<a href="#" class="btnBuyTicket">Buy your tickets here!</a>
+<a href="#" class="button">Link Button</a>
 
 <table>
   <tr>
