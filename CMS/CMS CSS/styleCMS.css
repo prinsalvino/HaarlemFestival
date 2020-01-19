@@ -1,0 +1,29 @@
+.page_section
+{
+    margin: auto;
+    width: 100%;
+    background-color: white;
+    max-width: 1200px;
+}
+
+h1
+{
+    font-size: 1em;
+    text-align: left;
+    color: black;
+}
+
+div
+{
+border: 1px solid black;
+  background-color: white;
+  width: max-width;                 
+  padding: 10px;
+  margin: 10px;
+}
+
+.chartContainer
+{
+    height: 370px; 
+    width: 100%;
+}
