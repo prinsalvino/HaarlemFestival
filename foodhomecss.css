@@ -8,22 +8,22 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-	margin: 50px 250px;
-	width: 700px;
+	margin: 50px 350px;
+	width: 800px;
 	height: 30px;
 }
 
 .MrandMrs{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 	
 }
 .BackgroundRestaurant1{
-	margin: 50px 250px 100px;
-	height: 250px;
+	margin: 50px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
@@ -37,7 +37,7 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 190px 38px;
+    margin: 230px 38px;
     color:black;
 	
 }
@@ -54,18 +54,25 @@
 .booknowtext1{
 	color: black;
 }
+.booknowtext1{
+	color: black;
+}
 
 .Ratatouille{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
+.info{
+	font-size: 20px;
+
+}
 
 .BackgroundRestaurant2{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 150px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
@@ -90,17 +97,17 @@
 }
 
 .BackgroundRestaurant3{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 200px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
 }
 
 .ML{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
@@ -114,22 +121,22 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 190px 38px;
+    margin: 230px 38px;
     color:black;
 }
 
 .BackgroundRestaurant4{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 190px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
 }
 
 .RestaurantFris{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
@@ -143,22 +150,22 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 190px 38px;
+    margin: 230px 38px;
     color:black;
 }
 
 .BackgroundRestaurant5{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 150px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
 }
 
 .RestaurantSpecktackel{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
@@ -177,17 +184,17 @@
 }
 
 .BackgroundRestaurant6{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 150px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
 }
 
 .Brinkmann{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
@@ -201,22 +208,22 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 190px 38px;
+    margin: 220px 38px;
     color:black;
 }
 
 .BackgroundRestaurant7{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 150px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
 }
 
 .Toujours{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
@@ -229,22 +236,22 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 170px 38px;
+    margin: 180px 38px;
     color:black;
 }
 
 .BackgroundRestaurant8{
-	margin: 150px 250px 100px;
-	height: 250px;
+	margin: 150px 350px 100px;
+	height: 300px;
 	width: 600px;
 	z-index: 3;
 	background: #0B0A0A
 }
 
 .GoldenBull{
-	margin: 0px 350px;
-	height: 250px;
-	width: 600px;
+	margin: 0px 500px;
+	height: 300px;
+	width: 650px;
 	background:#F0E6E6;
 	position: absolute;
 }
@@ -258,14 +265,14 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 190px 38px;
+    margin: 220px 38px;
     color:black;
 }
 .restaurantname{
 	font-size: 24px;
 }
 h2{
-	font-size: 12px;
+	font-size: 15px;
 	color: gray;
 }
 .price{

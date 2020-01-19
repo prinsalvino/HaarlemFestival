@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.FoodCheckout{
+ background-image: url("../img/checkout.jpg");
+    color: #1E1E1E;
+    width: 100%;
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
