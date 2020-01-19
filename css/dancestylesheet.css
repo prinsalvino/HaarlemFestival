@@ -41,7 +41,7 @@
 .danceDescriptionHome{
     background-color: #ccc;
     margin-top: 105px;
-    width: 600px;
+    width: 700px;
     margin-left:33%; 
     margin-right:35%;
     align-content:center;
@@ -55,7 +55,7 @@
 
 .danceHomeColumn{
     float: left;
-    width: 20.5%;
+    width: 23%;
     background-color: 	#A9A9A9;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
