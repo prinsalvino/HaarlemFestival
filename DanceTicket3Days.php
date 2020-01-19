@@ -43,7 +43,6 @@ session_start();
   </a>
 </div> 
 
-<h1>this is 3 days ticket</h1>
 
 <table>
   <tr>
@@ -54,7 +53,12 @@ session_start();
   <tr>
     <td>3 Days: All Artists </td>
     <td>€ 250.00</td>
-    <td></td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
   </tr>
   <tr>
     <td>      </td>

@@ -53,6 +53,8 @@ table {
     width: 50%;
     background-color: #ccc;
     opacity: 0.8;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
   
   td, th {
