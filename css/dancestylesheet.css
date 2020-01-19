@@ -10,6 +10,12 @@
     background-size: cover;
 }
 
+.danceTimetable{
+    background-image: url("../img/Dance_TimetableBG.jpg");
+    width: 100%;
+    background-size: cover;
+}
+
 
 
 .danceDescriptionHome{

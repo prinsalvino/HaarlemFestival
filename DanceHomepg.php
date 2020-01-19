@@ -26,7 +26,7 @@ session_start();
   </div>
   </a>
 
-  <a class="DanceTimetable" href="DanceTicketFriday.php"> 
+  <a class="DanceTimetable" href="DanceTimetableFriday.php"> 
   <div class="danceHomeColumn" style=" text-align: center;margin-top:1vw">
     Timetable
   </div>
