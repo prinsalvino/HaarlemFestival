@@ -53,7 +53,7 @@ session_start();
     <b>When will my favorite artist perform?</b>
     You could check where and when is your favorite artist will perform on this page.<br> </br>
 
-    <b>Make sure to have lots of fun and don't forget to share your memories wth us on Facebook, Twitter, 
+    <b>Make sure to have lots of fun and don't forget to share your memories with us on Facebook, Twitter, 
         Instagram via #HaarlemDance. </b>
 
 </div>
