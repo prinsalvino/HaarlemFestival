@@ -5,7 +5,8 @@ session_start();
 
  if(isset($_SESSION['email']))
  {
-     header("Location: homepageLogin.php"); //if user is logged in, redirect to homepage
+     //header("Location: homepageLogin.php"); //if user is logged in, redirect to homepage
+     header("Location: ..//..//dashboard.php")
  }
 
 ?> 
