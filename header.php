@@ -33,7 +33,7 @@
           <li><b>   <a class="navilink" href=""> Dance </a>   </b></li> 
           <li><b>   <a class="navilink" href=""> Food  </a>   </b></li> 	
           <li><b>   <a class="navilink" href="historyHomePage.php"> Historic Tour </a>   </b></li> 
-          <li><b>   <a class="navilink" href=""> Contact Us </a>   </b></li> 
+          <li><b>   <a class="navilink" href="shoppingCart.php"> Contact Us </a>   </b></li> 
       </ul>
   </nav> 
   <br>
