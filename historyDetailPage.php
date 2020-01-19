@@ -64,7 +64,7 @@
 			<p>The hofje was founded from the legacy of Dirck van Bakenes (or Dirc van Bakenesse) in 1395. This makes it the oldest hofje in the Netherlands. The earliest mention of it in town records is from the History of Haarlem by Samuel Ampzing in 1628, who claims to have copied the stichtingsbrief or letter of foundation (since lost).</p>
 		</section>
 		
-		<button class="button" onclick="location.href='historyTickettest.php'">Tickets!</button>
+		<button class="button" onclick="location.href='historyTickets.php'">Tickets!</button>
 		<button class="button" id="detailButton" onclick="location.href='historyHomePage.php'">Go back</button>
     </body>
     <?php

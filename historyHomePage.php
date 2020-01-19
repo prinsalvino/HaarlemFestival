@@ -35,7 +35,7 @@
 		<p class="infoText">Get lost in the rich history of the city on Haarlem with our tour going past and inside many of the city's most well known locations.
 			Each tour will take about 3 hours to complete with a break around the middle of the tour, at the Jopenkerk. There will be a total of 4 tour dates, ranging from July 26th to July 29th, of which the latter 3 will have a Chinese, Dutch and English tour. (With the first date simply having English and Dutch.) Individual tickets will cost €17.50 and family tickets, which will be for 4 people, are €60.00 </p>
 		
-		<button class="button" onclick="location.href='historyTickettest.php'">Tickets!</button>
+		<button class="button" onclick="location.href='historyTickets.php'">Tickets!</button>
 		<button class="button" id="detailButton" onclick="location.href='historyDetailPage.php'">Detail page</button>
 		
 		<img src="img/poort.jpg" alt="poort" align="middle"; class="poort">
