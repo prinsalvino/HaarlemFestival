@@ -23,8 +23,20 @@
 }
 
 .danceLocation{
-    column-count: 3;
+    column-count: 2;
     column-gap: 35px;
+    background-color: #ccc;
+    margin-top: 40px;
+    width: 700px;
+    margin-left:33%; 
+    margin-right:35%;
+    align-content:center;
+    opacity: 0.8;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: 30px ;
 }
 
 .btnBuyTicket {
