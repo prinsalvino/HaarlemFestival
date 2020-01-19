@@ -24,8 +24,8 @@
             <nav class="navigation"> 
             <ul>
                 <li><b><a class="cmsnavilink" href="dashboard.php">Dashboard</a></b></li>
-                <li><b><a class="cmsnavilink" href="products.php">Products</a></b></li>
-                <li><b><a class="cmsnavilink" href="homepageLogin.php">Logout</a></b></li>
+                <li><b><a class="cmsnavilink" href="products.php"style="padding-right: 48px;">Products</a></b></li>
+                <li><b><a class="cmsnavilink" href="homepageLogin.php"style="padding-right: 66px;">Logout</a></b></li>
             </ul>
             </nav>
 
