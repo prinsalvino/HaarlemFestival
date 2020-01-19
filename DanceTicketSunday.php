@@ -53,6 +53,7 @@ session_start();
                       <input id="qty1" type="text" value="1" name="qty" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
+    <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
   <td>Afrojack/ Martin Garrix/ <br> Nicky Romero </br></td>
@@ -63,6 +64,7 @@ session_start();
                       <input id="qty1" type="text" value="1" name="qty" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
+    <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
   <td>Armin van Buuren </td>
@@ -73,6 +75,7 @@ session_start();
                       <input id="qty1" type="text" value="1" name="qty" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
+    <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
   <td>Hardwell </td>
@@ -83,6 +86,7 @@ session_start();
                       <input id="qty1" type="text" value="1" name="qty" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
+    <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
   <td>Martin Garrix </td>
@@ -93,6 +97,7 @@ session_start();
                       <input id="qty1" type="text" value="1" name="qty" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
+    <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
 </table>
   
