@@ -1,5 +1,5 @@
 <?php
-require("config.php");
+require("DB.php");
 $procedure = isset($_GET['procedure']) ? $_GET['procedure']: ""; // if the value exist its set otherwise it becomes a empty string
 
 switch( $procedure )  {

@@ -16,6 +16,7 @@ public int $price = null;
 public int $stock = null;
 public string $content = null;
 
+$dsn = "mysql:host=localhost;dbname=hfitteam1"
 
 public function __construct($data=array())
 {
@@ -49,7 +50,8 @@ if ( isset($params['dates']) ) {
 
     public static function getID($ticket_id)
     {
-        $conn = new PDO (DB_DSN, DB_USERNAME, DB_PASSWORD); //making connection to MYSQL DB using config file prewritten details
+
+        $conn = new PDO ( $dsn, 'hfitteam1', '3FxmuBcR' ); //making connection to MYSQL DB
 
         $sql = "SELECT *, dates FROM tickets WHERE ticket_id = :ticket_id"; //gets id from table
         $bind = $conn->prepare( $sql ); //
@@ -107,7 +109,7 @@ if ( isset($params['dates']) ) {
         if ( !is_null( $this->id ) ) trigger_error ( "Eventinsert(): Event already exists with the id:($this->id).", E_USER_ERROR );
     
         // Insert the Event
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( $dsn, 'hfitteam1', '3FxmuBcR' );
         $sql = "INSERT INTO tickets ( ticket_id, event, dates, time, location, special, price, stock ) VALUES  :ticket_id, :event, :dates, :time, :location, :special, :price, :stock )";
         $bind = $conn->prepare ( $sql );
         $bind->bindValue( ":ticket_id", $this->ticket_id, PDO::PARAM_INT );
@@ -134,7 +136,7 @@ if ( isset($params['dates']) ) {
         if ( is_null( $this->ticket_id ) ) trigger_error ( "Eventupdate(): Failed to update an Event that has no ID.", E_USER_ERROR );
        
         // Update the Event
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( $dsn, 'hfitteam1', '3FxmuBcR' );
         $sql = "UPDATE tickets SET ticket_id=:ticket_id, event=:event, dates=:publicationDate, time=:time, location=:location, special=:special, price=:price, stock=:stock WHERE ticket_id = :ticket_id";
         $bind = $conn->prepare ( $sql );
         $bind = $conn->prepare ( $sql );
@@ -161,7 +163,7 @@ if ( isset($params['dates']) ) {
         if ( is_null( $this->ticket_id ) ) trigger_error ( "Eventdelete(): Failed to delete an Event that has no ID.", E_USER_ERROR );
     
         // Delete the Article
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( $dsn, 'hfitteam1', '3FxmuBcR' );
         $bind = $conn->prepare ( "DELETE FROM tickets WHERE ticket_id = :ticket_id LIMIT 1" ); // only 1 event can get deleted at a time
         $bind->bindValue( ":ticket_id", $this->ticket_id, PDO::PARAM_INT );
         $bind->execute();

@@ -1,7 +1,4 @@
 <?php
-define( "DB_DSN", "localhost; hfitteam1_db" );
-define( "DB_USERNAME", "hfitteam1" );
-define( "DB_PASSWORD", "3FxmuBcR" );
 define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates" );
 define( "EVENTPAGES_NUM_EVENTS", 20 ); //change amount for evenets shown in each page

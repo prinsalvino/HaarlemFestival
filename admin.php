@@ -1,5 +1,6 @@
 <?php
 require("config.php");
+require("DB.php")
 session_start();
 $procedure = isset( $_GET['procedure'] ) ? $_GET['procedure'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
