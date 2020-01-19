@@ -1,0 +1,174 @@
+@charset "utf-8";
+.DescriptionList{
+	align-items: center;
+	border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+	margin: 50px 250px;
+	width: 700px;
+	height: 30px;
+}
+
+.MrandMrs{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+	
+}
+.BackgroundRestaurant1{
+	margin: 50px 250px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+.time1restaurant1{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 190px 38px;
+    color:black;
+	
+}
+
+.rest1img{
+	float:left;
+}
+
+.price1{
+	float:right;
+}
+
+
+.booknowtext1{
+	color: white;
+}
+
+.Ratatouille{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+
+.BackgroundRestaurant2{
+	margin: 100px 250px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.booknowtext2{
+		color: black;
+	
+}
+
+.time1restaurant2{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 120px 38px;
+    color:black;
+}
+
+.BackgroundRestaurant3{
+	margin: 150px 250px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.ML{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+
+.time1restaurant3{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 190px 38px;
+    color:black;
+}
+
+.BackgroundRestaurant4{
+	margin: 200px 250px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.RestaurantFris{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+
+.time1restaurant4{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 190px 38px;
+    color:black;
+}
+
+.BackgroundRestaurant5{
+	margin: 250px 250px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.RestaurantSpecktackel{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+
+.time1restaurant5{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 190px 38px;
+    color:black;
+}
