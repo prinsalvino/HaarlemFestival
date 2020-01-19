@@ -20,15 +20,15 @@ session_start();
   </div>
   </a>
 
-  <a class="DanceLocation" href="DanceLocation.php"> 
+  <a class="DanceVenue" href="DanceLocation.php"> 
   <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
     Location
   </div>
   </a>
 
-  <a class="DanceFaqs" href="DanceFaqs.php">
+  <a class="DanceQuestions" href="DanceFaqs.php">
   <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    FAQs
+    FAQs 
   </div>
   </a>
 </div> 

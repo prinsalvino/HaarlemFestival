@@ -20,40 +20,41 @@ session_start();
   </div>
   </a>
 
-  <a class="DanceLocation" href="DanceLocation.php"> 
+  <a class="DanceVenue" href="DanceLocation.php"> 
   <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
     Location
   </div>
   </a>
 
-  <a class="DanceFaqs" href="DanceFaqs.php">
+  <a class="DanceQuestions" href="DanceFaqs.php">
   <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    FAQs
+    FAQs 
   </div>
   </a>
 </div> 
 
 <div class = "danceFaqs">
 
-    What is Haarlem Dance?
-    Haarlem Dance is a special three-day programme where six of the best Dutch DJs will peform. 
+<b>What is Haarlem Dance?</b>
+Haarlem Dance is a special three-day programme where six of the best Dutch DJs will peform. <br></br>
 
-    When is Haarlem Dance?
-    It will be held on 27-29 of April 2020. 
+    <b>When is Haarlem Dance?</b>
+    It will be held on 27-29 of April 2020. <br></br>
 
-    Where is Haarlem Dance?
-    There will be different location for every artists. You could check the place here.
+    <b>Where is Haarlem Dance?</b>
+    There will be different location for every artists. You could check the place here.<br> </br>
 
-    What is the minimum age requirement for Haarlem Dance?
-    The minimum age is 18. All visitors are obliged to carry valid prrof of identity, which must be displayed on request.
+    <b>What is the minimum age requirement for Haarlem Dance?</b>
+    The minimum age is 18. All visitors are obliged to carry valid prrof of identity, which must be displayed on request.<br></br>
 
-    Which artists will be appearing at Haarlem Dance?
-    You could check the line up here.
+    <b>Which artists will be appearing at Haarlem Dance?</b>
+    You could check the line up here. <br> </br>
 
-    When will my favorite artist perform?
-    You could check where and when is your favorite artist will perform on this page.
+    <b>When will my favorite artist perform?</b>
+    You could check where and when is your favorite artist will perform on this page.<br> </br>
 
-    Make sure to have lots of fun and don't forget to share your memories wth us on Facebook, Twitter, Instagram via #HaarlemDance. 
+    <b>Make sure to have lots of fun and don't forget to share your memories wth us on Facebook, Twitter, 
+        Instagram via #HaarlemDance. </b>
 
 </div>
 

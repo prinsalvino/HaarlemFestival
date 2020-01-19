@@ -80,7 +80,7 @@
 .danceFaqs{
     background-color: #ccc;
     margin-top: 0px;
-    width: 700px;
+    width: 800px;
     margin-left:33%; 
     margin-right:35%;
     align-content:center;
@@ -89,7 +89,7 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    font-size: 20px ;
+    font-size: 18px ;
 }
 
 .danceDescriptionInfo{
