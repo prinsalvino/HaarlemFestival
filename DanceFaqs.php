@@ -35,8 +35,8 @@ session_start();
 
 <div class = "danceFaqs">
 
-<b>What is Haarlem Dance?</b>
-Haarlem Dance is a special three-day programme where six of the best Dutch DJs will peform. <br></br>
+    <b>What is Haarlem Dance?</b>
+    Haarlem Dance is a special three-day programme where six of the best Dutch DJs will peform. <br></br>
 
     <b>When is Haarlem Dance?</b>
     It will be held on 27-29 of April 2020. <br></br>
