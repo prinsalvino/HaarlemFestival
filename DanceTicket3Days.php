@@ -44,7 +44,7 @@ session_start();
 </div> 
 
 
-<table>
+<table class = "table1">
   <tr>
     <th>     </th>
     <th>     </th>

@@ -48,7 +48,7 @@
     clear: both;
 } 
 
-table {
+.table1 {
     border-collapse: collapse;
     width: 70%;
     background-color: #ccc;

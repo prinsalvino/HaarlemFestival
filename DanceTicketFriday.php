@@ -43,7 +43,68 @@ session_start();
   </a>
 </div> 
 
-<h1>this is friday ticket</h1>
+<table class = "table2">
+  <tr>
+    <td>Friday: All Artists </td>
+    <td>€ 125.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Nicky Romero/ Afrojack</td>
+    <td>€ 75.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Tiësto </td>
+    <td>€ 60.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Hardwell </td>
+    <td>€ 60.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Armin van Buuren </td>
+    <td>€ 60.00</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+  <tr>
+  <td>Martin Garrix </td>
+    <td>€ 60</td>
+    <td><div class="cart-quantity">
+                      Qty: 
+                      <button onclick="increase_by_one('qty1');">+</button>
+                      <input id="qty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('qty1');" />-</button>
+                    </div></td>
+  </tr>
+</table>
   
 <?php include "footer.php";?> 
 
