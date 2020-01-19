@@ -22,6 +22,11 @@
     background-size: cover;
 }
 
+.danceLocation{
+    column-count: 3;
+    column-gap: 35px;
+}
+
 .btnBuyTicket {
     background-color: #ccc;
     border: none;

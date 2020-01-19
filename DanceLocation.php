@@ -34,11 +34,37 @@ session_start();
 </div> 
 
 <div class = "danceDescriptionInfo">
-    <br> </br>Haarlem dance is a three day dance event where six of the best Dutch DJs who will fill the 
-    city with dance, trance, house, and techno music. <br> </br>
-    The event will be held on 27-29 of April 2020.
+    Since there will be different DJs that will perform, the location will be at <br> </br>
+    some of the famous clubs or event place in haarlem. the address are listed below:
     <br> </br>
+    <div class = "danceLocation">
+    Caprera Openluchttheater <br></br>
+    Hoge Duin en Daalseweg 2 <br></br>
+    2061 AG Bloemendaal <br></br>
+
+    Club Ruis <br></br>
+    Smedestraat 31 <br></br>
+    2011 RE Haarlem <br></br>
+
+    Club Stalker <br></br>
+    Kromme Elleboogsteeg 20 <br></br>
+    2011 TS Haarlem <br></br>
+
+    Jopenkerk  <br></br>
+    Gedempte Voldersgracht 2  <br></br>
+    2011 WD Haarlem <br></br>
+
+    Lichtfabriek <br></br>
+    Minckelersweg 2 <br></br>
+    2031 EM Haarlem <br></br>
+
+    XO the Club  <br></br>
+    Grote Markt 8 <br></br>
+    2011 RD Haarlem <br></br>
+    </div>
+
 </div>
+
 
 <?php include "footer.php";?> 
 
