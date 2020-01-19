@@ -5,7 +5,14 @@ session_start();
 
  if(isset($_SESSION['email']))
  {
-     header("Location: homepageLogin.php"); //if user is logged in, redirect to homepage
+     if($_SESSION['userType'] = "volunteer")
+     {
+        header("Location: CMS/templates/homepage.php"); //if user is logged in, redirect to homepage
+     }
+     else
+     {
+         header("Location: homepageLogin.php"); //if user is logged in, redirect to homepage
+     }
  }
 
 ?> 
