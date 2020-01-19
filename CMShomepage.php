@@ -1,5 +1,5 @@
-<?php include "templates/include/cmsheader.php" 
-      include "config.php"  
+<?php include "CMS/templates/include/cmsheader.php" 
+      include "CMS/config.php"  
         ?>
 
       <ul id="dashboard">
