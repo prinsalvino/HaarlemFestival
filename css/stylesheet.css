@@ -26,6 +26,8 @@
     color: #1E1E1E;
     width: 100%;
     background-size: cover;
+	background-repeat: repeat;
+	background-size: 100%;
 }
 
 
