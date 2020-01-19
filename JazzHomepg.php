@@ -24,7 +24,7 @@ session_start();
 </p>
 
 <div class="scheduleRow">
-          <a class="D1" href="JazzD1.php">
+          <a class="D1" href="jazzD1.php">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>

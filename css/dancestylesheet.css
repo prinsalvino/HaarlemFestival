@@ -10,17 +10,50 @@
     background-size: cover;
 }
 
+.danceTimetable{
+    background-image: url("../img/Dance_TimetableBG.jpg");
+    width: 100%;
+    background-size: cover;
+}
+
 
 
 .danceDescriptionHome{
     background-color: #ccc;
     margin-top: 105px;
-    width: 500px;
-    margin-left:35%; 
+    width: 600px;
+    margin-left:33%; 
     margin-right:35%;
     align-content:center;
     opacity: 0.8;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
+
+.danceHomeColumn{
+    float: left;
+    width: 20.5%;
+    background-color: 	#A9A9A9;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 2vw;
+    color:#000000;
+    border-style: solid;
+    border-color: #000000;
+}
+
+
+
+.danceHomeRow:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
 
 .danceTicketColumn{
     float: left;
