@@ -57,11 +57,10 @@ table {
     border-bottom-right-radius: 20px;
     margin-left:15%; 
     margin-right:15%;
-    text-align: center;
   }
   
   td, th {
-    text-align: left;
+    text-align: center;
     padding: 12px;
   }
   
