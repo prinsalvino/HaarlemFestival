@@ -37,7 +37,7 @@ session_start();
     Since there will be different DJs that will perform, the location will be at
     some of the famous clubs or event place in haarlem. the address are listed below:
     <br> </br>
-    <div class = "danceLocation">
+
     Caprera Openluchttheater <br></br>
     Hoge Duin en Daalseweg 2 <br></br>
     2061 AG Bloemendaal <br></br>
@@ -61,7 +61,6 @@ session_start();
     XO the Club  <br></br>
     Grote Markt 8 <br></br>
     2011 RD Haarlem <br></br>
-    </div>
 
 </div>
 
