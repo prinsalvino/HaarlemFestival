@@ -57,7 +57,8 @@ session_start();
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
                       <input id="qty1" type="text" value="1" name="qty" />
-                      <button onclick="decrease_by_one('qty1');" />-</button>
+                      <button onclick="decrease_by_one('qty1');" />-</button>  
+                      <button class="addTOcart" onclick="#" > Add to cart </button> 
                     </div></td>
   </tr>
   <tr>

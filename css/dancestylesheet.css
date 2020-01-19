@@ -180,3 +180,11 @@ table{
 #qty1 {
     width: 30px;
 }
+
+.addTOcart {
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 10px;
+    cursor: pointer;
+}
+
