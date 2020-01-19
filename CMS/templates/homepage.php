@@ -1,3 +1,4 @@
+<!doctype html>
 <?php include "CMS/templates/include/cmsheader.php" 
       include "CMS/config.php"  
         ?>
@@ -5,9 +6,6 @@
       <ul id="dashboard">
  
 <?php 
-
-
-<!doctype html>
 <html>
 <body>
     <section class="page_section">
@@ -29,11 +27,11 @@
 </body>
 </html>
 
-
-
-
-
-
-
 <?php include "templates/include/footer.php" ?>
+
+
+
+
+
+
 
