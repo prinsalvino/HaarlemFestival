@@ -34,36 +34,203 @@ session_start();
                   <br><br>
                   Thursday<br>
                   The Patronaat</b>
+                  <br><br>
+                  <a href="#venueInfo1" class="linkVenueInfo">(venue info)</a>
           </h1>
     </div>
 
 
     <div class= "columnTicketpg b" style="margin-top:1vw; width: 60%;">
-
+<!-- -------------------------------------------------------ROW 1---------------------------------------------------------------------------->
       <div class="rowTickets">
-          <div class="columnTickets" style="margin-right: 1.5vw;" >
-            <b> 
-                Gumbo Kings <br>
-                18:00-19:00 <br>
-                Main Hall<br>
-                €15   <div class="cart-quantity">
-                      Qty: 
-                      <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
-                      <button onclick="decrease_by_one('qty1');" />-</button>
-                    </div>
-            </b>
+          <div class="columnTickets"  >
+            <div class="row1">
+              <div class="column1" >
+                <b> 
+                    Gumbo Kings <br>
+                    18:00-19:00 <br>
+                    Main Hall<br>
+                    €15   <div class="cart-quantity">
+                          Qty: 
+                          
+                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                            <input id="qty1" type="text" value="1" name="J1" />
+                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                        </div>
+                </b>
+              </div>
+              <div class="column1" >
+                <p style="color:green"> <b> Available </b></p>
+                    <br>
+                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+              </div>
+            </div>
           </div>
-          <div class="columnTickets" >
-                  
-          </div>
-      </div>
-    </div>  
-  </div>
 
-  <!-- later 
-  https://stackoverflow.com/questions/33261525/passing-input-value-as-session-variable
-  -->
+          <div class="columnTickets"  >
+          <div class="row1">
+              <div class="column1" >
+                <b> 
+                    Gumbo Kings <br>
+                    18:00-19:00 <br>
+                    Main Hall<br>
+                    €15   <div class="cart-quantity">
+                          Qty: 
+                          
+                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                            <input id="qty1" type="text" value="1" name="J1" />
+                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                        </div>
+                </b>
+              </div>
+              <div class="column1" >
+                <p style="color:green"> <b> Available </b></p>
+                    <br>
+                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+              </div>
+            </div>
+          </div>
+
+          
+      </div>
+<!-- -------------------------------------------------------ROW 1----------------------------------------------------------------------------> 
+   
+<!-- -------------------------------------------------------ROW 2---------------------------------------------------------------------------->
+      <div class="rowTickets">
+          <div class="columnTickets"  >
+            <div class="row1">
+              <div class="column1" >
+                <b> 
+                    Gumbo Kings <br>
+                    18:00-19:00 <br>
+                    Main Hall<br>
+                    €15   <div class="cart-quantity">
+                          Qty: 
+                          
+                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                            <input id="qty1" type="text" value="1" name="J1" />
+                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                        </div>
+                </b>
+              </div>
+              <div class="column1" >
+                <p style="color:green"> <b> Available </b></p>
+                    <br>
+                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+              </div>
+            </div>
+          </div>
+
+          <div class="columnTickets"  >
+          <div class="row1">
+              <div class="column1" >
+                <b> 
+                    Gumbo Kings <br>
+                    18:00-19:00 <br>
+                    Main Hall<br>
+                    €15   <div class="cart-quantity">
+                          Qty: 
+                          
+                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                            <input id="qty1" type="text" value="1" name="J1" />
+                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                        </div>
+                </b>
+              </div>
+              <div class="column1" >
+                <p style="color:green"> <b> Available </b></p>
+                    <br>
+                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+              </div>
+            </div>
+          </div>
+
+          
+      </div>
+<!-- -------------------------------------------------------ROW 2----------------------------------------------------------------------------> 
+   
+<!-- -------------------------------------------------------ROW 3---------------------------------------------------------------------------->
+      <div class="rowTickets">
+          <div class="columnTickets"  >
+            <div class="row1">
+              <div class="column1" >
+                <b> 
+                    Gumbo Kings <br>
+                    18:00-19:00 <br>
+                    Main Hall<br>
+                    €15   <div class="cart-quantity">
+                          Qty: 
+                          
+                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                            <input id="qty1" type="text" value="1" name="J1" />
+                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                        </div>
+                </b>
+              </div>
+              <div class="column1" >
+                <p style="color:green"> <b> Available </b></p>
+                    <br>
+                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+              </div>
+            </div>
+          </div>
+
+          <div class="columnTickets"  >
+          <div class="row1">
+              <div class="column1" >
+                <b> 
+                    Gumbo Kings <br>
+                    18:00-19:00 <br>
+                    Main Hall<br>
+                    €15   <div class="cart-quantity">
+                          Qty: 
+                          
+                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                            <input id="qty1" type="text" value="1" name="J1" />
+                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                        </div>
+                </b>
+              </div>
+              <div class="column1" >
+                <p style="color:green"> <b> Available </b></p>
+                    <br>
+                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+              </div>
+            </div>
+          </div>
+
+          
+      </div>
+<!-- -------------------------------------------------------ROW 3----------------------------------------------------------------------------> 
+  <a class="allAccess" href="jazzAllAccess.php">
+    <p >
+    Get your All-Access pass for this day @ €35,00 <br>
+    All- Access pass for Thursday, Friday, Saturday @ €80,00 </p>
+    <a>
+  </div> 
+
+ </div>
+
+<div id=venueInfo1 class=venueInfo>
+  <h1><i><b> General Information about the venue </b> </i>
+    <p>
+      <br>
+      Patronaat<br>
+      Address:<br>
+      Zijlsingel 2<br>
+      2013 DN Haarlem<br>
+      E-mail: info@patronaat.nl<br>
+      phone: <br>
+      023-517 58 50 (office) -  during office hours 10.00u - 17.00u<br>
+      023-517 58 58 (cash desk/information number)</p>
+</div> 
+
  <?php include "footer.php";?> 
 </body>
 </html>
