@@ -1,4 +1,7 @@
 @charset "utf-8";
+*{
+	    font-family: "Georgia Pro", Times New Roman, Times, serif;
+}
 .DescriptionList{
 	align-items: center;
 	border-top-left-radius: 25px;
@@ -19,7 +22,7 @@
 	
 }
 .BackgroundRestaurant1{
-	margin: 50px 250px;
+	margin: 50px 250px 100px;
 	height: 250px;
 	width: 600px;
 	z-index: 3;
@@ -49,7 +52,7 @@
 
 
 .booknowtext1{
-	color: white;
+	color: black;
 }
 
 .Ratatouille{
@@ -61,7 +64,7 @@
 }
 
 .BackgroundRestaurant2{
-	margin: 100px 250px;
+	margin: 150px 250px 100px;
 	height: 250px;
 	width: 600px;
 	z-index: 3;
@@ -82,12 +85,12 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin: 120px 38px;
+    margin: 170px 38px;
     color:black;
 }
 
 .BackgroundRestaurant3{
-	margin: 150px 250px;
+	margin: 150px 250px 100px;
 	height: 250px;
 	width: 600px;
 	z-index: 3;
@@ -116,7 +119,7 @@
 }
 
 .BackgroundRestaurant4{
-	margin: 200px 250px;
+	margin: 150px 250px 100px;
 	height: 250px;
 	width: 600px;
 	z-index: 3;
@@ -145,7 +148,7 @@
 }
 
 .BackgroundRestaurant5{
-	margin: 250px 250px;
+	margin: 150px 250px 100px;
 	height: 250px;
 	width: 600px;
 	z-index: 3;
@@ -169,6 +172,104 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
+    margin: 170px 38px;
+    color:black;
+}
+
+.BackgroundRestaurant6{
+	margin: 150px 250px 100px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.Brinkmann{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+
+.time1restaurant6{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     margin: 190px 38px;
     color:black;
+}
+
+.BackgroundRestaurant7{
+	margin: 150px 250px 100px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.Toujours{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+.time1restaurant7{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 170px 38px;
+    color:black;
+}
+
+.BackgroundRestaurant8{
+	margin: 150px 250px 100px;
+	height: 250px;
+	width: 600px;
+	z-index: 3;
+	background: #0B0A0A
+}
+
+.GoldenBull{
+	margin: 0px 350px;
+	height: 250px;
+	width: 600px;
+	background:#F0E6E6;
+	position: absolute;
+}
+
+.time1restaurant8{
+	background: #F3EAEA;
+	float: left;
+    width: 20.5%;
+    opacity: 0.9 ;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 190px 38px;
+    color:black;
+}
+.restaurantname{
+	font-size: 24px;
+}
+h2{
+	font-size: 12px;
+	color: gray;
+}
+.price{
+	font-weight: bold;
+	float: right;
+	margin-right: 25px;
 }
