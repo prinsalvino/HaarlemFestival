@@ -1,3 +1,17 @@
+.danceHomepage{
+    background-image: url("../img/Dance_HomeBG.jpg");
+    width: 100%;
+    background-size: cover;
+}
+
+.danceTicket{
+    background-image: url("../img/Dance_TicketBG.jpg");
+    width: 100%;
+    background-size: cover;
+}
+
+
+
 .danceDescriptionHome{
     background-color: #ccc;
     width: 400px;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 session_start();
 
 ?>  
-<html class = "dance">
+<html class = "danceTicket">
 <head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -16,14 +16,6 @@ session_start();
 <body>
 <?php include "header.php";?>
 
-<!-- <nav>
-<ul class='danceMenu'>
-<li class='danceMenuItem'><a href ="">3 days</a></li>
-<li class='danceMenuItem'><a href ="">Friday</a></li>
-<li class='danceMenuItem'><a href ="">Saturday</a></li>
-<li class='danceMenuItem'><a href ="">Sunday</a></li>
-</ul>
-</nav> -->
 
 <div class="danceTicketRow">
   <a class="DanceTicket3Days" href="DanceTicket3Days.php">    
