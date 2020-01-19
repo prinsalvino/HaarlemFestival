@@ -18,7 +18,7 @@ session_start();
     a special three-day programme in Haarlem City!
 </br> Catch Martin Garrix, Hardwell, Armin van Buuren, Tiesto, Nicky Romero, 
     and Afrojack in Haarlem Dance! Buy your tickets now! </br>
-    <brr> </br>
+    <br> </br>
     <div class="danceHomeRow">
   <a class="DanceTickets" href="DanceTicket3Days.php">    
   <div class="danceHomeColumn" style=" text-align: center; margin-top:1vw">
