@@ -43,7 +43,7 @@ session_start();
   </a>
 </div> 
 
-<table class = "table2">
+<table>
   <tr>
     <td>Friday: All Artists </td>
     <td>€ 125.00</td>
