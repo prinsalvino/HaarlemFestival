@@ -16,8 +16,28 @@
     background-size: cover;
 }
 
+.btnBuyTicket {
+    background-color: #ccc;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    width: 400px;
+    height: 45px;
+    margin-left:33%; 
+    margin-right:35%;
+    align-content: center;
+    opacity: 0.8;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-align: center;
+    font-size: 30px;
+  }
 
-.danceBuyTicketColumn{
+/* .danceBuyTicketColumn{
     background-color: #ccc;
     width: 400px;
     height: 45px;
@@ -31,12 +51,9 @@
     border-bottom-left-radius: 15px;
     text-align: center;
     font-size: 30px;
-}
+} */
 
-.danceBuyTicketRow:after {
-    content: "";
-    clear: both;
-} 
+
 
 .danceDescriptionHome{
     background-color: #ccc;
