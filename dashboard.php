@@ -1,9 +1,13 @@
 <!doctype html>
-<html>
+<html class = "dashboard">
+<head>
 <meta charset="utf-8"/>
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css">   
-<?php include "CMS/templates/include/cmsheader.php" 
-      include "CMS/config.php"  
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/styleCMS.css">
+</head>
+<body>   
+<?php include "header.php" 
+      include "config.php"  
         ?>
 <body>
     <section class="page_section">
@@ -14,14 +18,14 @@
             </div>
 
 
-            <h1>"Dashboard"</h1>
+            
         </section>
         
             <nav class="navigation"> 
             <ul>
-                <li><b><a class="navilink" href="dashboard.php">"Dashboard"</a></b></li>
-                <li><b><a class="navilink" href="products.php">"Products"</a></b></li>
-                <li><b><a class="navilink" href="homepageLogin.php">"Logout"</a></b></li>
+                <li><b><a class="cmsnavilink" href="dashboard.php">Dashboard</a></b></li>
+                <li><b><a class="cmsnavilink" href="products.php">Products</a></b></li>
+                <li><b><a class="cmsnavilink" href="homepageLogin.php">Logout</a></b></li>
             </ul>
             </nav>
 
@@ -51,7 +55,7 @@
 
  
  
-<?php include "templates/include/footer.php" ?>
+<?php include "footer.php" ?>
 
 
 

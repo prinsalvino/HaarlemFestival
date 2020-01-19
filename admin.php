@@ -36,43 +36,6 @@ switch ( $procedure )
     dashboard();
 }
 
-function login()
-{
-    $results = array();
-    $results['pageTitle'] = "Admin Login | Haarlem Festival";
-
-    if ( isset( $_POST['login'] ) )
-    {
-      //attempt to log the user in  
-        if ( $_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD )
-        {
-            $_SESSION['username'] = ADMIN_USERNAME;
-            header( "Location: admin.php" );
-        }
-        else {
-
-            // Login failed
-            $results['errorMessage'] = "Incorrect username or password. Try again.";
-            require( TEMPLATE_PATH . "/admin/loginForm.php" );
-          }
-      
-        } else {
-      
-          // User has not sent form - display the form
-          require( TEMPLATE_PATH . "/admin/loginForm.php" );
-        }    
-
-
-
-    }
-
-}
-
-function logout() 
-{
-    unset( $_SESSION['username'] );
-    header( "Location: admin.php" );
-}
 
 function newEvent() {
 

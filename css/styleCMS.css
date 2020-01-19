@@ -1,0 +1,75 @@
+*
+{
+    font-size: 1.1vw;
+}
+
+
+.page_section
+{
+    
+    width: 100%;
+    background-color: darkgrey;
+    max-width: 1200px;
+}
+
+.dashboard
+{
+    background-color: darkgrey;
+}
+title
+{
+    background-color: darkgrey;
+
+}
+h1
+{
+    font-size: 1em;
+    text-align: left;
+    color: black;
+}
+
+div
+{
+border: 1px solid black;
+  background-color: white;
+  width: max-width;                 
+  padding: 10px;
+  margin: 10px;
+}
+
+li{
+    background-color: grey;
+}
+
+.navigation
+{
+    width: 175px;
+}
+ul
+{
+    border: 1px solid black;
+    height: 400px;
+    width: 180px;
+}
+body ul li
+{
+    display:flex;
+    padding-top: 25px;
+}
+a.cmsnavilink
+{
+    color: #1E1E1E;
+    text-decoration: none;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top-style: outset;
+    position: relative;
+    top: 40px;
+}
+
+    
+    
