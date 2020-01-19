@@ -16,7 +16,7 @@
     background-size: cover;
 }
 
-.btnBuyTicket {
+/* .btnBuyTicket {
     background-color: #ccc;
     border: none;
     text-align: center;
@@ -34,9 +34,9 @@
     border-bottom-left-radius: 15px;
     text-align: center;
     font-size: 30px;
-  }
+  } */
 
-/* .danceBuyTicketColumn{
+ .danceBuyTicketColumn{
     background-color: #ccc;
     width: 400px;
     height: 45px;
@@ -50,7 +50,8 @@
     border-bottom-left-radius: 15px;
     text-align: center;
     font-size: 30px;
-} */
+    text-decoration: none;
+} 
 
 
 
