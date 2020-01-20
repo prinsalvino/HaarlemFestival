@@ -40,8 +40,8 @@
         <a href="dashboard.php">Dashboard</a>
         <button class="dropdown-btn" style="width: 170px;">Products</button>
         <div class="dropdown-container">
-            <a href="editEvents" style="background-color: slategrey;">Add New</a>
-            <a href="listEvents" style="background-color: slategrey;">Edit Existing</a>    
+            <a href="editEvents.php" style="background-color: slategrey;">Add New</a>
+            <a href="listEvents.php" style="background-color: slategrey;">Edit Existing</a>    
         </div>
         <a href="logout.php">Logout</a>     
     </div>
