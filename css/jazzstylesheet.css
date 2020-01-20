@@ -94,11 +94,6 @@
     cursor: pointer;
 }
 
-#qty1 {
-    width: 2vw;
-    background-color: #ccc;
-}
-
 .allAccess,
 .linkVenueInfo {
     color: #fff;
@@ -129,4 +124,30 @@ footer {
     bottom: 0;
     width: 100%;
     height: 2.5rem;
+}
+
+#qty1,
+#qty2,
+#qty3,
+#qty4,
+#qty5,
+#qty6,
+#qty7,
+#qty8,
+#qty9,
+#qty10,
+#qty11,
+#qty12,
+#qty13,
+#qty14,
+#qty15,
+#qty16,
+#qty17,
+#qty18,
+#qty19,
+#qty20,
+#qty21,
+#qty22 {
+    width: 2vw;
+    background-color: #ccc;
 }
