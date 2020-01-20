@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 include "AutoLoaderIncl.php";
+include "DB.php";
 
 session_start();
 

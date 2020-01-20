@@ -1,7 +1,6 @@
 <?php include "header.php" ?>
 <?php include "DB.php" ?>
 <?php session_start(); ?>
-<?php session_start(); ?>
 <!doctype html>
 <html class = "dashboard">
 <head>
@@ -20,7 +19,7 @@
         </section>
         
 
-        h1>Editting/Adding Event</h1> 
+        <h1>Editting/Adding Event</h1> 
   
   <div class="sidenav">
         <a href="dashboard.php">Dashboard</a>
@@ -58,21 +57,17 @@
     
 
 
-</body>
-</html>
+
+
 
       <form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
         <input type="hidden" name="ticket_id" value="<?php echo $results['event']->ticket_id ?>"/>
 
-<?php if ( isset( $results['errorMessage'] ) ) { ?>
-        <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
-<?php } ?>
-
-        <ul>
+        <ul class="editor">
 
           <li>
             <label for="event">Event Type</label>
-            <input type="text" name="event" id="event" placeholder="Type of Event" value="<?php echo htmlspecialchars( $results['events']->event )?>" />
+            <input type="text" name="event" id="event" placeholder="Type of Event" required maxlength= "20"<?php echo htmlspecialchars( $results['events']->event )?>" />
           </li>
 
           <li>
@@ -88,13 +83,13 @@
 
           <li>
             <label for="location">Location</label>
-            <textarea name="location" id="location" placeholder="Address or Restaurant Name" required maxlength="100"><?php echo htmlspecialchars( $results['events']->location )?></textarea>
+            <input name="location" id="location" placeholder="Address or Restaurant Name" required maxlength="100"><?php echo htmlspecialchars( $results['events']->location )?>
           </li>
 
           <li>
             <label for="special">Special</label>
-            <textarea name="special" id="special" placeholder="Artist/Type of Food/Language/Deal" required maxlength="100"><?php echo htmlspecialchars( $results['events']->special )?></textarea>
-          </li>
+            <input name="special" id="special" placeholder="Artist/Type of Food/Language/Deal" required maxlength="100"><?php echo htmlspecialchars( $results['events']->special )?>
+          </li>          
 
 
 
@@ -103,13 +98,20 @@
 
         </ul>
 
-        <div class="buttons">
-          <input type="submit" name="saveChanges" value="Save Changes" />
-          <input type="submit" formnovalidate name="cancel" value="Cancel" />
-        </div>
+        
+        <input type="submit" name="saveChanges" value="Save Changes" 
+        style="position: relative;
+        left: 317px;
+        top: -99px;">
+          <input type="submit" formnovalidate name="cancel" value="Cancel"
+          style="position: relative;
+            left: 317px;
+            top: -99px;" />
+        
 
       </form>
-
+      </body>
+      </html>
 <?php if ( $results['events']->id ) { ?>
       <p><a href="admin.php?action=deleteEvent&amp;articleId=<?php echo $results['events']->id ?>" onclick="return confirm('Delete This Event?')">Delete This Event</a></p>
 <?php } ?>
