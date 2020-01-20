@@ -10,12 +10,12 @@ class UserController
 	{
 		$this->UserService = new UserService();
     }
-    
+
     public function getAllUsers() 
     { 
         return $this->UserService->getAllUsers(); 
     }
-    
+
 	public function showAllUsers() 
 	{ 
         $datas = $this->UserService->getAllUsers(); 

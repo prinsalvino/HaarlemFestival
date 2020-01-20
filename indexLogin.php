@@ -41,6 +41,7 @@ session_start();
             <button type="submit" name="login">
                 Login
             </button>
+            </form>
             <!-- other options -->
             <br><br>                
             <!-- <a href="index.pwdreset.php" >

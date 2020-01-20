@@ -18,9 +18,9 @@ if(!isset($_SESSION['email']))
 	<title>
 		Home || Haarlem Festival
         </title> 
-       
+
 	<body> 
- 
+
         <p >
         Welcome 
         <?php 
@@ -44,10 +44,9 @@ if(!isset($_SESSION['email']))
                     $_SESSION['volunteer_age'] = $data->volunteer_age;
                     $_SESSION['volunteer_admin'] = $data->volunteer_admin;
                     $_SESSION['volunteer_superadmin'] = $data->volunteer_superadmin;
-                    
-                }
 
-                    if($_SESSION['volunteer_superadmin'] == 1)
+                }
+               if($_SESSION['volunteer_superadmin'] == 1)
                         {
                             header("Location: dashboard.php?isSuperadmin=1"); 
                         }
@@ -55,7 +54,7 @@ if(!isset($_SESSION['email']))
                         header("Location: dashboard.php"); 
                     }
             }
-        ?> 
+?>
         <br>
         </p>
         <form class="logoutLblPos" align="right" name="form1" method="post" action="logout.php">                         

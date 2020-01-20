@@ -27,8 +27,9 @@ if (isset($_POST["login"]))
         }
         else{
             $_SESSION['userType'] = "volunteer";
-        }        
-       
+        }
+
+        header("location: homepageLogin.php?Login=Successful"); //to go the home page
     }
     else
     {
