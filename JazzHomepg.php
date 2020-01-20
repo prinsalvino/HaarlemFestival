@@ -76,7 +76,7 @@ session_start();
           </div>
           </a>
 
-          <a class="D2" href="JazzD2.php">
+          <a class="D2" href="jazzD2.php">
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
             <table style="width:100%;text-align: center;">
               <tr>
@@ -128,7 +128,7 @@ session_start();
           </div>
           </a>
 
-          <a class="D3" href="JazzD3.php">
+          <a class="D3" href="jazzD3.php">
           <div class="scheduleColumn" style=" text-align: center; margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
@@ -180,7 +180,7 @@ session_start();
           </div>
         </a>
 
-        <a class="D4" href="JazzD4.php">
+        <a class="D4" href="jazzD4.php">
           <div class="scheduleColumn" style=" text-align: center;margin-top:1vw">
           <table style="width:100%;text-align: center;">
               <tr>
