@@ -1,9 +1,3 @@
-*
-{
-    font-size: 1.1vw;
-}
-
-
 .page_section
 {
     
@@ -28,7 +22,7 @@ h1
     color: black;
 }
 
-div
+.dash
 {
 border: 1px solid black;
   background-color: white;
@@ -43,12 +37,7 @@ border: 1px solid black;
 {
     width: 175px;
 }
-ul
-{
-    border: 1px solid black;
-    height: 400px;
-    width: 180px;
-}
+
 body ul li
 {
     display:flex;

@@ -1,16 +1,14 @@
 <?php session_start(); ?>
 <!doctype html>
 <html class = "dashboard">
-<head>
+
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<link rel="stylesheet" type="text/css" href="css/styleCMS.css">
-</head>
-<body>   
+<!--<link rel="stylesheet" type="text/css" href="css/styleCMS.css">-->
 <?php include "header.php" ;
-      include "DB.php"        ;
-        ?>
-<body>
+      include "DB.php"?>
+      
+<body>   
     <section class="page_section">
         <section id="Title">
     
@@ -63,7 +61,7 @@
     });
     }
     </script>
-
+<section>
 
             <div class="Sales_box" id="sales">
                 <div id="title">Sales</div>
