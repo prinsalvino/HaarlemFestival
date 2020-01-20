@@ -207,7 +207,7 @@ session_start();
          
       </div>
 <!-- -------------------------------------------------------ROW 3----------------------------------------------------------------------------> 
-  <a class="allAccess" href="jazzAllAccess.php?day=26">
+  <a class="allAccess" href="jazzAllAccess.php?day=27">
     <p >
     Get your All-Access pass for this day @ €35,00 <br>
     All- Access pass for Thursday, Friday, Saturday @ €80,00 </p>
