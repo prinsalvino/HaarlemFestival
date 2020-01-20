@@ -174,5 +174,14 @@ div#title
     padding-left: 8px;
   }
   
+  table
+  {
+    position: absolute;
+    left: 486px;
+    top: 82px;
+  }
+
+
+
   /**.title_box #content {
 } **  

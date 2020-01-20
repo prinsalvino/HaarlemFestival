@@ -8,7 +8,7 @@ class EventPage
   
 public int $ticket_id = null;
 public string $event = null;
-public int $dates = null;
+public int $date = null;
 public int $time = null;
 public string $location = null;
 public string $special = null;
@@ -22,7 +22,7 @@ public function __construct($data=array())
 {
     if ( isset( $data['ticket_id'] ) ) $this->ticket_id = (int) $data['ticket_id'];
     if ( isset( $data['event'] ) ) $this->event = $data['event'] );
-    if ( isset( $data['dates'] ) ) $this->dates = (int) $data['dates'];
+    if ( isset( $data['date'] ) ) $this->dates = (int) $data['dates'];
     if ( isset( $data['time'] ) ) $this->time = (int) $data['time'] );
     if ( isset( $data['location'] ) ) $this->location = $data['location'] );
     if ( isset( $data['special'] ) ) $this->special = $data['special'];
@@ -53,7 +53,7 @@ if ( isset($params['dates']) ) {
 
         $conn = new PDO ( $dsn, 'hfitteam1', '3FxmuBcR' ); //making connection to MYSQL DB
 
-        $sql = "SELECT *, dates FROM tickets WHERE ticket_id = :ticket_id"; //gets id from table
+        $sql = "SELECT *, date FROM tickets WHERE ticket_id = :ticket_id"; //gets id from table
         $bind = $conn->prepare( $sql ); 
         $bind->bindValue( ":ticket_id", $ticket_id, PDO::PARAM_INT ); //security risk prevention by using placeholder
         $bind->execute();
@@ -74,11 +74,11 @@ if ( isset($params['dates']) ) {
     
         // Insert the Event
         $conn = new PDO( $dsn, 'hfitteam1', '3FxmuBcR' );
-        $sql = "INSERT INTO tickets ( ticket_id, event, dates, time, location, special, price, stock ) VALUES  :ticket_id, :event, :dates, :time, :location, :special, :price, :stock )";
+        $sql = "INSERT INTO tickets ( ticket_id, event, date, time, location, special, price, stock ) VALUES  :ticket_id, :event, :date, :time, :location, :special, :price, :stock )";
         $bind = $conn->prepare ( $sql );
         $bind->bindValue( ":ticket_id", $this->ticket_id, PDO::PARAM_INT );
         $bind->bindValue( ":event", $this->event, PDO::PARAM_STR );
-        $bind->bindValue( ":dates", $this->dates, PDO::PARAM_INT );
+        $bind->bindValue( ":date", $this->date, PDO::PARAM_INT );
         $bind->bindValue( ":time", $this->time, PDO::PARAM_INT );
         $bind->bindValue( ":location", $this->location, PDO::PARAM_STR );
         $bind->bindValue( ":special", $this->special, PDO::PARAM_STR );
