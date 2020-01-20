@@ -5,7 +5,7 @@ class historyDb extends DB {
     
     public function getTickets() 
     { 
-        $sql = "SELECT * FROM tickets"; 
+        $sql = "SELECT * FROM tickets WHERE event = 'history'"; 
         $result = $this->connect()->query($sql); 
         $this->closeCon();
 

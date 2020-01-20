@@ -315,7 +315,6 @@ class UserService extends DB {
                 echo 'Caught exception: ',  $e->getMessage(), "\n";
             }
         }
-
         
 }
 

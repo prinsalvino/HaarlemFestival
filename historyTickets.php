@@ -11,19 +11,16 @@ include ("header.php");
 <body>
 <?php
 include ("historyDB.php");
+    $ticketID = 0;
 
     $result = $this->historyDB->getTickets();
-    if(empty($result)){ echo "It don't work";
-    }
-    else if(issit($result)){echo "What?";}
-    else{
-        foreach($result as $ticket)
+    foreach($result as $ticket)
     {
-        echo "We got it";
+        echo "<p> Hey there </p>";
     }
-}
-
-
 ?>
 </body>
+<?php
+	include ("footer.php");
+?>
 </html>
