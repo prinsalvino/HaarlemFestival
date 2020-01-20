@@ -1,8 +1,7 @@
 <?php
-require("config.php");
-require("DB.php")
+require("DB.php");
 session_start();
-$procedure = isset( $_GET['procedure'] ) ? $_GET['procedure'] : "";
+$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
 if ( $procedure != "login" && $procedure != "logout" && !$username ) {
@@ -10,7 +9,7 @@ if ( $procedure != "login" && $procedure != "logout" && !$username ) {
     exit;
 }
 
-switch ( $procedure ) 
+switch ( $action ) 
 {
 
     case 'login':
@@ -26,7 +25,7 @@ switch ( $procedure )
     break;
 
     case 'editEvent':
-        existingEvent();
+        editEvent();
     break;
 
     case 'deleteEvent':
@@ -42,7 +41,7 @@ function newEvent() {
 
     $results = array();
     $results['pageTitle'] = "New Event";
-    $results['formProcedure'] = "newEvent";
+    $results['formAction'] = "newEvent";
   
     if ( isset( $_POST['saveChanges'] ) ) {
   
@@ -50,17 +49,12 @@ function newEvent() {
       $event = new EventPage;
       $event->storeFormValues( $_POST );
       $event->insert();
-      header( "Location: admin.php?status=changesSaved" );
+      header( "Location: listEvents.php?status=changesSaved" );
   
     } elseif ( isset( $_POST['cancel'] ) ) {
   
       // User has cancelled their edits return to dashboard
-      header( "Location: admin.php" );
-    } else {
-  
-      // User has not posted the edit, display the form
-      $results['event'] = new EventPage;
-      require( TEMPLATE_PATH . "/admin/editEvent.php" );
+      header( "Location: listEvents.php" );
     }
   
   }
@@ -69,43 +63,38 @@ function newEvent() {
 
     $results = array();
     $results['pageTitle'] = "Edit Event";
-    $results['formProcedure'] = "editEvent";
+    $results['formAction'] = "editEvent";
   
     if ( isset( $_POST['saveChanges'] ) ) {
   
       // User has posted the edit, so save the  changes
   
       if ( !$event = EventPage::getId( (int)$_POST['ticket_id'] ) ) {
-        header( "Location: admin.php?error=EventNotFound" );
+        header( "Location: editEvents.php?error=EventNotFound" );
         return;
       }
   
       $event->storeFormValues( $_POST );
       $event->update();
-      header( "Location: admin.php?status=changesSaved" );
+      header( "Location: editEvents.php?status=changesSaved" );
   
     } elseif ( isset( $_POST['cancel'] ) ) {
   
       // User has cancelled their edits return to edits page
       header( "Location: admin.php" );
-    } else {
-  
-      // Edit form not posted yet so redisplay the form
-      $results['event'] = EventPage::getId( (int)$_GET['ticket_id'] );
-      require( TEMPLATE_PATH . "/admin/editEvent.php" );
-    }
+    } 
   
   }
 
   function deleteEvent() {
 
     if ( !$event = EventPage::getId( (int)$_GET['ticket_id'] ) ) {
-      header( "Location: admin.php?error=eventNotFound" );
+      header( "Location: editEvents.php?error=eventNotFound" );
       return;
     }
   
     $event->delete();
-    header( "Location: admin.php?status=EventDeleted" );
+    header( "Location: editEvents.php?status=EventDeleted" );
   }
   
   /*

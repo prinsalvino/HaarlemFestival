@@ -1,8 +1,8 @@
 <?php
 require("DB.php");
-$procedure = isset($_GET['procedure']) ? $_GET['procedure']: ""; // if the value exist its set otherwise it becomes a empty string
+$action = isset($_GET['action']) ? $_GET['action']: ""; // if the value exist its set otherwise it becomes a empty string
 
-switch( $procedure )  {
+switch( $action )  {
 
    
     case 'addNew':
@@ -25,12 +25,12 @@ function editExisting() {
     $results['ticket_id'] = EventPage::getId( (int)$_GET["ticket_id"] );
     $results['pageTitle'] = $results['ticket_id']->title . "Editing Event";
    
-    require( TEMPLATE_PATH . "/editExisting.php" );
+    require( "editEvents.php" );
 
 }
 
 function dashboard() {
-        require( TEMPLATE_PATH . "dashboard.php" );
+        require( "dashboard.php" );
         //figure out how to makes views/sales and orders appear here along with messages.
   }
    
