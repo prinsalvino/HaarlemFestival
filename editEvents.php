@@ -1,4 +1,6 @@
 <?php include "header.php" ?>
+<?php include "DB.php" ?>
+<?php session_start(); ?>
 
 <div id="adminHeader">
         <h2>Adding New Page</h2>        
@@ -8,7 +10,7 @@
 
       <h1><?php echo $results['pageTitle']?></h1>
 
-      <form action="admin.php?procedure=<?php echo $results['formAction']?>" method="post">
+      <form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
         <input type="hidden" name="ticket_id" value="<?php echo $results['event']->ticket_id ?>"/>
 
 <?php if ( isset( $results['errorMessage'] ) ) { ?>
@@ -58,7 +60,7 @@
       </form>
 
 <?php if ( $results['events']->id ) { ?>
-      <p><a href="admin.php?action=deleteArticle&amp;articleId=<?php echo $results['events']->id ?>" onclick="return confirm('Delete This Event?')">Delete This Event</a></p>
+      <p><a href="admin.php?action=deleteEvent&amp;articleId=<?php echo $results['events']->id ?>" onclick="return confirm('Delete This Event?')">Delete This Event</a></p>
 <?php } ?>
 
 <?php include "footer.php" ?>

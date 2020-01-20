@@ -1,4 +1,6 @@
 <?php include "header.php" ?>
+<?php include "DB.php" ?>
+<?php session_start(); ?>
 
       <div id="adminHeader">
         <h2>Adding New Page</h2>        
@@ -25,9 +27,9 @@
           <th>Special</th>
         </tr>
 
-<?php foreach ( $results['event'] as $events ) { ?>
+<?php foreach ( $results['tickets_id'] as $events ) { ?>
 
-        <tr onclick="location='admin.php?action=editEventPage&amp;ticket_id=<?php echo $event->ticket_id?>'">
+        <tr onclick="location='listEvents.php?action=editEventPage&amp;ticket_id=<?php echo $event->ticket_id?>'">
           <td>
               <?php echo $events->ticket_id?>
             </td>
@@ -56,8 +58,6 @@
 
       </table>
 
-      <p><?php echo $results['totalRows']?> Events<?php echo ( $results['totalRows'] != 1 ) ? 's' : '' ?> in total.</p>
-
-      <p><a href="admin.php?procedure=newArticle">Add a New Article</a></p>
+      <p><a href="admin.php?action=newArticle">Add a New Event</a></p>
 
 <?php include "footer.php" ?>

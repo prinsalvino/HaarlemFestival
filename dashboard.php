@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html class = "dashboard">
 <head>
@@ -7,8 +8,7 @@
 </head>
 <body>   
 <?php include "header.php" 
-      include "DB.php"  
-      include "config.php" 
+      include "DB.php"        
         ?>
 <body>
     <section class="page_section">

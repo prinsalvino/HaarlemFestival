@@ -1,5 +1,5 @@
 <?php
-
+  include "DB.php"
 class EventPage
 {
 
@@ -21,7 +21,7 @@ $dsn = "mysql:host=localhost;dbname=hfitteam1"
 public function __construct($data=array())
 {
     if ( isset( $data['ticket_id'] ) ) $this->ticket_id = (int) $data['ticket_id'];
-    if ( isset( $data['event'] ) ) $this->event = $data['title'] );
+    if ( isset( $data['event'] ) ) $this->event = $data['event'] );
     if ( isset( $data['dates'] ) ) $this->dates = (int) $data['dates'];
     if ( isset( $data['time'] ) ) $this->time = (int) $data['time'] );
     if ( isset( $data['location'] ) ) $this->location = $data['location'] );
@@ -54,8 +54,8 @@ if ( isset($params['dates']) ) {
         $conn = new PDO ( $dsn, 'hfitteam1', '3FxmuBcR' ); //making connection to MYSQL DB
 
         $sql = "SELECT *, dates FROM tickets WHERE ticket_id = :ticket_id"; //gets id from table
-        $bind = $conn->prepare( $sql ); //
-        $bind->bindValue( ":ticket_id", $id, PDO::PARAM_INT ); //security risk prevention by using placeholder
+        $bind = $conn->prepare( $sql ); 
+        $bind->bindValue( ":ticket_id", $ticket_id, PDO::PARAM_INT ); //security risk prevention by using placeholder
         $bind->execute();
         $records = $bind->fetch();
         $conn = null;
@@ -63,43 +63,7 @@ if ( isset($params['dates']) ) {
         if ( $records ) return new Eventpage( $records );
     }
 
-    /*
-    public static function getList( $numRows=1000 ) { //make sure everything gets listed
-      $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-      $sql = "SELECT SQL_CALC_FOUND_ROWS *, dates AS dates FROM tickets
-              ORDER BY ticket_id DESC LIMIT :numRows";
-  
-      $bind = $conn->prepare( $sql );
-      $bind->bindValue( ":numRows", $numRows, PDO::PARAM_INT );
-      $bind->execute();
-      $list = array();
-  
-      while ( $row = $st->fetch() ) {
-        $event = new EventPage( $row );
-        $list[] = $event;
-      }
-  
-      // Total number of articles that matched the criteria
-      $sql = "SELECT FOUND_ROWS() AS totalRows";
-      $totalRows = $conn->query( $sql )->fetch();
-      $conn = null;
-      return ( array ( "results" => $list, "totalRows" => $totalRows[0] ) );
-      }   
-      */
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+        
       //Inserts the current Event into the database, and sets its ID.
       
     
@@ -137,7 +101,7 @@ if ( isset($params['dates']) ) {
        
         // Update the Event
         $conn = new PDO( $dsn, 'hfitteam1', '3FxmuBcR' );
-        $sql = "UPDATE tickets SET ticket_id=:ticket_id, event=:event, dates=:publicationDate, time=:time, location=:location, special=:special, price=:price, stock=:stock WHERE ticket_id = :ticket_id";
+        $sql = "UPDATE tickets SET ticket_id=:ticket_id, event=:event, dates=:dates, time=:time, location=:location, special=:special, price=:price, stock=:stock WHERE ticket_id = :ticket_id";
         $bind = $conn->prepare ( $sql );
         $bind = $conn->prepare ( $sql );
         $bind->bindValue( ":ticket_id", $this->ticket_id, PDO::PARAM_INT );
