@@ -27,16 +27,16 @@
         include "shoppingCartDB.php";
         $records = $this->ShopDB->getAllOrders();
         foreach ($records as $result){
-                $customer_id = $result["customer_id"];
-                $ticket_id = $result["ticket_id"];
-                $qty = $result["qty"];
-                $price = $result["price"];?>
+                $customer_id = $result['customer_id'];
+                $ticket_id = $result['ticket_id'];
+                $qty = $result['qty'];
+                $price = $result['price'];?>
                 <tr>
-                    <td><?php echo $customer_id;?></td>
-                    <td><?php echo $ticket_id;?></td>
-                    <td><?php echo $qty;?></td>
-                    <td><?php echo $price;?></td>
-                    <td><a href="shoppingCartDelete.php?customer_id=<?php echo $customer_id?>" class="btn btn-danger btn-sm">Delete</a> </td>
+                    <th><?php echo $customer_id;?></th>
+                    <th><?php echo $ticket_id;?></th>
+                    <th><?php echo $qty;?></th>
+                    <th><?php echo $price;?></th>
+                    <th><a href="shoppingCartDelete.php?customer_id=<?php echo $customer_id?>" class="btn btn-danger btn-sm">Delete</a> </th>
                 </tr>
         <?php
         }
