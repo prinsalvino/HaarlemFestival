@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Delete records from database using PHP - Coding Birds Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <?php include ("header.php"); ?>
 <body>
@@ -25,7 +25,7 @@
         <tbody>
         <?php
         include "shoppingCartDB.php";
-        $records = $this->ShopDB->getAllOrders();
+        $records = $this->ShopDB->getOrdersTickets();
         foreach ($records as $result){
                 $customer_id = $result['customer_id'];
                 $ticket_id = $result['ticket_id'];

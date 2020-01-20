@@ -1,13 +1,24 @@
 <?php
-include "DB.php";
+include ("DB.php");
 
 class historyDb extends DB {
     
-    //Get all tickets.
-    public function getTickets()
-    {   
-        $resultTicket = $this->connect()->query("SELECT * FROM tickets;");
-        return $resultTicket;
+    public function getTickets() 
+    { 
+        $sql = "SELECT * FROM tickets"; 
+        $result = $this->connect()->query($sql); 
+        $this->closeCon();
+
+        $numRows = $result->num_rows; 
+            if ($numRows > 0) 
+            {
+                while ($row = $result->fetch_assoc()) 
+                { 
+                    $data[] = $row; 
+                } 
+                return $data;  
+                
+            } 
     }
 
 
