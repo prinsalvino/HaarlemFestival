@@ -1,3 +1,4 @@
+/* ----------- For background image for every page ------------*/
 .danceHomepage{
     background-image: url("../img/Dance_HomeBG.jpg");
     width: 100%;
@@ -22,7 +23,7 @@
     background-size: cover;
 }
 
-
+/* ---------- Link button to ticket page ---------- */
 .btnBuyTicket {
     background-color: #ccc;
     border: none;
@@ -43,7 +44,7 @@
     font-size: 30px;
     color: #000000;
   } 
-
+/* ------- Homepage description box --------- */
 
 .danceDescriptionHome{
     background-color: #ccc;
@@ -59,7 +60,7 @@
     border-bottom-left-radius: 25px;
     font-size: 30px ;
 }
-
+/*---------- Description box location page ---------- */
 .danceLocation{
     background-color: #ccc;
     margin-top: 0px;
@@ -76,7 +77,7 @@
     column-count: 2;
     column-gap: 20px;
 }
-
+/* ----------- Desciption bo faqs page ----------- */
 .danceFaqs{
     background-color: #ccc;
     margin-top: 0px;
@@ -91,7 +92,7 @@
     border-bottom-left-radius: 25px;
     font-size: 18px ;
 }
-
+/* -------- Description box info page ------------ */
 .danceDescriptionInfo{
     background-color: #ccc;
     margin-top: 40px;
@@ -106,7 +107,7 @@
     border-bottom-left-radius: 25px;
     font-size: 30px ;
 }
-
+/* --------- Homepage buttons link to other pages ---------- */
 .danceHomeColumn{
     float: left;
     width: 23%;
@@ -130,7 +131,7 @@
     clear: both;
 } 
 
-
+/* ----------- Navigation bar --------- */
 .danceTicketColumn{
     float: left;
     width: 20.5%;
@@ -152,7 +153,7 @@
     display: table;
     clear: both;
 } 
-
+/* ---------- Table for tickets and timetable ----------- */
 table{
     border-collapse: collapse;
     width: 70%;
@@ -176,11 +177,11 @@ table{
     background-color: #000000 ;
     color: red;
   }
-
+/* --------- Quantity button ----------- */
 #qty1 {
     width: 30px;
 }
-
+/* ---------- Add to cart button ----------- */
 .addTOcart {
     border-radius: 10px;
     border: 2px solid #000;
