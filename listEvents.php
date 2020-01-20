@@ -1,21 +1,58 @@
 <?php include "header.php" ?>
 <?php include "DB.php" ?>
 <?php session_start(); ?>
+<!doctype html>
+<html class = "dashboard">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/styleCMS.css">
+</head>
 
-      <div id="adminHeader">
-        <h2>Adding New Page</h2>        
-      </div>
+<body>
+    <section class="page_section">
+        <section id="Title">
+    
+        <div style="width: 1388px;">              
+                Editable Pages
+            </div>           
+        </section>      
 
-      <h1>Enter Info About Event</h1>
+      <h1>Select Event To Edit</h1>
 
-<?php if ( isset( $results['errorMessage'] ) ) { ?>
-        <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
-<?php } ?>
+      <div class="sidenav">
+        <a href="dashboard.php">Dashboard</a>
+        <button class="dropdown-btn" style="width: 170px;">Products</button>
+        <div class="dropdown-container">
+            <a href="editEvents" style="background-color: slategrey;">Add New</a>
+            <a href="listEvents" style="background-color: slategrey;">Edit Existing</a>    
+        </div>
+        <a href="homepageLogin.php">Logout</a>     
+    </div>
+
+    <script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "contents") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "contents";
+    }
+    });
+    }
+    </script>     
+ </section>
+    
 
 
-<?php if ( isset( $results['statusMessage'] ) ) { ?>
-        <div class="statusMessage"><?php echo $results['statusMessage'] ?></div>
-<?php } ?>
+</body>
+</html>
 
       <table>
         <tr>
@@ -56,8 +93,6 @@
 
 <?php } ?>
 
-      </table>
-
-      <p><a href="admin.php?action=newArticle">Add a New Event</a></p>
+      </table>      
 
 <?php include "footer.php" ?>
