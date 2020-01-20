@@ -61,7 +61,9 @@
 <!------------------------------------------------End of restaurant 1--------------------------------------------------->
 
 <div class = "Ratatouille">
+    <a  href="fooddetail1.php">
     <img src="/imgrestaurant/rat.png" class = "rest1img" alt="Ratatouile" height="300" width="300">
+    </a>
   	<h1 class="restaurantname">Ratatouille </h1> </br>
 	<h2>French, Fish & Seafood, European </h2> </br>
 	<p class = "info">Telephone: 0235427270 </br></br>
@@ -72,20 +74,23 @@
 </div>
 <div class = "BackgroundRestaurant2">
 	<h1 class = "booknowtext2">Book Now!</h1>
-		<div class="time1restaurant2" style=" text-align: center;">
+  <a  href="foodcheckout.php">
+	<div class="time1restaurant2" style=" text-align: center;">
     17:00  
   </div>
-		<!--<a  href="DanceTicketFriday.php"> -->
+  </a>
+
+		<a  href="foodcheckout.php">
   <div class="time1restaurant2" style=" text-align: center;">
     19:00
   </div>
-  <!--</a>-->
+  </a>
 
-  <!--<a class="" href="DanceTicketSaturday.php">-->
+  <a class="" href="foodcheckout.php">
   <div class="time1restaurant2" style=" text-align: center;">
     21:00
   </div>
-  <!--</a>-->
+  </a>
     </div> 
 	</div>
 

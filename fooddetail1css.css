@@ -4,7 +4,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .fooddetail{
-    background-image: url("../imgrestaurant/res-1.jpg");
+    background-image: url("../img/res-1.jpg");
     background-repeat: no-repeat;
 }
 
@@ -137,6 +137,22 @@ b{
 
 .location{
     margin-left: 40%;
+}
+
+.bg1{
+    background-image: url("../img/res-1.jpg");
+    background-repeat: no-repeat;
+}
+
+.bg2{
+    background-image: url("../img/res-1.jpg");
+    background-repeat: no-repeat;
+    background-image: url("../imgrestaurant/bg2.jpg");
+    background-repeat: no-repeat;
+}
+
+.bg3{
+    
 }
 
 
