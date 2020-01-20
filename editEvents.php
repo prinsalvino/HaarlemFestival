@@ -1,7 +1,6 @@
 <?php include "header.php" ?>
 <?php include "DB.php" ?>
 <?php session_start(); ?>
-<?php session_start(); ?>
 <!doctype html>
 <html class = "dashboard">
 <head>
@@ -58,8 +57,8 @@
     
 
 
-</body>
-</html>
+
+
 
       <form action="admin.php?action=<?php echo $results['formAction']?>" method="post">
         <input type="hidden" name="ticket_id" value="<?php echo $results['event']->ticket_id ?>"/>
@@ -111,7 +110,8 @@
         
 
       </form>
-
+      </body>
+      </html>
 <?php if ( $results['events']->id ) { ?>
       <p><a href="admin.php?action=deleteEvent&amp;articleId=<?php echo $results['events']->id ?>" onclick="return confirm('Delete This Event?')">Delete This Event</a></p>
 <?php } ?>
