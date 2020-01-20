@@ -240,7 +240,7 @@ Address: Grote Markt 13, 201 4</br></br></p>
 <!------------------------------------------------End of restaurant 7--------------------------------------------------->
 
 <div class = "GoldenBull">
-    <img src="/imgrestaurant/goldeb bukll.jpg" class = "rest1img" alt="The Golden Bull" height="250" width="250">
+    <img src="/imgrestaurant/goldeb bukll.jpg" class = "rest1img" alt="The Golden Bull" height="300" width="300">
   	<h1 class="restaurantname">The Golden Bull </h1> </br>
 	<h2>Steakhouse, Argentinian, European </h2> </br></br>
 	<p>Telephone: 023 5319733 </br></br>
