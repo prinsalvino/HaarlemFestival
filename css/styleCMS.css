@@ -181,7 +181,64 @@ div#title
     top: 82px;
   }
 
+  .editor
+  {    
+    position: absolute;
+    left: 300px;
+    top: 73px;
+    width: 300px;
 
+  }
 
+  label
+  {
+    position: relative;
+    left: 16px;
+  }
+
+  input
+  {
+    position: relative;
+    left: 45px;
+    width: 130px;
+  }
+
+  input #event
+  {
+    left: 28px;
+    width: 170px;
+    height: 18px;
+  }
+  input #date
+  {
+    left: 49px;
+    width: 232px;
+    height: 18px;
+  }  
+  input #time
+  {
+    width: 170px;
+    height: 18px;
+  }
+  input #location
+  {
+    left: 17px;
+    width: 172px;
+    height: 18px;
+
+  }
+  input #special
+  {
+    left: 28px;
+  }
+
+  textarea
+  {
+    position: relative;
+    left: 105px;
+    width: 130px;
+  }
+
+  
   /**.title_box #content {
 } **  
