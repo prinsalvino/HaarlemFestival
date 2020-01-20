@@ -60,8 +60,9 @@ session_start();
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -72,21 +73,22 @@ session_start();
           <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
+                    Evolve <br>
+                    19:30-20:30 <br>
                     Main Hall<br>
                     €15   <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
+                          <button class="qtyBtn" onclick="increase_by_one('qty2');">+</button>
+                            <input id="qty2" type="text" value="1" name="J2" />
                           
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty2');" />-</button>
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -103,21 +105,22 @@ session_start();
             <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
+                    Ntjam Rosie <br>
+                    21:00-22:00 <br>
                     Main Hall<br>
                     €15   <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
+                          <button class="qtyBtn" onclick="increase_by_one('qty3');">+</button>
+                            <input id="qty3" type="text" value="1" name="J3" />
                           
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty3');" />-</button>
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -128,21 +131,22 @@ session_start();
           <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
+                  Wicked Jazz Sounds <br>
                     18:00-19:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
-                          Qty: 
+                    Second Hall<br>
+                    €10   <div class="cart-quantity">
+                         Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
+                          <button class="qtyBtn" onclick="increase_by_one('qty4');">+</button>
+                            <input id="qty4" type="text" value="1" name="J4" />
                           
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty4');" />-</button>
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -159,21 +163,22 @@ session_start();
             <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+                    Tom Thomsom Assemble <br>
+                    19:30-20:30 <br>
+                    Second Hall<br>
+                    €10   <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
+                          <button class="qtyBtn" onclick="increase_by_one('qty5');">+</button>
+                            <input id="qty5" type="text" value="1" name="J5" />
                           
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty5');" />-</button>
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -184,28 +189,29 @@ session_start();
           <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+                    Jonna Frazer <br>
+                    21:00-22:00 <br>
+                    Second Hall<br>
+                    €10   <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
+                          <button class="qtyBtn" onclick="increase_by_one('qty6');">+</button>
+                            <input id="qty6" type="text" value="1" name="J6" />
                           
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty6');" />-</button>
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
             </div>
           </div>
 
-          
+         
       </div>
 <!-- -------------------------------------------------------ROW 3----------------------------------------------------------------------------> 
   <a class="allAccess" href="jazzAllAccess.php?day=26">

@@ -24,17 +24,8 @@ session_start();
           <h1 class="inner" >
 
           <?php
-          if($_GET['day'] == 26)
-            {
-          ?> 
-            <b> Day 1 <br>
-            July 26,2020
-            <br><br>
-            Thursday<br>
-             
-        <?php
-            }
-            else if($_GET['day'] == 27)
+
+          if($_GET['day'] == 27)
             {
         ?> 
             <b> Day 2 <br>
@@ -76,30 +67,55 @@ session_start();
       <p style="text-align: center; color: #fff"> <b> Book your <i>"All Day Access"</i> tickets here</b>
     <br><br><br></p>
       <div class="rowTickets">
-          <div class="columnTickets"  >
+          <div class="columnTickets" style="width:50%"  >
             <div class="row1">
               <div class="column1" >
                 <b> 
-                    All-Access pass for this day:  <br>
-                    €35,00 <div class="cart-quantity">
-                          Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
-                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
-                        </div>
+                All-Access pass for this day:  <br>
+                €35,00 <div class="cart-quantity">
+                      Qty: 
+                    
+                <?php
+                  if($_GET['day'] == 27)
+                   {
+                ?> 
+                  <button class="qtyBtn" onclick="increase_by_one('qty20');">+</button>
+                  <input id="qty20" type="text" value="1" name="J20" />
+                  <button class="qtyBtn" onclick="decrease_by_one('qty20');" />-</button>
+                <?php
+                    }
+                    else if($_GET['day'] == 28)
+                    {
+                ?> 
+                  <button class="qtyBtn" onclick="increase_by_one('qty21');">+</button>
+                  <input id="qty21" type="text" value="1" name="J21" />
+                  <button class="qtyBtn" onclick="decrease_by_one('qty21');" />-</button>
+                <?php
+                }
+                else 
+                {
+                ?>
+
+                <button class="qtyBtn" onclick="increase_by_one('qty19');">+</button>
+                <input id="qty19" type="text" value="1" name="J19" />
+                <button class="qtyBtn" onclick="decrease_by_one('qty19');" />-</button>
+                <?php
+                    }
+                ?> 
+
+                </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1" style=" float: right; text-align: left; width: auto;" >
+              <p style="color:green;  "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
             </div>
           </div>
 
-          <div class="columnTickets"  >
+          <div class="columnTickets" style="width:50%; margin-top:2vw; display: inline-block;  float: right;  text-align: left;" >
           <div class="row1">
               <div class="column1" >
                 <b> 
@@ -107,15 +123,16 @@ session_start();
                     €80,00   <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
+                          <button class="qtyBtn" onclick="increase_by_one('qty22');">+</button>
+                            <input id="qty22" type="text" value="1" name="J22" />
                           
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty22');" />-</button>
                         </div>
                 </b>
               </div>
-              <div class="column1" >
-                <p style="color:green"> <b> Available </b></p>
+              <div class="column1"  style=" float: right; text-align: left; width: auto;">
+                <p style="color:green; "> 
+                <b> Available </b></p>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -125,7 +142,7 @@ session_start();
 <!-- -------------------------------------------------------ROW 1----------------------------------------------------------------------------> 
   </div>
 </div>  
-
+<p><br><br<br><br><br> </p>
 <div id=venueInfo class=venueInfo>
   <h1><i><b> General Information about the venue </b> </i>
     <p>
