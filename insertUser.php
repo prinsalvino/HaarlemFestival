@@ -65,12 +65,12 @@ if (isset($_POST["signUp"]))
         {
             //if the credentials belong to a volunteer
             $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
-            header("location: homepageLogin?volunteerSignUp=Successful"); 
+            header("location: dashboard.php?SignUp=Successful"); 
         }
 }
 else
 {
-    header("Location: signUpCustomer.php");//to go to the sign Up page
+    header("Location: indexLogin.php");//to go to the sign Up page
 }
 
 

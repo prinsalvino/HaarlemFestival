@@ -46,14 +46,14 @@ if(!isset($_SESSION['email']))
                     $_SESSION['volunteer_superadmin'] = $data->volunteer_superadmin;
                     
                 }
-            }
-            
-            echo $_SESSION['userName']." !"; 
-            if($_SESSION['volunteer_superadmin'] == 1)
-            {
-        ?> 
-                <br><a href="signUpVolunteer.php?isSuperadmin=1" >Sign Up a new volunteer?</a> 
-        <?php
+
+                    if($_SESSION['volunteer_superadmin'] == 1)
+                        {
+                            header("Location: dashboard.php?isSuperadmin=1"); 
+                        }
+                    else{
+                        header("Location: dashboard.php"); 
+                    }
             }
         ?> 
         <br>
