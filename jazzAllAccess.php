@@ -80,10 +80,8 @@ session_start();
             <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+                    All-Access pass for this day:  <br>
+                    €35,00 <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
@@ -105,10 +103,8 @@ session_start();
           <div class="row1">
               <div class="column1" >
                 <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+                   All-Access pass for Thurs, Fri, Sat<br>
+                    €80,00   <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
