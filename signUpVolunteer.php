@@ -11,7 +11,7 @@
  }
  else if(!$_GET['isSuperadmin']==1)
  {
-    header("Location: homepageLogin.php"); //if user is logged in, redirect to homepageLogin
+    header("Location: dashboard.php"); 
  }
  ?>
  <!DOCTYPE html>
@@ -52,7 +52,7 @@
                 Sign Up
             </button>
             <br><br>
-            <a href="homepageLogin.php" >
+            <a href="dashboard.php" >
                 Back
             </a>
 

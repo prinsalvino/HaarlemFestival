@@ -7,8 +7,8 @@
 <link rel="stylesheet" type="text/css" href="css/styleCMS.css">
 </head>
 <body>   
-<?php include "header.php" 
-      include "DB.php"        
+<?php include "header.php" ;
+      include "DB.php"        ;
         ?>
 <body>
     <section class="page_section">
@@ -20,16 +20,30 @@
         </section>
         
 
-         
+  <!-- sign up volunteer        -->
+  <?php
+    if($_GET["isSuperadmin"]=="1")
+    {                
+ ?>
+  <br><a href="signUpVolunteer.php?isSuperadmin=1" >Sign Up a new volunteer?</a> 
+  <?php
+    }
+        if($_GET["SignUp"]=="Successful")
+        {
+            echo '<p style="color:green;"> Volunteer Sign Up successful  </p>';
+        }
+    ?>
+
+<!-- sign up volunteer  ends  -->
   
   <div class="sidenav">
         <a href="dashboard.php">Dashboard</a>
         <button class="dropdown-btn" style="width: 170px;">Products</button>
         <div class="dropdown-container">
-            <a href="#" style="background-color: slategrey;">Add New</a>
-            <a href="editEvents.php" style="background-color: slategrey;">Edit Existing</a>    
+            <a href="editEvents" style="background-color: slategrey;">Add New</a>
+            <a href="listEvents" style="background-color: slategrey;">Edit Existing</a>    
         </div>
-        <a href="homepageLogin.php">Logout</a>     
+        <a href="logout.php">Logout</a>     
     </div>
 
     <script>
@@ -100,7 +114,7 @@
 
  
  
-<?php include "footer.php" ?>
+<?php include "footer.php"; ?>
 
 
 
