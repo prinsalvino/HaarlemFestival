@@ -1,4 +1,5 @@
-.jazzD1 {
+.jazzD1,
+.jazzD4 {
     background-image: url("../img/jazzD1bg.jpg");
     color: #1E1E1E;
     width: 100%;
@@ -58,6 +59,10 @@
     padding: 1vw;
     margin-bottom: 0.5vw;
     margin-left: 10px;
+}
+
+.jazzD4 .columnTickets {
+    margin-bottom: 2vw;
 }
 
 .rowTickets:after {
@@ -124,6 +129,12 @@ footer {
     bottom: 0;
     width: 100%;
     height: 2.5rem;
+}
+
+.D4footer footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #qty1,
