@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <!--<link rel="stylesheet" type="text/css" href="css/styleCMS.css">-->
-<?php include "header.php" ;
+<?php include "header.php";
       include "DB.php"?>
       
 <body>   
@@ -110,8 +110,8 @@
 </html>
 
 
- 
- 
+
+
 <?php include "footer.php"; ?>
 
 
