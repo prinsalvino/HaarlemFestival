@@ -85,10 +85,7 @@ session_start();
   
   </div>
 </div>
-
-<div class="D4footer">
  <?php include "footer.php";?> 
-</div>
 </body>
 </html>
 
