@@ -1,14 +1,23 @@
-<?php session_start(); ?>
-<!doctype html>
-<html class = "dashboard">
-
-<meta charset="utf-8"/>
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<!--<link rel="stylesheet" type="text/css" href="css/styleCMS.css">-->
-<?php include "header.php";
-      include "DB.php"?>
+<?php  
+declare(strict_types=1);
+session_start();
+?> 
+<!DOCTYPE html>
+ <html class="dashboard"> 
+ <head> 
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styleCMS.css">
+    <title>
+                Dashboard || Haarlem Festival
+        </title> 
       
 <body>   
+<?php include "header.php" ; ?> <!---idk why you needed to include DB.php but i removed that and now you can see somehting hopefully-->
+     
+
     <section class="page_section">
         <section id="Title">
     
@@ -31,15 +40,15 @@
             echo '<p style="color:green;"> Volunteer Sign Up successful  </p>';
         }
     ?>
-
+</section>
 <!-- sign up volunteer  ends  -->
   
   <div class="sidenav">
         <a href="dashboard.php">Dashboard</a>
         <button class="dropdown-btn" style="width: 170px;">Products</button>
         <div class="dropdown-container">
-            <a href="editEvents" style="background-color: slategrey;">Add New</a>
-            <a href="listEvents" style="background-color: slategrey;">Edit Existing</a>    
+            <a href="editEvents.php" style="background-color: slategrey;">Add New</a>
+            <a href="listEvents.php" style="background-color: slategrey;">Edit Existing</a>    
         </div>
         <a href="logout.php">Logout</a>     
     </div>
@@ -105,14 +114,14 @@
     </section>
     
 
-
+    <?php include "footer.php";?> 
 </body>
 </html>
 
 
+ 
 
 
-<?php include "footer.php"; ?>
 
 
 
