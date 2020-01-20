@@ -13,7 +13,7 @@ session_start();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jazzScript.js" ></script>  
     <title>
-            Jazz D1 26 July 2020 || Haarlem Festival
+            Jazz D3 28 July 2020 || Haarlem Festival
     </title> 
 </head>
 <body>
@@ -29,10 +29,10 @@ session_start();
   <div class="rowTicketpg">
     <div class="columnTicketpg a" style="  margin-top:1vw; text-align: center; width: 30%;">
           <h1 class="inner" >
-          <b> Day 1 <br>
-                  July 26,2020
+          <b> Day 3<br>
+                  July 28,2020
                   <br><br>
-                  Thursday<br>
+                  Saturday<br>
                   The Patronaat</b>
                   <br><br>
                   <a href="#venueInfo1" class="linkVenueInfo">(venue info)</a>
