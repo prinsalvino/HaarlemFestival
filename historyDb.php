@@ -21,6 +21,18 @@ class historyDb extends DB {
             } 
     }
 
+    public function addToCart($user, $ticket_id, $amount, $price)
+    {
+        $link = mysqli_connect("localhost", "hfitteam1", "3FxmuBcR", "hfitteam1_db");
+
+        $sql = "INSERT INTO `order_item` (`customer_id`, `ticket_id`, `qty`, `price`, `payed`) VALUES ('$user', '$ticket_id', '$amount', '$price', '1')";
+        if(mysqli_query($link, $sql)){
+            echo "Records inserted successfully.";
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
+    }
+
 
     public function getTicketsSorted($language)
     {   

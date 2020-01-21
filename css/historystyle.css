@@ -24,15 +24,16 @@ html { overflow-y: scroll; overflow-x:hidden; }
 	position: absolute;
 	bottom: 10%;
 	margin-left: 7%;
-	width: 65%;
-	height: 10%;
+	font-size: 70px;
+	float: left;
 }
 
 .center-left {
 	position: absolute;
 	bottom: 30%;
 	margin-left: 7%;
-	font-size: 110px;
+	font-size: 65px;
+	float: left;
 }
 
 .header {
@@ -141,4 +142,23 @@ h2{
 #locationpic{
 	border-style: solid;
 	margin-top: 5px;
+}
+
+
+/*The history ticket page*/
+
+.tickets{
+	margin-top: 7%;
+	margin-left: 7%;
+	width: 86%;
+	background-color: black;
+	border-radius: 25px;
+}
+
+.select{
+	margin-top: 7%;
+	margin-left: 7%;
+	width: 72%;
+	background-color: gray;
+	border-radius: 25px;
 }

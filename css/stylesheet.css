@@ -19,15 +19,13 @@
     background-size: cover;
 }
 
-
-
 .Food {
     background-image: url("../img/1.jpg");
     color: #1E1E1E;
     width: 100%;
     background-size: cover;
-	background-repeat: repeat;
-	background-size: 100%;
+    background-repeat: repeat;
+    background-size: 100%;
 }
 
 
@@ -94,6 +92,60 @@ a:hover {
 
 
 /* ----------------------------------------------------------Header styling----------------------------------------------------------------------- */
+
+.cloumnHpg {
+    float: left;
+    width: 45%;
+    margin: 3vw;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.rowHpg:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.Himg {
+    content: url("../img/hBG.png");
+    width: 40vw;
+    height: 24vw;
+}
+
+.Himg:hover {
+    content: url("../img/hBG2.png");
+}
+
+.Fimg {
+    content: url("../img/fBG.png");
+    width: 40vw;
+    height: 24vw;
+}
+
+.Fimg:hover {
+    content: url("../img/fBG2.png");
+}
+
+.Dimg {
+    content: url("../img/dBG.png");
+    width: 40vw;
+    height: 24vw;
+}
+
+.Dimg:hover {
+    content: url("../img/dBG2.png");
+}
+
+.Jimg {
+    content: url("../img/jBG.png");
+    width: 40vw;
+    height: 24vw;
+}
+
+.Jimg:hover {
+    content: url("../img/jBG2.png");
+}
 
 
 /* ----------------------------------------------------------Footer styling----------------------------------------------------------------------- */
