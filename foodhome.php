@@ -29,7 +29,9 @@
 <!--</form>-->
 	
 	<div class = "MrandMrs">
+  <a  href="fooddetail1.php">
     <img src="/imgrestaurant/mr.png" class = "rest1img" alt="Restaurant Mr.&Mrs" height="300" width="300">
+    </a>
   	<h1 class="restaurantname">Restaurant Mr.&Mrs </h1> </br>
 	<h2>Dutch, Fish & Seafood, European </h2> </br>
 	<p>Telephone: 0235315935 </br></br>
@@ -40,20 +42,22 @@
 </div>
 <div class = "BackgroundRestaurant1">
 	<h1 class = "booknowtext1">Book Now!</h1>
+  <a  href="foodcheckout.php">
 		<div class="time1restaurant1" style=" text-align: center;">
     18:00  
-  </div>
-		<!--<a  href="DanceTicketFriday.php"> -->
+    </div>
+    </a>
+		<a  href="foodcheckout.php">
   <div class="time1restaurant1" style=" text-align: center;">
     19:30
   </div>
-  <!--</a>-->
+  </a>
 
-  <!--<a class="" href="DanceTicketSaturday.php">-->
+  <a  href="foodcheckout.php">
   <div class="time1restaurant1" style=" text-align: center;">
     21:00
   </div>
-  <!--</a>-->
+  </a>
     </div> 
 	</div>
 
