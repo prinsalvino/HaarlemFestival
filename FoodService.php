@@ -4,7 +4,7 @@ include "DB.php";
 class FoodService extends DB {
     public function getAllRestaurant() 
     { 
-        $sql = "SELECT * FROM tickets WHERE event = 'Food'; 
+        $sql = "SELECT * FROM tickets WHERE event = 'Food' ; 
         $result = $this->connect()->query($sql); 
         $this->closeCon();
 

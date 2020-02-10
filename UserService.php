@@ -23,7 +23,16 @@ class UserService extends DB {
     //Sorry to put it at the top here, but it's just to test the ticket pull system
     public function getTicketById($id)
     {   
-        $resultTicket = $this->connect()->query("SELECT * FROM tickets WHERE ticket_id = '"$id"' ;");
+        $conn = $this->connect();
+        $stmt = $conn->prepare("SELECT * FROM tickets WHERE ticket_id = ? ;");
+        $stmt->bind_param('s', $id);
+
+        $stmt->execute();
+
+        $resultTicket = $stmt->get_result();
+
+
+
         return $resultTicket;
     }
 
