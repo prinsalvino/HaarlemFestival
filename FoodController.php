@@ -14,20 +14,19 @@ class FoodController
     public function getAllRestaurant() 
     { 
         return $this->FoodService->getAllRestaurant(); 
-    }
-    
-	public function showAllRestaurant() 
-	{ 
-        $datas = $this->FoodService->getAllRestaurant(); 
-		foreach ($datas as $data)  
-		{
-			echo "Date : ".$data['date']."<br>"; 
-			echo "Time : ".$data['time']."<br>"; 
-			echo "Name : ".$data['location']."<br>"; 		
-			echo "Special : ".$data['special']."<br>"; 		
-			echo "Price : ".$data['price']."<br>"; 		
-		}
 	}
+	public function test() {
+		return "tested";
+	}
+	
+	public function getSessionTime($restoname){
+		return $this->FoodService->getSessionTime($restoname); 
+	}
+	public function getExtraDescription($restoname){
+		return $this->FoodService->getExtraDescription($restoname); 
+
+	}
+
 }
 
 
