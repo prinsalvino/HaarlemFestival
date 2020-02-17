@@ -11,10 +11,6 @@ if (isset($_POST["signUp"]))
     $name=$_POST["name"];
     $email= $_POST["email"];
     $password= $_POST["password"];
-    //for volunteers
-    $age= $_POST["age"];
-    $isAdmin= $_POST["isAdmin"];
-    $isSuperadmin= $_POST["isSuperadmin"];
 
     $passwordlength= strlen($password); //to check the length of the password
 
@@ -25,11 +21,6 @@ if (isset($_POST["signUp"]))
             {
                  header("Location: signUpCustomer.php?SignUpError=invalidEmail");//to go back to the sign Up page
             }
-            else if($_GET["user"]=="volunteer") 
-            {
-                header("Location: signUpVolunteer.php?SignUpError=invalidEmail");//to go back to the sign Up page
-            }
-           
         }
         else if($passwordlength < 6)    //to check if the password entered is atleast 6 characters long
         {
@@ -37,11 +28,6 @@ if (isset($_POST["signUp"]))
             {
                 header("Location: signUpCustomer.php?SignUpError=passwordShort");//to go back to the sign Up page
             }
-            else if($_GET["user"]=="volunteer") 
-            {
-                header("Location: signUpVolunteer.php?SignUpError=invalidEmail");//to go back to the sign Up page
-            }
-            
         }
         else if($ifExists==TRUE)
         {
@@ -49,11 +35,6 @@ if (isset($_POST["signUp"]))
             {
                 header("Location: signUpCustomer.php?SignUpError=emailExists");//to go back to the sign Up page
             } 
-            else if($_GET["user"]=="volunteer") 
-            {
-                header("Location: signUpVolunteer.php?SignUpError=emailExists");//to go back to the sign Up page
-            }
-            
         }
         
         //this else is executed when nothing is wrong with sign up
@@ -64,33 +45,6 @@ if (isset($_POST["signUp"]))
                 $users->addNewCustomer($name, $email, $password);
                 $_SESSION['userType'] = "customer";
                 header("location: postLogin.php?SignUp=Successful"); //to go the index page to login with new account
-            }
-            else if($_GET["user"]=="volunteer") 
-            {
-                //additional volunteer checks
-                //check if volunteer age, admin status(bool) and super admin status(bool) is a numeric value or not
-                    if( !ctype_digit($age))
-                    {
-                        header("Location: signUpVolunteer.php?SignUpError=ageNotNaturalNum");//to go back to the sign Up page
-                        
-                    }
-                    elseif(is_bool($isAdmin) === false)
-                    {
-                        header("Location: signUpVolunteer.php?SignUpError=isAdminNotBool");//to go back to the sign Up page
-                    }
-
-                    elseif(is_bool($isSuperadmin) === false)
-                    {
-                        header("Location: signUpVolunteer.php?SignUpError=isSuperAdminNotBool");//to go back to the sign Up page
-                    }
-                    else
-                    {
-                        //if the credentials belong to a volunteer
-                        $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
-                        $_SESSION['userType'] = "volunteer";
-                        header("location: dashboard.php?V_SignUp_Successful=".$name.""); 
-                    }
-                
             }
         }
 }

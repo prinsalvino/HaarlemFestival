@@ -28,30 +28,29 @@
 	<h1>Sign Up Volnteer</h1>
                          
 <!-------------------------------------------form action------------------------------------------------------------------>
-        <form action="insertUser.php?user=volunteer" method="POST"> 
+        <form action="insertVolunteer.php" method="POST"> 
             <label for="name" >Name</label>
                 <input type="text" id="name" class="form-control" name="name" required autofocus>
-                <br>
+                <br><br>
             <label for="email_address" >E-Mail Address</label>
                 <input type="email" id="email_address" class="form-control" name="email" required >
-                <br>
+                <br><br>
+            <label for="password" class="lbl">Password</label>
+                <input type="password" id="password" class="form-control" name="password" required>
+            <br><br>
             <label for="age" >Age</label>
                 <input type="number" id="email_address" class="form-control" name="age" required >
-                <br>
+                <br><br>
             <label for="isAdmin" >Give volunteer 'Admin' status ?<br> 1=yes  0=no  NO other values<br></label>
                 <input style="color:black" type="number" id="email_address" class="form-control" name="isAdmin" placeholer="1=yes  0=no  NO other values" required >
-                <br>   
+                <br><br>  
             <label for="isSuperadmin" >Give volunteer 'Super Admin' status ? <br> 1=yes  0=no  NO other values<br></label>
                 <input style="color:black" type="number" id="email_address" class="form-control" name="isSuperadmin" placeholer="1=yes  0=no  NO other values" required >
-                <br>
-            <label for="password" class="lbl">Password</label>
-                    <input type="password" id="password" class="form-control" name="password" required>
-
-            <br><br>
-            <button type="submit" name="signUp">
+            <br><br><br>
+            <button type="submit" name="signUpVolunteer">
                 Sign Up
             </button>
-            <br><br>
+            <br><br><br>
             <a href="dashboard.php" >
                 Back
             </a>
