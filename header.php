@@ -17,7 +17,7 @@
         ?>
           <div class="columnLoginCart" style=" text-align: center; margin-top:1vw">
               <b>
-              <p class="cartlink"> Hi <?php echo $_SESSION['userName']; ?>!! <br><br>
+              <p class="cartlink"> Hi <?php echo ucfirst($_SESSION['userName']); ?>!! <br><br>
               <a class="cartlink" href="logout.php"> Log out </a></b>
           </div>
         <?php 

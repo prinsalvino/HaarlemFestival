@@ -32,12 +32,13 @@ session_start();
 
         }
         if($_SESSION['volunteer_superadmin'] == 1)
-                {
-                    header("Location: dashboard.php?isSuperadmin=1"); 
-                }
-            else{
-                header("Location: dashboard.php"); 
-            }
-    }
+        {
+            header("Location: dashboard.php?isSuperadmin=1"); 
+        }
+        else
+        {
+            header("Location: dashboard.php"); 
+        }
+}
 
 ?>

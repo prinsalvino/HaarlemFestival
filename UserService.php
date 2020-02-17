@@ -153,7 +153,7 @@ class UserService extends DB {
                 echo 'Caught exception: ',  $e->getMessage(), "\n";
             }
         }
-        
+
         public function verifyCustomerEmailExistance($email)
         {
             try 
@@ -316,7 +316,7 @@ class UserService extends DB {
         {
             try {
                 $stmt = $this->connect()->prepare("INSERT INTO `volunteer` (`volunteer_name`,`volunteer_mail`, `volunteer_password`,  `volunteer_age`, `volunteer_admin`, `volunteer_superadmin`) VALUES (?,?,?,?,?,?) ;");
-                $stmt->bind_param("sssiii",$name,$email, $password);    
+                $stmt->bind_param("sssiii",$name,$email, $password, $age, $isAdmin, $isSuperadmin);    
                 // set parameters and execute
                 // $hashedPass = password_hash($password, PASSWORD_DEFAULT);
                 $stmt->execute();

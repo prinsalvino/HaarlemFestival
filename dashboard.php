@@ -28,18 +28,18 @@ session_start();
         
 
   <!-- sign up volunteer        -->
-  <?php
-    if($_GET["isSuperadmin"]=="1")
-    {                
- ?>
-  <br><a href="signUpVolunteer.php?isSuperadmin=1" >Sign Up a new volunteer?</a> 
-  <?php
-    }
-        if($_GET["SignUp"]=="Successful")
-        {
-            echo '<p style="color:green;"> Volunteer Sign Up successful  </p>';
-        }
+    <?php
+        if($_SESSION['volunteer_superadmin']=="1")
+        {                
     ?>
+    <br><a href="signUpVolunteer.php?isSuperadmin=1" >Sign Up a new volunteer?</a> 
+    <?php
+        }
+            if($_GET["SignUp"]=="Successful")
+            {
+                echo '<p style="color:green;"> Volunteer Sign Up successful  </p>';
+            }
+        ?>
 </section>
 <!-- sign up volunteer  ends  -->
   

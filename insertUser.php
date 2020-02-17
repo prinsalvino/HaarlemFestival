@@ -70,7 +70,7 @@ if (isset($_POST["signUp"]))
                 //if the credentials belong to a volunteer
                 $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
                 $_SESSION['userType'] = "volunteer";
-                header("location: dashboard.php?VolunteerSignUp=".$_SESSION['email'].""); 
+                header("location: dashboard.php?V_SignUp_Successful=".$name.""); 
             }
         }
 }
