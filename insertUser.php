@@ -56,7 +56,7 @@ if (isset($_POST["signUp"]))
             
         }
         
-        //this else is executed when nothing is wrong with sing up
+        //this else is executed when nothing is wrong with sign up
         else{
             $_SESSION['email']=$email;
             if($_GET["user"]=="customer")  //if the credentials belong to a customer
@@ -67,16 +67,36 @@ if (isset($_POST["signUp"]))
             }
             else if($_GET["user"]=="volunteer") 
             {
-                //if the credentials belong to a volunteer
-                $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
-                $_SESSION['userType'] = "volunteer";
-                header("location: dashboard.php?V_SignUp_Successful=".$name.""); 
+                //additional volunteer checks
+                //check if volunteer age, admin status(bool) and super admin status(bool) is a numeric value or not
+                    if( !ctype_digit($age))
+                    {
+                        header("Location: signUpVolunteer.php?SignUpError=ageNotNaturalNum");//to go back to the sign Up page
+                        
+                    }
+                    elseif(is_bool($isAdmin) === false)
+                    {
+                        header("Location: signUpVolunteer.php?SignUpError=isAdminNotBool");//to go back to the sign Up page
+                    }
+
+                    elseif(is_bool($isSuperadmin) === false)
+                    {
+                        header("Location: signUpVolunteer.php?SignUpError=isSuperAdminNotBool");//to go back to the sign Up page
+                    }
+                    else
+                    {
+                        //if the credentials belong to a volunteer
+                        $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
+                        $_SESSION['userType'] = "volunteer";
+                        header("location: dashboard.php?V_SignUp_Successful=".$name.""); 
+                    }
+                
             }
         }
 }
 else
 {
-    header("Location: indexLogin.php");//to go to the sign Up page
+    header("Location: indexLogin.php");//to go to the login page
 }
 
 

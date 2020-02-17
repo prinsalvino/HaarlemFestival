@@ -33,16 +33,16 @@
                 <input type="text" id="name" class="form-control" name="name" required autofocus>
                 <br>
             <label for="email_address" >E-Mail Address</label>
-                <input type="text" id="email_address" class="form-control" name="email" required >
+                <input type="email" id="email_address" class="form-control" name="email" required >
                 <br>
             <label for="age" >Age</label>
-                <input type="text" id="email_address" class="form-control" name="age" required >
+                <input type="number" id="email_address" class="form-control" name="age" required >
                 <br>
             <label for="isAdmin" >Give volunteer 'Admin' status ?<br> 1=yes  0=no  NO other values<br></label>
-                <input style="color:black" type="text" id="email_address" class="form-control" name="isAdmin" placeholer="1=yes  0=no  NO other values" required >
+                <input style="color:black" type="number" id="email_address" class="form-control" name="isAdmin" placeholer="1=yes  0=no  NO other values" required >
                 <br>   
             <label for="isSuperadmin" >Give volunteer 'Super Admin' status ? <br> 1=yes  0=no  NO other values<br></label>
-                <input style="color:black" type="text" id="email_address" class="form-control" name="isSuperadmin" placeholer="1=yes  0=no  NO other values" required >
+                <input style="color:black" type="number" id="email_address" class="form-control" name="isSuperadmin" placeholer="1=yes  0=no  NO other values" required >
                 <br>
             <label for="password" class="lbl">Password</label>
                     <input type="password" id="password" class="form-control" name="password" required>
@@ -68,6 +68,18 @@
                 else if($_GET["SignUpError"]=="emailExists")
                 {
                     echo '<p style="color:red;"> A user with the entered email already exists!!<br> Try again </p>';
+                }
+                else if($_GET["SignUpError"]=="ageNotNaturalNum")
+                {
+                    echo '<p style="color:red;"> Age must be a Natural number!!<br>(NO Negative or decimal numbers)<br> Try again </p>';
+                }
+                else if($_GET["SignUpError"]=="isAdminNotBool")
+                {
+                    echo '<p style="color:red;"> Insert either 0 or 1 for Admin Status!!<br> Try again </p>';
+                }
+                else if($_GET["SignUpError"]=="isSuperAdminNotBool")
+                {
+                    echo '<p style="color:red;"> Insert either 0 or 1 for Super Admin Status!!<br> Try again </p>';
                 }
             ?>
 <!---------------------------------------------form ends------------------------------------------------------------------>
