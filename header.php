@@ -8,11 +8,32 @@
     </div>
     <div class="headerColumn" >      
       <div class="rowLoginCart">
+      <?php 
+      session_start();
+
+      if(isset($_SESSION['email']))
+      {
+        
+        ?>
           <div class="columnLoginCart" style=" text-align: center; margin-top:1vw">
-                  <b><a class="cartlink" href="indexLogin.php"> Log in </a>
-                  <br> Or <br> 
-                  <a class="cartlink" href="signUpCustomer.php"> Sign up  </a></b>
+              <b><a class="cartlink" href="logout.php"> Log out </a></b>
           </div>
+        <?php 
+      }
+      else
+      {
+        ?> 
+          <div class="columnLoginCart" style=" text-align: center; margin-top:1vw">
+            <b><a class="cartlink" href="indexLogin.php"> Log in </a>
+            <br> Or <br> 
+            <a class="cartlink" href="signUpCustomer.php"> Sign up  </a></b>
+            </div>
+        <?php 
+      }
+      ?>
+
+          
+
           <div class="columnLoginCart" style=" margin-top:1vw">
               <p> 
               <a class="cart" href="" style="text-decoration: none">

@@ -89,6 +89,71 @@ class UserService extends DB {
             }            
         }
 
+        
+        public function verifyCustomerPassword($email,$password)
+        {
+            try 
+           {
+            $conn=$this->connect();
+            $result = $conn->query("SELECT customer_password FROM customer WHERE customer_mail LIKE '".$email."' ;");
+            $numRows = $result->num_rows; 
+            if ($numRows > 0) 
+            {
+                $password = mysqli_real_escape_string($conn, $password);
+                
+                $data[]=$result->fetch_array();
+                $a =  $data[0];
+            
+                if($a["customer_password"]==$password)  
+                {
+                    $this->closeCon();
+                    // echo $a["customer_password"];
+                    return true;
+                }
+                else
+                {
+                    $this->closeCon();
+                    return false;
+                }
+                
+            }
+            }
+            catch (Exception $e) {
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
+            }
+        }
+
+        public function verifyVolunteerPassword($email,$password)
+        {
+            try{
+            $conn=$this->connect();
+            $result = $conn->query("SELECT volunteer_password FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
+           
+            $numRows = $result->num_rows; 
+                if ($numRows > 0) 
+                {
+                    $password = mysqli_real_escape_string($conn, $password);
+                    
+                    $data[]=$result->fetch_array();
+                    $a =  $data[0];
+                    
+                    if($a["volunteer_password"]==$password)  
+                    {
+                        $this->closeCon();
+                        return true;
+                    }
+                    else
+                    {
+                        $this->closeCon();
+                        return false;
+                    }
+                }
+            }
+            catch (Exception $e) {
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
+            }
+        }
+        
         public function verifyCustomerEmailExistance($email)
         {
             try 
@@ -165,69 +230,6 @@ class UserService extends DB {
             } 
         }
 
-        public function verifyCustomerPassword($email,$password)
-        {
-            try 
-           {
-            $conn=$this->connect();
-            $result = $conn->query("SELECT customer_password FROM customer WHERE customer_mail LIKE '".$email."' ;");
-            $numRows = $result->num_rows; 
-            if ($numRows > 0) 
-            {
-                $password = mysqli_real_escape_string($conn, $password);
-                
-                $data[]=$result->fetch_array();
-                $a =  $data[0];
-            
-                if($a["customer_password"]==$password)  
-                {
-                    $this->closeCon();
-                    // echo $a["customer_password"];
-                    return true;
-                }
-                else
-                {
-                    $this->closeCon();
-                    return false;
-                }
-                
-            }
-            }
-            catch (Exception $e) {
-                echo 'Caught exception: ',  $e->getMessage(), "\n";
-            }
-        }
-
-        public function verifyVolunteerPassword($email,$password)
-        {
-            try{
-            $conn=$this->connect();
-            $result = $conn->query("SELECT volunteer_password FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
-           
-            $numRows = $result->num_rows; 
-                if ($numRows > 0) 
-                {
-                    $password = mysqli_real_escape_string($conn, $password);
-                    
-                    $data[]=$result->fetch_array();
-                    $a =  $data[0];
-                    
-                    if($a["volunteer_password"]==$password)  
-                    {
-                        $this->closeCon();
-                        return true;
-                    }
-                    else
-                    {
-                        $this->closeCon();
-                        return false;
-                    }
-                }
-            }
-            catch (Exception $e) {
-                echo 'Caught exception: ',  $e->getMessage(), "\n";
-            }
-        }
 
         public function verifyUserType($email) //to be accessed after login
         {

@@ -6,7 +6,7 @@ session_start();
 
 if(!isset($_SESSION['email']))
  {
-     header("Location: indexLogin.php"); //if user is not logged in, redirect to user index pg
+     header("Location: index.php"); //if user is not logged in, redirect to user index pg
  }
 ?>
 

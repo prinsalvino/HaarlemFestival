@@ -17,11 +17,11 @@ class DB
         
         if($this->_mysqliConnectionObject->connect_error)
         {
-            echo "It doesn't work.";
+            // echo "datatbase connection not established";
             die($this->_mysqliConnectionObject->connect_error);
         }
         else{
-            echo "ok tested";
+        //    echo "ok tested";
         }
 
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

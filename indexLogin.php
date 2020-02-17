@@ -5,7 +5,7 @@ session_start();
 
  if(isset($_SESSION['email']))
  {
-     header("Location: homepageLogin.php"); //if user is logged in, redirect to homepage
+     header("Location: index.php"); //if user is logged in, redirect to homepage
  }
 
 ?> 
@@ -41,7 +41,6 @@ session_start();
             <button type="submit" name="login">
                 Login
             </button>
-            </form>
             <!-- other options -->
             <br><br>                
             <!-- <a href="index.pwdreset.php" >

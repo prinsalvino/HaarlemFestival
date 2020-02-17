@@ -5,10 +5,10 @@
 
  session_start();
 
- if(isset($_SESSION['email']))
- {
-     header("Location: homepageLogin.php"); //if user is logged in, redirect to homepageLogin.php
- }
+//  if(isset($_SESSION['email']))
+//  {
+//      header("Location: index.php"); //if user is logged in, redirect to homepageLogin.php
+//  }
  ?>
  <!DOCTYPE html>
  <html> 
