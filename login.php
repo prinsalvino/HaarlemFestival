@@ -27,12 +27,11 @@ if (isset($_POST["login"]))
         if($users->verifyUserType($email) == TRUE) //if the user is a customer it returns TRUE
         {
             $_SESSION['userType'] = "customer";
-            header("location: index.php?Login=Successful"); //to go the home page
         }
         else{
             $_SESSION['userType'] = "volunteer";
-            header("location: dashboard.php?Login=Successful"); //to go the home page
         }
+        header("location: postLogin.php?Login=Successful"); //to go postLogin.php where the user is redirected further according to their roles
     }
     else
     {
