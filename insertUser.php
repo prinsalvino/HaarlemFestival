@@ -55,17 +55,23 @@ if (isset($_POST["signUp"]))
             }
             
         }
-
-        else if($_GET["user"]=="customer")  //if the credentials belong to a customer
-        {
-            $users->addNewCustomer($name, $email, $password);
-            header("location: indexLogin.php?SignUp=Successful"); //to go the index page to login with new account
-        }
-        else if($_GET["user"]=="volunteer") 
-        {
-            //if the credentials belong to a volunteer
-            $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
-            header("location: dashboard.php?SignUp=Successful"); 
+        
+        //this else is executed when nothing is wrong with sing up
+        else{
+            $_SESSION['email']=$email;
+            if($_GET["user"]=="customer")  //if the credentials belong to a customer
+            {
+                $users->addNewCustomer($name, $email, $password);
+                $_SESSION['userType'] = "customer";
+                header("location: postLogin.php?SignUp=Successful"); //to go the index page to login with new account
+            }
+            else if($_GET["user"]=="volunteer") 
+            {
+                //if the credentials belong to a volunteer
+                $users->addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin );
+                $_SESSION['userType'] = "volunteer";
+                header("location: dashboard.php?VolunteerSignUp=".$_SESSION['email'].""); 
+            }
         }
 }
 else
