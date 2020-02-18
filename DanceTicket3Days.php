@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
 
 ?>  
 <html class = "danceTicket">
@@ -45,8 +46,14 @@ session_start();
 
 
 <table>
+<!-- // this get the ticket  array from the controller  -->
+
+<?php
+$ticket = new ticketsController();
+$ticketArr = $ticket->getDanceJazzTickets(39);
+?>
   <tr>
-    <th>     </th>
+    <th> Price <?php echo $ticketArr[4]; ?>    </th>
     <th>     </th>
     <th>     </th>
   </tr>
