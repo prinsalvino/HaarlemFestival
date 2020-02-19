@@ -53,13 +53,13 @@ $ticket = new ticketsController();
 $ticketArr = $ticket->getDanceJazzTickets(39);
 ?>
   <tr>
-    <th> Price <?php echo $ticketArr[4]; ?>    </th>
+    <th>     </th>
     <th>     </th>
     <th>     </th>
   </tr>
   <tr>
     <td>3 Days: All Artists </td>
-    <td>€ 250.00</td>
+    <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>

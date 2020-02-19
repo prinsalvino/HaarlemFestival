@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
 
 ?>  
 <html class = "danceTicket">
@@ -44,9 +45,18 @@ session_start();
 </div> 
 
 <table>
+
+<?php
+$ticket = new ticketsController();
+$ticketsSatAllArtists = $ticket->getDanceJazzTickets(37);
+$ticketSat3Artists = $ticket->getDanceJazzTickets(28);
+$ticketSatAfrojack = $ticket->getDanceJazzTickets(29);
+$ticketSatTiesto = $ticket->getDanceJazzTickets(30);
+$ticketSatNicky =$ticket->getDanceJazzTickets(31);
+?>
   <tr>
     <td>Saturday: All Artists </td>
-    <td>€ 150.00</td>
+    <td>€ <?php echo $ticketsSatAllArtists[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
@@ -56,8 +66,8 @@ session_start();
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
-  <td>Hardwell/ Martin Garrix/ <br> Armin van Buuren </br></td>
-    <td>€ 110.00</td>
+  <td> <?php echo $ticketSat3Artists[3]; ?></td>
+    <td>€ <?php echo $ticketSat3Artists[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
@@ -67,8 +77,8 @@ session_start();
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
-  <td>Afrojack </td>
-    <td>€ 60.00</td>
+  <td> <?php echo $ticketSatAfrojack[3]; ?></td>
+    <td>€ <?php echo $ticketSatAfrojack[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
@@ -78,8 +88,8 @@ session_start();
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
-  <td>Tiësto </td>
-    <td>€ 75.00</td>
+  <td> <?php echo $ticketSatTiesto[3]; ?></td>
+    <td>€ <?php echo $ticketSatTiesto[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
@@ -89,8 +99,8 @@ session_start();
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
   <tr>
-  <td>Nicky Romero </td>
-    <td>€ 60.00</td>
+  <td> <?php echo $ticketSatNicky[3]; ?></td>
+    <td>€ <?php echo $ticketSatNicky[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
