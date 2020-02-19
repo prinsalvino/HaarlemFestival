@@ -1,7 +1,9 @@
 <?php
-
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
+
+$ticket = new ticketsController(); 
 
 ?>  
 <html class = "jazz">
@@ -29,6 +31,7 @@ session_start();
           <table style="width:100%;text-align: center;">
               <tr>
                 <th>
+                <?php $ticketArr = $ticket->getDanceJazzTickets(1); ?>
                   Day 1 <br>
                   July 26,2020
                   <br>

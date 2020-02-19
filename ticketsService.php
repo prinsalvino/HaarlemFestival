@@ -26,12 +26,12 @@ class ticketsService extends DB {
        $eventArray= array();
        foreach ($data as $val) {
         // taking the specifically rqd columns from the whole result for the dance/jazz event
-            $date =  $val[2];
-            $time= $val[3];
-            $location= $val[4];
-            $special= $val[5];
-            $price= $val[6];
-            $stock= $val[7];
+            $date =  $val[2]; //0
+            $time= $val[3]; //1
+            $location= $val[4]; //2
+            $special= $val[5]; //3
+            $price= $val[6];  //4
+            $stock= $val[7]; //5
             array_push($eventArray,$date,$time,$location,$special,$price,$stock);
             return $eventArray;
         }
