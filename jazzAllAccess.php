@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
+
+$jazzTicket= new ticketsService();
 
 ?>  
 <html class="jazzD1">
@@ -24,9 +27,10 @@ session_start();
           <h1 class="inner" >
 
           <?php
-
+            
           if($_GET['day'] == 27)
             {
+              $jTicketArr=$jazzTicket->getJazzTicketInfo(20) ;
         ?> 
             <b> Day 2 <br>
             July 27,2020
@@ -37,6 +41,7 @@ session_start();
             }
             else if($_GET['day'] == 28)
             {
+              $jTicketArr=$jazzTicket->getJazzTicketInfo(21) ;
         ?> 
         <b> Day 3 <br>
             July 28,2020
@@ -46,6 +51,7 @@ session_start();
         }
         else 
         {
+          $jTicketArr=$jazzTicket->getJazzTicketInfo(19) ;
         ?> 
              <b> Day 1 <br>
             July 26,2020
@@ -71,8 +77,9 @@ session_start();
             <div class="row1">
               <div class="column1" >
                 <b> 
-                All-Access pass for this day:  <br>
-                €35,00 <div class="cart-quantity">
+                All-Access pass for <?php echo $jTicketArr[0]."\r ".$jTicketArr[7]; ?>:  <br>
+                €<?php echo $jTicketArr[4]; ?>
+                <div class="cart-quantity">
                       Qty: 
                     
                 <?php
@@ -118,9 +125,11 @@ session_start();
           <div class="columnTickets" style="width:50%; margin-top:2vw; display: inline-block;  float: right;  text-align: left;" >
           <div class="row1">
               <div class="column1" >
+              <?php $jTicketArr_AA3=$jazzTicket->getJazzTicketInfo(22) ; ?>
                 <b> 
                    All-Access pass for Thurs, Fri, Sat<br>
-                    €80,00   <div class="cart-quantity">
+                    €<?php echo $jTicketArr_AA3[4]; ?>  
+                    <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty22');">+</button>

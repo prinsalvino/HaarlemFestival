@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
+
+$jazzTicket= new ticketsService();
 
 ?>  
 <html class="jazzD4">
@@ -36,14 +39,18 @@ session_start();
       <div class="rowTickets">
           <div class="columnTickets"  >
           <b> 
-              Ruis Soundsystem  <br>
-              15:00-16:00 <br>
+          <?php $jTicketArr205=$jazzTicket->getJazzTicketInfo(205) ;  ?>
+                    <?php echo $jTicketArr205[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr205[1]; ?>
           </b>
           </div>
           <div class="columnTickets"  >
           <b> 
-              The Noordanians  <br>
-              18:00-19:00 <br>
+            <?php $jTicketArr207=$jazzTicket->getJazzTicketInfo(207) ;  ?>
+            <?php echo $jTicketArr207[3]; ?>
+            <br>
+            <?php echo $jTicketArr207[1]; ?>
           </b>
           </div>
       </div>
@@ -53,14 +60,18 @@ session_start();
       <div class="rowTickets">
           <div class="columnTickets"  >
           <b> 
-              Wicked Jazz Sounds  <br>
-              16:00-17:00 <br>
+            <?php $jTicketArr209=$jazzTicket->getJazzTicketInfo(209) ;  ?>
+            <?php echo $jTicketArr209[3]; ?>
+            <br>
+            <?php echo $jTicketArr209[1]; ?>
           </b>
           </div>
           <div class="columnTickets"  >
           <b> 
-              Gumbo Kings  <br>
-              19:00-20:00 <br>
+            <?php $jTicketArr206=$jazzTicket->getJazzTicketInfo(206) ;  ?>
+            <?php echo $jTicketArr206[3]; ?>
+            <br>
+            <?php echo $jTicketArr206[1]; ?>
           </b>
           </div>
       </div>
@@ -70,14 +81,18 @@ session_start();
       <div class="rowTickets">
           <div class="columnTickets"  >
           <b> 
-              Evolve  <br>
-              17:00-18:00 <br>
+            <?php $jTicketArr208=$jazzTicket->getJazzTicketInfo(208) ;  ?>
+            <?php echo $jTicketArr208[3]; ?>
+            <br>
+            <?php echo $jTicketArr208[1]; ?>
           </b>
           </div>
           <div class="columnTickets"  >
           <b> 
-              Gare du Nord  <br>
-              20:00-21:00<br>
+            <?php $jTicketArr210=$jazzTicket->getJazzTicketInfo(210) ;  ?>
+            <?php echo $jTicketArr210[3]; ?>
+            <br>
+            <?php echo $jTicketArr210[1]; ?>
           </b>
           </div>
       </div>

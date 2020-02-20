@@ -1,7 +1,9 @@
 <?php
-
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
+
+$jazzTicket= new ticketsService();
 
 ?>  
 <html class="jazzD1">
@@ -46,11 +48,16 @@ session_start();
           <div class="columnTickets"  >
             <div class="row1">
               <div class="column1" >
-                <b> 
-                    Gumbo Kings <br>
-                    18:00-19:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+                <b>                 
+                  <?php $jTicketArr1=$jazzTicket->getJazzTicketInfo(1) ;  ?>
+                  <?php echo $jTicketArr1[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr1[1]; ?>
+                    <br>
+                    <?php echo $jTicketArr1[6]; ?>
+                    <br>
+                    €<?php echo $jTicketArr1[4]; ?>  
+                    <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
@@ -73,10 +80,15 @@ session_start();
           <div class="row1">
               <div class="column1" >
                 <b> 
-                    Evolve <br>
-                    19:30-20:30 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+                    <?php $jTicketArr4=$jazzTicket->getJazzTicketInfo(4) ;  ?>
+                    <?php echo $jTicketArr4[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr4[1]; ?>
+                    <br>
+                    <?php echo $jTicketArr4[6]; ?>
+                    <br>
+                    €<?php echo $jTicketArr4[4]; ?>
+                <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty2');">+</button>
@@ -104,11 +116,16 @@ session_start();
           <div class="columnTickets"  >
             <div class="row1">
               <div class="column1" >
-                <b> 
-                    Ntjam Rosie <br>
-                    21:00-22:00 <br>
-                    Main Hall<br>
-                    €15   <div class="cart-quantity">
+              <b> 
+                    <?php $jTicketArr2=$jazzTicket->getJazzTicketInfo(2) ;  ?>
+                    <?php echo $jTicketArr2[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr2[1]; ?>
+                    <br>
+                    <?php echo $jTicketArr2[6]; ?>
+                    <br>
+                    €<?php echo $jTicketArr2[4]; ?>
+                <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty3');">+</button>
@@ -130,11 +147,16 @@ session_start();
           <div class="columnTickets"  >
           <div class="row1">
               <div class="column1" >
-                <b> 
-                  Wicked Jazz Sounds <br>
-                    18:00-19:00 <br>
-                    Second Hall<br>
-                    €10   <div class="cart-quantity">
+              <b> 
+                    <?php $jTicketArr5=$jazzTicket->getJazzTicketInfo(5) ;  ?>
+                    <?php echo $jTicketArr5[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr5[1]; ?>
+                    <br>
+                    <?php echo $jTicketArr5[6]; ?>
+                    <br>
+                    €<?php echo $jTicketArr5[4]; ?>
+                <div class="cart-quantity">
                          Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty4');">+</button>
@@ -162,11 +184,16 @@ session_start();
           <div class="columnTickets"  >
             <div class="row1">
               <div class="column1" >
-                <b> 
-                    Tom Thomsom Assemble <br>
-                    19:30-20:30 <br>
-                    Second Hall<br>
-                    €10   <div class="cart-quantity">
+              <b> 
+                    <?php $jTicketArr3=$jazzTicket->getJazzTicketInfo(3) ;  ?>
+                    <?php echo $jTicketArr3[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr3[1]; ?>
+                    <br>
+                    <?php echo $jTicketArr3[6]; ?>
+                    <br>
+                    €<?php echo $jTicketArr3[4]; ?>
+                <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty5');">+</button>
@@ -188,11 +215,16 @@ session_start();
           <div class="columnTickets"  >
           <div class="row1">
               <div class="column1" >
-                <b> 
-                    Jonna Frazer <br>
-                    21:00-22:00 <br>
-                    Second Hall<br>
-                    €10   <div class="cart-quantity">
+              <b> 
+                    <?php $jTicketArr6=$jazzTicket->getJazzTicketInfo(6) ;  ?>
+                    <?php echo $jTicketArr6[3]; ?>
+                    <br>
+                    <?php echo $jTicketArr6[1]; ?>
+                    <br>
+                    <?php echo $jTicketArr6[6]; ?>
+                    <br>
+                    €<?php echo $jTicketArr6[4]; ?>
+                <div class="cart-quantity">
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty6');">+</button>
