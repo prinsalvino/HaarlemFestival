@@ -15,8 +15,8 @@ class ticketsController
 		return $this->ticketsService->getDanceJazzTickets($t_id);
 	}
 
-	public function getJazz_eventHall_eventDay($t_id){  
-		return $this->ticketsService->getJazz_eventHall_eventDay($t_id);
+	public function getJazzTicketInfo($t_id){  
+		return $this->ticketsService->getJazzTicketInfo($t_id);
 	}
 }
 

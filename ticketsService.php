@@ -37,7 +37,8 @@ class ticketsService extends DB {
         }
     }
 
-    public function getJazz_eventHall_eventDay($t_id) {
+    public function getJazzTicketInfo($t_id) { 
+        //added _eventHall_eventDay to jazz tickets
         //getting the event hall and event day from table jazz tickets where ticket_id is a foreign key
         $sql = "SELECT event_hall,event_day FROM `Jazz tickets` WHERE ticket_id = ".$t_id.""; 
         $result = $this->connect()->query($sql); 
@@ -52,14 +53,15 @@ class ticketsService extends DB {
                 } 
             } 
 
-            $jazzArray= array();
+            $jazzArray= $this->getDanceJazzTickets($t_id) ;
             foreach ($data as $val) {
                 // taking the specifically rqd columns from the whole result for the dance/jazz event
                 $_eventHall= $val[0];  
                 $_eventDay= $val[1]; 
                 array_push($jazzArray,$_eventHall,$_eventDay);
-                return $jazzArray;
             }
+            return $jazzArray;
+            // return $data; 
             
     }
 
@@ -117,8 +119,8 @@ class ticketsService extends DB {
 }   
 
 $abc= new ticketsService();
-$arr=$abc->getDanceJazzTickets(1) ;  
-$arr=$abc->getJazz_eventHall_eventDay(3) ;  
-echo $arr[1];
-// print_r($arr);
+// // $arr=$abc->getDanceJazzTickets(1) ;  
+$arr=$abc->getJazzTicketInfo(210) ;  
+// echo $arr[1];
+print_r($arr);
  ?>
