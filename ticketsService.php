@@ -32,6 +32,7 @@ class ticketsService extends DB {
             $special= $val[5]; //3 //artist
             $price= $val[6];  //4
             $stock= $val[7]; //5
+            
             array_push($eventArray,$date,$time,$location,$special,$price,$stock);
             return $eventArray;
         }
@@ -65,6 +66,31 @@ class ticketsService extends DB {
             return $jazzArray;
             // return $data; 
             
+    }
+
+    public function stockAvalabilityJazz($stock, $AllAccess=null) 
+    {
+        if($stock>10 && $AllAccess!=null)
+        {
+        ?>
+            <p style="color:green;  "> 
+            <b> Available </b></p>
+        <?php
+        }
+        elseif($stock>50 && $AllAccess==null)
+        {
+        ?>
+            <p style="color:green;  "> 
+            <b> Available </b></p>
+        <?php
+        }
+        else{
+            ?>
+            <p style="color:red;  "> 
+            <b> Low in Stock </b></p>
+        <?php
+        }
+        
     }
 
     public function alterTicketDateFormat($date) //split the date into D M Y to display in a new format in the view

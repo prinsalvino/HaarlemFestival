@@ -61,15 +61,15 @@ $jazzTicket= new ticketsService();
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />
-                          
+                            <input id="qty1" type="text" value="1" name="J1" />                          
                           <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+              <!-- <p style="color:green;  "> 
+                <b> Available </b></p> -->
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr1[5]); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -91,16 +91,16 @@ $jazzTicket= new ticketsService();
                 <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty2');">+</button>
-                            <input id="qty2" type="text" value="1" name="J2" />
-                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty2');" />-</button>
+                          <button class="qtyBtn" onclick="increase_by_one('qty4');">+</button>
+                            <input id="qty4" type="text" value="1" name="J4" />                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty4');" />-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+              <!-- <p style="color:green;  "> 
+                <b> Available </b></p> -->
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr4[5]); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -128,16 +128,14 @@ $jazzTicket= new ticketsService();
                 <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty3');">+</button>
-                            <input id="qty3" type="text" value="1" name="J3" />
-                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty3');" />-</button>
+                          <button class="qtyBtn" onclick="increase_by_one('qty2');">+</button>
+                            <input id="qty2" type="text" value="1" name="J2" />                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty2');" />-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr2[5]); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -159,16 +157,14 @@ $jazzTicket= new ticketsService();
                 <div class="cart-quantity">
                          Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty4');">+</button>
-                            <input id="qty4" type="text" value="1" name="J4" />
-                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty4');" />-</button>
+                          <button class="qtyBtn" onclick="increase_by_one('qty5');">+</button>
+                            <input id="qty5" type="text" value="1" name="J5" />                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty5');" />-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr5[5]); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -196,16 +192,14 @@ $jazzTicket= new ticketsService();
                 <div class="cart-quantity">
                           Qty: 
                           
-                          <button class="qtyBtn" onclick="increase_by_one('qty5');">+</button>
-                            <input id="qty5" type="text" value="1" name="J5" />
-                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty5');" />-</button>
+                          <button class="qtyBtn" onclick="increase_by_one('qty3');">+</button>
+                            <input id="qty3" type="text" value="1" name="J3" />                          
+                          <button class="qtyBtn" onclick="decrease_by_one('qty3');" />-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr3[5]); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -228,15 +222,13 @@ $jazzTicket= new ticketsService();
                           Qty: 
                           
                           <button class="qtyBtn" onclick="increase_by_one('qty6');">+</button>
-                            <input id="qty6" type="text" value="1" name="J6" />
-                          
+                            <input id="qty6" type="text" value="1" name="J6" />                          
                           <button class="qtyBtn" onclick="decrease_by_one('qty6');" />-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr6[5]); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>

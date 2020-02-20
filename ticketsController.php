@@ -18,6 +18,10 @@ class ticketsController
 	public function getJazzTicketInfo($t_id){  
 		return $this->ticketsService->getJazzTicketInfo($t_id);
 	}
+
+	public function stockAvalabilityJazz($stock){  
+		 $this->ticketsService->stockAvalabilityJazz($stock);
+	}
 }
 
 ?>

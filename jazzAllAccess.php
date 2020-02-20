@@ -114,8 +114,7 @@ $jazzTicket= new ticketsService();
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <p style="color:green;  "> 
-                <b> Available </b></p>
+                <?php $jazzTicket->stockAvalabilityJazz($jTicketArr[5], 1); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
@@ -140,8 +139,7 @@ $jazzTicket= new ticketsService();
                 </b>
               </div>
               <div class="column1"  style=" float: right; text-align: left; width: auto;">
-                <p style="color:green; "> 
-                <b> Available </b></p>
+              <?php $jazzTicket->stockAvalabilityJazz($jTicketArr_AA3[5], 1); ?>
                     <br>
                     <button class="addTOcart" onclick="#" > Add to cart </button> 
               </div>
