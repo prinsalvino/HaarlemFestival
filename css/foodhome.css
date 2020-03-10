@@ -1,0 +1,41 @@
+.column1{
+    margin:auto;
+    height: 300px;
+	width: 650px;
+    background:#F0E6E6;
+    z-index: 2;
+}
+.column2{
+    margin-top: 70px;
+    margin-left: 10%;
+	height: 300px;
+	width: 600px;
+    z-index: 1;
+    background: #0B0A0A;
+    position: absolute;
+
+    
+}
+
+.restaurantname{
+    font-size: xx-large;
+    float: right;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.description{
+    font-size: large;
+    float: right;
+    padding-right: 10px;
+}
+.extradesc{
+    float: right;
+    padding-top: 15px;
+    font-size: large;
+    padding-right: 10px;;
+}
+.price{
+}
+.restimg{
+    float: left;
+}
