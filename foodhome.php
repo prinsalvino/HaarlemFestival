@@ -1,5 +1,5 @@
 	
-<HTML>
+<HTML class = "foodHome">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,37 +37,44 @@ $restaurants = $restaurant -> getAllRestaurant();
 
 echo "<br>";
 foreach($restaurants as $data){
-	$extradesc = $restaurant -> getExtraDescription($data['location']);
-	$times = $restaurant -> getSessionTime($data['location']);
+	$restoname = $data['location'];
+	$specialty = $data['special'];
+	$extradesc = $restaurant -> getExtraDescription($restoname);
+	$pictures = $restaurant -> getPicture($restoname);
+	$times = $restaurant -> getSessionTime($restoname);
 	$price = $data['price'];
 	$restoid = $data['ticket_id'];
-
-	$index = 1; ?>
+	
+	
+	foreach ($pictures as $data) {
+		$picture = $data['picture'];
+	}
+	 ?>
 	<div class = "container">
 	<div class = "row">
 		<div class = "column1"> 
 	
 			<a  href="fooddetail1.php">
-    		<img src="/imgrestaurant/rat.png" class = "restimg" alt="Ratatouile" height="300" width="300">
+    		<img src="/imgrestaurant/<?php echo $picture?>" class = "restimg" alt="<?php echo $picture?>" height="300" width="300">
     		</a>
 		
-			<h1 class="restaurantname"><?php echo $data['location'];?></h1>
-			<br>
+			<h1 class="restaurantname"><?php echo $restoname;?></h1>
+		
 	
-			<h2 class="description"><?php echo $data['special']; ?></h2>
-			<br>
+			<h2 class="description"><?php echo $specialty; ?></h2>
+			
 			<p class = "extradesc">
 			<?php
 			foreach($extradesc as $data){
 				echo "Telephone: "; echo $data['telephone']; echo "<br>"; echo "<br>";
 				echo "Email: "; echo $data['email']; echo "<br>"; echo "<br>";
-				echo "Address: "; echo $data['address']; echo "<br>"; echo "<br>"; 
+				echo "Address: "; echo $data['address']; echo "<br>"; 
 			}
-			</p>
 			?>
+			</p>
 
 		
-			 <?php echo $price;?>
+			<p class = "price">€ <?php echo $price;?></p>
 			<br>
 		</div>
 	
@@ -77,7 +84,7 @@ foreach($restaurants as $data){
 	
 			?>
 		
-				<button type = "submit" href= "#" class="btn btn-primary btn-sm" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
+				<button type = "submit" href= "#" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
 
 			<?php
 	}
