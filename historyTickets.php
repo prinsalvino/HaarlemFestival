@@ -69,7 +69,7 @@ if(isset($_GET["action"]))
 			<br /><br />
 			<?php
                 //Over here 30478239048902384092384902384023890
-				$query = "SELECT * FROM tickets";
+				$query = "SELECT * FROM tickets WHERE event='History'";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
