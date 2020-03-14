@@ -8,9 +8,8 @@ include "AutoLoaderIncl.php";
 <html class = "danceTicket">
 <head>
 <meta charset="utf-8"/>
-<link rel="stylesheet" type="text/css" href="css/dancestylesheet.css">
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
+<link rel="stylesheet" type="text/css" href="css/dancestylesheet.css">
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jazzScript.js" ></script>  
@@ -63,9 +62,9 @@ $ticketArr = $ticket->getDanceJazzTickets(39);
     <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
-                      <button onclick="decrease_by_one('qty1');" />-</button>  
+                      <button onclick="increase_by_one('Dqty1');">+</button>
+                      <input id="Dqty1" type="text" value="1" name="qty" />
+                      <button onclick="decrease_by_one('Dqty1');" />-</button>  
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
