@@ -189,4 +189,16 @@ table{
     cursor: pointer;
 }
 
+footer {
+    color: #1e1e1e;
+    font-size: 2vw;
+    background-image: url("../img/trasnparentBG.png");
+    /* background-color: #fff; */
+    padding-bottom: 0.vw;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
 
