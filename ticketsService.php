@@ -144,10 +144,21 @@ class ticketsService extends DB {
         return $newDate;
     }
 
+    public function Test()
+    {
+        // session_start();
+        // echo session_name();
+
+        $lifetime=5;
+        session_start();
+        setcookie(session_name(),session_id(),time()+$lifetime);
+        echo session_id();
+    }
+
 }   
 
-// $abc= new ticketsService();
-// $arr=$abc->getJazzTicketInfo(205) ;  
-// // echo $arr[1];
-// print_r($arr);
+$abc= new ticketsService();
+$abc->Test();
+
+
  ?>
