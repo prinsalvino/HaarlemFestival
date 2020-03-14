@@ -3,7 +3,7 @@
 
 include "AutoLoaderIncl.php";
 include "showErrors.php";
-include "sessionHelper.php";
+include "TempOrder_Controller.php";
 
 session_start();
 
@@ -19,14 +19,16 @@ if(true)
         //create a new cookie like this
         $lifetime=60; //5 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
         setcookie(session_name(),session_id(),time()+$lifetime);
-        echo session_id()."====";
-        echo time()+$lifetime."====".time();
+        echo session_id()."====".time();
+        $timeToExpire =time()+$lifetime;
 
-        //delete expired session tokens
-        $SeS = new sessionHelper();
-        $SeS->DeleteExpiredSessionToken();
+       
+        $SeS = new TempOrder_Controller();
+        $ses_id=session_id();
+        $SeS->DeleteExpiredSessionToken(); //delete expired session tokens
+        $SeS->InsertTempOrder($ses_id,101, 3, 10, $timeToExpire) ;//insert it into db table "temp_Order_item",
 
-        //insert it into db table "temp_Order_item",
+        
         //temp_id in the DB is session_id, 
     }
 
