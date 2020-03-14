@@ -200,8 +200,25 @@ tr:nth-child(even) {
 
 /* --------- Quantity button ----------- */
 
-#qty1 {
+#Dqty1,
+#Dqty2,
+#Dqty3,
+#Dqty4,
+#Dqty5,
+#Dqty6,
+#Dqty7,
+#Dqty8,
+#Dqty9,
+#Dqty10,
+#Dqty11,
+#Dqty12,
+#Dqty13,
+#Dqty14,
+#Dqty15,
+#Dqty16,
+#Dqty17, {
     width: 30px;
+	 background-color: #ccc;
 }
 
 
