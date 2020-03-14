@@ -1,29 +1,32 @@
 /* ----------- For background image for every page ------------*/
-.danceHomepage{
+
+.danceHomepage {
     background-image: url("../img/Dance_HomeBG.jpg");
     width: 100%;
     background-size: cover;
 }
 
-.danceTicket{
+.danceTicket {
     background-image: url("../img/Dance_TicketBG.jpg");
     width: 100%;
     background-size: cover;
 }
 
-.danceTimetable{
+.danceTimetable {
     background-image: url("../img/Dance_TimetableBG.jpg");
     width: 100%;
     background-size: cover;
 }
 
-.danceInfo{
+.danceInfo {
     background-image: url("../img/Dance_InfoBG.jpg");
     width: 100%;
     background-size: cover;
 }
 
+
 /* ---------- Link button to ticket page ---------- */
+
 .btnBuyTicket {
     background-color: #ccc;
     border: none;
@@ -32,8 +35,8 @@
     text-decoration: none;
     width: 400px;
     height: 45px;
-    margin-left:33%; 
-    margin-right:35%;
+    margin-left: 33%;
+    margin-right: 35%;
     align-content: center;
     opacity: 0.8;
     border-top-left-radius: 15px;
@@ -43,118 +46,133 @@
     text-align: center;
     font-size: 30px;
     color: #000000;
-  } 
+}
+
+
 /* ------- Homepage description box --------- */
 
-.danceDescriptionHome{
+.danceDescriptionHome {
     background-color: #ccc;
     margin-top: 105px;
     width: 700px;
-    margin-left:25%; 
-    margin-right:25%;
-    align-content:center;
+    margin-left: 25%;
+    margin-right: 25%;
+    align-content: center;
     opacity: 0.8;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    font-size: 30px ;
+    font-size: 30px;
 }
+
+
 /*---------- Description box location page ---------- */
-.danceLocation{
+
+.danceLocation {
     background-color: #ccc;
     margin-top: 0px;
     width: 700px;
-    margin-left:25%; 
-    margin-right:25%;
-    align-content:center;
+    margin-left: 25%;
+    margin-right: 25%;
+    align-content: center;
     opacity: 0.8;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    font-size: 20px ;
+    font-size: 20px;
     column-count: 2;
     column-gap: 20px;
 }
+
+
 /* ----------- Desciption bo faqs page ----------- */
-.danceFaqs{
+
+.danceFaqs {
     background-color: #ccc;
     margin-top: 0px;
     width: 900px;
     margin-left: 20%;
     margin-right: 20%;
-    align-content:center;
+    align-content: center;
     opacity: 0.8;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    font-size: 18px ;
+    font-size: 18px;
 }
+
+
 /* -------- Description box info page ------------ */
-.danceDescriptionInfo{
+
+.danceDescriptionInfo {
     background-color: #ccc;
     margin-top: 40px;
     width: 700px;
-    margin-left:25%; 
-    margin-right:25%;
-    align-content:center;
+    margin-left: 25%;
+    margin-right: 25%;
+    align-content: center;
     opacity: 0.8;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    font-size: 30px ;
+    font-size: 30px;
 }
+
+
 /* --------- Homepage buttons link to other pages ---------- */
-.danceHomeColumn{
+
+.danceHomeColumn {
     float: left;
     width: 23%;
-    background-color: 	#A9A9A9;
+    background-color: #A9A9A9;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
     margin: 2vw;
-    color:#000000;
+    color: #000000;
     border-style: solid;
     border-color: #000000;
     font-size: 33px;
 }
 
-
-
 .danceHomeRow:after {
     content: "";
     display: table;
     clear: both;
-} 
+}
+
 
 /* ----------- Navigation bar --------- */
-.danceTicketColumn{
+
+.danceTicketColumn {
     float: left;
     width: 20.5%;
     background-color: #ccc;
-    opacity: 0.9 ;
+    opacity: 0.9;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
     margin: 2vw;
-    color:yellow;
-    font-size: 30px ;
+    color: yellow;
+    font-size: 30px;
 }
-
-
 
 .danceTicketRow:after {
     content: "";
     display: table;
     clear: both;
-} 
+}
+
+
 /* ---------- Table for tickets and timetable ----------- */
-table{
+
+table {
     border-collapse: collapse;
     width: 70%;
     background-color: #ccc;
@@ -163,25 +181,32 @@ table{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    margin-left:15%; 
-    margin-right:15%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 10px;
-  }
-  
-  td, th {
+}
+
+td,
+th {
     text-align: left;
     padding: 12px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #000000 ;
+}
+
+tr:nth-child(even) {
+    background-color: #000000;
     color: red;
-  }
+}
+
+
 /* --------- Quantity button ----------- */
+
 #qty1 {
     width: 30px;
 }
+
+
 /* ---------- Add to cart button ----------- */
+
 .addTOcart {
     border-radius: 10px;
     border: 2px solid #000;
@@ -194,11 +219,12 @@ footer {
     font-size: 2vw;
     background-image: url("../img/trasnparentBG.png");
     /* background-color: #fff; */
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    padding-top: 0.5vw;
     padding-bottom: 0.vw;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 2.5rem;
 }
-
-
