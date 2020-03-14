@@ -26,6 +26,10 @@ class FoodController
 		return $this->FoodService->getExtraDescription($restoname); 
 
 	}
+	public function getPicture($restoname){
+		return $this->FoodService->getPicture($restoname); 
+
+	}
 
 }
 

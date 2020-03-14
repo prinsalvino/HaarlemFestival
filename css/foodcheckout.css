@@ -3,6 +3,11 @@
 *{
     font-family: "Georgia Pro", Times New Roman, Times, serif;
 }
+body{
+    background-image: url("../imgrestaurant/checkout.jpg");
+
+}
+
 
 form{
     margin-left: 25px;
@@ -36,6 +41,7 @@ form{
     margin-right: 100px;
     width: 400px;
     height: 50px;
+    margin-top: 20px;
 
     background-color: greenyellow;
 }
@@ -50,6 +56,9 @@ form{
     width: 400px;
     
 }
+.Time{
+    margin-left: 25px;
+}
 
 .feeexplain{
     font-size: 15px;
@@ -58,11 +67,46 @@ form{
 h1{
     margin-left: 25px;
 }
+.opening{
+    font-size: large;
+    font-weight: bold;
+}
 
-.Time{
-    margin-left: 25px;
+.TimeInput{
+    margin-left: 170px;
+    display: inline;
+
 }
 
 .comments{
     height: 100px;
+    margin-left: 130px;
+
+}
+
+.Date{
+    margin-left: 180px;
+}
+.inputName{
+    margin-left: 170px;
+
+}
+
+.Adult{
+    margin-left: 173px;
+
+
+}
+.Kids{
+    margin-left: 135px;
+
+}
+
+.teleNumber{
+    margin-left: 60px;
+
+}
+
+.CalculateReservation{
+    margin-top: 15px;
 }

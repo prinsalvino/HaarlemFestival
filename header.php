@@ -77,17 +77,13 @@
           <div class="columnLoginCart" style=" margin-top:1vw">
 
               <p> 
-
               <a class="cart" href="shoppingCart.php" style="text-decoration: none">
-
                 <img class=cartImg src="../img/shopping-cart.png" align="top" title="cart/basket" style="width:5vw; Height:5vw">
 
               </a>  
 
                 <br><br><br><br>
-
                   <b><a class="translink" href="shoppingCart.php"> NL/EN </a></b> 
-
               </p>
 
           </div>
