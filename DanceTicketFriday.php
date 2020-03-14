@@ -63,7 +63,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
+                      <input id="qty1" type="text" value="1" name="dance1" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
@@ -73,9 +73,9 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td>€ <?php echo $ticketNickyAfrojack[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
-                      <button onclick="decrease_by_one('qty1');" />-</button>
+                      <button onclick="increase_by_one('qty2');">+</button>
+                      <input id="qty2" type="text" value="1" name="dance2" />
+                      <button onclick="decrease_by_one('qty2');" />-</button>
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
@@ -84,9 +84,9 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td>€ <?php echo $ticketTiesto[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
-                      <button onclick="decrease_by_one('qty1');" />-</button>
+                      <button onclick="increase_by_one('qty3');">+</button>
+                      <input id="qty3" type="text" value="1" name="dance3" />
+                      <button onclick="decrease_by_one('qty3');" />-</button>
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
   </tr>
@@ -96,7 +96,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
+                      <input id="qty1" type="text" value="1" name="dance1" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
@@ -107,7 +107,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
+                      <input id="qty1" type="text" value="1" name="dance1" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
@@ -118,7 +118,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button onclick="increase_by_one('qty1');">+</button>
-                      <input id="qty1" type="text" value="1" name="qty" />
+                      <input id="qty1" type="text" value="1" name="dance1" />
                       <button onclick="decrease_by_one('qty1');" />-</button>
                     </div></td>
     <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
