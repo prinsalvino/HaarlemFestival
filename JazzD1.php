@@ -11,8 +11,7 @@ $jazzTicket= new ticketsService();
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="css/jazzstylesheet.css">
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script type="text/javascript" src="js/jazzScript.js" ></script>  
     <title>
             Jazz D1 26 July 2020 || Haarlem Festival

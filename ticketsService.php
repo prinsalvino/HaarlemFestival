@@ -144,10 +144,15 @@ class ticketsService extends DB {
         return $newDate;
     }
 
+    public function Test()
+    {
+//
+    }
+
 }   
 
-// $abc= new ticketsService();
-// $arr=$abc->getJazzTicketInfo(205) ;  
-// // echo $arr[1];
-// print_r($arr);
+$abc= new ticketsService();
+// $abc->Test();
+
+
  ?>

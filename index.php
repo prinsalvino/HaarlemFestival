@@ -14,6 +14,18 @@ session_start();
                 Home || Haarlem Festival
         </title> 
 </head>
+    <?php
+    if(($_GET['Logout']=="Successful"))
+    {
+        ?><script>
+            function myFunction() {
+            alert("You have been logged out");
+            }
+
+            myFunction();
+        </script>  
+        <?php
+    } ?>
   
 	<body> 
     <?php include "header.php";?> 
