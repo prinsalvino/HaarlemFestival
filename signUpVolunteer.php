@@ -113,7 +113,7 @@
                 {
                     ?> <script> myFunction("Age must be a Natural number!!(NO Negative or decimal numbers) Try again"); </script><?php
                 }
-            ?>
+                ?>
             </div>
 <!---------------------------------------------form ends------------------------------------------------------------------>
 
