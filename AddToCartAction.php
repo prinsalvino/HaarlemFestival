@@ -3,7 +3,6 @@
 
 include "AutoLoaderIncl.php";
 include "showErrors.php";
-include "TempOrder_Controller.php";
 
 session_start();
 
@@ -27,9 +26,7 @@ if(true)
         $ses_id=session_id();
         $SeS->DeleteExpiredSessionToken(); //delete expired session tokens
         $SeS->InsertTempOrder($ses_id,101, 3, 10, $timeToExpire) ;//insert it into db table "temp_Order_item",
-
-        
-        //temp_id in the DB is session_id, 
+        //$SeS->ExportTempOrder(101,"testEmail@live.in");
     }
 
     else{
