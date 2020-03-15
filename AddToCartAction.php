@@ -1,6 +1,5 @@
 <?php
 //AddToCartAction.php
-
 include "AutoLoaderIncl.php";
 include "showErrors.php";
 
@@ -25,24 +24,29 @@ if(true)
         $SeS = new TempOrder_Controller();
         $ses_id=session_id();
         $SeS->DeleteExpiredSessionToken(); //delete expired session tokens
-        $SeS->InsertTempOrder($ses_id,101, 3, 10, $timeToExpire) ;//insert it into db table "temp_Order_item",
-        //$SeS->ExportTempOrder(101,"testEmail@live.in");
+        $SeS->InsertTempOrder($ses_id,102, 3, 10, $timeToExpire) ;//insert it into db table "temp_Order_item",
+       // $SeS->ExportTempOrder(102,"testEmail2@live.in");
     }
 
     else{
-    //"user not logged in";
-    //else    
-    //insert into db table "order_Items", take customer email from the session, 
-    //until the order is payed, the Order stays null
+        //"user not logged in";
+        $Ord = new Order_Controller();
+        // $Ord->Test();
+        $customer_email=$_SESSION['email'];
+        $total_price = $qty * $tkt_price;
+        //insert into db table "order_Items", take customer email from the session
+        //until the order is payed, the Order stays null
+        $Ord->insertOrderItems($customer_email,$ticket_id,$qty,$total_price);
 
 
-    //what happens when a temp user logs in, 
-    //the order item data from the user with session_id is trasferred to the order_items table
 
-    //when the order is confirmed 
-    //order is inserted in the "Orders"
-    //insert the customer email from the  session, and total price we calculate, 
-    //the order id is AI, get Item_id from the DB and for each item id in Item_id(explode), enter order id in order items
+        //what happens when a temp user logs in, 
+        //the order item data from the user with session_id is trasferred to the order_items table
+
+        //when the order is confirmed 
+        //order is inserted in the "Orders"
+        //insert the customer email from the  session, and total price we calculate, 
+        //the order id is AI, get Item_id from the DB and for each item id in Item_id(explode), enter order id in order items
 
         }
 }
