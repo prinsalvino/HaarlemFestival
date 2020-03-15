@@ -80,8 +80,6 @@ if(isset($_GET["action"]))
 			<br />
 			<?php
 				//Over here 30478239048902384092384902384023890
-			$i = 0;
-			while(i != 1){	
 				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
 				else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
 				else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
@@ -109,7 +107,6 @@ if(isset($_GET["action"]))
 			<?php
 					}
 				}
-			}
 			?>
 	</body>
 </html>
