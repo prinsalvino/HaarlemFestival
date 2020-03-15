@@ -98,7 +98,7 @@
                 }
             </script> 
             <?php
-                if($_GET["SignUpError"]=="invalidEmailinvalidEmail"){
+                if($_GET["SignUpError"]=="invalidEmail"){
                     ?> <script> myFunction("Invalid email format!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="passwordShort")

@@ -74,17 +74,22 @@
             </a>
 
             <br><br>
+            <script>
+            function myFunction(text) {
+                alert(text);
+                }
+            </script> 
             <?php
                 if($_GET["SignUpError"]=="invalidEmail"){
-                    echo '<p style="color:red;"> Invalid email format !!<br> Try again </p>';
+                    ?> <script> myFunction("Invalid email format!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="passwordShort")
                 {
-                    echo '<p style="color:red;">  Your password contains less than 6 characters!!<br> Try again </p>';
+                    ?> <script> myFunction("Your password contains less than 6 characters!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="emailExists")
                 {
-                    echo '<p style="color:red;"> A user with the entered email already exists!!<br> Try again </p>';
+                    ?> <script> myFunction("A user with the entered email already exists!! Try again"); </script><?php
                 }
             ?>
 
