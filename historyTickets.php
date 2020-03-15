@@ -68,26 +68,38 @@ if(isset($_GET["action"]))
 	</head>
 	<body>
 		<br />
-		<div class="container">
+
+		<input type="submit" name="thursday" value="Thursday" style="border-radius: 25px; border:5px solid black; padding: 16px; margin-left: 10%" align="center" />
+		<input type="submit" name="friday" value="Friday" style="border-radius: 25px; border:5px solid black; padding: 16px; margin-left: 10%" align="center" />
+		<input type="submit" name="saturday" value="Saturday" style="border-radius: 25px; border:5px solid black; padding: 16px; margin-left: 10%" align="center" />
+		<input type="submit" name="sunday" value="Sunday" style="border-radius: 25px; border:5px solid black; padding: 16px; margin-left: 10%" align="center" />
+
+
+
+		<div class="container" style= "border:100px; border-radius: 25px; background-color:#333">
 			<br />
 			<?php
-                //Over here 30478239048902384092384902384023890
-				$query = "SELECT * FROM tickets WHERE event='History'";
+				//Over here 30478239048902384092384902384023890
+			$i = 0;
+			while(i != 1){	
+				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
+				else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
+				else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
+				else if(isset($_POST["sunday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-29'"; }
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
+
 			<div class="col-md-4">
 				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
+					<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px;" align="center">
 
-						<p><?php echo $row["date"]; ?></p>
+						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
 						<p><?php echo $row["special"]; ?></p>
                         <p>€<?php echo $row["price"]; ?></p>
-
-						<input type="text" name="quantity" value="1" class="form-control" />
 
 						<input type="submit" name="Select ticket" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
 
@@ -97,6 +109,7 @@ if(isset($_GET["action"]))
 			<?php
 					}
 				}
+			}
 			?>
 	</body>
 </html>
