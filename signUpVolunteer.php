@@ -9,10 +9,11 @@
  {
      header("Location: indexLogin.php"); //if user is logged in, redirect to indexLogin
  }
- else if(!$_GET['isSuperadmin']==1)
+ else if($_SESSION['volunteer_superadmin']!=1)
  {
     header("Location: dashboard.php"); 
  }
+ 
  ?>
  <!DOCTYPE html>
  <html class = "homepage"> 
@@ -69,44 +70,48 @@
             <label for="age" >Age</label>
                 <input style="font-size: 15px; width:30vw; float:right;"  type="number" id="email_address" class="fadeIn third" name="age" required >
                 <br><br>
-            <label for="isAdmin" >Give volunteer 'Admin' status ?<br> 1=yes  0=no  NO other values<br></label>
-                <input style="font-size: 15px; width:30vw; float:right; color:black" type="number" id="email_address" class="fadeIn third" name="isAdmin" placeholer="1=yes  0=no  NO other values" required >
+            <label for="isAdmin" >Give volunteer 'Admin' status ?<br> 1=yes  0=no  <br></label>
+                <select class="fadeIn third" name="isAdmin" style="font-size: 15px; width:30vw; float:right" required> 
+                <option value="0">0</option>
+                <option style="color:#1e1e1e;" value="1">1</option>
+                </select>
                 <br><br>  
-            <label for="isSuperadmin" >Give volunteer 'Super Admin' status ? <br> 1=yes  0=no  NO other values<br></label>
-                <input style="font-size: 15px; width:30vw; float:right; color:black" type="number" id="email_address" class="fadeIn third" name="isSuperadmin" placeholer="1=yes  0=no  NO other values" required >
+            <label for="isSuperadmin" >Give volunteer 'Super Admin' status ? <br> 1=yes  0=no<br></label>
+                <select class="fadeIn third" name="isSuperAdmin" style="font-size: 15px; width:30vw; float:right" required> 
+                <option value="0">0</option>
+                <option style="color:#1e1e1e;" value="1">1</option>
+                </select>
             <br><br><br>
-            <button class="btn btn-primary" type="submit" name="signUpVolunteer">
+            <button class="btn btn-primary" type="submit" name="signupVolunteer">
                 Sign Up
             </button>
+        </form>
             <br><br><br>
             <a href="dashboard.php" >
                 Back
             </a>
 
             <br><br>
+            <script>
+            function myFunction(text) {
+                alert(text);
+                }
+            </script> 
             <?php
-                if($_GET["SignUpError"]=="invalidEmail"){
-                    echo '<p style="color:red;"> Invalid email format !!<br> Try again </p>';
+                if($_GET["SignUpError"]=="invalidEmailinvalidEmail"){
+                    ?> <script> myFunction("Invalid email format!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="passwordShort")
                 {
-                    echo '<p style="color:red;">  Your password contains less than 6 characters!!<br> Try again </p>';
+                    ?> <script> myFunction("Your password contains less than 6 characters!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="emailExists")
                 {
-                    echo '<p style="color:red;"> A user with the entered email already exists!!<br> Try again </p>';
+                    ?> <script> myFunction("A user with the entered email already exists!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="ageNotNaturalNum")
                 {
-                    echo '<p style="color:red;"> Age must be a Natural number!!<br>(NO Negative or decimal numbers)<br> Try again </p>';
-                }
-                else if($_GET["SignUpError"]=="isAdminNotBool")
-                {
-                    echo '<p style="color:red;"> Insert either 0 or 1 for Admin Status!!<br> Try again </p>';
-                }
-                else if($_GET["SignUpError"]=="isSuperAdminNotBool")
-                {
-                    echo '<p style="color:red;"> Insert either 0 or 1 for Super Admin Status!!<br> Try again </p>';
+                    ?> <script> myFunction("Age must be a Natural number!!(NO Negative or decimal numbers) Try again"); </script><?php
                 }
             ?>
             </div>

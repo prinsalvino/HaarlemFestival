@@ -67,6 +67,7 @@
             <button type="submit" name="signUp">
                 Sign Up
             </button>
+        </form>
             <br><br>
             <a href="indexLogin.php" >
                 Already a user? Log in !!
