@@ -55,35 +55,41 @@
 <!-------------------------------------------form action------------------------------------------------------------------>
         <form action="insertUser.php?user=customer" method="POST"> 
             <label for="name" >Name</label><br>
-                <input style="width:30vw;" type="text" id="name" class="fadeIn first" name="name" required autofocus>
+                <input placeholder="enter your name " style="width:30vw;" type="text" id="name" class="fadeIn first" name="name" required autofocus>
             <br>
             <label for="email_address" >E-Mail Address</label><br>
-                <input style="width:30vw;" type="text" id="email_address" class="fadeIn second" name="email" required >
+                <input style="width:30vw;" placeholder="enter your email " type="text" id="email_address" class="fadeIn second" name="email" required >
             <br>
             <label for="password" class="lbl">Password</label><br>
-                    <input style="width:30vw;" type="password" id="password" class="fadeIn third" name="password" required>
+                    <input style="width:30vw;" placeholder="enter more that 6 characters" type="password" id="password" class="fadeIn third" name="password" required>
 
             <br><br>
             <button type="submit" name="signUp">
                 Sign Up
             </button>
+        </form>
             <br><br>
             <a href="indexLogin.php" >
                 Already a user? Log in !!
             </a>
 
             <br><br>
+            <script>
+            function myFunction(text) {
+                alert(text);
+                }
+            </script> 
             <?php
                 if($_GET["SignUpError"]=="invalidEmail"){
-                    echo '<p style="color:red;"> Invalid email format !!<br> Try again </p>';
+                    ?> <script> myFunction("Invalid email format!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="passwordShort")
                 {
-                    echo '<p style="color:red;">  Your password contains less than 6 characters!!<br> Try again </p>';
+                    ?> <script> myFunction("Your password contains less than 6 characters!! Try again"); </script><?php
                 }
                 else if($_GET["SignUpError"]=="emailExists")
                 {
-                    echo '<p style="color:red;"> A user with the entered email already exists!!<br> Try again </p>';
+                    ?> <script> myFunction("A user with the entered email already exists!! Try again"); </script><?php
                 }
             ?>
 

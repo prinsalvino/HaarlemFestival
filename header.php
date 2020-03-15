@@ -8,10 +8,11 @@
 
     </div>
 
+    
     <div class="headerColumn">
-
+    <a href="index.php" >
       <img src="../img/titlelogo.png" title="Haarlem festival" style="width:25.25vw; Height:8vw">
-
+    </a>
     </div>
 
     <div class="headerColumn" >      
