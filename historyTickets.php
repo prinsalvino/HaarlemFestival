@@ -80,10 +80,11 @@ if(isset($_GET["action"]))
 			<br />
 			<?php
 				//Over here 30478239048902384092384902384023890
-				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
-				else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
-				else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
-				else if(isset($_POST["sunday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-29'"; }
+				//if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
+				//else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
+				//else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
+				//else if(isset($_POST["sunday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-29'"; }
+				$query = "SELECT * FROM tickets WHERE event='History'";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
@@ -98,6 +99,9 @@ if(isset($_GET["action"]))
 						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
 						<p><?php echo $row["special"]; ?></p>
                         <p>€<?php echo $row["price"]; ?></p>
+						<input type="text" name="quantity" value="1" class="form-control" />
+
+
 
 						<input type="submit" name="Select ticket" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
 
