@@ -59,13 +59,13 @@
 <!-------------------------------------------form action------------------------------------------------------------------>
         <form action="insertVolunteer.php" method="POST" style="font-size: 10px;"> 
             <label for="name" >Name</label>
-                <input style="font-size: 15px; width:30vw; float:right;"  type="text" id="name" class="fadeIn first" name="name" required autofocus>
+                <input placeholder="enter your name " style="font-size: 15px; width:30vw; float:right;"  type="text" id="name" class="fadeIn first" name="name" required autofocus>
                 <br><br>
             <label for="email_address" >E-Mail Address</label>
-                <input style="font-size: 15px; width:30vw; float:right;"  type="email" id="email_address" class="fadeIn second" name="email" required >
+                <input placeholder="enter your email " style="font-size: 15px; width:30vw; float:right;"  type="email" id="email_address" class="fadeIn second" name="email" required >
                 <br><br>
             <label for="password" class="lbl">Password</label>
-                <input style="font-size: 15px; width:30vw; float:right;"  type="password" id="password" class="fadeIn third" name="password" required>
+                <input placeholder="enter more that 6 characters" style="font-size: 15px; width:30vw; float:right;"  type="password" id="password" class="fadeIn third" name="password" required>
             <br><br>
             <label for="age" >Age</label>
                 <input style="font-size: 15px; width:30vw; float:right;"  type="number" id="email_address" class="fadeIn third" name="age" required >
