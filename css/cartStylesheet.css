@@ -14,8 +14,8 @@
     background: #CCC;
     padding: 20px;
     /*t r b l*/
-    margin: 0px 5vw 10px 5vw;
-    opacity: 0.8;
+    margin: 0px 5vw 6vw 5vw;
+    opacity: 0.9;
     /* width: 200px;
     height: 150px; */
 }
@@ -54,11 +54,27 @@ p {
 /* Modal Content */
 
 .modal-content {
+    opacity: 1.0;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+a.modal-content {
+    color: #1E1E1E;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
 }
 
 
@@ -79,6 +95,6 @@ p {
 }
 
 footer {
-    position: relative;
-    padding-bottom: 0vw;
+    position: fixed;
+    padding-bottom: 0;
 }

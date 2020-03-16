@@ -12,7 +12,7 @@ if(true)
 {
     if (!isset($_SESSION['email'])) 
     {
-        //"user is logged in"
+        //"user is not logged in"
 
         //create a new cookie like this
         $lifetime=60; //5 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
@@ -29,7 +29,7 @@ if(true)
     }
 
     else{
-        //"user not logged in";
+        //"user logged in";
         $Ord = new Order_Controller();
         // $Ord->Test();
         $customer_email=$_SESSION['email'];

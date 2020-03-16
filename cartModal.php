@@ -1,14 +1,14 @@
 
 <div class="modalContainer">
     <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
+    <button id="myBtn">Proceed to payment</button>
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal" style="opacity: 1.0;">
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <p><a href="indexLogin.php">Login</a> or <a href="signUpCustomer.php">Sign up to continue</a></p>
         </div>
     </div> 
 </div>  
