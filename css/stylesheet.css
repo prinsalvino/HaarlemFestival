@@ -12,6 +12,14 @@
     background-size: cover;
 }
 
+.cart {
+    background-image: url("../img/cartBG.jpg");
+    /* Photo by Melissa from Pexels */
+    color: #FFF;
+    width: 100%;
+    background-size: cover;
+}
+
 .jazz {
     background-image: url("../img/jazzBG1.jpg");
     color: #1E1E1E;
