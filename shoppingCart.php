@@ -32,10 +32,13 @@ session_start();
             { ?> <center> <?php  include "cartModal.php"; ?>   </center>
         <?php 
         }
-        else{ ?>
-            <button onclick="window.location.href = 'index.php';">Proceed to payment</button> <?php } ?>
+        else{ 
+            $url="index.php";
+            ?>
+            <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php } ?>
 
             <p style="z-index:2"><b> 
+            <?php //echo $_SESSION['time']; ?>
 [21:58] Gremlin: Bruh why you takin' pictures of me?
 [21:59] Mӕds (Øverlord): you are a gob
 [21:59] Gremlin: Gob Grem Rat

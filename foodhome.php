@@ -49,6 +49,8 @@ foreach($restaurants as $data){
 	foreach ($pictures as $data) {
 		$picture = $data['picture'];
 	}
+
+	
 	 ?>
 	<div class = "container">
 	<div class = "row">
@@ -80,12 +82,12 @@ foreach($restaurants as $data){
 	
 		<div class = "column2">
 			<?php 
+			
 			foreach($times as $data){
-	
+				$url="timeToSes.php?time=".$data['time'];			
 			?>
-		
-				<button type = "submit" href= "#" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
-
+				
+				<button onClick = "window.location.href = '<?php echo $url; ?>';" id = "time" type = "submit" href= "#" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
 			<?php
 	}
 	?>
@@ -99,9 +101,14 @@ foreach($restaurants as $data){
 	echo "<br>";
 	echo "<br>";
 }
-
 	include ("footer.php");
-
-
 ?>
+<script>
+	function getTime(session, time) {
+		//$_SESSION["time"] = time;
+		session = time;
+		alert(session);
+	
+	}
+</script>
 </HTML>
