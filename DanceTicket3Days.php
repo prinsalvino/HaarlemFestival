@@ -62,11 +62,11 @@ $ticketArr = $ticket->getDanceJazzTickets(39);
     <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button onclick="increase_by_one('Dqty1');">+</button>
-                      <input id="Dqty1" type="text" value="1" name="qty" />
-                      <button onclick="decrease_by_one('Dqty1');" />-</button>  
+                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty1');">+</button>
+                      <input id="Dqty1" type="text" value="1" name="dance1" />
+                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty1');" />-</button>  
                     </div></td>
-    <td> <button class="addTOcart" onclick="#" > Add to cart </button> </td>
+    <td> <input type="submit" name ="add_to_cart" style = "margin-top:5px" class= "btn-addToCart" value = "Add To Cart" />
   </tr>
   <tr>
     <td>      </td>
