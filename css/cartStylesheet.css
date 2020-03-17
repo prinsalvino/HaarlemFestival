@@ -1,0 +1,100 @@
+.cartBody-h1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    /*t r b l*/
+    margin: 5px 5vw 0.5px 5vw;
+    color: #FFF;
+    /* width: 200px;
+    height: 150px; */
+}
+
+.cartBody {
+    border-radius: 25px;
+    background: #CCC;
+    padding: 20px;
+    /*t r b l*/
+    margin: 0px 5vw 6vw 5vw;
+    opacity: 0.9;
+    /* width: 200px;
+    height: 150px; */
+}
+
+p {
+    color: #1E1E1E;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    opacity: 1.0;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+a.modal-content {
+    color: #1E1E1E;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    padding-bottom: 0;
+}

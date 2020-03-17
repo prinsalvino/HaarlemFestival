@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <header>
 
   <div class="headerRow">
@@ -8,10 +9,11 @@
 
     </div>
 
+    
     <div class="headerColumn">
-
+    <a href="index.php" >
       <img src="../img/titlelogo.png" title="Haarlem festival" style="width:25.25vw; Height:8vw">
-
+    </a>
     </div>
 
     <div class="headerColumn" >      
@@ -77,13 +79,17 @@
           <div class="columnLoginCart" style=" margin-top:1vw">
 
               <p> 
+
               <a class="cart" href="shoppingCart.php" style="text-decoration: none">
+
                 <img class=cartImg src="../img/shopping-cart.png" align="top" title="cart/basket" style="width:5vw; Height:5vw">
 
               </a>  
 
                 <br><br><br><br>
+
                   <b><a class="translink" href="shoppingCart.php"> NL/EN </a></b> 
+
               </p>
 
           </div>

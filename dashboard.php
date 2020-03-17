@@ -105,11 +105,20 @@ session_start();
                     For example, a bill-to address
                 </div>
             </div>
-
-        
-
-        
-    
+            <script>
+            function myFunction(text) {
+                alert(text);
+                }
+            </script>
+            <?php
+            if(isset($_GET["V_SignUp_Successful"]))
+                {
+                //    $getName = $_GET["V_SignUp_Successful"];
+                //     $msg="Volunteer ".$getName." is signed up successfully";
+                ?>
+                     <script> myFunction("Volunteer is signed up successfully"); </script><?php
+                }
+            ?>
     
     </section>
     

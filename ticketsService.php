@@ -146,19 +146,13 @@ class ticketsService extends DB {
 
     public function Test()
     {
-        // session_start();
-        // echo session_name();
-
-        $lifetime=5;
-        session_start();
-        setcookie(session_name(),session_id(),time()+$lifetime);
-        echo session_id();
+//
     }
 
 }   
 
 $abc= new ticketsService();
-$abc->Test();
+// $abc->Test();
 
 
  ?>

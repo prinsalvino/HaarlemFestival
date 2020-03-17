@@ -12,6 +12,14 @@
     background-size: cover;
 }
 
+.cart {
+    background-image: url("../img/cartBG.jpg");
+    /* Photo by Melissa from Pexels */
+    color: #1E1E1E;
+    width: 100%;
+    background-size: cover;
+}
+
 .jazz {
     background-image: url("../img/jazzBG1.jpg");
     color: #1E1E1E;
@@ -156,11 +164,11 @@ footer {
     background-image: url("../img/trasnparentBG.png");
     /* background-color: #fff; */
     padding-top: 0.5vw;
-    padding-bottom: 0.vw;
+    padding-bottom: 0.5vw;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
+    height: 3rem;
 }
 
 .clearfix {

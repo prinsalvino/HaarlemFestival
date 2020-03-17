@@ -10,47 +10,80 @@ session_start();
 
 ?> 
 <!DOCTYPE html>
- <html> 
+ <html class = "homepage"> 
  <head> 
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="myStylesheet.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 		<title>
 			Login || Haarlem Festival
         </title> 
   
-	<body> 
-        
+	<body style="background-color:transparent;"> 
+
+    <header>
+
+        <div class="headerRow" style="margin-bottom: 1vw;padding-bottom: 0.5vw; padding-right: 0.5vw">
+
+            <div class="headerColumn">
+
+            <img src="../img/BetterLogo.png" title="Haarlem festival" style="width:8vw; Height:8vw; margin-left:1vw">
+
+            </div>
+
+            <div class="headerColumn" >
+            <a href="index.php" >
+            <img src="../img/titlelogo.png" title="Haarlem festival" style="width:25.25vw; Height:8vw; margin-left:4vw">
+            </a>
+            </div>
+
+            <div class="headerColumn" >
+
+            <img src="../img/BetterLogo.png" title="Haarlem festival" style="float:right; width:8vw; Height:8vw; margin-left:1vw">
+
+            </div>
+
+        </div>    
+
+    </header>
+<div style="text-align: center">        
 	<h1>Login</h1>
                          
         <!-------------------------------------------form action-------------------------------------------------------------->
-        <form action="login.php" method="POST"> <!--Email-->
-            <label for="email_address" >E-Mail Address</label>
-                <input type="text" id="email_address" class="form-control" name="email" required autofocus>
-            
-        
-            <!--password-->
-            <label for="password" class="lbl">Password</label>
-                    <input type="password" id="password" class="form-control" name="password" required>
-            
-        
-            <br>
-            <input type="checkbox" name="remember_me" id="remember_me">
-                    Remember me 
-                    <br>
-        
-            <button type="submit" name="login">
+
+<div class=" fadeInDown">
+  <div >
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    <form action="login.php" method="POST">
+    <label for="email_address" >E-Mail Address</label><br>
+      <input style="width:30vw; " type="text" id="login" class="fadeIn second" name="email" placeholder="e mail" required autofocus>
+      <br>
+      <label for="password" class="lbl">Password</label><br>
+      <input  style="width:30vw;" type="text" id="password" class="fadeIn third" name="password"  placeholder="password" required>
+      <br><br>
+      <button type="submit" name="login">
                 Login
             </button>
-            <!-- other options -->
-            <br><br>                
-            <!-- <a href="index.pwdreset.php" >
-                Forgot Your Password?
-            </a>
-            <br><br> -->
-            <a href="signUpCustomer.php" >
-                Not a user? Sign Up now !!
-            </a>
-
+    </form>
+    <br><br>
+    <!-- Sign up -->
+    <div id="formFooter">
+    <a href="signUpCustomer.php" >
+        Not a user? Sign Up now !!
+    </a>
+    </div>
+    </div>
+  </div>
+</div>
             <?php
                 if($_GET["Login"]=="Unsuccessful"){
                     echo '<p style="color:red;"> Username or Password is invalid !!<br> Try again </p>';

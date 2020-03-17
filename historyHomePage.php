@@ -42,7 +42,9 @@
 		<img src="img/poort.jpg" alt="poort" align="middle"; class="poort">
 		</div>
 	</body>
+	
 	<?php
 	include ("footer.php");
 	?>
+	
 </html>
