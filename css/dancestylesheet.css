@@ -200,31 +200,20 @@ tr:nth-child(even) {
 
 /* --------- Quantity button ----------- */
 
-#Dqty1,
-#Dqty2,
-#Dqty3,
-#Dqty4,
-#Dqty5,
-#Dqty6,
-#Dqty7,
-#Dqty8,
-#Dqty9,
-#Dqty10,
-#Dqty11,
-#Dqty12,
-#Dqty13,
-#Dqty14,
-#Dqty15,
-#Dqty16,
-#Dqty17, {
+.DQtyBtn {
+	background-color: #ccc;
+    color: #000;
+    border-radius: 10px;
+    border: 2px solid #000;
     width: 2vw;
-	 background-color: #ccc;
+    font-weight: bold;
+	cursor: pointer; 
 }
 
 
 /* ---------- Add to cart button ----------- */
 
-.addTOcart {
+.btn-addToCart {
     border-radius: 10px;
     border: 2px solid #000;
     padding: 10px;
