@@ -55,22 +55,27 @@ $jazzTicket= new ticketsService();
                     <br>
                     <?php echo $jTicketArr1[6]; ?>
                     <br>
-                    €<?php echo $jTicketArr1[4]; ?>  
+                    €<?php echo $jTicketArr1[4];   
+
+                     //$btn4= new jazzbtns(); 
+                     //$btn4->addToCartBtn(4);   ?><!--test -->
+
                     <div class="cart-quantity">
-                          Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
-                            <input id="qty1" type="text" value="1" name="J1" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
-                        </div>
+                      Qty: 
+                      <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                        <input id="qty1" type="text" value="1" name="J1" />                          
+                      <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                      
+                    </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
-              <!-- <p style="color:green;  "> 
-                <b> Available </b></p> -->
                 <?php $jazzTicket->stockAvalabilityJazz($jTicketArr1[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty1send" type="text" name="qty1" value="1" >                     
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form>
               </div>
             </div>
           </div>

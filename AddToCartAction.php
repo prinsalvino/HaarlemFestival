@@ -25,6 +25,7 @@ if(true)
         $ses_id=session_id();
         $SeS->DeleteExpiredSessionToken(); //delete expired session tokens
         $SeS->InsertTempOrder($ses_id,102, 3, 10, $timeToExpire) ;//insert it into db table "temp_Order_item",
+        echo "\nQuantity: ".$_POST["qty1"];
        // $SeS->ExportTempOrder(102,"testEmail2@live.in");
     }
 
