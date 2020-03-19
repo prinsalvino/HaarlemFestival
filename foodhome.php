@@ -45,11 +45,11 @@ foreach($restaurants as $data){
 	$price = $data['price'];
 	$restoid = $data['ticket_id'];
 	
-	
 	foreach ($pictures as $data) {
 		$picture = $data['picture'];
 	}
-	 ?>
+	?>
+
 	<div class = "container">
 	<div class = "row">
 		<div class = "column1"> 
@@ -80,15 +80,15 @@ foreach($restaurants as $data){
 	
 		<div class = "column2">
 			<?php 
+			
 			foreach($times as $data){
-	
+				$url="timeToSes.php?time=".$data['time']. "&&restoname=".$restoname. "&&price=".$price;			
 			?>
-		
-				<button type = "submit" href= "#" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
-
+				
+				<button onClick = "window.location.href = '<?php echo $url; ?>';" id = "time" type = "submit" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
 			<?php
-	}
-	?>
+			}
+			?>
 		</div>
 	</div>
 	</div>
@@ -99,9 +99,6 @@ foreach($restaurants as $data){
 	echo "<br>";
 	echo "<br>";
 }
-
 	include ("footer.php");
-
-
 ?>
 </HTML>

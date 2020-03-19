@@ -1,4 +1,4 @@
-<HTML>
+<HTML >
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-
+<body onload = "onLoad()">
 <?php
 
 session_start();
@@ -28,7 +28,7 @@ error_reporting(E_ALL);*/
 
 include ("header.php");
 ?>
-<h1 class = "opening"> Reserve Your Table!</h1> </br>
+<h1 class = "opening"> Reserve Your Table at <?php echo $_SESSION['restoname'];?>!</h1> </br>
 
 
     <div class="row">
@@ -52,7 +52,7 @@ include ("header.php");
 
             <form action="/action_page.php">
                 Adult: 		
-                <select id = "selectboxAdult" name="Adult" class = "Adult" onchange = "calculateAdult()">
+                <select id = "selectboxAdult" name="Adult" class = "Adult" onchange = "calculateAll()">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -62,7 +62,7 @@ include ("header.php");
             <br>
             <form action="/action_page.php">
                 Kids(<12): 		
-                <select id = "selectboxKids" onchange = "calculateKids()" name="Kids" class = "Kids">
+                <select id = "selectboxKids" onchange = "calculateAll()" name="Kids" class = "Kids">
                     <option id = "0" value="0">0</option>
                     <option id = "1" value="1">1</option>
                     <option id = "2" value="2">2</option>
@@ -72,7 +72,7 @@ include ("header.php");
             </form>
             <br/>
 
-            <pre class = "Time">Time:                  18:00</pre>
+            <pre class = "Time">Time:                  <?php echo $_SESSION["time"];?></pre>
 
             <form class = "TelNumber" action="/action_page.php">
                 Telephone Number:   	<input type="text" class = "telenumber" name="telnum" value=""><br>
@@ -92,7 +92,7 @@ include ("header.php");
                 <br>
                 <br>
 
-              <p class = "TotalPrice"> € {Price}</p>
+              <p class = "TotalPrice" id = "totalPrice"> € {Price}</p>
             </div>
 
            
@@ -102,7 +102,7 @@ include ("header.php");
                 <p class = "feeexplain">*A reservation fee of €10,- per person. This fee will be deducted <br>
                 from the final check on visiting the restaurant.</p>
 
-                <p>Reservation Fee  € {fee}</p>
+                <p id = "reservationFee">Reservation Fee  € {fee}</p>
 
             </div>
 
@@ -116,21 +116,62 @@ include ("header.php");
 	include ("footer.php");
 ?>
 <script>
+
+function  calculateAll() {
+    var priceKids = calculateKids();
+    var priceAdult = calculateAdult();
+    calculateReservation();
+
+    var total = priceKids + priceAdult;
+
+    document.getElementById("totalPrice").innerHTML =  "Total Price: € " + total;
+
+}
+
     //can also just pass the value from the parameter
 function calculateKids() {
-
     var selectBox = document.getElementById("selectboxKids");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    document.getElementById("priceKids").innerHTML = "Kids(<12) " + selectedValue + " € " + "price";
+    var price = selectedValue * 10;
+
+    document.getElementById("priceKids").innerHTML = "Kids(<12): " + selectedValue + " € " + price;
+
+    return price;
 
 }
 
 function calculateAdult() {
 
-var selectBox = document.getElementById("selectboxAdult");
-var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-document.getElementById("priceAdult").innerHTML = "Adult  " + selectedValue + " € " + "price";
+    var selectBox = document.getElementById("selectboxAdult");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    var price = selectedValue * 10;
+    
+
+    document.getElementById("priceAdult").innerHTML = "Adult:  " + selectedValue + " € " + price;
+
+    return price;
+    
 
 }
+
+function onLoad(){
+    calculateAll();
+    calculateReservation();
+}
+
+function calculateReservation() {
+    var selectBoxAdult = document.getElementById("selectboxAdult");
+    var selectBoxKids = document.getElementById("selectboxKids");
+
+    var valueAdult =  parseInt(selectBoxAdult.options[selectBoxAdult.selectedIndex].value);
+    var valueKids =  parseInt(selectBoxKids.options[selectBoxKids.selectedIndex].value);
+
+    var valueTotal = (valueAdult + valueKids) * 10;
+
+
+    document.getElementById("reservationFee").innerHTML = "Reservation Fee  € " + valueTotal;
+}
 </script>
+</body>
+
 </HTML>
