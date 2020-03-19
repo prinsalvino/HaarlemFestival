@@ -10,9 +10,9 @@ class Order_Controller  {
 		$this->_OrderService = new OrderService();
     }
 
-    public function insertOrderItems($customer_email,$ticket_id,$qty,$total_price)
+    public function insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price)
     {
-        $this->_OrderService->insertOrderItems($customer_email,$ticket_id,$qty,$total_price);
+        $this->_OrderService->insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price);
     }
 
     public function Test()

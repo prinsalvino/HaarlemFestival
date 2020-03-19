@@ -15,17 +15,9 @@ function decrease_by_one(field) {
     }
 }
 
-function getInputValue(input_ID) {
-    var inputValue = document.getElementById(input_ID).value;
-    // return inputValue;
-    document.write(inputValue);
+function displayAlert() {
+    alert("Ticket added to cart");
 }
-
-
-function getInputValue2(input_ID, post_input_ID) {
-    var inputValue = document.getElementById(input_ID).value;
-    var qtySend = document.getElementById(post_input_ID);
-    qtySend.setAttribute('value', inputValue);
-
-    // return inputValue;
-}
+// function displayAlert(artist_name) {
+//     alert("Ticket for " + artist_name + " added to cart");
+// }
