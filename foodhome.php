@@ -101,4 +101,12 @@ foreach($restaurants as $data){
 }
 	include ("footer.php");
 ?>
+<script>
+	function getTime(session, time) {
+		//$_SESSION["time"] = time;
+		session = time;
+		alert(session);
+	
+	}
+</script>
 </HTML>

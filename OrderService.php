@@ -5,9 +5,10 @@ include "showErrors.php";
 
 class OrderService extends DB {
     
-    public function insertOrderItems($customer_email,$ticket_id,$qty,$total_price)
+    public function insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price)
     {
         try {
+            $total_price = $qty * $tkt_price;
            //insert into order_items
             $stmt = $this->connect()->prepare
             ("INSERT INTO `order_Items`(`customer_email`,`ticket_id`,`qty`,`total_price`) VALUES (?,?,?,?) ;");
