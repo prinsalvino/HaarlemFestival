@@ -71,7 +71,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
           <input id="Dqty2send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="1" >
+          <input type="hidden" name="ticket_id" value="24" >
           <input type="hidden" name="tkt_price" value="<?php echo $ticketsAllArtistsFri[4]; ?>" >
           <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
           <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
@@ -88,7 +88,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
           <input id="Dqty3send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="1" >
+          <input type="hidden" name="ticket_id" value="25" >
           <input type="hidden" name="tkt_price" value="<?php echo $ticketNickyAfrojack[4]; ?>" >
           <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
           <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
@@ -105,7 +105,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
           <input id="Dqty4send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="1" >
+          <input type="hidden" name="ticket_id" value="26" >
           <input type="hidden" name="tkt_price" value="<?php echo $ticketTiesto[4];  ?>" >
           <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
           <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
@@ -122,7 +122,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
           <input id="Dqty5send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="1" >
+          <input type="hidden" name="ticket_id" value="27" >
           <input type="hidden" name="tkt_price" value="<?php echo $ticketHardwell[4];  ?>" >
           <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
           <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
@@ -139,7 +139,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
           <input id="Dqty6send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="1" >
+          <input type="hidden" name="ticket_id" value="28" >
           <input type="hidden" name="tkt_price" value="<?php echo $ticketArmin[4]; ?>" >
           <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
           <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
@@ -156,7 +156,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
           <input id="Dqty7send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="1" >
+          <input type="hidden" name="ticket_id" value="29" >
           <input type="hidden" name="tkt_price" value="<?php echo$ticketMartin[4]; ?>" >
           <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
           <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
