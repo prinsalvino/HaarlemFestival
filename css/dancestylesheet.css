@@ -221,6 +221,29 @@ tr:nth-child(even) {
     cursor: pointer;
 }
 
+
+#Dqty1,
+#Dqty2,
+#Dqty3,
+#Dqty4,
+#Dqty5,
+#Dqty6,
+#Dqty7,
+#Dqty8,
+#Dqty9,
+#Dqty10,
+#Dqty11,
+#Dqty12,
+#Dqty13,
+#Dqty14,
+#Dqty15,
+#Dqty16,
+#Dqty17
+{
+    width: 2vw;
+    background-color: #ccc;
+}
+
 footer {
     color: #1e1e1e;
     font-size: 2vw;
