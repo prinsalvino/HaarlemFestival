@@ -22,7 +22,6 @@ if (isset($_POST["login"]))
     if($users->checkUserExistence($email, $password)==TRUE)
     {            
         $_SESSION['email']=$email;
-        $_SESSION['password']=$password;
 
         if($users->verifyUserType($email) == TRUE) //if the user is a customer it returns TRUE
         {
@@ -31,7 +30,15 @@ if (isset($_POST["login"]))
         else{
             $_SESSION['userType'] = "volunteer";
         }
-        header("location: postLogin.php?Login=Successful"); //to go postLogin.php where the user is redirected further according to their roles
+
+        if($_GET["tempUser"]=="login") //if the user is coming from shopping cart pass the get var tempUser
+        {
+            $ses_id= $_GET["ses_id"];
+            header("location: postLogin.php?Login=Successful&tempUser=login&ses_id=".$ses_id.""); 
+        }
+        else{
+            header("location: postLogin.php?Login=Successful"); //to go postLogin.php where the user is redirected further according to their roles
+        }
     }
     else
     {

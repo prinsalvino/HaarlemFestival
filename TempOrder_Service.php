@@ -13,10 +13,16 @@ class TempOrder_Service extends OrderService {
         try {
             $ExStaus="Session Active";
             $total_price = $qty * $tkt_price;
+
+            $stmtDel = $this->connect()->prepare  //deleting duplicate orders
+            ("DELETE FROM `temp_Order_item` WHERE `ticket_id` = ? && `ExStaus` = ? && `temp_id` = ? ;");
+            $stmtDel->bind_param("iss",$ticket_id,$ExStaus,$session_id );
+            $stmtDel->execute();
+            
             $stmt = $this->connect()->prepare
             ("INSERT INTO `temp_Order_item`(`temp_id`, `ticket_id`, `qty`, `total_price`, `Expire_Session`, `ExStaus`) VALUES (?,?,?,?,?,?) ;");
             $stmt->bind_param("siiiis",$session_id,$ticket_id,$qty, $total_price,$Expire_Session,$ExStaus );
-            // set parameters and execute
+
             $stmt->execute();
         }
         catch (Exception $e) {
@@ -24,9 +30,10 @@ class TempOrder_Service extends OrderService {
         }
     }
 
-    public function getTempOrder($t_id) 
+    public function getTempOrder($t_id,$ses_id) 
     { 
-        $sql = "SELECT * FROM `temp_Order_item` WHERE ticket_id = ".$t_id." && ExStaus = 'Session Active' "; 
+        
+        $sql = "SELECT * FROM `temp_Order_item` WHERE ticket_id = ".$t_id." && ExStaus = 'Session Active' && temp_id = '".$ses_id."' "; 
         $result = $this->connect()->query($sql); 
         $this->closeCon();
 
@@ -53,28 +60,34 @@ class TempOrder_Service extends OrderService {
            
     }
 
-    public function ExportTempOrder($ticket_id,$customer_email)
+    public function ExportTempOrder($ticket_id,$customer_email,$ses_id)
     {
          try {
             //get values from the temp table
-            $temp_order=$this->getTempOrder($ticket_id); //arrray
+            $temp_order=$this->getTempOrder($ticket_id,$ses_id); //array
+            $tkt_price = $temp_order[2]/$temp_order[1]; //calculation actual price as the total price will be don again while inserting in the order items
             $_OrderService =  new OrderService();
             //insert into order_items
-            $_OrderService->insertOrderItems($customer_email,$temp_order[0],$temp_order[1],$temp_order[2] );          
+            $_OrderService->insertOrderItems($customer_email,$temp_order[0],$temp_order[1],$tkt_price );  
+            
+            $stmtDel = $this->connect()->prepare  //deleting temporary orders
+            ("DELETE FROM `temp_Order_item` WHERE `temp_id` = ? ;");
+            $stmtDel->bind_param("s",$ses_id );
+            $stmtDel->execute();
         }
         catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
     }
 
-    public function DeleteExpiredSessionToken() //delete entries from DB where session token has expired
+    public function DeleteExpiredSessionToken($session_id) //delete entries from DB where session token has expired
     {
         try
         {
             $conn=$this->connect();
             $currentDate = date("U");
-            //$sql = "DELETE FROM `temp_Order_item`  WHERE  Expire_Session <  ".$currentDate." ;";
-            $sql = "UPDATE `temp_Order_item` SET `ExStaus`='Session Expired' WHERE  Expire_Session <  ".$currentDate." ;";
+            $sql = "DELETE FROM `temp_Order_item`  WHERE  Expire_Session <  ".$currentDate." && `temp_id` != '".$session_id."' ;";
+            //$sql = "UPDATE `temp_Order_item` SET `ExStaus`='Session Expired' WHERE  Expire_Session <  ".$currentDate." ;";
             $query = mysqli_query($conn,$sql);
         }
         catch (mysqli_sql_exception $e)
@@ -87,6 +100,6 @@ class TempOrder_Service extends OrderService {
 }
 
 // $abc = new TempOrder_Service;
-// print_r($abc->getTempOrder(101));
+// print_r($abc->getTempOrder(1,"o5e9btqlfr0ggvevvnsq") );
 // $temp_order=$abc->getTempOrder(101);
 // echo $temp_order[0]."--".$temp_order[1]."--".$temp_order[2];

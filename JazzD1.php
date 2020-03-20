@@ -67,9 +67,9 @@ $jazzTicket= new ticketsService();
 
                     <div class="cart-quantity">
                       Qty: 
-                      <button class="qtyBtn" onclick="increase_by_one('qty1');">+</button>
+                      <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send');">+</button>
                         <input id="qty1" type="text" value="1" name="J1" />                          
-                      <button class="qtyBtn" onclick="decrease_by_one('qty1');" />-</button>
+                      <button class="qtyBtn" onclick="decrease_by_one('qty1','qty1send');" />-</button>
                       
                     </div>
                 </b>
@@ -78,7 +78,7 @@ $jazzTicket= new ticketsService();
                 <?php $jazzTicket->stockAvalabilityJazz($jTicketArr1[5]); ?>
                     <br>
                     <form action="AddToCartAction.php" method="POST">                     
-                      <input id="qty1send" type="hidden" name="qty1" value="1" >  <!--actual field that send qty via post-->
+                      <input id="qty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
                       <input type="hidden" name="ticket_id" value="1" >
                       <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr1[4]; ?>" >
                       <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>

@@ -1,6 +1,9 @@
 <?php  
 declare(strict_types=1);
-session_start();
+include "AutoLoaderIncl.php";
+// include "showErrors.php";
+// session_start();
+
 ?> 
     
 <!DOCTYPE html>
@@ -28,49 +31,45 @@ session_start();
 
         <div class="cartBody">
         <?php 
+            $ses_id="";
             if(!isset($_SESSION['email'])) 
-            { ?> <center> <?php  include "cartModal.php"; ?>   </center>
-        <?php 
-        }
-        else{ 
+            {   $ses_id=session_id();
+                ?> <center> <?php  include "cartModal.php"; ?>   </center>
+               
+            <?php 
+            }
+            else{ 
             $url="index.php";
             ?>
             <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php } ?>
 
-            <p style="z-index:2"><b> 
-            <?php //echo $_SESSION['time']; ?>
-[21:58] Gremlin: Bruh why you takin' pictures of me?
-[21:59] Mӕds (Øverlord): you are a gob
-[21:59] Gremlin: Gob Grem Rat
-[13:42] Muskan: @everyone ITSM teacher Usman wants to arrange an online lecture this week, he asked to discuss the timing and date with you all
-[13:43] Gremlin: I'm just chillin' all week.
-[13:43] Mӕds (Øverlord): Yeah exactly
-[13:44] Gremlin: So whenever's fine for me
-[13:53] Muskan: should we go for tomorrow?
-[13:54] Thomaß (Überlord): Anytime, I'll make time for it
-[13:57] IB veteran stephen (Ovarawd): how about we actually do it base on the actuall school schedule?
-[13:58] Muskan: soo
-[13:59] Muskan: we have consultancy on the same time as in the schedule on moodle
-[13:59] Muskan: do i put it in #announcements ?
-[14:03] Mӕds (Øverlord): sure
-[14:28] Branni Babbu (ØværæstLørd): feel free to do @.everyone
-[14:29] Muskan: He'll send an email to everyone later
-[21:58] Gremlin: Bruh why you takin' pictures of me?
-[21:59] Mӕds (Øverlord): you are a gob
-[21:59] Gremlin: Gob Grem Rat
-[13:42] Muskan: @everyone ITSM teacher Usman wants to arrange an online lecture this week, he asked to discuss the timing and date with you all
-[13:43] Gremlin: I'm just chillin' all week.
-[13:43] Mӕds (Øverlord): Yeah exactly
-[13:44] Gremlin: So whenever's fine for me
-[13:53] Muskan: should we go for tomorrow?
-[13:54] Thomaß (Überlord): Anytime, I'll make time for it
-[13:57] IB veteran stephen (Ovarawd): how about we actually do it base on the actuall school schedule?
-[13:58] Muskan: soo
-[13:59] Muskan: we have consultancy on the same time as in the schedule on moodle
-[13:59] Muskan: do i put it in #announcements ?
-[14:03] Mӕds (Øverlord): sure
-[14:28] Branni Babbu (ØværæstLørd): feel free to do @.everyone
-[14:29] Muskan: He'll send an email to everyone later8</b></p>
+            <div style="z-index:2">
+                <div class="rowCart">
+                <div class="columnCart">
+                    <h2 style="text-align:center"><u>Day 1<br>July 26,2020</u></h2><br><br>
+                    Sed ut perspiciatis unde om style="text-align:centernis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quiauguititit sit autpernat consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. , quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nil molestiae consequatur,sheet of illum qui dolorem eum fugiat quo voluptas nulla pariatur?                </div>
+                <div class="columnCart">
+                    <h2 style="text-align:center"><u>Day 2<br>July 27,2020</u></h2><br><br>
+                </div>
+                <div class="columnCart">
+                    <h2 style="text-align:center"><u>Day 3<br>July 28,2020</u></h2><br><br>
+                </div>
+                <div class="columnCart">
+                    <h2 style="text-align:center"><u>Day 4<br>July 29,2020</u></h2><br><br>
+                </div>
+                </div>
+            
+            <div> 
+            <?php 
+                if($_GET["tempUser"]=="success_login") 
+                {
+                    $TempOrder = new TempOrder_Controller();
+                    $ses_id= $_GET["ses_id"];                    
+                    $TempOrder->ExportTempOrder(1,$_SESSION['email'],$ses_id); //pass ticket id, customer email and session id
+                }
+            ?>
+            
+            </b></p>
 
         </div>
 

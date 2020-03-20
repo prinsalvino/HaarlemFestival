@@ -44,7 +44,15 @@ if (isset($_POST["signUp"]))
             {
                 $users->addNewCustomer($name, $email, $password);
                 $_SESSION['userType'] = "customer";
-                header("location: postLogin.php?SignUp=Successful"); //to go the index page to login with new account
+
+                if($_GET["tempUser"]=="signup") //if the user is coming from shopping cart pass the get var tempUser
+                {
+                    $ses_id= $_GET["ses_id"];
+                    header("location: postLogin.php?Login=Successful&tempUser=signup&ses_id=".$ses_id.""); 
+                }
+                else{
+                    header("location: postLogin.php?Login=Successful"); //to go postLogin.php where the user is redirected further according to their roles
+                }
             }
         }
 }

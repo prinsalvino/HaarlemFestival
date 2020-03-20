@@ -94,6 +94,24 @@ a:hover {
     cursor: pointer;
 }
 
+.columnCart {
+    float: left;
+    width: 22.8%;
+    margin: 10px;
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+
+/* Clear floats after the columns */
+
+.rowCart:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 footer {
     position: fixed;
     padding-bottom: 0;

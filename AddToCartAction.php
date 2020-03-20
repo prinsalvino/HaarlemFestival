@@ -6,7 +6,7 @@ session_start();
 
 //getting ticket qty, price of the ticket, ticket id from the POST form
 $ticket_id = $_POST["ticket_id"];
-$qty = $_POST["qty1"];
+$qty = $_POST["qty"];
 $tkt_price = $_POST["tkt_price"];
 
 if (isset($_POST["addTOcart"])) 
@@ -16,24 +16,21 @@ if (isset($_POST["addTOcart"]))
         //"user is not logged in"
 
         //create a new cookie like this
-        $lifetime=60; //60 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
+        $lifetime=120; //60 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
         setcookie(session_name(),session_id(),time()+$lifetime);
-        // echo session_id()."====".time();
-
-        $timeToExpire =time()+$lifetime;       
+        $Expire_Session =time()+$lifetime;       
         $TempOrder = new TempOrder_Controller();
-        $ses_id=session_id();
-        $TempOrder->DeleteExpiredSessionToken(); //delete expired session tokens
-        $TempOrder->InsertTempOrder($ses_id,$ticket_id,$qty,$tkt_price, $timeToExpire) ;//insert it into db table "temp_Order_item",
-        header("Location: index.php");//to go to the index page
-       // $TempOrder->ExportTempOrder($ticket_id,$customer_email);
+        $session_id=session_id();
+        $TempOrder->DeleteExpiredSessionToken($session_id); //delete expired session tokens
+        $TempOrder->InsertTempOrder($session_id, $ticket_id, $qty, $tkt_price, $Expire_Session) ;//insert it into db table "temp_Order_item",
+       
     }
 
     else{
         //"user logged in";
         $Ord = new Order_Controller();
         // $Ord->Test();
-        $customer_email="idgf.kr"; //$_SESSION['email'];
+        $customer_email=$_SESSION['email']; //$_SESSION['email'];
         //insert into db table "order_Items", take customer email from the session
         //until the order is payed, the Order stays null
         $Ord->insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price);
