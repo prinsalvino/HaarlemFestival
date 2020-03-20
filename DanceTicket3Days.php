@@ -13,6 +13,9 @@ include "AutoLoaderIncl.php";
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jazzScript.js" ></script>  
+<title>
+    Dance Festival 27 - 29 April 2020 
+</title> 
 </head>
 <body>
 <?php include "header.php";?>
@@ -62,11 +65,17 @@ $ticketArr = $ticket->getDanceJazzTickets(39);
     <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty1');">+</button>
-                      <input id="Dqty1" type="text" value="1" name="dance1" />
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty1');" />-</button>  
+                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty1','Dqty1send');">+</button>
+                      <input id="Dqty1" type="text" value="1" name="dance1"/>
+                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty1','Dqtysend');">-</button>  
                     </div></td>
-    <td> <input type="submit" name ="add_to_cart" style = "margin-top:5px" class= "btn-addToCart" value = "Add To Cart" />
+    <td>            <form action="AddToCartAction.php" method="POST">                     
+                      <input id="Dqty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="1" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $ticketArr[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form>
   </tr>
   <tr>
     <td>      </td>

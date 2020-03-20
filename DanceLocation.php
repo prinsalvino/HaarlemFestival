@@ -9,6 +9,9 @@ session_start();
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="css/dancestylesheet.css">
+<title>
+    Dance Festival Locations
+</title> 
 </head>
 <body>
 <?php include "header.php";?>
