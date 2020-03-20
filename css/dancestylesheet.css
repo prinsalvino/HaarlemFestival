@@ -213,8 +213,9 @@ tr:nth-child(even) {
 
 /* ---------- Add to cart button ----------- */
 
-.btn-addToCart {
-    border-radius: 10px;
+.addTOcart {
+	
+	border-radius: 10px;
     border: 2px solid #000;
     padding: 10px;
     cursor: pointer;
