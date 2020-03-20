@@ -66,8 +66,8 @@ $ticketArr = $ticket->getDanceJazzTickets(39);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty1','Dqty1send');">+</button>
-                      <input id="Dqty1" type="text" value="1" name="dance1"/>
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty1','Dqtysend');">-</button>  
+                      <input class = "quantityBox" id="Dqty1" type="text" value="1" name="dance1"/>
+                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty1','Dqty1send');">-</button>  
                     </div></td>
     <td>            <form action="AddToCartAction.php" method="POST">                     
                       <input id="Dqty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
@@ -75,7 +75,7 @@ $ticketArr = $ticket->getDanceJazzTickets(39);
                       <input type="hidden" name="tkt_price" value="<?php echo $ticketArr[4]; ?>" >
                       <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
                       <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-                    </form>
+                    </form></td>
   </tr>
   <tr>
     <td>      </td>

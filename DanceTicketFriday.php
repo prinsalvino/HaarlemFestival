@@ -66,7 +66,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty2','Dqty2send');">+</button>
-                      <input id="Dqty2" type="text" value="1" name="dance2" />
+                      <input class = "quantityBox" id="Dqty2" type="text" value="1" name="dance2" />
                       <button class = "DQtyBtn" onclick="decrease_by_one('Dqty2','Dqty2send');">-</button>
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
@@ -83,7 +83,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty3','Dqty3send');">+</button>
-                      <input id="Dqty3" type="text" value="1" name="dance3" />
+                      <input class = "quantityBox" id="Dqty3" type="text" value="1" name="dance3" />
                       <button class = "DQtyBtn" onclick="decrease_by_one('Dqty3','Dqty3send');">-</button>
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
@@ -100,7 +100,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty4','Dqty4send');">+</button>
-                      <input id="Dqty4" type="text" value="1" name="dance4" />
+                      <input class = "quantityBox" id="Dqty4" type="text" value="1" name="dance4" />
                       <button class = "DQtyBtn" onclick="decrease_by_one('Dqty4','Dqty4send');">-</button>
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
@@ -117,7 +117,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty5','Dqty5send');">+</button>
-                      <input id="Dqty5" type="text" value="1" name="dance5" />
+                      <input class = "quantityBox" id="Dqty5" type="text" value="1" name="dance5" />
                       <button class = "DQtyBtn" onclick="decrease_by_one('Dqty5','Dqty5send');">-</button>
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
@@ -134,7 +134,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty6','Dqty6send');">+</button>
-                      <input id="Dqty6" type="text" value="1" name="dance6" />
+                      <input class = "quantityBox" id="Dqty6" type="text" value="1" name="dance6" />
                       <button class = "DQtyBtn" onclick="decrease_by_one('Dqty6','Dqty6send');">-</button>
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
@@ -151,7 +151,7 @@ $ticketMartin =$ticket->getDanceJazzTickets(27);
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty7','Dqty7send');">+</button>
-                      <input id="Dqty7" type="text" value="1" name="dance7" />
+                      <input class = "quantityBox" id="Dqty7" type="text" value="1" name="dance7" />
                       <button class = "DQtyBtn" onclick="decrease_by_one('Dqty7','Dqty7send');">-</button>
                     </div></td>
     <td> <form action="AddToCartAction.php" method="POST">                     
