@@ -34,7 +34,14 @@ $jazzTicket= new ticketsService();
                   <a href="#venueInfo2" class="linkVenueInfo">(venue info)</a>
           </h1>
     </div>
-
+    <?php
+    if(isset($_GET['orderAdded']))
+    {
+        ?><script>
+            displayAlert();
+        </script>  
+        <?php
+    } ?>
 
     <div class= "columnTicketpg b" style="margin-top:1vw; width: 60%;">
 <!-- -------------------------------------------------------ROW 1---------------------------------------------------------------------------->
@@ -53,17 +60,23 @@ $jazzTicket= new ticketsService();
                     €<?php echo $jTicketArr7[4]; ?>
                 <div class="cart-quantity">
                           Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty7');">+</button>
+                          <br>
+                          <button class="qtyBtn" onclick="increase_by_one('qty7','qty7send','qty6send');">+</button>
                             <input id="qty7" type="text" value="1" name="J7" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty7');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty7','qty7send');" >-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
                     <?php $jazzTicket->stockAvalabilityJazz($jTicketArr7[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty7send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="7" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr7[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form>  
               </div>
             </div>
           </div>
@@ -82,17 +95,23 @@ $jazzTicket= new ticketsService();
                     €<?php echo $jTicketArr10[4]; ?>
                 <div class="cart-quantity">
                           Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty10');">+</button>
+                          <br>
+                          <button class="qtyBtn" onclick="increase_by_one('qty10','qty10send','qty6send');">+</button>
                             <input id="qty10" type="text" value="1" name="J10" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty10');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty10','qty10send');" >-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
                     <?php $jazzTicket->stockAvalabilityJazz($jTicketArr10[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty10send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="10" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr10[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form>  
               </div>
             </div>
           </div>
@@ -117,17 +136,23 @@ $jazzTicket= new ticketsService();
                     €<?php echo $jTicketArr8[4]; ?>
                 <div class="cart-quantity">
                           Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty8');">+</button>
+                          <br>
+                          <button class="qtyBtn" onclick="increase_by_one('qty8','qty8send');">+</button>
                             <input id="qty8" type="text" value="1" name="J8" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty8');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty8','qty8send');">-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
                     <?php $jazzTicket->stockAvalabilityJazz($jTicketArr8[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty8send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="8" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr8[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form> 
               </div>
             </div>
           </div>
@@ -146,17 +171,23 @@ $jazzTicket= new ticketsService();
                     €<?php echo $jTicketArr11[4]; ?>
                 <div class="cart-quantity">
                          Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty11');">+</button>
+                          <br>
+                          <button class="qtyBtn" onclick="increase_by_one('qty11','qty11send');">+</button>
                             <input id="qty11" type="text" value="1" name="J11" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty11');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty11','qty11send');">-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
                     <?php $jazzTicket->stockAvalabilityJazz($jTicketArr11[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty11send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="11" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr11[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form> 
               </div>
             </div>
           </div>
@@ -181,17 +212,23 @@ $jazzTicket= new ticketsService();
                     €<?php echo $jTicketArr9[4]; ?>
                 <div class="cart-quantity">
                           Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty9');">+</button>
+                          <br>
+                          <button class="qtyBtn" onclick="increase_by_one('qty9','qty9send');">+</button>
                             <input id="qty9" type="text" value="1" name="J9" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty9');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty9','qty9send');">-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
                     <?php $jazzTicket->stockAvalabilityJazz($jTicketArr9[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty9send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="9" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr9[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form> 
               </div>
             </div>
           </div>
@@ -210,17 +247,23 @@ $jazzTicket= new ticketsService();
                     €<?php echo $jTicketArr12[4]; ?>
                 <div class="cart-quantity">
                           Qty: 
-                          
-                          <button class="qtyBtn" onclick="increase_by_one('qty12');">+</button>
+                          <br>
+                          <button class="qtyBtn" onclick="increase_by_one('qty12','qty12send');">+</button>
                             <input id="qty12" type="text" value="1" name="J12" />                          
-                          <button class="qtyBtn" onclick="decrease_by_one('qty12');" />-</button>
+                          <button class="qtyBtn" onclick="decrease_by_one('qty12','qty12send');">-</button>
                         </div>
                 </b>
               </div>
               <div class="column1" style=" float: right; text-align: left; width: auto;" >
                     <?php $jazzTicket->stockAvalabilityJazz($jTicketArr12[5]); ?>
                     <br>
-                    <button class="addTOcart" onclick="#" > Add to cart </button> 
+                    <form action="AddToCartAction.php" method="POST">                     
+                      <input id="qty12send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input type="hidden" name="ticket_id" value="12" >
+                      <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr12[4]; ?>" >
+                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    </form> 
               </div>
             </div>
           </div>

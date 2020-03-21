@@ -115,4 +115,6 @@ a:hover {
 footer {
     position: fixed;
     padding-bottom: 0;
+    bottom: 0;
+    width: 100%;
 }

@@ -16,7 +16,7 @@ if (isset($_POST["addTOcart"]))
         //"user is not logged in"
 
         //create a new cookie like this
-        $lifetime=120; //60 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
+        $lifetime=7200; //60 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
         setcookie(session_name(),session_id(),time()+$lifetime);
         $Expire_Session =time()+$lifetime;       
         $TempOrder = new TempOrder_Controller();
