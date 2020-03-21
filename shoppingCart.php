@@ -32,22 +32,32 @@ include "AutoLoaderIncl.php";
         <div class="cartBody">
             <?php 
                 $ses_id="";
+                $CartController = new shoppingCartController;
+
                 if(!isset($_SESSION['email'])) 
                 {   $ses_id=session_id();
-                    ?> <center> <?php  include "cartModal.php"; ?>   </center>
-                
-                <?php 
+                    ?> <center> <?php  include "cartModal.php"; ?>   </center>                
+                    <?php 
+                    $arr=$CartController->getOrderItems($ses_id, NULL) ;
                 }
                 else{ 
-                $url="index.php";
-                ?>
-                <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php } ?>
+                    $arr=$CartController->getOrderItems(NULL, $_SESSION['email']) ;
+                    $url="index.php";
+                    ?>
+                    <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php 
+                } ?>
 
                 <div style="z-index:2" class="rowCart">
                     <div class="columnCart">
                         <h2 style="text-align:center"><u>Day 1<br>July 26,2020</u></h2><br>
-                        Sed ut perspiciatis unde om style="text-align:centernis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quiauguititit sit autpernat consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. , quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nil molestiae consequatur,sheet of illum qui dolorem eum fugiat quo voluptas nulla pariatur?                </div>
-                    <div class="columnCart">
+                    <?php
+                    foreach($arr as $a)
+                    {
+                    print_r($a);   echo "<br>";
+                    }
+                    ?>
+                    </div>
+                     <div class="columnCart">
                         <h2 style="text-align:center"><u>Day 2<br>July 27,2020</u></h2><br>
                     </div>
                     <div class="columnCart">

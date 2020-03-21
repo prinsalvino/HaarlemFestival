@@ -40,7 +40,8 @@ class TempOrder_Service extends OrderService {
         $numRows = $result->num_rows; 
             if ($numRows > 0) 
             {
-                while ($row = $result->fetch_array()) 
+             
+                //while ($row = $result->fetch_assoc()) 
                 { 
                     $data[] = $row; 
                 } 
@@ -55,9 +56,8 @@ class TempOrder_Service extends OrderService {
                     array_push($orders,$ticket_id, $qty, $total_price);
                 }
                 return $orders;
-                //return $data;
             } 
-           
+
     }
 
     public function ExportTempOrder($ticket_id,$customer_email,$ses_id)
@@ -100,6 +100,13 @@ class TempOrder_Service extends OrderService {
 }
 
 // $abc = new TempOrder_Service;
-// print_r($abc->getTempOrder(1,"o5e9btqlfr0ggvevvnsq") );
-// $temp_order=$abc->getTempOrder(101);
-// echo $temp_order[0]."--".$temp_order[1]."--".$temp_order[2];
+//     $arr=$abc->getAllTempOrder("674q4mrf16tem8ti6a8h3vecc1") ;
+//     echo "<br>";
+//     foreach($arr as $data){
+//         $restoname = $data['temp_id'];
+//         $specialty = $data['ticket_id'];
+//         print_r($data);
+//         echo "<br>";
+//     }
+    //print_r($arr);
+    //echo $arr['temp_id']."\n";
