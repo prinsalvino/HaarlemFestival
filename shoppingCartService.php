@@ -124,13 +124,9 @@ class shoppingCartService extends ticketsService
         return $finalArray;          
     }
 
-    public function deleteRecordById($ticket_id,$customer_id) {
+    public function deleteRecordById($ticket_id,$customer_id,$session_id) {
 
-        $query = "DELETE FROM order_item WHERE ticket_id='$recordId' && customer_id='$customer_id' ;";
-
-        $result = $this->connect()->query($query); 
-
-        return $result;
+       
 
     }
 
