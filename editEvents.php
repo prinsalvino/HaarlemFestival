@@ -67,7 +67,7 @@
 
           <li>
             <label for="event">Event Type</label>
-            <input type="text" name="event" id="event" placeholder="Type of Event" required maxlength= "20"<?php echo htmlspecialchars( $results['events']->event )?>" />
+            <input type="text" name="event" id="event" placeholder="Type of Event" required maxlength= "20"<?php echo htmlspecialchars( $results['events']->event )?> />
           </li>
 
           <li>
@@ -78,7 +78,7 @@
 
           <li>
             <label for="Time">Time</label>
-            <input type="time" name= "time" id="time" placeholder="Time i.e. 18:00:00" required maxlength="8" value="<?php echo $results['events']->time )?>"/>
+            <input type="time" name= "time" id="time" placeholder="Time i.e. 18:00:00" required maxlength="8" value="<?php echo $results['events']->time ?> "/>
           </li>
 
           <li>
