@@ -35,17 +35,17 @@ include "AutoLoaderIncl.php";
                 $CartController = new shoppingCartController;
                 $arr=array();
 
-                //exporting user orders 
+                // //exporting user orders 
                 // if(isset($_GET['tempUser']) && $_GET['tempUser']=="success_login") 
                 // {
                 //     $TempOrder = new TempOrder_Controller();
-                //     $ses_id= $_GET["ses_id"]; 
-                //     $arr=$CartController->getOrderItems($ses_id, NULL) ;
+                //     $sess_id= $_GET["ses_id"]; 
+                //     $arr=$CartController->getOrderItems($sess_id, NULL) ;
                 //     if(empty($arr))
                 //     {
                 //         foreach($arr as $a)
                 //         {
-                //             $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$ses_id); //pass ticket id, customer email and session id
+                //             $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$sess_id); //pass ticket id, customer email and session id
                 //         }   
                 //     }
                 // }
@@ -187,19 +187,31 @@ include "AutoLoaderIncl.php";
  <!-----------------------------------end---------------------------------------------------->
                
                 <?php
-                // if($_GET['tempUser']=="success_login") 
-                // {
-                //     $TempOrder = new TempOrder_Controller();
-                //     //$TempOrder->test();
-                //     $ses_id= $_GET["ses_id"]; 
-                //     $arr=$CartController->getOrderItems($ses_id, NULL) ;
-                //     //$_SESSION['email'] = "abc.est";
-                //     foreach($arr as $a)
-                //     {
-                //         //echo  $a["ticket_id"]."<br>";
-                //         $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$ses_id); //pass ticket id, customer email and session id
-                //     }    
-                // }
+                //exporting user orders 
+                if(isset($_GET['tempUser']) && $_GET['tempUser']=="success_login") 
+                {
+                    $TempOrder = new TempOrder_Controller();
+                    $sess_id= $_GET["ses_id"]; 
+                    $arr=$CartController->getOrderItems($sess_id, NULL) ;
+                    if(!empty($arr))
+                    {
+                        foreach($arr as $a)
+                        {
+                            $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$sess_id); //pass ticket id, customer email and session id
+                        }   
+                    }
+
+                    //js to reload the pg after orders are added  ?>
+                    <script> 
+                        window.onload = function() {
+                        if(!window.location.hash) {
+                            window.location = window.location + '#OrdersExported';
+                            window.location.reload();
+                            }
+                        }
+                    </script> 
+                    <?php                  
+                }
                 ?>
         </div>
 

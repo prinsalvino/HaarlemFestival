@@ -20,7 +20,17 @@ $jazzTicket= new ticketsService();
     </title> 
 </head>
 <body>
-<?php include "header.php";?> 
+<?php include "header.php";
+$pattern = '/\borderAdded=yes\b/'; 
+$getVar = $_GET['day'];
+if (preg_match($pattern, $getVar) == true) { 
+    ?><script>
+    displayAlert();
+    </script>  
+<?php
+} 
+
+?> 
 
   <div class="rowTicketpg">
     <div class="columnTicketpg a" style="  margin-top:1vw; text-align: center; width: 30%;">

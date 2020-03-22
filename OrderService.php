@@ -1,6 +1,6 @@
 <?php
 include_once "DB.php";
-include "showErrors.php";
+// include_once "showErrors.php";
 
 
 class OrderService extends DB {
