@@ -89,7 +89,7 @@ if(isset($_POST["add_to_cart"]))
                      	 Qty: 
                           <br> 
                      	 <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send');">+</button>
-                       		 <input id="qty1" type="text" value="1" name="J1" style="width:50%;"/>                          
+                       		 <input id="qty1" type="text" value="1" name="J1" style="width:10%;"/>                          
                      	 <button class="qtyBtn" onclick="decrease_by_one('qty1','qty1send');" />-</button>
                     	</div>
 						
