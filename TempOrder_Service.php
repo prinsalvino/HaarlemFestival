@@ -1,12 +1,9 @@
 <?php
 // include "DB.php";
-include "showErrors.php";
-include "OrderService.php";
-
+// include "showErrors.php";
+include_once "OrderService.php";
 
 class TempOrder_Service extends OrderService {
-
-    private $_OrderService = NULL; 
 
     public function InsertTempOrder($session_id, $ticket_id, $qty, $tkt_price, $Expire_Session)
     {
@@ -41,7 +38,7 @@ class TempOrder_Service extends OrderService {
             if ($numRows > 0) 
             {
              
-                //while ($row = $result->fetch_assoc()) 
+                while ($row = $result->fetch_assoc()) 
                 { 
                     $data[] = $row; 
                 } 
@@ -50,9 +47,9 @@ class TempOrder_Service extends OrderService {
                 foreach ($data as $val) 
                 {
                     // taking the specifically rqd columns from the whole result
-                    $ticket_id= $val[1]; //0
-                    $qty= $val[2]; //1
-                    $total_price= $val[3]; //2
+                    $ticket_id= $val["ticket_id"]; //0
+                    $qty= $val["qty"]; //1
+                    $total_price= $val["total_price"]; //2
                     array_push($orders,$ticket_id, $qty, $total_price);
                 }
                 return $orders;
@@ -66,13 +63,12 @@ class TempOrder_Service extends OrderService {
             //get values from the temp table
             $temp_order=$this->getTempOrder($ticket_id,$ses_id); //array
             $tkt_price = $temp_order[2]/$temp_order[1]; //calculation actual price as the total price will be don again while inserting in the order items
-            $_OrderService =  new OrderService();
             //insert into order_items
-            $_OrderService->insertOrderItems($customer_email,$temp_order[0],$temp_order[1],$tkt_price );  
+            $this->insertOrderItems($customer_email,$temp_order[0],$temp_order[1],$tkt_price );  
             
             $stmtDel = $this->connect()->prepare  //deleting temporary orders
-            ("DELETE FROM `temp_Order_item` WHERE `temp_id` = ? ;");
-            $stmtDel->bind_param("s",$ses_id );
+            ("DELETE FROM `temp_Order_item` WHERE `temp_id` = ? && `ticket_id` = ?;"); 
+            $stmtDel->bind_param("si",$ses_id,$ticket_id );
             $stmtDel->execute();
         }
         catch (Exception $e) {
@@ -100,7 +96,9 @@ class TempOrder_Service extends OrderService {
 }
 
 // $abc = new TempOrder_Service;
-//     $arr=$abc->getAllTempOrder("674q4mrf16tem8ti6a8h3vecc1") ;
+//     // $arr=$abc->getTempOrder(1,"u1fic85o30mb5jj9jn1pn3j5m7") ;
+//     $abc->ExportTempOrder(1,"test","h04m2mqta4cal2bjl8kjmltlc2");
+//     print_r($arr);
 //     echo "<br>";
 //     foreach($arr as $data){
 //         $restoname = $data['temp_id'];

@@ -15,4 +15,10 @@ class shoppingCartController
         return $this->_shoppingCartService->getOrderItems($session_id, $user_email);
     }
 
+    public function ExportTempOrder($ticket_id,$customer_email,$ses_id)
+    {
+        $this->_shoppingCartService->ExportTempOrder($ticket_id,$customer_email,$ses_id);
+    }
+
 }
+

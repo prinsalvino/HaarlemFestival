@@ -1,5 +1,5 @@
 <?php
-include "DB.php";
+include_once "DB.php";
 include "showErrors.php";
 
 
@@ -9,6 +9,12 @@ class OrderService extends DB {
     {
         try {
             $total_price = $qty * $tkt_price;
+
+            $stmtDel = $this->connect()->prepare  //deleting duplicate orders
+            ("DELETE FROM `order_Items` WHERE `ticket_id` = ? && `customer_email` = ? ;");
+            $stmtDel->bind_param("is",$ticket_id, $customer_email);
+            $stmtDel->execute();
+
            //insert into order_items
             $stmt = $this->connect()->prepare
             ("INSERT INTO `order_Items`(`customer_email`,`ticket_id`,`qty`,`total_price`) VALUES (?,?,?,?) ;");

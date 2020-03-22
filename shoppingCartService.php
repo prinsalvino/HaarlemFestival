@@ -1,6 +1,7 @@
 <?php
 // include "showErrors.php";
-include "ticketsController.php";
+include_once "ticketsController.php";
+// include_once "TempOrder_Service.php";
 
 class shoppingCartService extends ticketsService
 
@@ -13,10 +14,9 @@ class shoppingCartService extends ticketsService
             {
                 //get values from the temp table
                 $temp_order_items=$this->sortTicketinfo($session_id, NULL); //array    
-                return $temp_order_items;        
-                // $temp_order_items=$this->getTempOrder($ticket_id, $session_id); //array                
+                return $temp_order_items;
             }
-            elseif($session_id==NULL) //loggeed in user
+            else if($session_id==NULL) //loggeed in user
             {
                 $order_items=$this->sortTicketinfo(NULL,$user_email); //array    
                 return $order_items;   
@@ -73,9 +73,9 @@ class shoppingCartService extends ticketsService
 
         if($user_email==NULL) //temp user
         {              
-            $arr=$this->getAllTempOrder("0074vr5kt1s88fhideg821f1p7") ;                     
+            $arr=$this->getAllTempOrder($ses_id) ;                     
         }
-        elseif($session_id==NULL) //loggeed in user
+        elseif($ses_id==NULL) //loggeed in user
         {
             $arr=$this->getAllOrderItems($user_email)  ;
         }
@@ -92,7 +92,7 @@ class shoppingCartService extends ticketsService
                 $location= $val[4]; //2
                 $special= $val[5]; //3 
                 $price= $val[6];  //4
-                array_push($eventArray,$time,$location,$special,$price);
+               array_push($eventArray,$date,$time,$location,$special,$price);
             }    
             if($ticket_id<23)   //1-22
             {
@@ -112,9 +112,10 @@ class shoppingCartService extends ticketsService
             }
 
             $data2=array(
-                'time' => $eventArray[0],
-                't_name' => $eventArray[2],
-                'price' => $eventArray[3],
+                'date' => $eventArray[0],
+                'time' => $eventArray[1],
+                't_name' => $eventArray[3],
+                'price' => $eventArray[4],
                 'event' => $ticket_event,
             );
             $mergeData = array_merge($data,$data2);
@@ -134,12 +135,14 @@ class shoppingCartService extends ticketsService
     }
 
 }
+
 // $abc = new shoppingCartService;
-// // $arr=$abc->getOrderItems("0074vr5kt1s88fhideg821f1p7", NULL) ;
-// $arr=$abc->getOrderItems(NULL, "pickyourfilter@bighit.kr") ;
+// $abc->ExportTempOrder(1,"test","h04m2mqta4cal2bjl8kjmltlc2");
+
+// $abc = new shoppingCartService;
+// $arr=$abc->getOrderItems("9ecrn15ltf36uk5btdopuqa0j1", NULL) ;
+// // $arr=$abc->getOrderItems(NULL, "pickyourfilter@bighit.kr") ;
 // foreach($arr as $a)
 // {
 //   print_r($a);   echo "<br>";
 // }
-
-

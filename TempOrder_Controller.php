@@ -18,7 +18,10 @@ class TempOrder_Controller  {
     {
         $this->_TempOrder_Service->InsertTempOrder($session_id,$ticket_id, $qty, $tkt_price, $Expire_Session) ;
     }
-
+    public function test()
+    {
+        echo "work bitch!!!";
+    }
     public function ExportTempOrder($ticket_id,$customer_email,$ses_id)
     {
         $this->_TempOrder_Service->ExportTempOrder($ticket_id,$customer_email,$ses_id);
