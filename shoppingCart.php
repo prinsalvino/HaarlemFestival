@@ -36,22 +36,19 @@ include "AutoLoaderIncl.php";
                 $arr=array();
 
                 //exporting user orders 
-                if(isset($_GET['tempUser']) && $_GET['tempUser']=="success_login") 
-                {
-                    $TempOrder = new TempOrder_Controller();
-                    $ses_id= $_GET["ses_id"]; 
-                    $arr=$CartController->getOrderItems($ses_id, NULL) ;
-                    if(empty($arr))
-                    {
-                        foreach($arr as $a)
-                        {
-                            $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$ses_id); //pass ticket id, customer email and session id
-                        }   
-                    }
-                    else{
-                        echo "yes";
-                    }
-                }
+                // if(isset($_GET['tempUser']) && $_GET['tempUser']=="success_login") 
+                // {
+                //     $TempOrder = new TempOrder_Controller();
+                //     $ses_id= $_GET["ses_id"]; 
+                //     $arr=$CartController->getOrderItems($ses_id, NULL) ;
+                //     if(empty($arr))
+                //     {
+                //         foreach($arr as $a)
+                //         {
+                //             $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$ses_id); //pass ticket id, customer email and session id
+                //         }   
+                //     }
+                // }
 
                 if(!isset($_SESSION['email'])) 
                 {   $ses_id=session_id();
@@ -160,7 +157,35 @@ include "AutoLoaderIncl.php";
 
                         ?>
                     </div>
+
+
                 </div>
+                
+<!---------------------- For special Tickets like All access --------------------->
+            <div class="rowCart">        
+                <?php
+                if(!empty($arr))
+                {?>
+                <div class="columnCart" style="width:30%; float: left;border-style: solid; border-color: coral;">
+                    <h2 style="text-align:center"><u>Specials</u></h2><br> <?php
+                    foreach($arr as $a)
+                    {
+                        if(($a["date"] != "Jul 26, 2020") && ($a["date"] != "Jul 27, 2020") && ($a["date"] != "Jul 28, 2020") && ($a["date"] != "Jul 29, 2020") )
+                        {
+                            ?> 
+                            
+                            <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
+                            echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
+                            echo "Total price €".$a["total_price"]."<br>";     
+                            ?> <small> <button> X Remove </button> </small> <?php                        
+                        }
+                    }?> 
+                </div>    <?php
+                }
+                ?>
+             </div>        
+ <!-----------------------------------end---------------------------------------------------->
+               
                 <?php
                 // if($_GET['tempUser']=="success_login") 
                 // {

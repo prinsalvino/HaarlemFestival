@@ -43,14 +43,6 @@ $jazzTicket= new ticketsService();
           </h1>
     </div>
 
-    <?php
-    if(isset($_GET['orderAdded']))
-    {
-        ?><script>
-            displayAlert();
-        </script>  
-        <?php
-    } ?>
     <div class= "columnTicketpg b" style="margin-top:1vw; width: 60%;">
 <!-- -------------------------------------------------------ROW 1---------------------------------------------------------------------------->
       <div class="rowTickets">

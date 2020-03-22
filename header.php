@@ -68,14 +68,14 @@
 
       }
 
-      ?>
-
-
-
-          
-
-
-
+    if(isset($_GET['orderAdded']))
+    {
+        ?><script>
+            displayAlert();
+        </script>  
+        <?php
+    } ?>
+    
           <div class="columnLoginCart" style=" margin-top:1vw">
 
               <p> 
