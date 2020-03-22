@@ -35,38 +35,16 @@ include "AutoLoaderIncl.php";
                 $CartController = new shoppingCartController;
                 $arr=array();
 
-                // //exporting user orders 
-                // if(isset($_GET['tempUser']) && $_GET['tempUser']=="success_login") 
-                // {
-                //     $TempOrder = new TempOrder_Controller();
-                //     $sess_id= $_GET["ses_id"]; 
-                //     $arr=$CartController->getOrderItems($sess_id, NULL) ;
-                //     if(empty($arr))
-                //     {
-                //         foreach($arr as $a)
-                //         {
-                //             $TempOrder->ExportTempOrder($a["ticket_id"],$_SESSION['email'],$sess_id); //pass ticket id, customer email and session id
-                //         }   
-                //     }
-                // }
-
                 if(!isset($_SESSION['email'])) 
                 {   $ses_id=session_id();
-                    ?> <center> <?php  include "cartModal.php"; ?>   </center>                
-                    <?php 
+                    
                     $arr=$CartController->getOrderItems($ses_id, NULL) ;
-                    foreach($arr as $a) //insert all temp ticket ids in an array to later use them to export tickets if user logs in
-                    {
-                       // array_push($_SESSION['tkt_ids'],$a["ticket_id"]);
-                    }
                 }
-                else{ 
-                    $arr=$CartController->getOrderItems(NULL, $_SESSION['email']) ;
-                    $url="index.php";
-                    ?>
-                    <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php 
-                        
-                    }
+                else
+                { 
+                $arr=$CartController->getOrderItems(NULL, $_SESSION['email']) ;
+                 
+                }
 
 
                 ?>
@@ -84,7 +62,7 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?> <small> <button> X Remove </button> </small> <?php                        
+                                   ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
                                 }
                             }
                         }
@@ -105,7 +83,7 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?> <small> <button> X Remove </button> </small> <?php                        
+                                   ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
                                 }
                             }
                         }
@@ -126,7 +104,7 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?>  <button><small> X Remove </small></button>  <?php                        
+                                   ?>  <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button>  <?php                        
                                 }
                             }
                         }
@@ -147,7 +125,7 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?> <small> <button> X Remove </button> </small> <?php                        
+                                   ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
                                 }
                             }
                         }
@@ -161,12 +139,12 @@ include "AutoLoaderIncl.php";
 
                 </div>
                 
-<!---------------------- For special Tickets like All access --------------------->
+<!--------------ROW 2-------- For special Tickets like All access --------------------->
             <div class="rowCart">        
                 <?php
                 if(!empty($arr))
                 {?>
-                <div class="columnCart" style="width:30%; float: left;border-style: solid; border-color: coral;">
+                <div class="columnCart" style="float: left;border-style: solid; border-color: #CCC;">
                     <h2 style="text-align:center"><u>Specials</u></h2><br> <?php
                     foreach($arr as $a)
                     {
@@ -177,14 +155,51 @@ include "AutoLoaderIncl.php";
                             <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                             echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                             echo "Total price €".$a["total_price"]."<br>";     
-                            ?> <small> <button> X Remove </button> </small> <?php                        
+                            ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
                         }
                     }?> 
                 </div>    <?php
                 }
                 ?>
-             </div>        
- <!-----------------------------------end---------------------------------------------------->
+
+                <div class="columnCart" style="width: 40%;float: right;border-style: solid; border-color: #73ad21;">
+                <H3><u> Total Price:     €
+                    <?php
+                    $sum = 0;
+                    if(!empty($arr))
+                    {
+                        foreach($arr as $a)
+                        {
+                            $sum+= $a["total_price"];
+                        }
+                        echo $sum."<br><br>";
+                        //check out button
+                        if(!isset($_SESSION['email'])) 
+                        {   
+                            $ses_id=session_id();
+                            ?> <center> <?php  include "cartModal.php"; ?>   </center>                
+                            <?php 
+                        }
+                        else
+                        { 
+                            $url="index.php";
+                            ?>
+                            <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php                             
+                        }
+                    }
+                    else{
+                        echo "0<br>No items added to the cart";
+                    }
+
+                    
+                    ?>
+                </u></h3>
+                </div>
+             </div>  
+             
+             
+
+ <!--------------------------------ROw 2---end---------------------------------------------------->
                
                 <?php
                 //exporting user orders 
