@@ -48,7 +48,6 @@ include "AutoLoaderIncl.php";
 
 
                 ?>
-
                 <div style="z-index:2" class="rowCart">
                     <div class="columnCart">
                         <h2 style="text-align:center"><u>Day 1<br>July 26,2020</u></h2><br>
@@ -148,7 +147,7 @@ include "AutoLoaderIncl.php";
                     <h2 style="text-align:center"><u>Specials</u></h2><br> <?php
                     foreach($arr as $a)
                     {
-                        if(($a["date"] != "Jul 26, 2020") && ($a["date"] != "Jul 27, 2020") && ($a["date"] != "Jul 28, 2020") && ($a["date"] != "Jul 29, 2020"))
+                        if(($a["date"] != "Jul 26, 2020") && ($a["date"] != "Jul 27, 2020") && ($a["date"] != "Jul 28, 2020") && ($a["date"] != "Jul 29, 2020") )
                         {
                             ?> 
                             

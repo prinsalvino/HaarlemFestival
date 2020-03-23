@@ -5,6 +5,19 @@ include "showErrors.php";
 session_start();
 
 //getting ticket qty, price of the ticket, ticket id from the POST form
+// if (isset($_POST["ticket_id"])) {
+//     $ticket_id = $_POST["ticket_id"];
+//     $qty = $_POST["qty1"];
+//     $tkt_price = $_POST["tkt_price"];
+// }
+// else{
+//     $ticket_id = $_SESSION['ticketfood'];
+//     $tkt_price = $_SESSION['price'];
+//     $qty = $_SESSION['AdultQ'] + $_SESSION['KidsQ'];
+// }
+
+// echo $_SESSION['ticketfood'];
+
 $ticket_id = $_POST["ticket_id"];
 $qty = $_POST["qty"];
 $tkt_price = $_POST["tkt_price"];

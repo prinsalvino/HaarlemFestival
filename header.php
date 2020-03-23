@@ -88,7 +88,7 @@
 
                 <br><br><br><br>
 
-                  <b><a class="translink" href="shoppingCart.php"> NL/EN </a></b> 
+                  <!-- <b><a class="translink" href="shoppingCart.php"> NL/EN </a></b>  -->
 
               </p>
 
