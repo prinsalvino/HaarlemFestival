@@ -124,9 +124,26 @@ class shoppingCartService extends ticketsService
         return $finalArray;          
     }
 
-    public function deleteRecordById($ticket_id,$customer_id,$session_id) {
-
-       
+    public function deleteRecordById($ticket_id,$customer_email,$session_id) {
+        try{
+            if($customer_email==NULL) //temp user
+            {
+                $stmtDel = $this->connect()->prepare  //deleting duplicate orders
+                ("DELETE FROM `temp_Order_item` WHERE `ticket_id` = ? && `temp_id` = ? ;");
+                $stmtDel->bind_param("is",$ticket_id,$session_id );
+                
+            }
+            else if($session_id==NULL) //loggeed in user
+            {
+                $stmtDel = $this->connect()->prepare  //deleting temporary orders
+                ("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = `Unconfirmed`;"); 
+                $stmtDel->bind_param("si",$customer_email,$ticket_id );
+            }
+            $stmtDel->execute();               
+        }
+        catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }   
 
     }
 

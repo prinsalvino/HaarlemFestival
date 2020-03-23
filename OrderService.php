@@ -1,6 +1,6 @@
 <?php
-include_once "DB.php";
-// include_once "showErrors.php";
+//include "DB.php";
+include "showErrors.php";
 
 
 class OrderService extends DB {
@@ -9,10 +9,10 @@ class OrderService extends DB {
     {
         try {
             $total_price = $qty * $tkt_price;
-
-            $stmtDel = $this->connect()->prepare  //deleting duplicate orders
-            ("DELETE FROM `order_Items` WHERE `ticket_id` = ? && `customer_email` = ? ;");
-            $stmtDel->bind_param("is",$ticket_id, $customer_email);
+            //DELETE ANY duplicate order with the same email and ticket id
+            $stmtDel = $this->connect()->prepare  //deleting temporary orders
+            ("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = `Unconfirmed`;"); 
+            $stmtDel->bind_param("si",$customer_email,$ticket_id );
             $stmtDel->execute();
 
            //insert into order_items

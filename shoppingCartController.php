@@ -20,5 +20,11 @@ class shoppingCartController
         $this->_shoppingCartService->ExportTempOrder($ticket_id,$customer_email,$ses_id);
     }
 
+    public function deleteRecordById($ticket_id,$customer_email,$session_id) 
+    {
+        $this->_shoppingCartService->deleteRecordById($ticket_id,$customer_email,$session_id);
+    }
+
+
 }
 
