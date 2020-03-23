@@ -78,7 +78,7 @@ if(isset($_POST["add_to_cart"]))
 				?>
 
 			<div class="col-md-4">
-				<form method="POST">
+				<form>
 				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px;" align="center">
 
 						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
@@ -86,7 +86,7 @@ if(isset($_POST["add_to_cart"]))
                         <p>€<?php echo number_format($row["price"], 2, '.', '');?></p>
 						
 						<div>
-                     	 Qty: 
+                     	 Amount: 
                           <br> 
                      	 <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send');">+</button>
                        		 <input id="qty1" type="text" value="1" name="J1" style="width:10%;"/>                          
