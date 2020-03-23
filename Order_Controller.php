@@ -20,3 +20,5 @@ class Order_Controller  {
         $this->_OrderService->Test();
     }
 }
+$testing = new Order_Controller;
+$testing->insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price);

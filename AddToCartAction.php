@@ -1,6 +1,6 @@
 <?php
 include "AutoLoaderIncl.php";
-include "showErrors.php";
+//include "showErrors.php";
 
 session_start();
 
@@ -43,9 +43,9 @@ if (isset($_POST["addTOcart"]))
         //"user logged in";
         $Ord = new Order_Controller();
         // $Ord->Test();
-        $customer_email=$_SESSION['email']; //$_SESSION['email'];
+        $customer_email=$_SESSION['email']; 
         //insert into db table "order_Items", take customer email from the session
-        //until the order is payed, the Order stays null
+        //until the order is payed, the Order stays Unconfirmed
         $Ord->insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price);
 
 

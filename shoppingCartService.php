@@ -136,7 +136,7 @@ class shoppingCartService extends ticketsService
             else if($session_id==NULL) //loggeed in user
             {
                 $stmtDel = $this->connect()->prepare  //deleting temporary orders
-                ("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = `Unconfirmed`;"); 
+                ("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = 'Unconfirmed';"); 
                 $stmtDel->bind_param("si",$customer_email,$ticket_id );
             }
             $stmtDel->execute();               
