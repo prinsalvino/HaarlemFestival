@@ -8,7 +8,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p><a href="indexLogin.php">Login</a> or <a href="signUpCustomer.php">Sign up to continue</a></p>
+            <p><a href="indexLogin.php?tempUser=login&ses_id=<?php echo  $ses_id; ?>">Login</a> or <a href="signUpCustomer.php?tempUser=signup&ses_id=<?php echo  $ses_id; ?>">Sign up to continue</a></p>
         </div>
     </div> 
 </div>  

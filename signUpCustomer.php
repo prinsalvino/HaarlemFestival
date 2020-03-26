@@ -53,7 +53,14 @@
 	<h1>Sign Up</h1>
                          
 <!-------------------------------------------form action------------------------------------------------------------------>
-        <form action="insertUser.php?user=customer" method="POST"> 
+    <?php if($_GET["tempUser"]=="signup") //if the user is coming from shopping cart pass the get var signup
+    {
+        $ses_id= $_GET["ses_id"];
+        ?><form action="insertUser.php?user=customer&tempUser=signup&ses_id=<?php echo  $ses_id; ?>" method="POST"><?php
+    } 
+    else{
+        ?><form action="insertUser.php?user=customer" method="POST"><?php
+    }?>
             <label for="name" >Name</label><br>
                 <input placeholder="enter your name " style="width:30vw;" type="text" id="name" class="fadeIn first" name="name" required autofocus>
             <br>

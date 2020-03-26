@@ -17,8 +17,22 @@ session_start();
         foreach($UserdataArray as $data)   
         {	
             $_SESSION['userName'] = $data->customer_name; 
-        }   
-        header("Location: index.php?uname=".$_SESSION['userName'].""); 
+        }  
+        
+        if($_GET["tempUser"]=="login") //if the user is coming from shopping cart pass the get var tempUser
+        {
+            $ses_id= $_GET["ses_id"];
+           header("location: shoppingCart.php?tempUser=success_login&ses_id=".$ses_id.""); 
+        }
+        else if($_GET["tempUser"]=="signup") //if the user is coming from shopping cart pass the get var tempUser
+        {
+            $ses_id= $_GET["ses_id"];
+           header("location: shoppingCart.php?tempUser=success_login&ses_id=".$ses_id.""); 
+        }
+        else{
+            header("Location: index.php?uname=".$_SESSION['userName'].""); 
+        }
+       
     }
     else
     {
@@ -33,11 +47,11 @@ session_start();
         }
         if($_SESSION['volunteer_superadmin'] == 1)
         {
-            header("Location: dashboard.php?isSuperadmin=1"); 
+           header("Location: dashboard.php?isSuperadmin=1"); 
         }
         else
         {
-            header("Location: dashboard.php"); 
+           header("Location: dashboard.php"); 
         }
 }
 

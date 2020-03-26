@@ -68,14 +68,14 @@
 
       }
 
-      ?>
-
-
-
-          
-
-
-
+    if(isset($_GET['orderAdded']))
+    {
+        ?><script>
+            displayAlert();
+        </script>  
+        <?php
+    } ?>
+    
           <div class="columnLoginCart" style=" margin-top:1vw">
 
               <p> 
@@ -88,7 +88,7 @@
 
                 <br><br><br><br>
 
-                  <b><a class="translink" href="shoppingCart.php"> NL/EN </a></b> 
+                  <!-- <b><a class="translink" href="shoppingCart.php"> NL/EN </a></b>  -->
 
               </p>
 

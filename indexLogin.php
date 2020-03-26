@@ -63,17 +63,30 @@ session_start();
     </div>
 
     <!-- Login Form -->
-    <form action="login.php" method="POST">
-    <label for="email_address" >E-Mail Address</label><br>
-      <input style="width:30vw; " type="text" id="login" class="fadeIn second" name="email" placeholder="e mail" required autofocus>
-      <br>
-      <label for="password" class="lbl">Password</label><br>
-      <input  style="width:30vw;" type="text" id="password" class="fadeIn third" name="password"  placeholder="password" required>
-      <br><br>
-      <button type="submit" name="login">
-                Login
-            </button>
-    </form>
+
+            <!--  -->
+            <?php
+                    if($_GET["tempUser"]=="login") //if the user is coming from shopping cart pass the get var tempUser
+                    {
+                        $ses_id= $_GET["ses_id"];
+                        ?><form action="login.php?tempUser=login&ses_id=<?php echo  $ses_id; ?>" method="POST">
+                        <?php
+                    }
+                    else{
+                        ?><form action="login.php" method="POST"> 
+                        <?php
+                    }
+            ?>
+            <label for="email_address" >E-Mail Address</label><br>
+            <input style="width:30vw; " type="text" id="login" class="fadeIn second" name="email" placeholder="e mail" required autofocus>
+            <br>
+            <label for="password" class="lbl">Password</label><br>
+            <input  style="width:30vw;" type="password" id="password" class="fadeIn third" name="password"  placeholder="password" required>
+            <br><br>
+            <button type="submit" name="login">
+                        Login
+                    </button>
+        </form>
     <br><br>
     <!-- Sign up -->
     <div id="formFooter">
