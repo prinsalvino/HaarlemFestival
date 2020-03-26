@@ -30,6 +30,13 @@ class FoodController
 		return $this->FoodService->getPicture($restoname); 
 
 	}
+	public function getTicketId($date,$restoname, $time){
+		$datas = $this->FoodService->getTicketId($date,$restoname, $time);
+		foreach ($datas as $data) {
+			$ticket_id = $data['ticket_id'];
+		}
+		return $ticket_id;
+	}
 
 }
 

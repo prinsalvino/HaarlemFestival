@@ -4,13 +4,29 @@ include "showErrors.php";
 
 session_start();
 
-//getting ticket qty, price of the ticket, ticket id from the POST form
-$ticket_id = $_POST["ticket_id"];
-$qty = $_POST["qty1"];
-$tkt_price = $_POST["tkt_price"];
+$restaurant = NEW FoodController();
 
-if (isset($_POST["addTOcart"])) 
-{
+ $ticket_id = $restaurant -> getTicketId($_POST['Date'], $_SESSION['restoname'], $_SESSION['time']);
+ /*$_SESSION['ticketfood'] = $ticket_id;
+ $_SESSION['Date'] = $_POST['Date'];
+ $_SESSION['ClientName'] = $_POST['Name'];
+ $_SESSION['AdultQ'] = $_POST['Adult'];
+ $_SESSION['KidsQ'] = $_POST['Kids'];
+ $_SESSION['telnum'] = $_POST['telnum'];
+ $_SESSION['comment'] = $_POST['comment']; */
+
+
+//getting ticket qty, price of the ticket, ticket id from the POST form
+if (isset($_POST["ticket_id"])) {
+    $ticket_id = $_POST["ticket_id"];
+    $qty = $_POST["qty1"];
+    $tkt_price = $_POST["tkt_price"];
+}
+else{
+    $tkt_price = $_SESSION['price'];
+    $qty = $_POST['Adult'] + $_POST['Kids'];
+}
+
     if (!isset($_SESSION['email'])) 
     {
         //"user is not logged in"
@@ -24,12 +40,15 @@ if (isset($_POST["addTOcart"]))
         $TempOrder = new TempOrder_Controller();
         $ses_id=session_id();
         $TempOrder->DeleteExpiredSessionToken(); //delete expired session tokens
-        $TempOrder->InsertTempOrder($ses_id,$ticket_id,$qty,$tkt_price, $timeToExpire) ;//insert it into db table "temp_Order_item",
+      
+        $TempOrder->InsertTempOrder($ses_id,$ticket_id,$qty,$tkt_price, $timeToExpire);
+        //insert it into db table "temp_Order_item",
         header("Location: index.php");//to go to the index page
        // $TempOrder->ExportTempOrder($ticket_id,$customer_email);
     }
 
-    else{
+    else
+    {
         //"user logged in";
         $Ord = new Order_Controller();
         // $Ord->Test();
@@ -48,19 +67,17 @@ if (isset($_POST["addTOcart"]))
         //insert the customer email from the  session, and total price we calculate, 
         //the order id is AI, get Item_id from the DB and for each item id in Item_id(explode), enter order id in order items
 
+
         }
 
         //after any of the orders are inserted, go back to the previous page
-        if(isset($_REQUEST["destination"])){
+       if(isset($_REQUEST["destination"])){
             header("Location: ".$_REQUEST["destination"]."?orderAdded=yes");
         }else if(isset($_SERVER["HTTP_REFERER"])){
             header("Location: ".$_SERVER["HTTP_REFERER"]."?orderAdded=yes");
         }else{
             header("Location: index.php");//to go to the index page
-             /* some fallback, redirect to index.php */
+             //some fallback, redirect to index.php 
         }
-}
 
-else{
-    header("Location: index.php");//to go to the index page
-}
+?>

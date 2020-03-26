@@ -37,6 +37,7 @@ $restaurants = $restaurant -> getAllRestaurant();
 
 echo "<br>";
 foreach($restaurants as $data){
+	$ticketid = $data['ticket_id'];
 	$restoname = $data['location'];
 	$specialty = $data['special'];
 	$extradesc = $restaurant -> getExtraDescription($restoname);
@@ -82,7 +83,7 @@ foreach($restaurants as $data){
 			<?php 
 			
 			foreach($times as $data){
-				$url="timeToSes.php?time=".$data['time']. "&&restoname=".$restoname. "&&price=".$price;			
+				$url="timeToSes.php?time=".$data['time']. "&&restoname=".$restoname. "&&price=".$price. "&&ticketid=".$ticketid;			
 			?>
 				
 				<button onClick = "window.location.href = '<?php echo $url; ?>';" id = "time" type = "submit" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
