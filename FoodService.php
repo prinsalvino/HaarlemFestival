@@ -32,7 +32,31 @@ class FoodService extends DB {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
        
-	 }
+     }
+     public function getRestaurantBySpeciality($specialty) 
+     { 
+         try 
+         {
+             $sql = "SELECT ticket_id, location, special, price FROM tickets WHERE event = 'Food' AND special LIKE '%$specialty%' GROUP BY location ;" ; 
+             $result = $this->connect()->query($sql); 
+             $this->closeCon();
+             
+     
+             $numRows = $result->num_rows; 
+                 if ($numRows > 0) 
+                 {
+                     while ($row = $result->fetch_assoc()) 
+                     { 
+                          $data[] = $row;
+                     } 
+                     return $data;     
+                 } 
+         } 
+         catch (Exception $e) {
+             echo 'Caught exception: ',  $e->getMessage(), "\n";
+         }
+        
+      }
 	public function getSessionTime($restoname){
 		try 
         {

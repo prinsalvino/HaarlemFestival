@@ -15,8 +15,10 @@ class FoodController
     { 
         return $this->FoodService->getAllRestaurant(); 
 	}
-	public function test() {
-		return "tested";
+
+	public function getRestaurantBySpeciality($specialty)
+    { 
+        return $this->FoodService->getRestaurantBySpeciality($specialty);
 	}
 	
 	public function getSessionTime($restoname){

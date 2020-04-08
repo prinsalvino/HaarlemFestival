@@ -33,7 +33,38 @@ include ("header.php");
 
 //Open a new DB to use for DB connections
 $restaurant = NEW FoodController();
-$restaurants = $restaurant -> getAllRestaurant();
+?>
+  <br><br>
+
+<form action="foodhome.php" method = "POST" class="listdrop">
+<select class="DescriptionList" name = "DescriptionList">
+    <option value="All">All</option>
+    <option value="fish and seafood">Fish & Seafood</option>
+    <option value="Dutch">Dutch</option>
+    <option value="Argentinian">Argentinian</option>
+	<option value="European">European</option>
+    <option value="Asian">Asian</option>
+    <option value="International">International</option>
+    <option value="French">French</option>
+    <option value="Modern">Modern</option>
+  </select>
+  <input type="submit" name = "Submit" value = "Search">
+</form>
+<?php
+
+if (isset($_POST['submit'])) {
+	$selectedvalue = $_POST['DescriptionList'];
+	if ($selectedvalue == "All") {
+		$restaurants = $restaurant -> getAllRestaurant();
+	}
+	else {
+		$restaurants = $restaurant -> getRestaurantBySpeciality($selectedvalue);
+	}
+}
+else{
+	$restaurants = $restaurant -> getAllRestaurant();
+}
+
 
 echo "<br>";
 foreach($restaurants as $data){
