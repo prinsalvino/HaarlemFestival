@@ -252,7 +252,7 @@ include "AutoLoaderIncl.php";
                         }
                         else
                         { 
-                            $url="index.php";
+                            $url="payment.php";
                             ?>
                             <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php                             
                         }
