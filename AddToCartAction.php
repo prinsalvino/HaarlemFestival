@@ -1,6 +1,6 @@
 <?php
 include "AutoLoaderIncl.php";
-//include "showErrors.php";
+include "showErrors.php";
 
 session_start();
 
@@ -17,22 +17,15 @@ $restaurant = NEW FoodController();
 
 
 //getting ticket qty, price of the ticket, ticket id from the POST form
-// if (isset($_POST["ticket_id"])) {
-//     $ticket_id = $_POST["ticket_id"];
-//     $qty = $_POST["qty1"];
-//     $tkt_price = $_POST["tkt_price"];
-// }
-// else{
-//     $ticket_id = $_SESSION['ticketfood'];
-//     $tkt_price = $_SESSION['price'];
-//     $qty = $_SESSION['AdultQ'] + $_SESSION['KidsQ'];
-// }
-
-// echo $_SESSION['ticketfood'];
-
-$ticket_id = $_POST["ticket_id"];
-$qty = $_POST["qty"];
-$tkt_price = $_POST["tkt_price"];
+if (isset($_POST["ticket_id"])) {
+    $ticket_id = $_POST["ticket_id"];
+    $qty = $_POST["qty"];
+    $tkt_price = $_POST["tkt_price"];
+}
+else{
+    $tkt_price = $_SESSION['price'];
+    $qty = $_POST['Adult'] + $_POST['Kids'];
+}
 
     if (!isset($_SESSION['email'])) 
     {
@@ -41,12 +34,17 @@ $tkt_price = $_POST["tkt_price"];
         //create a new cookie like this
         $lifetime=7200; //60 sec for testing purposes, otherwise 7200 seconds(i.e. 2hrs)
         setcookie(session_name(),session_id(),time()+$lifetime);
-        $Expire_Session =time()+$lifetime;       
+        // echo session_id()."====".time();
+
+        $timeToExpire =time()+$lifetime;       
         $TempOrder = new TempOrder_Controller();
-        $session_id=session_id();
-        $TempOrder->DeleteExpiredSessionToken($session_id); //delete expired session tokens
-        $TempOrder->InsertTempOrder($session_id, $ticket_id, $qty, $tkt_price, $Expire_Session) ;//insert it into db table "temp_Order_item",
-       
+        $ses_id=session_id();
+        $TempOrder->DeleteExpiredSessionToken(); //delete expired session tokens
+      
+        $TempOrder->InsertTempOrder($ses_id,$ticket_id,$qty,$tkt_price, $timeToExpire);
+        //insert it into db table "temp_Order_item",
+        header("Location: index.php");//to go to the index page
+       // $TempOrder->ExportTempOrder($ticket_id,$customer_email);
     }
 
     else
@@ -54,9 +52,9 @@ $tkt_price = $_POST["tkt_price"];
         //"user logged in";
         $Ord = new Order_Controller();
         // $Ord->Test();
-        $customer_email=$_SESSION['email']; 
+        $customer_email="idgf.kr"; //$_SESSION['email'];
         //insert into db table "order_Items", take customer email from the session
-        //until the order is payed, the Order stays Unconfirmed
+        //until the order is payed, the Order stays null
         $Ord->insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price);
 
 
@@ -82,4 +80,4 @@ $tkt_price = $_POST["tkt_price"];
              //some fallback, redirect to index.php 
         }
 
-?>
+        ?>
