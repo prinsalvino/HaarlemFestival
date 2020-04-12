@@ -1,8 +1,7 @@
 <?php  
 declare(strict_types=1);
 include "AutoLoaderIncl.php";
-// include "showErrors.php";
-// session_start();
+//include "showErrors.php";
 
 ?> 
     
@@ -20,7 +19,9 @@ include "AutoLoaderIncl.php";
         </title> 
     </head>
 
-    <?php include ("header.php"); ?>
+    <?php include ("header.php"); 
+    unset($_SESSION['confirm']);
+    ?>
 
     <body>
 
@@ -235,22 +236,24 @@ include "AutoLoaderIncl.php";
                 <div class="columnCart" style="width: 40%;float: right;border-style: solid; border-color: #73ad21;">
                 <H3><u> Total Price:     €
                     <?php
-                    $sum = 0;
+                    $t_price = 0;
                     if(!empty($arr))
                     {
                         foreach($arr as $a)
                         {
-                            $sum+= $a["total_price"];
+                            $t_price+= $a["total_price"];
                         }
-                        echo $sum."<br><br>";
+                        echo $t_price.".00"."<br><br>";
+                        $_SESSION['t_price'] = $t_price.".00";  //passing total price in a session
+
                         //check out button
-                        if(!isset($_SESSION['email'])) 
+                        if(!isset($_SESSION['email'])) //if user not logged in, logs in or signs yp user
                         {   
                             $ses_id=session_id();
                             ?> <center> <?php  include "cartModal.php"; ?>   </center>                
                             <?php 
                         }
-                        else
+                        else // if user logged in, just proceed to actual payment
                         { 
                             $url="payment.php";
                             ?>

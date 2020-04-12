@@ -1,7 +1,7 @@
 <?php
-// include "showErrors.php";
+//include "showErrors.php";
 include_once "ticketsController.php";
-// include_once "TempOrder_Service.php";
+session_start();
 
 class shoppingCartService extends ticketsService
 
@@ -47,7 +47,7 @@ class shoppingCartService extends ticketsService
         }
     }
 
-    public function getAllOrderItems($user_email) 
+    public function getAllOrderItems($user_email) //only get orders that are not confirmed by the user
     {          
         try{
             $sql = "SELECT * FROM `order_Items` WHERE `status` = 'Unconfirmed' && `customer_email` = '".$user_email."' "; 
@@ -128,15 +128,17 @@ class shoppingCartService extends ticketsService
         try{
             if($customer_email==NULL) //temp user
             {
-                $stmtDel = $this->connect()->prepare  //deleting duplicate orders
+                $stmtDel = $this->connect()->prepare  //deleting temp order items
                 ("DELETE FROM `temp_Order_item` WHERE `ticket_id` = ? && `temp_id` = ? ;");
                 $stmtDel->bind_param("is",$ticket_id,$session_id );
                 
             }
             else if($session_id==NULL) //loggeed in user
             {
-                $stmtDel = $this->connect()->prepare  //deleting temporary orders
-                ("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = 'Unconfirmed';"); 
+                $stmtDel = $this->connect()->prepare  //deleting order items
+                //("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = 'Unconfirmed';"); 
+                ("UPDATE `order_Items` SET `status` = 'Item Deleted', `ticket_id` = 0 ".
+                 " WHERE `customer_email` = ? && `ticket_id` = ? && `status` = 'Unconfirmed';"); 
                 $stmtDel->bind_param("si",$customer_email,$ticket_id );
             }
             $stmtDel->execute();               
@@ -147,15 +149,47 @@ class shoppingCartService extends ticketsService
 
     }
 
+    public function confirmOrder($customer_email,$total_price) {
+        try{
+            $arr=$this->getOrderItems(NULL, $customer_email) ; //get unconfirmed orders
+            $order_item_ids=array();
+            
+            foreach($arr as $a)
+                {
+                    array_push($order_item_ids,$a[id]);
+                }  
+
+                $order_item_ids = implode(", ",$order_item_ids);
+
+                //to set to default, for test purposes only
+                //update order_Items set order_Id=0,status="Unconfirmed" Where NOT status="Item Deleted"
+                
+                //add order to orders with details of all the order items
+                $stmt = $this->connect()->prepare
+                ("INSERT INTO `orders`(`customer_email`,`total_price`,`Item_Id`) VALUES (?,?,?) ;");
+                $stmt->bind_param("sds", $customer_email,$total_price,$order_item_ids);
+                $stmt->execute();
+
+                //mark order as confirmed in order items table and assign order ID to order items who are 0 by default
+                 $stmt2 = $this->connect()->prepare
+                ("UPDATE".
+                    " order_Items t1".
+                    " INNER JOIN orders t2 ON t1.customer_email = t2.customer_email".
+                " SET".
+                    " t1.status = 'Confirmed',".
+                    " t1.order_Id = t2.order_Id".
+                " WHERE".
+                    " t1.status = 'Unconfirmed'".
+                    " AND t1.customer_email = ? " ) ;
+                $stmt2->bind_param("s", $customer_email);
+                $stmt2->execute();
+        }
+        catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }  
+    }
+
 }
 
 // $abc = new shoppingCartService;
-// $abc->ExportTempOrder(1,"test","h04m2mqta4cal2bjl8kjmltlc2");
-
-// $abc = new shoppingCartService;
-// $arr=$abc->getOrderItems("9ecrn15ltf36uk5btdopuqa0j1", NULL) ;
-// // $arr=$abc->getOrderItems(NULL, "pickyourfilter@bighit.kr") ;
-// foreach($arr as $a)
-// {
-//   print_r($a);   echo "<br>";
-// }
+// $abc->confirmOrder($_SESSION['email'], $_SESSION['t_price']) ;

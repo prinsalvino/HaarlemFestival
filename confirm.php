@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
-include "showErrors.php";
-include 'DB.php';
+
 $payment_id = $_POST['id'];
 
 $file = fopen('confirm.log', 'a');
@@ -26,8 +25,5 @@ $json = json_decode($result, true);
 fwrite($file, $json . PHP_EOL);
 fclose($file);
 
-$status = $json['status'];   
-    
-
-
+$status = $json['status'];  
 ?>

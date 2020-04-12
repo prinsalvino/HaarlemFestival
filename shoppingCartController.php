@@ -25,6 +25,13 @@ class shoppingCartController
         $this->_shoppingCartService->deleteRecordById($ticket_id,$customer_email,$session_id);
     }
 
+    public function confirmOrder($customer_email,$total_price) 
+    {
+        $this->_shoppingCartService->confirmOrder($customer_email,$total_price) ;
+    }
+
 
 }
 
+// $abc = new shoppingCartController  ;
+// $abc->confirmOrder($_SESSION['email'], $_SESSION['t_price']) ;

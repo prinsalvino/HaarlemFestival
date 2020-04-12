@@ -1,7 +1,15 @@
 <?php  
 declare(strict_types=1);
 include "AutoLoaderIncl.php";
-include "showErrors.php";
+//include "showErrors.php";
+include_once "shoppingCartController.php";
+
+$ses_id=session_id();
+
+if($_SESSION['confirm'] != "Confirm"  )
+ {
+     header("Location: index.php"); //if user did not proceed with payment, redirect to index page
+ }
 
 ?> 
     
@@ -29,12 +37,14 @@ include "showErrors.php";
         </center>
     </div>
     <div class="cartBody">
-        
     <p style="text-align: center"> 
-        Test mollie payment demonstration completed<br>Thank you for shopping with us. Have a nice day! 
+        Your order is confirmed<br>Thank you for shopping with us. Have a nice day! 
     </p>
     </div>
     <?php
+        unset($_SESSION['confirm']);
+        $CartController = new shoppingCartController;
+        $CartController->confirmOrder($_SESSION['email'], $_SESSION['t_price']) ;
 
         include "footer.php";?> 
     </body>

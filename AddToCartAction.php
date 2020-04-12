@@ -42,32 +42,18 @@ else{
         $TempOrder->DeleteExpiredSessionToken(); //delete expired session tokens
       
         $TempOrder->InsertTempOrder($ses_id,$ticket_id,$qty,$tkt_price, $timeToExpire);
-        //insert it into db table "temp_Order_item",
-        header("Location: index.php");//to go to the index page
-       // $TempOrder->ExportTempOrder($ticket_id,$customer_email);
+        //insert it into db table "temp_Order_item"
+        $TempOrder->ExportTempOrder($ticket_id,$customer_email);
     }
 
     else
     {
         //"user logged in";
         $Ord = new Order_Controller();
-        // $Ord->Test();
-        $customer_email="idgf.kr"; //$_SESSION['email'];
+        $customer_email= $_SESSION['email'];
         //insert into db table "order_Items", take customer email from the session
-        //until the order is payed, the Order stays null
+        //until the order is payed, the Order Id stays 0 ans status stays unconfirmed
         $Ord->insertOrderItems($customer_email,$ticket_id,$qty,$tkt_price);
-
-
-
-        //what happens when a temp user logs in, 
-        //the order item data from the user with session_id is trasferred to the order_items table
-
-        //when the order is confirmed 
-        //order is inserted in the "Orders"
-        //insert the customer email from the  session, and total price we calculate, 
-        //the order id is AI, get Item_id from the DB and for each item id in Item_id(explode), enter order id in order items
-
-
         }
 
         //after any of the orders are inserted, go back to the previous page
