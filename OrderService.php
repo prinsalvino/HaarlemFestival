@@ -48,6 +48,3 @@ class OrderService extends DB {
         } 
     }
 }
-
-// $abc = new OrderService;
-// $abc->insertOrderItems("pickyourfilter@bighit.kr",3,4,15);
