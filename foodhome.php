@@ -52,7 +52,7 @@ $restaurant = NEW FoodController();
 </form>
 <?php
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['Submit'])) {
 	$selectedvalue = $_POST['DescriptionList'];
 	if ($selectedvalue == "All") {
 		$restaurants = $restaurant -> getAllRestaurant();
