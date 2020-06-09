@@ -28,6 +28,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
 		<div class="container" style= "border:100px; border-radius: 25px; background-color:#333">
 			<br />
+			<?php $formNumber = 0; ?> 
 			<?php
 				//Determine if one of the buttons was pressed.
 				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
@@ -41,6 +42,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
+				<?php $formNumber = $formNumber + 1; ?>
 
 			<div class="col-md-4">
 				<form>
@@ -53,16 +55,16 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 						<div>
                      	 Amount: 
                           <br> 
-                     	 <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send','qty6send');">+</button>
-                       		 <input id="qty1" type="text" value="1" name="J1" style="width:10%;"/>                          
-                     	 <button class="qtyBtn" onclick="decrease_by_one('qty1','qty1send');">-</button>
+                     	 <button type="button" class="qtyBtn" onclick="increase_by_one('<?php echo $formNumber ?>','amount','qty6send');">+</button>
+                       		 <input id="<?php echo $formNumber ?>" type="text" value="1" name="J1" style="width:10%;"/>                          
+                     	 <button type="button" class="qtyBtn" onclick="decrease_by_one('<?php echo $formNumber ?>','amount');">-</button>
                     	</div>
 						
 						<?php
 						//$historyTicket->stockAvalabilityJazz($row["stock"]); ?>
                     		<br>
                     		<form action="AddToCartAction.php" method="POST">                     
-                      		<input id="qty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      		<input id="amount" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
                       		<input type="hidden" name="ticket_id" value="<?php echo $row["id"]; ?>">
                       		<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
                       		<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
