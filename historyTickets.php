@@ -59,7 +59,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 						<div>
                      	 Amount: 
                           <br> 
-                     	 <button type="button" class="qtyBtn" onclick="increase_by_one('<?php echo $formNumber ?>','amount','qty6send');">+</button>
+                     	 <button type="button" class="qtyBtn" onclick="increase_by_one('<?php echo $formNumber ?>','amount');">+</button>
                        		 <input id="<?php echo $formNumber ?>" type="text" value="1" name="J1" style="width:10%;"/>                          
                      	 <button type="button" class="qtyBtn" onclick="decrease_by_one('<?php echo $formNumber ?>','amount');">-</button>
                     	</div>
