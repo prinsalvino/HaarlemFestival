@@ -1,5 +1,9 @@
 <?php
 include ("header.php");
+include ("AutoLoaderIncl.php");
+session_start();
+
+$historyTicket= new ticketsService();
 
 $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
@@ -30,7 +34,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 			<br />
 			<?php $formNumber = 0; ?> 
 			<?php
-				//Determine if one of the buttons was pressed.
+				//Determine if one of the buttons was pressed and filter accordingly
 				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
 				else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
 				else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
@@ -64,12 +68,12 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 						//$historyTicket->stockAvalabilityJazz($row["stock"]); ?>
                     		<br>
                     		<form action="AddToCartAction.php" method="POST">                     
-                      		<input id="amount" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-                      		<input type="hidden" name="ticket_id" value="<?php echo $row["id"]; ?>">
-                      		<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
-                      		<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-                      		<button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-                    	</form>	
+                      			<input id="amount" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      			<input type="hidden" name="ticket_id" value="<?php echo $row["id"]; ?>">
+                      			<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
+                      			<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      			<button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    		</form>	
 					</div>
 				</form>
 			</div>
