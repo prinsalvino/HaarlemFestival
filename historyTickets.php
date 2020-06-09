@@ -3,42 +3,6 @@ include ("header.php");
 
 $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
-
-//All of this is to add to cart, but I'm going to change this button's functionality.
-
-if(isset($_POST["add_to_cart"]))
-{
-	if(isset($_SESSION["shopping_cart"]))
-	{
-		$item_array_id = array_column($_SESSION["shopping_cart"], "ticket_id");
-		if(!in_array($_GET["id"], $item_array_id))
-		{
-			$count = count($_SESSION["shopping_cart"]);
-			$item_array = array(
-				'ticket_id'			=>	$_GET["ticket_id"],
-				'date'			=>	$_POST["date"],
-				'price'		=>	$_POST["price"],
-				'amount'		=>	$_POST["amount"]
-			);
-			$_SESSION["shopping_cart"][$count] = $item_array;
-		}
-		else
-		{
-			echo '<script>alert("Item Already Added")</script>';
-		}
-	}
-	else
-	{
-		$item_array = array(
-			'ticket_id'			=>	$_GET["ticket_id"],
-			'date'			=>	$_POST["date"],
-			'price'		=>	$_POST["price"],
-			'amount'		=>	$_POST["amount"]
-		);
-		$_SESSION["shopping_cart"][0] = $item_array;
-	}
-}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +12,7 @@ if(isset($_POST["add_to_cart"]))
         <link rel="stylesheet" href="css/stylesheet.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/historystyle.css">
+		<script type="text/javascript" src="js/jazzScript.js" ></script>
 	</head>
 	<body>
 		<br />
@@ -64,7 +29,7 @@ if(isset($_POST["add_to_cart"]))
 		<div class="container" style= "border:100px; border-radius: 25px; background-color:#333">
 			<br />
 			<?php
-				//Over here 30478239048902384092384902384023890
+				//Determine if one of the buttons was pressed.
 				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
 				else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
 				else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
@@ -88,13 +53,12 @@ if(isset($_POST["add_to_cart"]))
 						<div>
                      	 Amount: 
                           <br> 
-                     	 <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send');">+</button>
+                     	 <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send','qty6send');">+</button>
                        		 <input id="qty1" type="text" value="1" name="J1" style="width:10%;"/>                          
-                     	 <button class="qtyBtn" onclick="decrease_by_one('qty1','qty1send');" />-</button>
+                     	 <button class="qtyBtn" onclick="decrease_by_one('qty1','qty1send');">-</button>
                     	</div>
 						
 						<?php
-						//$historyTicket = new ticketsService();
 						//$historyTicket->stockAvalabilityJazz($row["stock"]); ?>
                     		<br>
                     		<form action="AddToCartAction.php" method="POST">                     
@@ -113,7 +77,7 @@ if(isset($_POST["add_to_cart"]))
 			?>
 	</body>
 	<br></br>
-	<div style="margin-left:-33%;">
+	<div>
 		<?php include "footer.php"; ?>
 	</div>
 </html>
