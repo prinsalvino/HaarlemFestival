@@ -40,6 +40,10 @@ class FoodController
 		return $ticket_id;
 	}
 
+	public function getTime($time, $restoname){
+		return $this->FoodService->getTime($time, $restoname);
+	}
+
 }
 
 

@@ -145,6 +145,29 @@ class FoodService extends DB {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
     }
+
+    public function getTime($time, $restoname){
+        try 
+        {
+            $sql = "SELECT date FROM tickets WHERE event = 'Food' AND  location = '$restoname' AND time = '$time' AND stock > 0" ; 
+            $result = $this->connect()->query($sql); 
+            $this->closeCon();
+            
+    
+            $numRows = $result->num_rows; 
+                if ($numRows > 0) 
+                {
+                    while ($row = $result->fetch_assoc()) 
+                    { 
+                         $data[] = $row;
+                    } 
+                    return $data;     
+                } 
+        } 
+        catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+    }
         
 }
 
