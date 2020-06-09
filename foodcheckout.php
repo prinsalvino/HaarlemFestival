@@ -114,9 +114,7 @@ foreach ($times as $time) {
 
     </div>
 
-<?php
-	include ("footer.php");
-?>
+
 <script>
 
 function  calculateAll(price) {
