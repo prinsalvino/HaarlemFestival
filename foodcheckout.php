@@ -27,6 +27,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);*/
 
 include ("header.php");
+require_once "FoodController.php";
+$restaurant = new FoodController();
+$times = $restaurant->getTime($_SESSION['time'], $_SESSION['restoname']);
+foreach ($times as $time) {
+    $list =  explode("-",$time['date']);
+    $restotime[] = $list[2];
+}
+
 ?>
 <h1 class = "opening"> Reserve Your Table at <?php echo $_SESSION['restoname'];?>!</h1> </br>
 
@@ -35,14 +43,14 @@ include ("header.php");
         <div class="col">
 
             <form id="allform" class = "NameInput" action="AddToCartAction.php" method="POST">
-                Name:   <input type="text" class = "inputName" name="Name" value=""><br>
-                <br>
-
+              
                 Date:		
                 <select name="Date" class = "Date">
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
+                    <option value="26"><?php echo $restotime[0];?></option>
+                    <option value="27"><?php echo $restotime[1];?></option>
+                    <option value="28"><?php echo $restotime[2];?></option>
+                    <option value="29"><?php echo $restotime[3];?></option>
+
                 </select>
                 July 2020
             <br>
@@ -71,7 +79,6 @@ include ("header.php");
 
             <pre class = "Time">Time:                  <?php echo $_SESSION["time"];?></pre>
 
-                Telephone Number:   	<input type="text" class = "telenumber" name="telnum"><br>
 
             </br>
                 Comments: <input type="text" class = "comments" name="comment" >
