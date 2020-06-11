@@ -1,9 +1,6 @@
 <?php
 include ("header.php");
 include ("AutoLoaderIncl.php");
-
-$historyTicket= new ticketsService();
-
 $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
 ?>
@@ -18,6 +15,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 		<script type="text/javascript" src="js/jazzScript.js" ></script>
 	</head>
 	<body>
+		<h1 style="text-align: center; font-size: 50px"> Historic Tour </h1>
 		<br />
 
 		<form method="POST" style="margin-left: -22%;">
@@ -67,8 +65,8 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 						//$historyTicket->stockAvalabilityJazz($row["stock"]); ?>
                     		<br>
                     		<form action="AddToCartAction.php" method="POST">                     
-                      			<input id="amount" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-                      			<input type="hidden" name="ticket_id" value="<?php echo $row["id"]; ?>">
+                      			<input id="amount" type="hidden" name="qty" value="<?php echo $formNumber ?>">  <!--actual field that send qty via post-->
+                      			<input type="hidden" name="ticket_id" value="<?php echo $row["ticket_id"]; ?>">
                       			<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
                       			<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
                       			<button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
