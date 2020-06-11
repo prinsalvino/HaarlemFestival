@@ -1,7 +1,6 @@
 <?php
 include ("header.php");
 include ("AutoLoaderIncl.php");
-session_start();
 
 $historyTicket= new ticketsService();
 
@@ -49,12 +48,12 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 				<?php $formNumber = $formNumber + 1; ?>
 
 			<div class="col-md-4">
-				<form>
+				
 				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px;" align="center">
 
 						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
 						<p><?php echo $row["special"]; ?></p>
-                        <p>€<?php echo number_format($row["price"], 2, '.', '');?></p>
+                        <p><?php echo number_format($row["price"], 2, '.', '');?></p>
 						
 						<div>
                      	 Amount: 
@@ -75,7 +74,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
                       			<button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
                     		</form>	
 					</div>
-				</form>
+				
 			</div>
 			<?php
 					}
