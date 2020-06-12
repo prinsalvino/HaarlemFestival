@@ -24,6 +24,18 @@ p {
     color: #1e1e1e;
 }
 
+.cartDelBtn {
+    font-size: 12px;
+    text-decoration: none;
+    background-color: #f44336;
+    color: #FFF;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
 
 /* The Modal (background) */
 

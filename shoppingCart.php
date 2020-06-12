@@ -1,8 +1,7 @@
 <?php  
 declare(strict_types=1);
 include "AutoLoaderIncl.php";
-// include "showErrors.php";
-// session_start();
+//include "showErrors.php";
 
 ?> 
     
@@ -14,12 +13,15 @@ include "AutoLoaderIncl.php";
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="css/cartStylesheet.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="js/jazzScript.js" ></script> 
         <title>
                 Cart || Haarlem Festival
         </title> 
     </head>
 
-    <?php include ("header.php"); ?>
+    <?php include ("header.php"); 
+    unset($_SESSION['confirm']);
+    ?>
 
     <body>
 
@@ -48,7 +50,6 @@ include "AutoLoaderIncl.php";
 
 
                 ?>
-
                 <div style="z-index:2" class="rowCart">
                     <div class="columnCart">
                         <h2 style="text-align:center"><u>Day 1<br>July 26,2020</u></h2><br>
@@ -62,7 +63,21 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
+                                   if(!isset($_SESSION['email'])) 
+                                   {   
+                                       $ses_id=session_id();
+                                       $url="deleteOrders.php?userType=temp&id=".$a["ticket_id"]."&details=".$ses_id;
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php                        
+                                   }
+                                   else
+                                   { 
+                                    $url="deleteOrders.php?userType=logged&id=".$a["ticket_id"]."&details=".$_SESSION['email'];
+                                    ?> 
+                                    <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                    <?php 
+                                   }                                   
                                 }
                             }
                         }
@@ -83,7 +98,21 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
+                                   if(!isset($_SESSION['email'])) 
+                                   {   
+                                       $ses_id=session_id();
+                                       $url="deleteOrders.php?userType=temp&id=".$a["ticket_id"]."&details=".$ses_id;
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php                        
+                                   }
+                                   else
+                                   { 
+                                    $url="deleteOrders.php?userType=logged&id=".$a["ticket_id"]."&details=".$_SESSION['email'];
+                                    ?> 
+                                    <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                    <?php 
+                                   }
                                 }
                             }
                         }
@@ -104,7 +133,21 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?>  <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button>  <?php                        
+                                   if(!isset($_SESSION['email'])) 
+                                   {   
+                                       $ses_id=session_id();
+                                       $url="deleteOrders.php?userType=temp&id=".$a["ticket_id"]."&details=".$ses_id;
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php                        
+                                   }
+                                   else
+                                   { 
+                                        $url="deleteOrders.php?userType=logged&id=".$a["ticket_id"]."&details=".$_SESSION['email'];
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php 
+                                   }         
                                 }
                             }
                         }
@@ -125,7 +168,21 @@ include "AutoLoaderIncl.php";
                                     ?> <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                                    echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                                    echo "Total price €".$a["total_price"]."<br>";     
-                                   ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
+                                   if(!isset($_SESSION['email'])) 
+                                   {   
+                                       $ses_id=session_id();
+                                       $url="deleteOrders.php?userType=temp&id=".$a["ticket_id"]."&details=".$ses_id;
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php                        
+                                   }
+                                   else
+                                   { 
+                                        $url="deleteOrders.php?userType=logged&id=".$a["ticket_id"]."&details=".$_SESSION['email'];
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php 
+                                   }                        
                                 }
                             }
                         }
@@ -155,7 +212,21 @@ include "AutoLoaderIncl.php";
                             <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
                             echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                             echo "Total price €".$a["total_price"]."<br>";     
-                            ?> <button style="background-color: #f44336; font-size: 15px; color: #FFF"> X Remove </button> <?php                        
+                            if(!isset($_SESSION['email'])) 
+                                   {   
+                                       $ses_id=session_id();
+                                       $url="deleteOrders.php?userType=temp&id=".$a["ticket_id"]."&details=".$ses_id;
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php                        
+                                   }
+                                   else
+                                   { 
+                                        $url="deleteOrders.php?userType=logged&id=".$a["ticket_id"]."&details=".$_SESSION['email'];
+                                        ?> 
+                                        <a class="cartDelBtn" href="<?php echo $url; ?>"> X Remove </a> 
+                                        <?php 
+                                   }                        
                         }
                     }?> 
                 </div>    <?php
@@ -165,24 +236,26 @@ include "AutoLoaderIncl.php";
                 <div class="columnCart" style="width: 40%;float: right;border-style: solid; border-color: #73ad21;">
                 <H3><u> Total Price:     €
                     <?php
-                    $sum = 0;
+                    $t_price = 0;
                     if(!empty($arr))
                     {
                         foreach($arr as $a)
                         {
-                            $sum+= $a["total_price"];
+                            $t_price+= $a["total_price"];
                         }
-                        echo $sum."<br><br>";
+                        echo $t_price.".00"."<br><br>";
+                        $_SESSION['t_price'] = $t_price.".00";  //passing total price in a session
+
                         //check out button
-                        if(!isset($_SESSION['email'])) 
+                        if(!isset($_SESSION['email'])) //if user not logged in, logs in or signs yp user
                         {   
                             $ses_id=session_id();
                             ?> <center> <?php  include "cartModal.php"; ?>   </center>                
                             <?php 
                         }
-                        else
+                        else // if user logged in, just proceed to actual payment
                         { 
-                            $url="index.php";
+                            $url="payment.php";
                             ?>
                             <button onclick="window.location.href = '<?php echo $url; ?>';">Proceed to payment</button> <?php                             
                         }
@@ -223,10 +296,19 @@ include "AutoLoaderIncl.php";
                             window.location = window.location + '#OrdersExported';
                             window.location.reload();
                             }
-                        }
+                        }                        
                     </script> 
                     <?php                  
                 }
+
+                if($_GET['order']=="deleted")
+                {
+                    ?><script>
+                        displayDeleteAlert()();
+                    </script>  
+                    <?php
+                }
+
                 ?>
         </div>
 

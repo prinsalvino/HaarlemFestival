@@ -20,5 +20,18 @@ class shoppingCartController
         $this->_shoppingCartService->ExportTempOrder($ticket_id,$customer_email,$ses_id);
     }
 
+    public function deleteRecordById($ticket_id,$customer_email,$session_id) 
+    {
+        $this->_shoppingCartService->deleteRecordById($ticket_id,$customer_email,$session_id);
+    }
+
+    public function confirmOrder($customer_email,$total_price) 
+    {
+        $this->_shoppingCartService->confirmOrder($customer_email,$total_price) ;
+    }
+
+
 }
 
+// $abc = new shoppingCartController  ;
+// $abc->confirmOrder($_SESSION['email'], $_SESSION['t_price']) ;

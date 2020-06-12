@@ -33,10 +33,42 @@ include ("header.php");
 
 //Open a new DB to use for DB connections
 $restaurant = NEW FoodController();
-$restaurants = $restaurant -> getAllRestaurant();
+?>
+  <br><br>
+
+<form action="foodhome.php" method = "POST" class="listdrop">
+<select class="DescriptionList" name = "DescriptionList">
+    <option value="All">All</option>
+    <option value="fish and seafood">Fish & Seafood</option>
+    <option value="Dutch">Dutch</option>
+    <option value="Argentinian">Argentinian</option>
+	<option value="European">European</option>
+    <option value="Aziatisch">Asian</option>
+    <option value="International">International</option>
+    <option value="French">French</option>
+    <option value="Modern">Modern</option>
+  </select>
+  <input type="submit" name = "Submit" value = "Search">
+</form>
+<?php
+
+if (isset($_POST['Submit'])) {
+	$selectedvalue = $_POST['DescriptionList'];
+	if ($selectedvalue == "All") {
+		$restaurants = $restaurant -> getAllRestaurant();
+	}
+	else {
+		$restaurants = $restaurant -> getRestaurantBySpeciality($selectedvalue);
+	}
+}
+else{
+	$restaurants = $restaurant -> getAllRestaurant();
+}
+
 
 echo "<br>";
 foreach($restaurants as $data){
+	$ticketid = $data['ticket_id'];
 	$restoname = $data['location'];
 	$specialty = $data['special'];
 	$extradesc = $restaurant -> getExtraDescription($restoname);
@@ -82,7 +114,7 @@ foreach($restaurants as $data){
 			<?php 
 			
 			foreach($times as $data){
-				$url="timeToSes.php?time=".$data['time']. "&&restoname=".$restoname. "&&price=".$price;			
+				$url="timeToSes.php?time=".$data['time']. "&&restoname=".$restoname. "&&price=".$price. "&&ticketid=".$ticketid;			
 			?>
 				
 				<button onClick = "window.location.href = '<?php echo $url; ?>';" id = "time" type = "submit" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>

@@ -1,4 +1,4 @@
-<?php include "header.php" ?>
+
 <?php include "DB.php" ?>
 <?php session_start(); ?>
 <!doctype html>
@@ -10,6 +10,7 @@
 </head>
   
 <body>
+  <?php include "header.php" ?>
     <section class="page_section">
         <section id="Title">
     

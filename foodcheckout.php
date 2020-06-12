@@ -27,6 +27,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);*/
 
 include ("header.php");
+require_once "FoodController.php";
+$restaurant = new FoodController();
+$times = $restaurant->getTime($_SESSION['time'], $_SESSION['restoname']);
+foreach ($times as $time) {
+    $list =  explode("-",$time['date']);
+    $restotime[] = $list[2];
+}
+
 ?>
 <h1 class = "opening"> Reserve Your Table at <?php echo $_SESSION['restoname'];?>!</h1> </br>
 
@@ -34,53 +42,46 @@ include ("header.php");
     <div class="row">
         <div class="col">
 
-            <form class = "NameInput" action="/action_page.php">
-                Name:   <input type="text" class = "inputName" name="Name" value=""><br>
-            </form>
-                <br>
-
-            <form action="/action_page.php">
+            <form id="allform" class = "NameInput" action="AddToCartAction.php" method="POST">
+              
                 Date:		
                 <select name="Date" class = "Date">
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
+                    <option value="26"><?php echo $restotime[0];?></option>
+                    <option value="27"><?php echo $restotime[1];?></option>
+                    <option value="28"><?php echo $restotime[2];?></option>
+                    <option value="29"><?php echo $restotime[3];?></option>
+
                 </select>
                 July 2020
-            </form>
+            <br>
             <br>
 
-            <form action="/action_page.php">
                 Adult: 		
-                <select id = "selectboxAdult" name="Adult" class = "Adult" onchange = "calculateAll()">
+                <select id = "selectboxAdult" name="Adult" class = "Adult" onchange = "calculateAll(<?php echo $_SESSION['price'];?>)">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
 	                <option value="4">4</option>
                 </select>
-            </form>
             <br>
-            <form action="/action_page.php">
+            <br>
+
                 Kids(<12): 		
-                <select id = "selectboxKids" onchange = "calculateAll()" name="Kids" class = "Kids">
+                <select id = "selectboxKids" onchange = "calculateAll(<?php echo $_SESSION['price'];?>)" name="Kids" class = "Kids">
                     <option id = "0" value="0">0</option>
                     <option id = "1" value="1">1</option>
                     <option id = "2" value="2">2</option>
                     <option id = "3" value="3">3</option>
 	                <option id = "4" value="4">4</option>
                 </select>
-            </form>
             <br/>
+            <br>
 
             <pre class = "Time">Time:                  <?php echo $_SESSION["time"];?></pre>
 
-            <form class = "TelNumber" action="/action_page.php">
-                Telephone Number:   	<input type="text" class = "telenumber" name="telnum" value=""><br>
-            </form>
 
             </br>
-            <form  class = "formcomment"action="/action_page.php">
-                Comments: <input type="text" class = "comments" name="comments" value="">
+                Comments: <input type="text" class = "comments" name="comment" >
             </form>
         </div>
 
@@ -106,20 +107,19 @@ include ("header.php");
 
             </div>
 
-            <input  type="submit" class = "submitbtn" value="Add to Cart">
+
+            <input  type="submit" class = "submitbtn" form="allform" value="Add to Cart" name = "addTOcart">
 
         </div>
 
     </div>
 
-<?php
-	include ("footer.php");
-?>
+
 <script>
 
-function  calculateAll() {
-    var priceKids = calculateKids();
-    var priceAdult = calculateAdult();
+function  calculateAll(price) {
+    var priceKids = calculateKids(price);
+    var priceAdult = calculateAdult(price);
     calculateReservation();
 
     var total = priceKids + priceAdult;
@@ -129,33 +129,36 @@ function  calculateAll() {
 }
 
     //can also just pass the value from the parameter
-function calculateKids() {
+function calculateKids(price) {
+    var price = parseFloat(price);
+    var pricekids = price/2;
     var selectBox = document.getElementById("selectboxKids");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    var price = selectedValue * 10;
+    var newprice = selectedValue * pricekids;
 
-    document.getElementById("priceKids").innerHTML = "Kids(<12): " + selectedValue + " € " + price;
 
-    return price;
+    document.getElementById("priceKids").innerHTML = "Kids(<12): " + selectedValue + " Person, € " + newprice;
+
+    return newprice;
 
 }
 
-function calculateAdult() {
-
+function calculateAdult(price) {
+    var price = parseFloat(price);
     var selectBox = document.getElementById("selectboxAdult");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    var price = selectedValue * 10;
+    var newprice = selectedValue * price;
     
 
-    document.getElementById("priceAdult").innerHTML = "Adult:  " + selectedValue + " € " + price;
+    document.getElementById("priceAdult").innerHTML = "Adult:  " + selectedValue + " Person, € " + newprice;
 
-    return price;
+    return newprice;
     
 
 }
 
 function onLoad(){
-    calculateAll();
+    calculateAll(<?php echo $_SESSION['price'];?>);
     calculateReservation();
 }
 

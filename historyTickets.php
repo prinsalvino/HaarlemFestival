@@ -1,43 +1,7 @@
 <?php
 include ("header.php");
-
+include ("AutoLoaderIncl.php");
 $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
-
-
-//All of this is to add to cart, but I'm going to change this button's functionality.
-
-if(isset($_POST["add_to_cart"]))
-{
-	if(isset($_SESSION["shopping_cart"]))
-	{
-		$item_array_id = array_column($_SESSION["shopping_cart"], "ticket_id");
-		if(!in_array($_GET["id"], $item_array_id))
-		{
-			$count = count($_SESSION["shopping_cart"]);
-			$item_array = array(
-				'ticket_id'			=>	$_GET["ticket_id"],
-				'date'			=>	$_POST["date"],
-				'price'		=>	$_POST["price"],
-				'amount'		=>	$_POST["amount"]
-			);
-			$_SESSION["shopping_cart"][$count] = $item_array;
-		}
-		else
-		{
-			echo '<script>alert("Item Already Added")</script>';
-		}
-	}
-	else
-	{
-		$item_array = array(
-			'ticket_id'			=>	$_GET["ticket_id"],
-			'date'			=>	$_POST["date"],
-			'price'		=>	$_POST["price"],
-			'amount'		=>	$_POST["amount"]
-		);
-		$_SESSION["shopping_cart"][0] = $item_array;
-	}
-}
 
 ?>
 <!DOCTYPE html>
@@ -48,8 +12,10 @@ if(isset($_POST["add_to_cart"]))
         <link rel="stylesheet" href="css/stylesheet.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/historystyle.css">
+		<script type="text/javascript" src="js/jazzScript.js" ></script>
 	</head>
 	<body>
+		<h1 style="text-align: center; font-size: 50px"> Historic Tour </h1>
 		<br />
 
 		<form method="POST" style="margin-left: -22%;">
@@ -63,8 +29,9 @@ if(isset($_POST["add_to_cart"]))
 
 		<div class="container" style= "border:100px; border-radius: 25px; background-color:#333">
 			<br />
+			<?php $formNumber = 0; ?> 
 			<?php
-				//Over here 30478239048902384092384902384023890
+				//Determine if one of the buttons was pressed and filter accordingly
 				if(isset($_POST["thursday"])){$query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-26'"; }
 				else if(isset($_POST["friday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-27'"; }
 				else if(isset($_POST["saturday"])){ $query = "SELECT * FROM tickets WHERE event='History' AND date = '2020-07-28'"; }
@@ -76,36 +43,36 @@ if(isset($_POST["add_to_cart"]))
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
+				<?php $formNumber = $formNumber + 1; ?>
 
 			<div class="col-md-4">
-				<form method="POST">
-				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px;" align="center">
+
+				<div style="border:5px solid black; background-color:#f1f1f1"; border-radius:25px; padding:16px;" align="center">
 
 						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
 						<p><?php echo $row["special"]; ?></p>
-                        <p>€<?php echo number_format($row["price"], 2, '.', '');?></p>
+                        <p><?php echo number_format($row["price"], 2, '.', '');?></p>
 						
 						<div>
-                     	 Qty: 
+                     	 Amount: 
                           <br> 
-                     	 <button class="qtyBtn" onclick="increase_by_one('qty1','qty1send');">+</button>
-                       		 <input id="qty1" type="text" value="1" name="J1" style="width:10%;"/>                          
-                     	 <button class="qtyBtn" onclick="decrease_by_one('qty1','qty1send');" />-</button>
+                     	 <button type="button" class="qtyBtn" onclick="increase_by_one('<?php echo $formNumber ?>','amount');">+</button>
+                       		 <input id="<?php echo $formNumber ?>" type="text" value="1" name="J1" style="width:10%;"/>                          
+                     	 <button type="button" class="qtyBtn" onclick="decrease_by_one('<?php echo $formNumber ?>','amount');">-</button>
                     	</div>
 						
 						<?php
-						//$historyTicket = new ticketsService();
 						//$historyTicket->stockAvalabilityJazz($row["stock"]); ?>
                     		<br>
                     		<form action="AddToCartAction.php" method="POST">                     
-                      		<input id="qty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-                      		<input type="hidden" name="ticket_id" value="<?php echo $row["id"]; ?>">
-                      		<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
-                      		<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-                      		<button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-                    	</form>	
+                      			<input id="amount" type="hidden" name="qty" value="<?php echo $formNumber ?>">  <!--actual field that send qty via post-->
+                      			<input type="hidden" name="ticket_id" value="<?php echo $row["ticket_id"]; ?>">
+                      			<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
+                      			<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                      			<button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
+                    		</form>	
 					</div>
-				</form>
+				
 			</div>
 			<?php
 					}
@@ -113,7 +80,7 @@ if(isset($_POST["add_to_cart"]))
 			?>
 	</body>
 	<br></br>
-	<div style="margin-left:-33%;">
+	<div>
 		<?php include "footer.php"; ?>
 	</div>
 </html>

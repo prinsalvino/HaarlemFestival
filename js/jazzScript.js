@@ -18,6 +18,11 @@ function decrease_by_one(field, field2) {
 function displayAlert() {
     alert("Ticket added to cart");
 }
+
+function displayDeleteAlert() {
+    alert("Order deleted from shopping cart");
+}
+
 // function displayAlert(artist_name) {
 //     alert("Ticket for " + artist_name + " added to cart");
 // }

@@ -15,8 +15,10 @@ class FoodController
     { 
         return $this->FoodService->getAllRestaurant(); 
 	}
-	public function test() {
-		return "tested";
+
+	public function getRestaurantBySpeciality($specialty)
+    { 
+        return $this->FoodService->getRestaurantBySpeciality($specialty);
 	}
 	
 	public function getSessionTime($restoname){
@@ -29,6 +31,17 @@ class FoodController
 	public function getPicture($restoname){
 		return $this->FoodService->getPicture($restoname); 
 
+	}
+	public function getTicketId($date,$restoname, $time){
+		$datas = $this->FoodService->getTicketId($date,$restoname, $time);
+		foreach ($datas as $data) {
+			$ticket_id = $data['ticket_id'];
+		}
+		return $ticket_id;
+	}
+
+	public function getTime($time, $restoname){
+		return $this->FoodService->getTime($time, $restoname);
 	}
 
 }
