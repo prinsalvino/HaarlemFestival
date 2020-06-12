@@ -24,7 +24,7 @@
         <a href="dashboard.php">Dashboard</a>
         <button class="dropdown-btn" style="width: 170px;">Products</button>
         <div class="dropdown-container">
-            <a href="editEvents.php" style="background-color: slategrey;">Add New</a>
+            <a href="addEvents.php" style="background-color: slategrey;">Add New</a>
             <a href="listEvents.php" style="background-color: slategrey;">Edit Existing</a>    
         </div>
         <a href="homepageLogin.php">Logout</a>     
@@ -80,14 +80,14 @@ if ($result = $connect->query($query)) {
         $field5name = $row["location"]; 
         $field6name = $row["special"]; 
  
-        echo '<tr> 
+        echo '<a href= "editEvent.php?id=$field1name"><tr> 
                   <td>'.$field1name.'</td> 
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
                   <td>'.$field4name.'</td> 
                   <td>'.$field5name.'</td> 
                   <td>'.$field6name.'</td> 
-              </tr>';
+              </tr> </a>';
     }
     $result->free();
 } 
