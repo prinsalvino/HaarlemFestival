@@ -47,7 +47,13 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
 			<div class="col-md-4">
 				
-				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px;" align="center">
+				<?php 	$background = "#f1f1f1";
+						//if($row["special"] = "English"){$background = "lightblue";}
+						//else if($row["special"] = "Dutch"){$background = "orange";}
+						//else if($row["special" = "Chinese"]){$background = "lightred";}
+				?>
+
+				<div style="border:5px solid black; background-color:<?php echo $background ?>; border-radius:25px; padding:16px;" align="center">
 
 						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
 						<p><?php echo $row["special"]; ?></p>
