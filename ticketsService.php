@@ -71,14 +71,14 @@ class ticketsService extends DB {
 
     public function stockAvalabilityJazz($stock, $AllAccess=null) 
     {
-        if($stock>10 && $AllAccess!=null)
+        if($stock>10 && $AllAccess!=null) //green
         {
         ?>
             <p style="color:#228B22;  "> 
             <b> Available </b></p>
         <?php
         }
-        elseif($stock>50 && $AllAccess==null)
+        elseif($stock>50 && $AllAccess==null) //green
         {
         ?>
             <p style="color:#228B22;  "> 
@@ -86,7 +86,7 @@ class ticketsService extends DB {
         <?php
         }
 
-        elseif($stock==0)
+        elseif($stock==0) //red
         {
         ?>
             <p style="color:#DC143C ;  "> 
@@ -94,7 +94,7 @@ class ticketsService extends DB {
         <?php
         }
 
-        else{
+        else{ //yellow
             ?>
             <p style="color: #9B870C;  "> 
             <b> Low in Stock </b></p>
