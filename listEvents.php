@@ -24,7 +24,7 @@
         <a href="dashboard.php">Dashboard</a>
         <button class="dropdown-btn" style="width: 170px;">Products</button>
         <div class="dropdown-container">
-            <a href="editEvents.php" style="background-color: slategrey;">Add New</a>
+            <a href="addEvents.php" style="background-color: slategrey;">Add New</a>
             <a href="listEvents.php" style="background-color: slategrey;">Edit Existing</a>    
         </div>
         <a href="homepageLogin.php">Logout</a>     
@@ -54,45 +54,83 @@
 </body>
 </html>
 
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Event</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Location</th>
-          <th>Special</th>
-        </tr>
+<html>
+<body>
+<?php 
+$connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
+$query = "SELECT * FROM tickets";
+ 
+ 
+echo '<table border="0" cellspacing="2" cellpadding="2"> 
+      <tr> 
+          <td> ID </td> 
+          <td> Event</td> 
+          <td> Date </td> 
+          <td> Time </td> 
+          <td> Location </td> 
+          <td> Special </td> 
+      </tr>';
+ 
+if ($result = $connect->query($query)) {
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["ticket_id"];
+        $field2name = $row["event"];
+        $field3name = $row["date"];
+        $field4name = $row["time"];
+        $field5name = $row["location"]; 
+        $field6name = $row["special"]; 
+ 
+        echo '<a href= "editEvent.php?id=$field1name"><tr> 
+                  <td>'.$field1name.'</td> 
+                  <td>'.$field2name.'</td> 
+                  <td>'.$field3name.'</td> 
+                  <td>'.$field4name.'</td> 
+                  <td>'.$field5name.'</td> 
+                  <td>'.$field6name.'</td> 
+              </tr> </a>';
+    }
+    $result->free();
+} 
 
-<?php foreach ( $results['tickets_id'] as $events ) { ?>
 
-        <tr onclick="location='listEvents.php?action=editEventPage&amp;ticket_id=<?php echo $event->ticket_id?>'">
-          <td>
-              <?php echo $events->ticket_id?>
-            </td>
-          <td>
-            <?php echo $events->event?>
-          </td>
+$results_per_page = 20;
 
-          <td>
-            <?php echo date('j M Y', $events->date)?>
-          </td>
+$sql = 'SELECT * FROM tickets';
+$result = mysqli_query($connect,$sql);
+$number_of_results = mysqli_num_rows($result);
 
-          <td>
-            <?php echo $events->time?>
-          </td>
 
-          <td>
-            <?php echo $events->location?>
-          </td>
 
-          <td>
-            <?php echo $events->special?>
-          </td>
-        </tr>
+$number_of_pages = ceil($number_of_results/$results_per_page);
 
-<?php } ?>
+if (!isset($_GET['page'])) {
+  $page = 1;
+  else{
+    $page = $_GET['page'];
+  }
+}
 
-      </table>      
+$this_page_first_result = ($page-1)*$results_per_page;
+
+$sql = 'SELECT * FROM tickets LIMIT ' . $this_page_first_result . ',' . $results_per_page;
+$result = mysqli_query($connect,$sql);
+
+while ($row = mysqli_fetch_array($result))
+{
+  echo $row['id'] . ' ' . $row['tickets'] . '<br>';
+}
+
+for ($page=1;$page<=$number_of_pages;$page++) {
+echo '<a href="listEvents.php?page=' . $page .'">' . $page . '</a> ';
+}
+
+?>
+
+
+
+</body>
+</html>
+
+   
 
 <?php include "footer.php" ?>

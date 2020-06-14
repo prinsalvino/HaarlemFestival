@@ -38,7 +38,7 @@ border: 1px solid black;
     width: 175px;
 }
 
-body ul li
+.formedit
 {
     display:flex;
     padding-top: 25px;
@@ -172,9 +172,9 @@ div#title
 
   .editor
   {    
-    position: absolute;
+    position: relative;
     left: 300px;
-    top: 73px;
+    top: -400px;
     width: 300px;
 
   }
@@ -189,7 +189,7 @@ div#title
   {
     position: relative;
     left: 45px;
-    width: 130px;
+    width: 100%;
   }
 
   input #event
