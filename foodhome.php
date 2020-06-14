@@ -86,9 +86,7 @@ foreach($restaurants as $data){
 	<div class = "row">
 		<div class = "column1"> 
 	
-			<a  href="fooddetail1.php">
     		<img src="/imgrestaurant/<?php echo $picture?>" class = "restimg" alt="<?php echo $picture?>" height="300" width="300">
-    		</a>
 		
 			<h1 class="restaurantname"><?php echo $restoname;?></h1>
 		
