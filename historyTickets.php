@@ -47,9 +47,10 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
 			<div class="col-md-4">
 
-				<div style="border:5px solid black; background-color:#f1f1f1"; border-radius:25px; padding:16px;" align="center">
+				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px; align: center; margin-bottom: 80px">
 
-						<p><?php echo $row["date"]; echo " || "; echo $row["time"]?></p>
+						<p><?php echo $row["date"]; echo " || "; echo $row["location"]?></p>
+						<p><?php echo $row["time"]; ?></p>
 						<p><?php echo $row["special"]; ?></p>
                         <p><?php echo number_format($row["price"], 2, '.', '');?></p>
 						
@@ -80,7 +81,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 			?>
 	</body>
 	<br></br>
-	<div>
+	<div style= "margin-left: -33.5%; margin-top: 50%">
 		<?php include "footer.php"; ?>
 	</div>
 </html>
