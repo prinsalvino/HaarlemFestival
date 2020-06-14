@@ -47,7 +47,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 
 			<div class="col-md-4">
 
-				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px; align: center; margin-bottom: 80px">
+				<div style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px; margin-bottom: 80px; text-align: center">
 
 						<p><?php echo $row["date"]; echo " || "; echo $row["location"]?></p>
 						<p><?php echo $row["time"]; ?></p>
@@ -66,7 +66,7 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 						//$historyTicket->stockAvalabilityJazz($row["stock"]); ?>
                     		<br>
                     		<form action="AddToCartAction.php" method="POST">                     
-                      			<input id="amount" type="hidden" name="qty" value="<?php echo $formNumber ?>">  <!--actual field that send qty via post-->
+                      			<input id="amount" type="hidden" name="qty" value="<?php echo $formNumber ?>"> 
                       			<input type="hidden" name="ticket_id" value="<?php echo $row["ticket_id"]; ?>">
                       			<input type="hidden" name="tkt_price" value="<?php echo $row["price"]; ?>">
                       			<input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
