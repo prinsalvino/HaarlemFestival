@@ -49,12 +49,11 @@ $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 				{
 					//For each result, go through the ticket process
 					while($row = mysqli_fetch_array($result))
-					{ ?>
-
+					{
 				
-				<?php $formNumber = $formNumber + 1; //This variable will be used later to make sure each ticket got their own working button ?>
+					$formNumber = $formNumber + 1; //This variable will be used later to make sure each ticket got their own working button ?>
 					
-					<?php //Create the box for each ticket and display all the variables on it. ?>
+					<!-- Create the box for each ticket and display all the variables on it. -->
 					<div class="col-md-4" style="border:5px solid black; background-color:#f1f1f1; border-radius:25px; padding:16px; margin-bottom: 80px; text-align: center">
 
 						<p><?php echo $row["date"]; echo " || "; echo $row["location"]?></p>
