@@ -10,6 +10,7 @@ if (isset($_POST["ticket_id"])) {
     $ticket_id = $_POST["ticket_id"];
     $qty = $_POST["qty"];
     $tkt_price = $_POST["tkt_price"];
+    $comments = $_POST["comments"];
     // echo $ticket_id ;
     // echo $qty;
     // echo $tkt_price;

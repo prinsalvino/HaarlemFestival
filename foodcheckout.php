@@ -81,7 +81,7 @@ foreach ($times as $time) {
 
 
             </br>
-                Comments: <input type="text" class = "comments" name="comment" >
+                Comments: <input type="text" class = "comments" name="comments" >
             </form>
         </div>
 
