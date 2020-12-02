@@ -9,9 +9,9 @@ class DB
     
         protected function connect() { 
 		$this->servername = "localhost";
-		$this->username = "hfitteam1"; 
-		$this->password = "3FxmuBcR";
-        $this->dbase = "hfitteam1_db";
+		$this->username = "hf20112020_team1"//"hfitteam1"; 
+		$this->password = "u61zgyookD" //"3FxmuBcR";
+        $this->dbase = "hf20112020" //"hfitteam1_db";
         
 		$this->_mysqliConnectionObject = new mysqli($this->servername, $this->username, $this->password,$this->dbase);
         
