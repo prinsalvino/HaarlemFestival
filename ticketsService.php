@@ -33,8 +33,9 @@ class ticketsService extends DB {
             $special= $val[5]; //3 //artist
             $price= $val[6];  //4
             $stock= $val[7]; //5
+            $session = $val[8]; //6
             
-            array_push($eventArray,$date,$time,$location,$special,$price,$stock);
+            array_push($eventArray,$date,$time,$location,$special,$price,$stock,$session);
             return $eventArray;
         }
     }
