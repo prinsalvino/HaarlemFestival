@@ -50,16 +50,16 @@ include "AutoLoaderIncl.php";
 <table>
 <?php
 $ticket = new ticketsController();
-$ticketsSunAllArtists = $ticket->getDanceJazzTickets(12);
-$ticketSun3Artists = $ticket->getDanceJazzTickets(13);
-$ticketSunArmin = $ticket->getDanceJazzTickets(14);
-$ticketSunHardwell = $ticket->getDanceJazzTickets(15);
-$ticketSunMartin =$ticket->getDanceJazzTickets(16);
+$ticketsSunAllArtists = $ticket->getDanceJazzTickets(38);
+$ticketSun3Artists = $ticket->getDanceJazzTickets(32);
+$ticketSunArmin = $ticket->getDanceJazzTickets(33);
+$ticketSunHardwell = $ticket->getDanceJazzTickets(34);
+$ticketSunMartin =$ticket->getDanceJazzTickets(35);
 ?>
 
   <tr>
-    <td><?php echo $ticketsSunAllArtists[2]; ?> </td>
-    <td>€ <?php echo $ticketsSunAllArtists[3]; ?>.00</td>
+    <td><?php echo $ticketsSunAllArtists[3]; ?> </td>
+    <td>€ <?php echo $ticketsSunAllArtists[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty13','Dqty13send');">+</button>
@@ -75,8 +75,8 @@ $ticketSunMartin =$ticket->getDanceJazzTickets(16);
         </form>
   </tr>
   <tr>
-  <td> <?php echo $ticketSun3Artists[2]; ?></td>
-    <td>€ <?php echo $ticketSun3Artists[3]; ?>.00</td>
+  <td> <?php echo $ticketSun3Artists[3]; ?></td>
+    <td>€ <?php echo $ticketSun3Artists[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty14','Dqty14send');">+</button>
@@ -92,8 +92,8 @@ $ticketSunMartin =$ticket->getDanceJazzTickets(16);
         </form>
   </tr>
   <tr>
-  <td> <?php echo $ticketSunArmin[2]; ?></td>
-    <td>€ <?php echo $ticketSunArmin[3]; ?>.00</td>
+  <td> <?php echo $ticketSunArmin[3]; ?></td>
+    <td>€ <?php echo $ticketSunArmin[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty15','Dqty15send');">+</button>
@@ -109,8 +109,8 @@ $ticketSunMartin =$ticket->getDanceJazzTickets(16);
         </form>
   </tr>
   <tr>
-  <td> <?php echo $ticketSunHardwell[2]; ?></td>
-    <td>€ <?php echo $ticketSunHardwell[3]; ?>.00</td>
+  <td> <?php echo $ticketSunHardwell[3]; ?></td>
+    <td>€ <?php echo $ticketSunHardwell[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty16','Dqty16send');">+</button>
@@ -126,8 +126,8 @@ $ticketSunMartin =$ticket->getDanceJazzTickets(16);
         </form>
   </tr>
   <tr>
-  <td> <?php echo $ticketSunMartin[2]; ?></td>
-    <td>€ <?php echo $ticketSunMartin[3]; ?>.00</td>
+  <td> <?php echo $ticketSunMartin[3]; ?></td>
+    <td>€ <?php echo $ticketSunMartin[4]; ?>.00</td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty17','Dqty17send');">+</button>

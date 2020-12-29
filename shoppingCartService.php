@@ -13,7 +13,7 @@ class shoppingCartService extends ticketsService
             if($user_email==NULL) //temp user
             {
                 //get values from the temp table
-                $temp_order_items=$this->sortTicketinfo($session_id, NULL); //array    
+                $temp_order_items=$this->sortTicketinfo($session_id, NULL); //array   
                 return $temp_order_items;
             }
             else if($session_id==NULL) //loggeed in user
@@ -73,9 +73,9 @@ class shoppingCartService extends ticketsService
 
         if($user_email==NULL) //temp user
         {              
-            $arr=$this->getAllTempOrder($ses_id) ;                     
+            $arr=$this->getAllTempOrder($ses_id) ;                  
         }
-        elseif($ses_id==NULL) //loggeed in user
+        elseif($ses_id==NULL) //logged in user
         {
             $arr=$this->getAllOrderItems($user_email)  ;
         }
@@ -83,15 +83,16 @@ class shoppingCartService extends ticketsService
         foreach($arr as $data)
         {
             $ticket_id = $data['ticket_id']; 
-            $arrs = $ticketsService->getTickets($ticket_id);
+            $arrs = $ticketsService->getTickets($ticket_id); 
+
             $eventArray= array();
             foreach ($arrs as $val) 
             {
-                $date = $this->alterTicketDateFormat($val[2]); //0
-                $time= $val[3]; //1
-                $location= $val[4]; //2
-                $special= $val[5]; //3 
-                $price= $val[6];  //4
+                $date = $this->alterTicketDateFormat($val[1]); //0
+                $time= $val[2]; //1
+                $location= $val[3]; //2
+                $special= $val[4]; //3 
+                $price= $val[5];  //4
                array_push($eventArray,$date,$time,$location,$special,$price);
             }    
             if($ticket_id<23)   //1-22
@@ -120,7 +121,8 @@ class shoppingCartService extends ticketsService
             );
             $mergeData = array_merge($data,$data2);
             array_push($finalArray,$mergeData);
-        }          
+        }
+        
         return $finalArray;          
     }
 

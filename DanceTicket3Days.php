@@ -53,7 +53,7 @@ include "AutoLoaderIncl.php";
 
 <?php
 $ticket = new ticketsController();
-$ticketArr = $ticket->getDanceJazzTickets(17);
+$ticketArr = $ticket->getDanceJazzTickets(39);
 ?>
   <tr>
     <th>     </th>
@@ -61,8 +61,8 @@ $ticketArr = $ticket->getDanceJazzTickets(17);
     <th>     </th>
   </tr>
   <tr>
-    <td><?php echo $ticketArr[0]; ?> </td>
-    <td>€ <?php echo $ticketArr[3]; ?>.00 </td>
+    <td><?php echo $ticketArr[3]; ?> </td>
+    <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty1','Dqty1send');">+</button>
@@ -71,7 +71,7 @@ $ticketArr = $ticket->getDanceJazzTickets(17);
                     </div></td>
     <td>            <form action="AddToCartAction.php" method="POST">                     
                       <input id="Dqty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-                      <input type="hidden" name="ticket_id" value="17" >
+                      <input type="hidden" name="ticket_id" value="39" >
                       <input type="hidden" name="tkt_price" value="<?php echo $ticketArr[4]; ?>" >
                       <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
                       <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 

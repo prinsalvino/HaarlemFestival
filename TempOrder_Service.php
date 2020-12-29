@@ -24,8 +24,7 @@ class TempOrder_Service extends OrderService {
         }
         catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
-        }
-    }
+        }    }
 
     public function getTempOrder($t_id,$ses_id) 
     { 

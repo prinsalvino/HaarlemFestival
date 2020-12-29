@@ -20,25 +20,26 @@ class ticketsService extends DB {
             } 
     }
 
-
     public function getDanceJazzTickets($t_id) 
     { 
        $data=$this->getTickets($t_id);
-       $eventArray= array();
-       foreach ($data as $val) {
+        $val = $data[0];    // Get the first (and only) row of data
+        $eventArray = array_slice($val, 1);
         // taking the specifically rqd columns from the whole result for the dance/jazz event
-            $date = $this->alterTicketDateFormat($val[2]); //0 
-            $time= $val[3]; //1
-            $location= $val[4]; //2
-            $special= $val[5]; //3 //artist
-            $price= $val[6];  //4
-            $stock= $val[7]; //5
-            $session = $val[8]; //6
-            
-            array_push($eventArray,$date,$time,$location,$special,$price,$stock,$session);
-            return $eventArray;
-        }
-    }
+        // $date = $this->alterTicketDateFormat($val[1]); //0 
+        // $time= $val[2]; //1
+        // $location= $val[3]; //2
+        // $special= $val[5]; //3 //artist
+        // $price= $val[6];  //4
+        // $stock= $val[7]; //5
+        // $session = $val[8]; //6
+        
+        // array_push($eventArray,$date,$time,$location,$special,$price,$stock,$session);
+
+        // Format the data using the month name
+        $eventArray[0] = $this->alterTicketDateFormat($eventArray[0]);
+        return $eventArray;
+     }
 
     public function getJazzTicketInfo($t_id) { 
         //function returns jazz tickets full info as an array
