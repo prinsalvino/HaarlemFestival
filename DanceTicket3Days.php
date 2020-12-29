@@ -61,8 +61,8 @@ $ticketArr = $ticket->getDanceJazzTickets(17);
     <th>     </th>
   </tr>
   <tr>
-    <td><?php echo $ticketArr[3]; ?> </td>
-    <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
+    <td><?php echo $ticketArr[0]; ?> </td>
+    <td>€ <?php echo $ticketArr[3]; ?>.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
                       <button class = "DQtyBtn" onclick="increase_by_one('Dqty1','Dqty1send');">+</button>
