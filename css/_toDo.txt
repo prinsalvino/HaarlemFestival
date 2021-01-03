@@ -4,7 +4,7 @@ TO DO:
 -check log in from HOME
 -check registration from shopping cart and from HOME
 -refactor code (ticket section)
--position of + and - 
+-change position of + and - 
 -notification "is added": how? change color of add to cart button?
 
 
