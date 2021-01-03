@@ -1,0 +1,14 @@
+TO DO:
+-shopping cart does not show the items
+-adapt stock in db & out of stock indication
+-check log in from HOME
+-check registration from shopping cart and from HOME
+-refactor code (ticket section)
+-position of + and - 
+-notification "is added": how? change color of add to cart button?
+
+
+
+
+DONE:
+-complete the db, add table for user, volunteer, and order items
