@@ -1,0 +1,17 @@
+TO DO:
+-H fix  shopping cart does not show the items (log in) 
+-H feat adapt stock in db 
+-M feat show out of stock indication
+-M refactor (ticket section is hardcoded)
+-M refactor eliminate hardcoded code (timetable)
+-H refactor remove hard links to IDs in database
+-M design UI for showing that an item has been added: how? change color of add to cart button?
+-H implement (if needed) "item added" feature
+-E fix  change position of + and - (for all ticket)
+
+
+DONE:
+-complete the db, add table for user, volunteer, and order items
+-change position of + and - (ticket 3 days)
+-check log in from HOME
+-check registration from shopping cart and from HOME
