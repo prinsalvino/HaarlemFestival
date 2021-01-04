@@ -12,3 +12,4 @@ TO DO:
 
 DONE:
 -complete the db, add table for user, volunteer, and order items
+-change position of + and - (ticket 3 days)
