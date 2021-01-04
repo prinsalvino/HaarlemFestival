@@ -9,6 +9,7 @@ TO DO:
 -E fix  change position of + and - (for all ticket)
 -E sort out text "Test profile" on payment screen (ask muskan)
 -M refactor repeated code (timetable)
+-M make a shareable function for the showing the timetable
 
 
 

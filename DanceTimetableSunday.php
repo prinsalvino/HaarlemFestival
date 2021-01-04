@@ -46,44 +46,36 @@ include "AutoLoaderIncl.php";
 
 <table>
 
-<?php
-$ticket = new ticketsController();
-$ticketSun3Artists = $ticket->getDanceJazzTickets(32);
-$ticketSunArmin = $ticket->getDanceJazzTickets(33);
-$ticketSunHardwell = $ticket->getDanceJazzTickets(34);
-$ticketSunMartin =$ticket->getDanceJazzTickets(35);
-?>
-
-  <tr>
+<tr>
     <td>Artist </td>
     <td>Venue</td>
     <td>Time</td>
     <td>Session</td>
   </tr>
+
+<?php
+
+$ticketController = new ticketsController();
+
+function printTicketLine($ticketController, $id)
+{
+  $ticket = $ticketController->getDanceJazzTickets($id);
+  echo <<<EOT
   <tr>
-  <td><?php echo $ticketSun3Artists[3]; ?></td>
-    <td><?php echo $ticketSun3Artists[2]; ?></td>
-    <td><?php echo $ticketSun3Artists[1]; ?></td>
-    <td><?php echo $ticketSun3Artists[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketSunMartin[3]; ?></td>
-    <td><?php echo $ticketSunMartin[2]; ?></td>
-    <td><?php echo $ticketSunMartin[1]; ?></td>
-    <td><?php echo $ticketSunMartin[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketSunArmin[3]; ?></td>
-    <td><?php echo $ticketSunArmin[2]; ?></td>
-    <td><?php echo $ticketSunArmin[1]; ?></td>
-    <td><?php echo $ticketSunArmin[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketSunHardwell[3]; ?></td>
-    <td><?php echo $ticketSunHardwell[2]; ?></td>
-    <td><?php echo $ticketSunHardwell[1]; ?></td>
-    <td><?php echo $ticketSunHardwell[6]; ?></td>
-  </tr>
+  <td>{$ticket[3]}</td>
+    <td>{$ticket[2]}</td>
+    <td>{$ticket[1]}</td>
+    <td>{$ticket[6]}</td>
+  </tr> 
+EOT;
+}
+
+printTicketLine($ticketController, 32);
+printTicketLine($ticketController, 35);
+printTicketLine($ticketController, 33);
+printTicketLine($ticketController, 34);
+
+?>
 </table>
   
 <?php include "footer.php";?> 

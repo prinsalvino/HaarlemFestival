@@ -45,14 +45,16 @@ include "AutoLoaderIncl.php";
 
 <table>
 
+<tr>
+    <td>Artist </td>
+    <td>Venue</td>
+    <td>Time</td>
+    <td>Session</td>
+  </tr>
+
 <?php
 
 $ticketController = new ticketsController();
-$ticketNickyAfrojack = $ticketController->getDanceJazzTickets(23);
-$ticketTiesto = $ticketController->getDanceJazzTickets(24);
-$ticketHardwell = $ticketController->getDanceJazzTickets(25);
-$ticketArmin =$ticketController->getDanceJazzTickets(26);
-$ticketMartin =$ticketController->getDanceJazzTickets(27);
 
 function printTicketLine($ticketController, $id)
 {
@@ -68,45 +70,12 @@ EOT;
 }
 
 printTicketLine($ticketController, 23);
+printTicketLine($ticketController, 24);
+printTicketLine($ticketController, 26);
+printTicketLine($ticketController, 27);
+printTicketLine($ticketController, 25);
 
 ?>
-
-  <tr>
-    <td>Artist </td>
-    <td>Venue</td>
-    <td>Time</td>
-    <td>Session</td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketNickyAfrojack[3]; ?></td>
-    <td><?php echo $ticketNickyAfrojack[2]; ?></td>
-    <td><?php echo $ticketNickyAfrojack[1]; ?></td>
-    <td><?php echo $ticketNickyAfrojack[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketTiesto[3]; ?></td>
-    <td><?php echo $ticketTiesto[2]; ?></td>
-    <td><?php echo $ticketTiesto[1]; ?></td>
-    <td><?php echo $ticketTiesto[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketMartin[3]; ?></td>
-    <td><?php echo $ticketMartin[2]; ?></td>
-    <td><?php echo $ticketMartin[1]; ?></td>
-    <td><?php echo $ticketMartin[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketArmin[3]; ?></td>
-    <td><?php echo $ticketArmin[2]; ?></td>
-    <td><?php echo $ticketArmin[1]; ?></td>
-    <td><?php echo $ticketArmin[6]; ?></td>
-  </tr>
-  <tr>
-  <td><?php echo $ticketHardwell[3]; ?></td>
-    <td><?php echo $ticketHardwell[2]; ?></td>
-    <td><?php echo $ticketHardwell[1]; ?></td>
-    <td><?php echo $ticketHardwell[6]; ?></td>
-  </tr>
 </table>
   
 <?php include "footer.php";?> 
