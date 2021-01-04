@@ -1,13 +1,15 @@
 TO DO:
--H fix  shopping cart does not show the items (log in) 
+-E check if the payment is fully working
 -H feat adapt stock in db 
 -M feat show out of stock indication
 -M refactor (ticket section is hardcoded)
--M refactor eliminate hardcoded code (timetable)
 -H refactor remove hard links to IDs in database
 -M design UI for showing that an item has been added: how? change color of add to cart button?
 -H implement (if needed) "item added" feature
 -E fix  change position of + and - (for all ticket)
+-E sort out text "Test profile" on payment screen (ask muskan)
+-M refactor repeated code (timetable)
+
 
 
 DONE:
@@ -15,3 +17,10 @@ DONE:
 -change position of + and - (ticket 3 days)
 -check log in from HOME
 -check registration from shopping cart and from HOME
+-M refactor eliminate hardcoded code (timetable)
+-H fix  shopping cart does not show the items (log in) 
+        -fixed the db for the defined value
+
+NOTES:
+-stock is not adapted when adding an item to shopping cart
+  no fix: code made by team mates, don't risk breaking their code

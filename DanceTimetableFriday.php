@@ -46,12 +46,29 @@ include "AutoLoaderIncl.php";
 <table>
 
 <?php
-$ticket = new ticketsController();
-$ticketNickyAfrojack = $ticket->getDanceJazzTickets(23);
-$ticketTiesto = $ticket->getDanceJazzTickets(24);
-$ticketHardwell = $ticket->getDanceJazzTickets(25);
-$ticketArmin =$ticket->getDanceJazzTickets(26);
-$ticketMartin =$ticket->getDanceJazzTickets(27);
+
+$ticketController = new ticketsController();
+$ticketNickyAfrojack = $ticketController->getDanceJazzTickets(23);
+$ticketTiesto = $ticketController->getDanceJazzTickets(24);
+$ticketHardwell = $ticketController->getDanceJazzTickets(25);
+$ticketArmin =$ticketController->getDanceJazzTickets(26);
+$ticketMartin =$ticketController->getDanceJazzTickets(27);
+
+function printTicketLine($ticketController, $id)
+{
+  $ticket = $ticketController->getDanceJazzTickets($id);
+  echo <<<EOT
+  <tr>
+  <td>{$ticket[3]}</td>
+    <td>{$ticket[2]}</td>
+    <td>{$ticket[1]}</td>
+    <td>{$ticket[6]}</td>
+  </tr> 
+EOT;
+}
+
+printTicketLine($ticketController, 23);
+
 ?>
 
   <tr>
