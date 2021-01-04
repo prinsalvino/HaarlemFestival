@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
 
 ?>  
 <html class = "danceTimetable">
@@ -43,6 +44,16 @@ session_start();
 <a href="DanceTicket3Days.php" class="btnBuyTicket">Buy your tickets here!</a>
 
 <table>
+
+<?php
+$ticket = new ticketsController();
+$ticketNickyAfrojack = $ticket->getDanceJazzTickets(23);
+$ticketTiesto = $ticket->getDanceJazzTickets(24);
+$ticketHardwell = $ticket->getDanceJazzTickets(25);
+$ticketArmin =$ticket->getDanceJazzTickets(26);
+$ticketMartin =$ticket->getDanceJazzTickets(27);
+?>
+
   <tr>
     <td>Artist </td>
     <td>Venue</td>
@@ -50,34 +61,34 @@ session_start();
     <td>Session</td>
   </tr>
   <tr>
-  <td>Nicky Romero/ Afrojack</td>
-    <td>Lichtfabriek</td>
-    <td>20:00</td>
-    <td>Back2Back</td>
+  <td><?php echo $ticketNickyAfrojack[3]; ?></td>
+    <td><?php echo $ticketNickyAfrojack[2]; ?></td>
+    <td><?php echo $ticketNickyAfrojack[1]; ?></td>
+    <td><?php echo $ticketNickyAfrojack[6]; ?></td>
   </tr>
   <tr>
-  <td>Tiësto</td>
-    <td>Club Stalker</td>
-    <td>22:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketTiesto[3]; ?></td>
+    <td><?php echo $ticketTiesto[2]; ?></td>
+    <td><?php echo $ticketTiesto[1]; ?></td>
+    <td><?php echo $ticketTiesto[6]; ?></td>
   </tr>
   <tr>
-  <td>Martin Garrix</td>
-    <td>Club Ruis</td>
-    <td>22:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketMartin[3]; ?></td>
+    <td><?php echo $ticketMartin[2]; ?></td>
+    <td><?php echo $ticketMartin[1]; ?></td>
+    <td><?php echo $ticketMartin[6]; ?></td>
   </tr>
   <tr>
-  <td>Armin van Buuren</td>
-    <td>XO The Club</td>
-    <td>22:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketArmin[3]; ?></td>
+    <td><?php echo $ticketArmin[2]; ?></td>
+    <td><?php echo $ticketArmin[1]; ?></td>
+    <td><?php echo $ticketArmin[6]; ?></td>
   </tr>
   <tr>
-  <td>Hardwell</td>
-    <td>JopenKerk</td>
-    <td>23:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketHardwell[3]; ?></td>
+    <td><?php echo $ticketHardwell[2]; ?></td>
+    <td><?php echo $ticketHardwell[1]; ?></td>
+    <td><?php echo $ticketHardwell[6]; ?></td>
   </tr>
 </table>
   

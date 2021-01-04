@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
 
 ?>  
 <html class = "danceTimetable">
@@ -44,6 +45,15 @@ session_start();
 <a href="DanceTicket3Days.php" class="btnBuyTicket">Buy your tickets here!</a>
 
 <table>
+
+<?php
+$ticket = new ticketsController();
+$ticketSun3Artists = $ticket->getDanceJazzTickets(32);
+$ticketSunArmin = $ticket->getDanceJazzTickets(33);
+$ticketSunHardwell = $ticket->getDanceJazzTickets(34);
+$ticketSunMartin =$ticket->getDanceJazzTickets(35);
+?>
+
   <tr>
     <td>Artist </td>
     <td>Venue</td>
@@ -51,28 +61,28 @@ session_start();
     <td>Session</td>
   </tr>
   <tr>
-  <td>Afrojack/ Tiësto/ <br><br> Nicky Romero</td>
-    <td>Caprera Openluchttheater</td>
-    <td>14:00</td>
-    <td>Back2Back</td>
+  <td><?php echo $ticketSun3Artists[3]; ?></td>
+    <td><?php echo $ticketSun3Artists[2]; ?></td>
+    <td><?php echo $ticketSun3Artists[1]; ?></td>
+    <td><?php echo $ticketSun3Artists[6]; ?></td>
   </tr>
   <tr>
-  <td>Martin Garrix</td>
-    <td>Club Stalker</td>
-    <td>18:00</td>
-    <td>TiëstoWorld</td>
+  <td><?php echo $ticketSunMartin[3]; ?></td>
+    <td><?php echo $ticketSunMartin[2]; ?></td>
+    <td><?php echo $ticketSunMartin[1]; ?></td>
+    <td><?php echo $ticketSunMartin[6]; ?></td>
   </tr>
   <tr>
-  <td>Armin van Buuren</td>
-    <td>Jopenkerk</td>
-    <td>19:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketSunArmin[3]; ?></td>
+    <td><?php echo $ticketSunArmin[2]; ?></td>
+    <td><?php echo $ticketSunArmin[1]; ?></td>
+    <td><?php echo $ticketSunArmin[6]; ?></td>
   </tr>
   <tr>
-  <td>Hardwell</td>
-    <td>XO the Club</td>
-    <td>21:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketSunHardwell[3]; ?></td>
+    <td><?php echo $ticketSunHardwell[2]; ?></td>
+    <td><?php echo $ticketSunHardwell[1]; ?></td>
+    <td><?php echo $ticketSunHardwell[6]; ?></td>
   </tr>
 </table>
   

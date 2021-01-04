@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
 
 ?>  
 <html class = "danceTimetable">
@@ -44,6 +45,15 @@ session_start();
 <a href="DanceTicket3Days.php" class="btnBuyTicket">Buy your tickets here!</a>
 
 <table>
+
+<?php
+$ticket = new ticketsController();
+$ticketSat3Artists = $ticket->getDanceJazzTickets(28);
+$ticketSatAfrojack = $ticket->getDanceJazzTickets(29);
+$ticketSatTiesto = $ticket->getDanceJazzTickets(30);
+$ticketSatNicky =$ticket->getDanceJazzTickets(31);
+?>
+
   <tr>
     <td>Artist </td>
     <td>Venue</td>
@@ -51,28 +61,28 @@ session_start();
     <td>Session</td>
   </tr>
   <tr>
-  <td>Hardwell/ Martin Garrix/ <br><br> Armin van Buuren</td>
-    <td>Caprera Openluchttheater</td>
-    <td>14:00</td>
-    <td>Back2Back</td>
+  <td><?php echo $ticketSat3Artists[3]; ?></td>
+    <td><?php echo $ticketSat3Artists[2]; ?></td>
+    <td><?php echo $ticketSat3Artists[1]; ?></td>
+    <td><?php echo $ticketSat3Artists[6]; ?></td>
   </tr>
   <tr>
-  <td>Tiësto</td>
-    <td>Lichtfabriek</td>
-    <td>21:00</td>
-    <td>TiëstoWorld</td>
+  <td><?php echo $ticketSatTiesto[3]; ?></td>
+    <td><?php echo $ticketSatTiesto[2]; ?></td>
+    <td><?php echo $ticketSatTiesto[1]; ?></td>
+    <td><?php echo $ticketSatTiesto[6]; ?></td>
   </tr>
   <tr>
-  <td>Afrojack</td>
-    <td>Jopenkerk</td>
-    <td>22:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketSatAfrojack[3]; ?></td>
+    <td><?php echo $ticketSatAfrojack[2]; ?></td>
+    <td><?php echo $ticketSatAfrojack[1]; ?></td>
+    <td><?php echo $ticketSatAfrojack[6]; ?></td>
   </tr>
   <tr>
-  <td>Nicky Romero</td>
-    <td>Club Stalker</td>
-    <td>23:00</td>
-    <td>Club</td>
+  <td><?php echo $ticketSatNicky[3]; ?></td>
+    <td><?php echo $ticketSatNicky[2]; ?></td>
+    <td><?php echo $ticketSatNicky[1]; ?></td>
+    <td><?php echo $ticketSatNicky[6]; ?></td>
   </tr>
 </table>
   
