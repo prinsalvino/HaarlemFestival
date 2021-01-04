@@ -7,7 +7,6 @@ TO DO:
 -M design UI for showing that an item has been added: how? change color of add to cart button?
 -H implement (if needed) "item added" feature
 -E fix  change position of + and - (for all ticket)
--E sort out text "Test profile" on payment screen (ask muskan)
 
 
 DONE:
@@ -20,6 +19,7 @@ DONE:
         -fixed the db for the defined value
 -M refactor repeated code (timetable)
 -M make a shareable function for the showing the timetable
+-E sort out text "Test profile" on payment screen (ask muskan)
 
 
 NOTES:
