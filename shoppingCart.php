@@ -210,7 +210,7 @@ include "AutoLoaderIncl.php";
                             ?> 
                             
                             <h3> <?php echo $a["event"]."<br>"; ?> </h3> <?php
-                            echo "NAME".$a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
+                            echo $a["t_name"]." (€".$a["price"].") * ".$a["qty"]."<br>";    
                             echo "Total price €".$a["total_price"]."<br>";     
                             if(!isset($_SESSION['email'])) 
                                    {   
