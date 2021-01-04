@@ -3,6 +3,7 @@
 declare(strict_types=1);
 session_start();
 include "AutoLoaderIncl.php";
+include "uiformat.php";
 
 ?>  
 <html class = "danceTimetable">
@@ -45,35 +46,11 @@ include "AutoLoaderIncl.php";
 
 <table>
 
-<tr>
-    <td>Artist </td>
-    <td>Venue</td>
-    <td>Time</td>
-    <td>Session</td>
-  </tr>
-
 <?php
 
 $ticketController = new ticketsController();
 
-function printTicketLine($ticketController, $id)
-{
-  $ticket = $ticketController->getDanceJazzTickets($id);
-  echo <<<EOT
-  <tr>
-  <td>{$ticket[3]}</td>
-    <td>{$ticket[2]}</td>
-    <td>{$ticket[1]}</td>
-    <td>{$ticket[6]}</td>
-  </tr> 
-EOT;
-}
-
-printTicketLine($ticketController, 23);
-printTicketLine($ticketController, 24);
-printTicketLine($ticketController, 26);
-printTicketLine($ticketController, 27);
-printTicketLine($ticketController, 25);
+printTicketLines($ticketController, [23,24,26,27,25]);
 
 ?>
 </table>

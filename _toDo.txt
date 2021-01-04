@@ -8,7 +8,6 @@ TO DO:
 -H implement (if needed) "item added" feature
 -E fix  change position of + and - (for all ticket)
 -E sort out text "Test profile" on payment screen (ask muskan)
--M refactor repeated code (timetable)
 -M make a shareable function for the showing the timetable
 
 
@@ -21,6 +20,7 @@ DONE:
 -M refactor eliminate hardcoded code (timetable)
 -H fix  shopping cart does not show the items (log in) 
         -fixed the db for the defined value
+-M refactor repeated code (timetable)
 
 NOTES:
 -stock is not adapted when adding an item to shopping cart
