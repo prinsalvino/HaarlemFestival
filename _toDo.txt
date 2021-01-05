@@ -1,10 +1,11 @@
 TO DO:
+-M refactor (ticket section is hardcoded)
+-M design UI for showing that an item has been added: how? change color of add to cart button?
+
 -E check if the payment is fully working
 -H feat adapt stock in db 
 -M feat show out of stock indication
--M refactor (ticket section is hardcoded)
 -H refactor remove hard links to IDs in database
--M design UI for showing that an item has been added: how? change color of add to cart button?
 -H implement (if needed) "item added" feature
 -E fix  change position of + and - (for all ticket)
 

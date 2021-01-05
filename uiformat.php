@@ -1,5 +1,5 @@
 <?php
-function printTicketLine($ticketController, $id)
+function printTimetableLine($ticketController, $id)
 {
   $ticket = $ticketController->getDanceJazzTickets($id);
   echo <<<EOT
@@ -12,7 +12,7 @@ function printTicketLine($ticketController, $id)
 EOT;
 }
 
-function printTicketLines($ticketController, $ids) {
+function printTimetableLines($ticketController, $ids) {
    echo <<<EOT
    <tr>
     <td>Artist </td>
@@ -22,9 +22,10 @@ function printTicketLines($ticketController, $ids) {
   </tr>
 EOT;
     foreach ($ids as $id) {
-        printTicketLine($ticketController, $id);
+        printTimetableLine($ticketController, $id);
     }
 }
+
 
 ?>
 

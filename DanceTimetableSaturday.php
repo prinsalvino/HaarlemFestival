@@ -51,7 +51,7 @@ include "uiformat.php";
 
 $ticketController = new ticketsController();
 
-printTicketLines($ticketController, [28,30,29,31]);
+printTimetableLines($ticketController, [28,30,29,31]);
 
 ?>
 </table>
