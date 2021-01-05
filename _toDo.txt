@@ -1,13 +1,9 @@
 TO DO:
 
--M design UI for showing that an item has been added: how? change color of add to cart button?
-
 -E check if the payment is fully working
 -H feat adapt stock in db 
 -M feat show out of stock indication
 -H refactor remove hard links to IDs in database
--H implement (if needed) "item added" feature
--E fix  change position of + and - (for all ticket)
 
 
 DONE:
@@ -22,7 +18,9 @@ DONE:
 -M make a shareable function for the showing the timetable
 -E sort out text "Test profile" on payment screen (ask muskan)
 -M refactor (ticket section is hardcoded), make function to generate ticket line
-
+-M design UI for showing that an item has been added: replace alert by friendly overlay
+-H implement (if needed) "item added" feature
+-E fix  change position of + and - (for all ticket)
 
 NOTES:
 -stock is not adapted when adding an item to shopping cart
