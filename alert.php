@@ -5,8 +5,8 @@
             justify-items: center;
             background-color: #ccc;
             margin-top: 40px;
-            width: 250px;
-            height: 70px;
+            width: 400px;
+            height: 120px;
             opacity: 0.8;
             border-radius: 10px;
             font-size: 35px;
