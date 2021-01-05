@@ -64,7 +64,7 @@ $ticketArr = $ticketController->getDanceJazzTickets(39);
   </tr>
 
   <?php
-  printTicketLine($ticketController,39,'Dqty1','Dqty1Send',"dance1");
+  printTicketLine($ticketController,39);
   ?>
 
   <tr>

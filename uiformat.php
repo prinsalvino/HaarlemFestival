@@ -26,21 +26,23 @@ EOT;
     }
 }
 
-function printTicketLine($ticketController,$id,$Dqty,$DqtySend,$danceName)
+function printTicketLine($ticketController,$id)
 {
   $ticketArr = $ticketController->getDanceJazzTickets($id);
+  $idQty = "idQty".$id;
+  $idQtySend = "idQtySend".$id;
   echo <<<EOT
   <tr>
     <td>{$ticketArr[3]}</td>
     <td>€ {$ticketArr[4]}.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button class = "DQtyBtn" onclick="decrease_by_one('{$Dqty}','{$DqtySend}');">-</button>
-                      <input class = "quantityBox" id="{$Dqty}" type="text" value="1" name="{$danceName}"/>
-                      <button class = "DQtyBtn" onclick="increase_by_one('{$Dqty}','{$DqtySend}');">+</button>  
+                      <button class = "DQtyBtn" onclick="decrease_by_one('{$idQty}','{$idQtySend}');">-</button>
+                      <input class = "quantityBox" id="{$idQty}" type="text" value="1" />
+                      <button class = "DQtyBtn" onclick="increase_by_one('{$idQty}','{$idQtySend}');">+</button>  
                     </div></td>
     <td>            <form action="AddToCartAction.php" method="POST">                     
-                      <input id="{$DqtySend}" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
+                      <input id="{$idQtySend}" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
                       <input type="hidden" name="ticket_id" value="{$id}" >
                       <input type="hidden" name="tkt_price" value="{$ticketArr[4]}" >
                       <input type="hidden" name="destination" value="{$_SERVER["REQUEST_URI"]}"/>
