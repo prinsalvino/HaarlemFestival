@@ -52,6 +52,13 @@ function printTicketLine($ticketController,$id)
 EOT;
 }
 
+function printTicketLines($ticketController, $ids)
+{
+  foreach ($ids as $id) {
+    printTicketLine($ticketController, $id);
+  }
+}
+
 
 ?>
 
