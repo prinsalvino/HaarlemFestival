@@ -1,5 +1,5 @@
 TO DO:
--M refactor (ticket section is hardcoded), make function to generate ticket line
+
 -M design UI for showing that an item has been added: how? change color of add to cart button?
 
 -E check if the payment is fully working
@@ -21,6 +21,7 @@ DONE:
 -M refactor repeated code (timetable)
 -M make a shareable function for the showing the timetable
 -E sort out text "Test profile" on payment screen (ask muskan)
+-M refactor (ticket section is hardcoded), make function to generate ticket line
 
 
 NOTES:
