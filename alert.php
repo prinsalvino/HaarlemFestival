@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-
     <style>
         #addedAlert {
             display: grid;
@@ -23,6 +14,7 @@
             transition: opacity 0.5s;
         }
         #alertContainer{
+            z-index: 10;
             pointer-events: none;
             position: absolute;
             top: 0px;
@@ -34,9 +26,6 @@
             justify-items: center;
         }
     </style>
-</head>
-
-<body>
 
     <div id="alertContainer">
         <div id="addedAlert">
@@ -44,24 +33,14 @@
         </div>
     </div>
 
-    <p>
-        Bla bla
-    </p>
-    <button>TEST</button>
-
     <script>
         function showOverlay(msg) {
             const addedAlert = document.getElementById("addedAlert");
             addedAlert.innerHTML = msg;
             window.setTimeout(() => {
-                console.log("TIMER!");
                 addedAlert.style.opacity = "0";
             }, 1000);
         }
 
         showOverlay("Item added!");
     </script>
-
-</body>
-
-</html>
