@@ -26,3 +26,6 @@ DONE:
 NOTES:
 -stock is not adapted when adding an item to shopping cart
   no fix: code made by team mates, don't risk breaking their code
+
+ 
+  
