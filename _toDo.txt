@@ -1,9 +1,5 @@
 TO DO:
 
--M check if the hfitteam1 is wrong
-        -suspect that it is only part of CMS that is why Dance is still working
--E DB.orders doesn't exist 
--E check if the payment is fully working
 -H feat adapt stock in db 
 -M feat show out of stock indication
 -H refactor remove hard links to IDs in database
@@ -25,10 +21,22 @@ DONE:
 -H implement (if needed) "item added" feature
 -E fix  change position of + and - (for all ticket)
 -E change old server name(http://hfitteam1.infhaarlem.nl/) to new server name
+-M check if the hfitteam1 is wrong
+        -suspect that it is only part of CMS that is why Dance is still working
+-E DB.orders doesn't exist (new database)
+-E check if the payment is fully working (see NOTES, for issues respect to shopping cart log in)
 
 NOTES:
 -stock is not adapted when adding an item to shopping cart
   no fix: code made by team mates, don't risk breaking their code
+- Did not change old (wrong) references to hfitteam1, only for my own code
+-it would have been better if there would be no temp order item table, so it is clearer with the design
+- shopping cart is not 100% correct 
+        scenario:
+        not logged in - order - payment + login = ok (order is in temp_Order_item first, and then after logging in it goes to order_Items)
+        not logged in - order - log in - shopping cart = no items shown (order remains in temp_Order_item)
+        logged in - order - shopping cart - payment = ok (order goes to order_items immediately)
+-orders table, order_Id is AI 
 
  
   
