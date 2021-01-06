@@ -1,5 +1,8 @@
 TO DO:
 
+-M check if the hfitteam1 is wrong
+        -suspect that it is only part of CMS that is why Dance is still working
+-E DB.orders doesn't exist 
 -E check if the payment is fully working
 -H feat adapt stock in db 
 -M feat show out of stock indication
@@ -21,6 +24,7 @@ DONE:
 -M design UI for showing that an item has been added: replace alert by friendly overlay
 -H implement (if needed) "item added" feature
 -E fix  change position of + and - (for all ticket)
+-E change old server name(http://hfitteam1.infhaarlem.nl/) to new server name
 
 NOTES:
 -stock is not adapted when adding an item to shopping cart
