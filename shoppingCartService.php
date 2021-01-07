@@ -153,38 +153,57 @@ class shoppingCartService extends ticketsService
 
     public function confirmOrder($customer_email,$total_price) {
         try{
-            $arr=$this->getOrderItems(NULL, $customer_email) ; //get unconfirmed orders
+            $arr = $this->getOrderItems(NULL, $customer_email) ; //get unconfirmed orders
+
+            foreach($arr as $val ){
+                $_id = $val['ticket_id'];
+                $qty = $val['qty'];
+
+                $stmt3 = $this->connect()->prepare
+                ("UPDATE `tickets` SET `stock`= `stock` - ? WHERE `ticket_id` = ?;");
+                $stmt3->bind_param("ii", $qty,$_id);
+                $stmt3->execute();
+
+            }
+
             $order_item_ids=array();
             
             foreach($arr as $a)
-                {
-                    array_push($order_item_ids,$a[id]);
-                }  
+            {
+                array_push($order_item_ids,$a[id]);
+            }  
 
-                $order_item_ids = implode(", ",$order_item_ids);
+            $order_item_ids = implode(", ",$order_item_ids);
 
-                //to set to default, for test purposes only
-                //update order_Items set order_Id=0,status="Unconfirmed" Where NOT status="Item Deleted"
-                
-                //add order to orders with details of all the order items
-                $stmt = $this->connect()->prepare
-                ("INSERT INTO `orders`(`customer_email`,`total_price`,`Item_Id`) VALUES (?,?,?) ;");
-                $stmt->bind_param("sds", $customer_email,$total_price,$order_item_ids);
-                $stmt->execute();
+            //to set to default, for test purposes only
+            //update order_Items set order_Id=0,status="Unconfirmed" Where NOT status="Item Deleted"
+            
+            //add order to orders with details of all the order items
+            $stmt = $this->connect()->prepare
+            ("INSERT INTO `orders`(`customer_email`,`total_price`,`Item_Id`) VALUES (?,?,?) ;");
+            $stmt->bind_param("sds", $customer_email,$total_price,$order_item_ids);
+            $stmt->execute();
 
-                //mark order as confirmed in order items table and assign order ID to order items who are 0 by default
-                 $stmt2 = $this->connect()->prepare
-                ("UPDATE".
-                    " order_Items t1".
-                    " INNER JOIN orders t2 ON t1.customer_email = t2.customer_email".
-                " SET".
-                    " t1.status = 'Confirmed',".
-                    " t1.order_Id = t2.order_Id".
-                " WHERE".
-                    " t1.status = 'Unconfirmed'".
-                    " AND t1.customer_email = ? " ) ;
-                $stmt2->bind_param("s", $customer_email);
-                $stmt2->execute();
+            //mark order as confirmed in order items table and assign order ID to order items who are 0 by default
+                $stmt2 = $this->connect()->prepare
+            ("UPDATE".
+                " order_Items t1".
+                " INNER JOIN orders t2 ON t1.customer_email = t2.customer_email".
+            " SET".
+                " t1.status = 'Confirmed',".
+                " t1.order_Id = t2.order_Id".
+            " WHERE".
+                " t1.status = 'Unconfirmed'".
+                " AND t1.customer_email = ? " ) ;
+            $stmt2->bind_param("s", $customer_email);
+            $stmt2->execute();
+
+            // $stmt3 = $this->connect()->prepare
+            // ("UPDATE `tickets` SET `stock`= `stock` - 1 WHERE `ticket_id` = 36;");
+            // ("UPDATE `tickets` SET `stock`= `stock` - ? WHERE `ticket_id` = ?;");
+            // $stmt3->bind_param("ii", $qty,$ticket_id);
+            // echo "&&&" .$ticket_id;
+            // $stmt3->execute();
         }
         catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";

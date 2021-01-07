@@ -2,7 +2,6 @@ TO DO:
 
 -E add to the notes the decision i made, respect to checking of stock 
 -M detect that text field for quantity is not working
--H feat adapt stock in db 
 -M feat show out of stock indication
 -H refactor remove hard links to IDs in database
 
@@ -27,6 +26,7 @@ DONE:
         -suspect that it is only part of CMS that is why Dance is still working
 -E DB.orders doesn't exist (new database)
 -E check if the payment is fully working (see NOTES, for issues respect to shopping cart log in)
+-H feat adapt stock in db 
 
 NOTES:
 -stock is not adapted and checked when adding an item to shopping cart
