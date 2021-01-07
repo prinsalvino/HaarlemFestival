@@ -29,6 +29,7 @@ EOT;
 function printTicketLine($ticketController,$id)
 {
   $ticketArr = $ticketController->getDanceJazzTickets($id);
+
   $idQty = "idQty".$id;
   $idQtySend = "idQtySend".$id;
   echo <<<EOT
@@ -49,7 +50,11 @@ function printTicketLine($ticketController,$id)
                       <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
                     </form></td>
   </tr>
+  
 EOT;
+
+print_r ($ticketArr);
+  
 }
 
 function printTicketLines($ticketController, $ids)
