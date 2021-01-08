@@ -32,8 +32,9 @@ function printTicketLine($ticketController,$id)
 
   $idQty = "idQty".$id;
   $idQtySend = "idQtySend".$id;
+  $stock = $ticketArr['stock'];
 
-  if($ticketArr['stock'] > 0){
+  if($stock > 0){
     $btnMessage = "Add to Cart";
     $btnDisabled = "";
     $qtyBtnDisabled = "";
@@ -53,7 +54,7 @@ function printTicketLine($ticketController,$id)
                       Qty: 
                       <button {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="decrease_by_one('{$idQty}','{$idQtySend}');">-</button>
                       <input {$btnDisabled} class = "quantityBox" id="{$idQty}" type="text" value="1" />
-                      <button  {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}');">+</button>  
+                      <button  {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}',{$stock});">+</button>  
                     </div></td>
     <td>            <form action="AddToCartAction.php" method="POST">                     
                       <input id="{$idQtySend}" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->

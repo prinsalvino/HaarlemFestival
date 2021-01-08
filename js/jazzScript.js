@@ -1,17 +1,18 @@
 // Quantity spin buttons
-function increase_by_one(field, field2) {
+function increase_by_one(field, field2,stock) {
     nr = parseInt(document.getElementById(field).value);
-    document.getElementById(field).value = nr + 1;
-    document.getElementById(field2).value = document.getElementById(field).value;
+    if(nr < stock){
+        document.getElementById(field).value = nr + 1;
+        document.getElementById(field2).value = document.getElementById(field).value;
+    }
+   
 }
 
 function decrease_by_one(field, field2) {
     nr = parseInt(document.getElementById(field).value);
-    if (nr > 0) {
-        if ((nr - 1) > 0) {
-            document.getElementById(field).value = nr - 1;
-            document.getElementById(field2).value = document.getElementById(field).value;
-        }
+    if (nr > 1) {
+        document.getElementById(field).value = nr - 1;
+        document.getElementById(field2).value = document.getElementById(field).value;
     }
 }
 

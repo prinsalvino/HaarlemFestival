@@ -1,8 +1,8 @@
 TO DO:
 
 -E add to the notes the decision i made, respect to checking of stock 
+-H feat disable the + button, when there is insufficient stock
 -M detect that text field for quantity is not working
--M feat show out of stock indication
 -H refactor remove hard links to IDs in database
 -E change the name of every Arr[0] to Arr['value'];
 
@@ -28,6 +28,8 @@ DONE:
 -E DB.orders doesn't exist (new database)
 -E check if the payment is fully working (see NOTES, for issues respect to shopping cart log in)
 -H feat adapt stock in db 
+-M feat show out of stock indication
+-H fix make sure that the quantity does not exceed the stock
 
 NOTES:
 -stock is not adapted and checked when adding an item to shopping cart
