@@ -36,6 +36,7 @@ function printTicketLine($ticketController,$id)
   if($ticketArr['stock'] > 0){
     $btnMessage = "Add to Cart";
     $btnDisabled = "";
+    $qtyBtnDisabled = "";
   }
   else {
     $btnMessage = "Out of Stock";
@@ -51,7 +52,7 @@ function printTicketLine($ticketController,$id)
     <td><div class="cart-quantity">
                       Qty: 
                       <button {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="decrease_by_one('{$idQty}','{$idQtySend}');">-</button>
-                      <input class = "quantityBox" id="{$idQty}" type="text" value="1" />
+                      <input {$btnDisabled} class = "quantityBox" id="{$idQty}" type="text" value="1" />
                       <button  {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}');">+</button>  
                     </div></td>
     <td>            <form action="AddToCartAction.php" method="POST">                     
