@@ -4,6 +4,7 @@ TO DO:
 -M detect that text field for quantity is not working
 -M feat show out of stock indication
 -H refactor remove hard links to IDs in database
+-E change the name of every Arr[0] to Arr['value'];
 
 
 DONE:

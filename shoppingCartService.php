@@ -197,13 +197,6 @@ class shoppingCartService extends ticketsService
                 " AND t1.customer_email = ? " ) ;
             $stmt2->bind_param("s", $customer_email);
             $stmt2->execute();
-
-            // $stmt3 = $this->connect()->prepare
-            // ("UPDATE `tickets` SET `stock`= `stock` - 1 WHERE `ticket_id` = 36;");
-            // ("UPDATE `tickets` SET `stock`= `stock` - ? WHERE `ticket_id` = ?;");
-            // $stmt3->bind_param("ii", $qty,$ticket_id);
-            // echo "&&&" .$ticket_id;
-            // $stmt3->execute();
         }
         catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
