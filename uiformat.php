@@ -32,6 +32,8 @@ function printTicketLine($ticketController,$id)
 
   $idQty = "idQty".$id;
   $idQtySend = "idQtySend".$id;
+  $minusBtn = "minusBtn" .$id;
+  $plusBtn = "plusBtn" .$id;
   $stock = $ticketArr['stock'];
 
   if($stock > 0){
@@ -56,9 +58,9 @@ function printTicketLine($ticketController,$id)
     <td>€ {$ticketArr[4]}.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button {$btnDisabled} class="DQtyBtn DQtyBtnDisabled" onclick="decrease_by_one('{$idQty}','{$idQtySend}');">-</button>
+                      <button id="{$minusBtn}" {$btnDisabled} class="DQtyBtn DQtyBtnDisabled" onclick="decrease_by_one('{$idQty}','{$idQtySend}','{$minusBtn}','{$plusBtn}');">-</button>
                       <input {$btnDisabled} class = "quantityBox" id="{$idQty}" type="text" value="1" />
-                      <button  {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}',{$stock});">+</button>  
+                      <button  id="{$plusBtn}" {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}','{$minusBtn}','{$plusBtn}', {$stock});">+</button>  
                     </div></td>
     <td>            <form action="AddToCartAction.php" method="POST">                     
                       <input id="{$idQtySend}" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
