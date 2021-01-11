@@ -44,6 +44,10 @@ function printTicketLine($ticketController,$id)
     $btnDisabled = "disabled";
     $qtyBtnDisabled = "DQtyBtnDisabled";
   }
+
+  if($stock == 1 ){
+    $qtyBtnDisabled = "DQtyBtnDisabled";
+  }
   
 
   echo <<<EOT
@@ -52,7 +56,7 @@ function printTicketLine($ticketController,$id)
     <td>€ {$ticketArr[4]}.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="decrease_by_one('{$idQty}','{$idQtySend}');">-</button>
+                      <button {$btnDisabled} class="DQtyBtn DQtyBtnDisabled" onclick="decrease_by_one('{$idQty}','{$idQtySend}');">-</button>
                       <input {$btnDisabled} class = "quantityBox" id="{$idQty}" type="text" value="1" />
                       <button  {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}',{$stock});">+</button>  
                     </div></td>
