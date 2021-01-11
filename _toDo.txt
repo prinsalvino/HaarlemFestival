@@ -1,7 +1,5 @@
 TO DO:
 
--H feat disable the + button, when there is insufficient stock
-        - in interaction (JavaScript) enable/disable as described below
 -M detect that text field for quantity is not working
 -H refactor remove hard links to IDs in database
 -E change the name of every Arr[0] to Arr['value'];
@@ -30,7 +28,9 @@ DONE:
 -H feat adapt stock in db 
 -M feat show out of stock indication
 -H fix make sure that the quantity does not exceed the stock
--at load time (for example for stock = 1) enable/disable buttons
+-H feat disable the + button, when there is insufficient stock
+        -at load time (for example for stock = 1) enable/disable buttons
+        - in interaction (JavaScript) enable/disable as described below
 
 
 NOTES:
