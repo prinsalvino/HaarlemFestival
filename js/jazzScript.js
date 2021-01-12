@@ -35,6 +35,15 @@ function decrease_by_one(field, field2, minusBtnID, plusBtnID) {
     }
 }
 
+function textFieldAddToCart(field, field2,formID){
+    txtQty = parseInt(document.getElementById(field).value);
+
+    document.getElementById(field).value = txtQty;
+    document.getElementById(field2).value = document.getElementById(field).value;
+
+    addToCartID.getElementById(formID).submit();
+}
+
 function displayAlert() {
     alert("Ticket added to cart");
 }
