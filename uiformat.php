@@ -59,16 +59,16 @@ function printTicketLine($ticketController,$id)
     <td>€ {$ticketArr[4]}.00 </td>
     <td><div class="cart-quantity">
                       Qty: 
-                      <button id="{$minusBtn}" {$btnDisabled} class="DQtyBtn DQtyBtnDisabled" onclick="decrease_by_one('{$idQty}','{$idQtySend}','{$minusBtn}','{$plusBtn}');">-</button>
+                      <button id="{$minusBtn}" {$btnDisabled} class="DQtyBtn DQtyBtnDisabled" onclick="decrease_by_one('{$idQty}','{$minusBtn}','{$plusBtn}');">-</button>
                       <input {$btnDisabled} class = "quantityBox" id="{$idQty}" type="text" value="1" />
-                      <button  id="{$plusBtn}" {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$idQtySend}','{$minusBtn}','{$plusBtn}', {$stock});">+</button>  
+                      <button  id="{$plusBtn}" {$btnDisabled} class="DQtyBtn {$qtyBtnDisabled}" onclick="increase_by_one('{$idQty}','{$minusBtn}','{$plusBtn}', {$stock});">+</button>  
                     </div></td>
-    <td>            <form id="{formID}" action="AddToCartAction.php" method="POST">                     
+    <td>            <form action="AddToCartAction.php" method="POST">                     
                       <input id="{$idQtySend}" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
                       <input type="hidden" name="ticket_id" value="{$id}" >
                       <input type="hidden" name="tkt_price" value="{$ticketArr[4]}" >
                       <input type="hidden" name="destination" value="{$_SERVER["REQUEST_URI"]}"/>
-                      <button type="submit" {$btnDisabled} class="addTOcart" name="addTOcart" onclick="textFieldAddToCart('{$idQty}','{$idQtySend}','{$formID}');"> {$btnMessage} </button> 
+                      <button type="submit" {$btnDisabled} class="addTOcart" name="addTOcart" onclick="textFieldAddToCart('{$idQty}','{$idQtySend}');"> {$btnMessage} </button> 
                     </form></td>
   </tr>
   

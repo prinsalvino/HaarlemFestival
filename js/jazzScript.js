@@ -1,9 +1,9 @@
 // Quantity spin buttons
-function increase_by_one(field, field2,minusBtnID,plusBtnID, stock) {
+function increase_by_one(field, minusBtnID,plusBtnID, stock) {
     nr = parseInt(document.getElementById(field).value);
     if(nr < stock){
         document.getElementById(field).value = nr + 1;
-        document.getElementById(field2).value = document.getElementById(field).value;
+        //document.getElementById(field2).value = document.getElementById(field).value;
 
         // Update looks of plus button
         if((nr + 1) >= stock){
@@ -19,11 +19,11 @@ function increase_by_one(field, field2,minusBtnID,plusBtnID, stock) {
     }
 }
 
-function decrease_by_one(field, field2, minusBtnID, plusBtnID) {
+function decrease_by_one(field, minusBtnID, plusBtnID) {
     nr = parseInt(document.getElementById(field).value);
     if (nr > 1) {
         document.getElementById(field).value = nr - 1;
-        document.getElementById(field2).value = document.getElementById(field).value;
+        //document.getElementById(field2).value = document.getElementById(field).value;
         if((nr - 1) <= 1){
             const btn = document.getElementById(minusBtnID);
             btn.disabled = true;
@@ -35,13 +35,8 @@ function decrease_by_one(field, field2, minusBtnID, plusBtnID) {
     }
 }
 
-function textFieldAddToCart(field, field2,formID){
-    txtQty = parseInt(document.getElementById(field).value);
-
-    document.getElementById(field).value = txtQty;
+function textFieldAddToCart(field, field2){
     document.getElementById(field2).value = document.getElementById(field).value;
-
-    addToCartID.getElementById(formID).submit();
 }
 
 function displayAlert() {
