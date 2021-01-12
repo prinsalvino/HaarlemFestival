@@ -22,31 +22,9 @@ include "uiformat.php";
 <?php include "header.php";?>
 
 
-<div class="danceTicketRow">
-  <a class="DanceTicket3Days" href="DanceTicket3Days.php">    
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    3 days  
-  </div>
-  </a>
-
-  <a class="DanceTicketFriday" href="DanceTicketFriday.php"> 
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Friday
-  </div>
-  </a>
-
-  <a class="DanceTicketSaturday" href="DanceTicketSaturday.php">
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    Saturday  
-  </div>
-  </a>
-
-  <a class="DanceTicketSunday" href="DanceTicketSunday.php">
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Sunday
-  </div>
-  </a>
-</div> 
+<?php
+printTicketMenuBar();
+?>
 
 <table>
 
