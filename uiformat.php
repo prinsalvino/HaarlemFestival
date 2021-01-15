@@ -34,7 +34,6 @@ function printTicketLine($ticketController,$id)
   $idQtySend = "idQtySend".$id;
   $minusBtn = "minusBtn" .$id;
   $plusBtn = "plusBtn" .$id;
-  $formID = "formID" .$id;
   $stock = $ticketArr['stock'];
 
   if($stock > 0){

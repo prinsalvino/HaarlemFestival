@@ -1,6 +1,5 @@
 TO DO:
 
--M detect that text field for quantity is not working
 -H refactor remove hard links to IDs in database
 -E change the name of every Arr[0] to Arr['value'];
 
@@ -31,6 +30,9 @@ DONE:
 -H feat disable the + button, when there is insufficient stock
         -at load time (for example for stock = 1) enable/disable buttons
         - in interaction (JavaScript) enable/disable as described below
+-M detect that text field for quantity is not working
+- remove unnecessary code (uiformat.php), ticket service
+- comment "<!-- Use for layout to center notification -->" in alert.php 
 
 
 NOTES:

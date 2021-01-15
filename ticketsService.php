@@ -25,16 +25,6 @@ class ticketsService extends DB {
        $data=$this->getTickets($t_id);
         $val = $data[0];    // Get the first (and only) row of data
         $eventArray = array_slice($val, 1);
-        // taking the specifically rqd columns from the whole result for the dance/jazz event
-        // $date = $this->alterTicketDateFormat($val[1]); //0 
-        // $time= $val[2]; //1
-        // $location= $val[3]; //2
-        // $special= $val[5]; //3 //artist
-        // $price= $val[6];  //4
-        // $stock= $val[7]; //5
-        // $session = $val[8]; //6
-        
-        // array_push($eventArray,$date,$time,$location,$special,$price,$stock,$session);
 
         // Format the data using the month name
         $eventArray[0] = $this->alterTicketDateFormat($eventArray[0]);
