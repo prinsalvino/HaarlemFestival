@@ -3,6 +3,7 @@
 declare(strict_types=1);
 session_start();
 include "AutoLoaderIncl.php";
+include "uiformat.php";
 
 ?>  
 <html class = "danceTicket">
@@ -21,127 +22,17 @@ include "AutoLoaderIncl.php";
 <?php include "header.php";?>
 
 
-<div class="danceTicketRow">
-  <a class="DanceTicket3Days" href="DanceTicket3Days.php">    
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    3 days  
-  </div>
-  </a>
-
-  <a class="DanceTicketFriday" href="DanceTicketFriday.php"> 
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Friday
-  </div>
-  </a>
-
-  <a class="DanceTicketSaturday" href="DanceTicketSaturday.php">
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    Saturday  
-  </div>
-  </a>
-
-  <a class="DanceTicketSunday" href="DanceTicketSunday.php">
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Sunday
-  </div>
-  </a>
-</div> 
+<?php
+printTicketMenuBar();
+?>
 
 <table>
 <?php
-$ticket = new ticketsController();
-$ticketsSunAllArtists = $ticket->getDanceJazzTickets(38);
-$ticketSun3Artists = $ticket->getDanceJazzTickets(32);
-$ticketSunArmin = $ticket->getDanceJazzTickets(33);
-$ticketSunHardwell = $ticket->getDanceJazzTickets(34);
-$ticketSunMartin =$ticket->getDanceJazzTickets(35);
-?>
+$ticketController = new ticketsController();
 
-  <tr>
-    <td><?php echo $ticketsSunAllArtists[3]; ?> </td>
-    <td>€ <?php echo $ticketsSunAllArtists[4]; ?>.00</td>
-    <td><div class="cart-quantity">
-                      Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty13','Dqty13send');">+</button>
-                      <input class = "quantityBox" id="Dqty13" type="text" value="1" name="dance13" />
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty13','Dqty13send');">-</button>
-                    </div></td>
-    <td> <form action="AddToCartAction.php" method="POST">                     
-          <input id="Dqty13send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="38" >
-          <input type="hidden" name="tkt_price" value="<?php echo $ticketsSunAllArtists[4];?>" >
-          <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-          <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-        </form>
-  </tr>
-  <tr>
-  <td> <?php echo $ticketSun3Artists[3]; ?></td>
-    <td>€ <?php echo $ticketSun3Artists[4]; ?>.00</td>
-    <td><div class="cart-quantity">
-                      Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty14','Dqty14send');">+</button>
-                      <input class = "quantityBox" id="Dqty14" type="text" value="1" name="dance14" />
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty13','Dqty14send');">-</button>
-                    </div></td>
-    <td> <form action="AddToCartAction.php" method="POST">                     
-          <input id="Dqty14send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="32" >
-          <input type="hidden" name="tkt_price" value="<?php echo $ticketSun3Artists[4]; ?>" >
-          <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-          <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-        </form>
-  </tr>
-  <tr>
-  <td> <?php echo $ticketSunArmin[3]; ?></td>
-    <td>€ <?php echo $ticketSunArmin[4]; ?>.00</td>
-    <td><div class="cart-quantity">
-                      Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty15','Dqty15send');">+</button>
-                      <input class = "quantityBox" id="Dqty15" type="text" value="1" name="dance15" />
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty15',,'Dqty15send');">-</button>
-                    </div></td>
-    <td> <form action="AddToCartAction.php" method="POST">                     
-          <input id="Dqty15send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="33" >
-          <input type="hidden" name="tkt_price" value="<?php echo $ticketSunArmin[4]; ?>" >
-          <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-          <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-        </form>
-  </tr>
-  <tr>
-  <td> <?php echo $ticketSunHardwell[3]; ?></td>
-    <td>€ <?php echo $ticketSunHardwell[4]; ?>.00</td>
-    <td><div class="cart-quantity">
-                      Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty16','Dqty16send');">+</button>
-                      <input class = "quantityBox" id="Dqty16" type="text" value="1" name="dance16" />
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty16','Dqty16send');">-</button>
-                    </div></td>
-    <td> <form action="AddToCartAction.php" method="POST">                     
-          <input id="Dqty16send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="34" >
-          <input type="hidden" name="tkt_price" value="<?php echo $ticketSunHardwell[4]; ?>" >
-          <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-          <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-        </form>
-  </tr>
-  <tr>
-  <td> <?php echo $ticketSunMartin[3]; ?></td>
-    <td>€ <?php echo $ticketSunMartin[4]; ?>.00</td>
-    <td><div class="cart-quantity">
-                      Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty17','Dqty17send');">+</button>
-                      <input class = "quantityBox" id="Dqty17" type="text" value="1" name="dance17" />
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty17','Dqty17send');">-</button>
-                    </div></td>
-    <td> <form action="AddToCartAction.php" method="POST">                     
-          <input id="Dqty17send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-          <input type="hidden" name="ticket_id" value="35" >
-          <input type="hidden" name="tkt_price" value="<?php echo $ticketSunMartin[4]; ?>" >
-          <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-          <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-        </form>
-  </tr>
+printTicketLines($ticketController,[38,32,33,34,35]);
+
+?>
 </table>
   
 <?php include "footer.php";?> 

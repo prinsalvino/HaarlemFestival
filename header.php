@@ -70,8 +70,9 @@
 
     if(isset($_GET['orderAdded']))
     {
+        include "alert.php";
         ?><script>
-            displayAlert();
+            //displayAlert();
         </script>  
         <?php
     } ?>

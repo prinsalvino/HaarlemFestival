@@ -3,6 +3,7 @@
 declare(strict_types=1);
 session_start();
 include "AutoLoaderIncl.php";
+include "uiformat.php";
 
 ?>  
 <html class = "danceTicket">
@@ -20,70 +21,36 @@ include "AutoLoaderIncl.php";
 <body>
 <?php include "header.php";?>
 
-
-<div class="danceTicketRow">
-  <a class="DanceTicket3Days" href="DanceTicket3Days.php">    
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    3 days  
-  </div>
-  </a>
-
-  <a class="DanceTicketFriday" href="DanceTicketFriday.php"> 
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Friday
-  </div>
-  </a>
-
-  <a class="DanceTicketSaturday" href="DanceTicketSaturday.php">
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    Saturday  
-  </div>
-  </a>
-
-  <a class="DanceTicketSunday" href="DanceTicketSunday.php">
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Sunday
-  </div>
-  </a>
-</div> 
-
+<?php
+printTicketMenuBar();
+?>
 
 <table>
 <!-- // this get the ticket  array from the controller  -->
 
 <?php
-$ticket = new ticketsController();
-$ticketArr = $ticket->getDanceJazzTickets(39);
+$ticketController = new ticketsController();
+$ticketArr = $ticketController->getDanceJazzTickets(39);
 ?>
-  <tr>
+
+<tr>
     <th>     </th>
     <th>     </th>
     <th>     </th>
   </tr>
-  <tr>
-    <td><?php echo $ticketArr[3]; ?> </td>
-    <td>€ <?php echo $ticketArr[4]; ?>.00 </td>
-    <td><div class="cart-quantity">
-                      Qty: 
-                      <button class = "DQtyBtn" onclick="increase_by_one('Dqty1','Dqty1send');">+</button>
-                      <input class = "quantityBox" id="Dqty1" type="text" value="1" name="dance1"/>
-                      <button class = "DQtyBtn" onclick="decrease_by_one('Dqty1','Dqty1send');">-</button>  
-                    </div></td>
-    <td>            <form action="AddToCartAction.php" method="POST">                     
-                      <input id="Dqty1send" type="hidden" name="qty" value="1" >  <!--actual field that send qty via post-->
-                      <input type="hidden" name="ticket_id" value="39" >
-                      <input type="hidden" name="tkt_price" value="<?php echo $ticketArr[4]; ?>" >
-                      <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
-                      <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button> 
-                    </form></td>
-  </tr>
+
+  <?php
+  printTicketLine($ticketController,39);
+  ?>
+
   <tr>
     <td>      </td>
     <td>      </td>
     <td>      </td>
   </tr>
+
+
 </table>
-  
 
 <?php include "footer.php";?> 
 

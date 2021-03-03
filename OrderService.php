@@ -22,7 +22,7 @@ class OrderService extends DB {
                 $stmt->bind_param("si",$customer_email,$ticket_id );
                 $stmt->execute();
             }
-                //insert into order_items
+                //insert into order_items 
                 $stmt = $this->connect()->prepare
                 ("INSERT INTO `order_Items`(`customer_email`,`ticket_id`,`qty`,`total_price`) VALUES (?,?,?,?) ;");
                 $stmt->bind_param("siii", $customer_email,$ticket_id,$qty,$total_price);

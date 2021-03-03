@@ -1,0 +1,53 @@
+TO DO:
+
+-H refactor remove hard links to IDs in database
+-E change the name of every Arr[0] to Arr['value'];
+
+
+DONE:
+-complete the db, add table for user, volunteer, and order items
+-change position of + and - (ticket 3 days)
+-check log in from HOME
+-check registration from shopping cart and from HOME
+-M refactor eliminate hardcoded code (timetable)
+-H fix  shopping cart does not show the items (log in) 
+        -fixed the db for the defined value
+-M refactor repeated code (timetable)
+-M make a shareable function for the showing the timetable
+-E sort out text "Test profile" on payment screen (ask muskan)
+-M refactor (ticket section is hardcoded), make function to generate ticket line
+-M design UI for showing that an item has been added: replace alert by friendly overlay
+-H implement (if needed) "item added" feature
+-E fix  change position of + and - (for all ticket)
+-E change old server name(http://hfitteam1.infhaarlem.nl/) to new server name
+-M check if the hfitteam1 is wrong
+        -suspect that it is only part of CMS that is why Dance is still working
+-E DB.orders doesn't exist (new database)
+-E check if the payment is fully working (see NOTES, for issues respect to shopping cart log in)
+-H feat adapt stock in db 
+-M feat show out of stock indication
+-H fix make sure that the quantity does not exceed the stock
+-H feat disable the + button, when there is insufficient stock
+        -at load time (for example for stock = 1) enable/disable buttons
+        - in interaction (JavaScript) enable/disable as described below
+-M detect that text field for quantity is not working
+- remove unnecessary code (uiformat.php), ticket service
+- comment "<!-- Use for layout to center notification -->" in alert.php 
+
+
+NOTES:
+-stock is not adapted and checked when adding an item to shopping cart
+        no fix: code made by team mates, don't risk breaking their code
+- Did not change old (wrong) references to hfitteam1, only for my own code
+-it would have been better if there would be no temp order item table, so it is clearer with the design
+- shopping cart is not 100% correct 
+        scenario:
+        not logged in - order - payment + login = ok (order is in temp_Order_item first, and then after logging in it goes to order_Items)
+        not logged in - order - log in - shopping cart = no items shown (order remains in temp_Order_item)
+        logged in - order - shopping cart - payment = ok (order goes to order_items immediately)
+-orders table, order_Id is AI 
+-check stock when an item is being added to the cart
+
+
+ 
+  

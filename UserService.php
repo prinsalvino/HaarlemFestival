@@ -69,7 +69,7 @@ class UserService extends DB {
                 $numRowsvolunteer = $this->getVolunteerEmail($email)->num_rows; 
 
                 if($numRowsCustomer > 0)
-                {  
+                { 
                     return $this->verifyCustomerPassword($email,$password);
                 }
 
@@ -86,7 +86,7 @@ class UserService extends DB {
             } 
             catch (Exception $e) {
                 echo 'Caught exception: ',  $e->getMessage(), "\n";
-            }            
+            }       
         }
 
         

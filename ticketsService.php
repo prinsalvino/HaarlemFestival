@@ -1,5 +1,6 @@
 <?php
 include "DB.php";
+//include "showErrors.php";
 
 class ticketsService extends DB {
     public function getTickets($t_id) 
@@ -19,24 +20,16 @@ class ticketsService extends DB {
             } 
     }
 
-
     public function getDanceJazzTickets($t_id) 
     { 
        $data=$this->getTickets($t_id);
-       $eventArray= array();
-       foreach ($data as $val) {
-        // taking the specifically rqd columns from the whole result for the dance/jazz event
-            $date = $this->alterTicketDateFormat($val[2]); //0 
-            $time= $val[3]; //1
-            $location= $val[4]; //2
-            $special= $val[5]; //3 //artist
-            $price= $val[6];  //4
-            $stock= $val[7]; //5
-            
-            array_push($eventArray,$date,$time,$location,$special,$price,$stock);
-            return $eventArray;
-        }
-    }
+        $val = $data[0];    // Get the first (and only) row of data
+        $eventArray = array_slice($val, 1);
+
+        // Format the data using the month name
+        $eventArray[0] = $this->alterTicketDateFormat($eventArray[0]);
+        return $eventArray;
+     }
 
     public function getJazzTicketInfo($t_id) { 
         //function returns jazz tickets full info as an array
@@ -70,23 +63,32 @@ class ticketsService extends DB {
 
     public function stockAvalabilityJazz($stock, $AllAccess=null) 
     {
-        if($stock>10 && $AllAccess!=null)
+        if($stock>10 && $AllAccess!=null) //green
         {
         ?>
-            <p style="color:green;  "> 
+            <p style="color:#228B22;  "> 
             <b> Available </b></p>
         <?php
         }
-        elseif($stock>50 && $AllAccess==null)
+        elseif($stock>50 && $AllAccess==null) //green
         {
         ?>
-            <p style="color:green;  "> 
+            <p style="color:#228B22;  "> 
             <b> Available </b></p>
         <?php
         }
-        else{
+
+        elseif($stock==0) //red
+        {
+        ?>
+            <p style="color:#DC143C ;  "> 
+            <b> Out of Stock </b></p>
+        <?php
+        }
+
+        else{ //yellow
             ?>
-            <p style="color:red;  "> 
+            <p style="color: #9B870C;  "> 
             <b> Low in Stock </b></p>
         <?php
         }
@@ -100,18 +102,7 @@ class ticketsService extends DB {
         $month=$dateArr[1];
 
         switch ($month) {
-            case "01":
-                $month= "Jan";
-                break;
-            case "02":
-                $month= "Feb";
-                break;  
-            case "03":
-                $month= "Mar";
-                break;              
-            case "04":
-                $month= "Apr";
-                break;              
+               
             case "05":
                 $month= "May";
                 break;              
@@ -123,18 +114,6 @@ class ticketsService extends DB {
                 break;  
             case "08":
                 $month= "Aug";
-                break;             
-            case "09":
-                $month= "Sep";
-                break;              
-            case "10":
-                $month= "Oct";
-                break;              
-            case "11":
-                $month= "Nov";
-                break;              
-            case "12":
-                $month= "Dec";
                 break;              
             default:
                 $month= "Jul";
@@ -144,15 +123,166 @@ class ticketsService extends DB {
         return $newDate;
     }
 
-    public function Test()
+    public function deductQtyFromStock($ticket_id, $qty)
+    {        
+        $stmt = $this->connect()->prepare  
+        ("UPDATE `tickets` SET `stock`= stock-? WHERE `ticket_id` = ? ") ; 
+        $stmt->bind_param("ii", $qty,$ticket_id );
+        $stmt->execute();
+    }
+
+
+    //functions to display Jazz tickets
+
+    public function gatherJazzTicketInfo($ticket_id, $jTicketArr)
     {
-//
+        ?>
+        <div class="column1" >
+            <b>                 
+            <?php $jTicketArr=$this->getJazzTicketInfo($ticket_id) ;  ?>
+            <?php echo $jTicketArr[3]; //Artists ?>  
+                <br>
+                <?php echo $jTicketArr[1]; //time  ?> 
+                <br>
+                <?php echo $jTicketArr[6]; //event hall  ?> 
+                <br>
+                €<?php echo $jTicketArr[4];   //price  ?>
+
+                <div class="cart-quantity">
+                 
+                <?php
+                    if($jTicketArr[5]!=0)
+                    {
+                        ?>
+                        Qty:
+                        <br> 
+                            <button class="qtyBtn" onclick="increase_by_one('qty<?php echo $ticket_id  ?>','qtySend<?php echo $ticket_id  ?>');">+</button>
+                                <input id="qty<?php echo $ticket_id  ?>" type="text" value="1" name="qty" 
+                                style=" width: 50%; background-color: #ccc;" />                                            
+                            <button class="qtyBtn" onclick="decrease_by_one('qty<?php echo $ticket_id  ?>','qtySend<?php echo $ticket_id  ?>');" />-</button>
+                
+                        <?php
+                    }
+                ?>
+                
+                </div>
+            </b>
+        </div>
+        <?php
+            return $jTicketArr;
+    }
+    
+
+    public function printJazzTickets($ticket_id)
+    {
+        ?>
+            
+            <div class="row1">
+                <?php
+                $jTicketArr = null;
+                $jTicketArr =$this->gatherJazzTicketInfo($ticket_id, $jTicketArr);
+                ?>
+                <div class="column1" style=" float: right; text-align: left; width: auto;" >
+                    <?php $this->stockAvalabilityJazz($jTicketArr[5]); ?>
+                        <br>
+                        <form action="AddToCartAction.php" method="POST">                     
+                        <input id="qtySend<?php echo $ticket_id ; ?>" type="hidden" name="qty" value="1" >  
+                        <!--actual field that send qty via post-->
+                        <input type="hidden" name="ticket_id" value="<?php echo $ticket_id;  ?>" >
+                        <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr[4]; ?>" >
+                        <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                        <?php
+                        if($jTicketArr[5]!=0)
+                        {
+                            ?>
+                            <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button>
+                            <?php
+                        }
+                        ?>                           
+                        </form>
+                </div>
+            </div>
+
+        <?php
+    }
+
+    public function gatherAllAccessJazzTicketInfo($ticket_id, $jTicketArr)
+    {
+        ?>
+        <div class="column1" >
+            <b>                 
+                <?php $jTicketArr=$this->getJazzTicketInfo($ticket_id) ;  
+
+                if($ticket_id == 22)
+                {
+                    echo $jTicketArr[3]; //name
+                }
+                else{
+                    echo $jTicketArr[3]." for<br> ".$jTicketArr[0].", ".$jTicketArr[7]; //name
+                }
+                ?>  
+                
+                <br>
+                €<?php echo $jTicketArr[4];   //price  ?>
+
+                <div class="cart-quantity">
+                <?php
+                    if($jTicketArr[5]!=0)
+                    {
+                        ?>
+                        Qty:
+                        <br> 
+                            <button class="qtyBtn" onclick="increase_by_one('qty<?php echo $ticket_id  ?>','qtySend<?php echo $ticket_id  ?>');">+</button>
+                                <input id="qty<?php echo $ticket_id  ?>" type="text" value="1" name="qty" 
+                                style=" width: 50%; background-color: #ccc;" />                                            
+                            <button class="qtyBtn" onclick="decrease_by_one('qty<?php echo $ticket_id  ?>','qtySend<?php echo $ticket_id  ?>');" />-</button>
+                
+                        <?php
+                    }
+                ?>
+                </div>
+            </b>
+        </div>
+        <?php
+            return $jTicketArr;
+    }
+
+    public function printAllAccessJazzTickets($ticket_id)
+    {
+        ?>
+            
+            <div class="row1">
+                <?php
+                $jTicketArr = null;
+                $jTicketArr =$this->gatherAllAccessJazzTicketInfo($ticket_id, $jTicketArr);
+                ?>
+                <div class="column1" style=" float: right; text-align: left; width: auto;" >
+                    <?php $this->stockAvalabilityJazz($jTicketArr[5], 1); ?>
+                        <br>
+                        <form action="AddToCartAction.php" method="POST">                     
+                            <input id="qtySend<?php echo $ticket_id;  ?>" type="hidden" name="qty" value="1" >  
+                            <!--actual field that send qty via post-->
+                            <input type="hidden" name="ticket_id" value="<?php echo $ticket_id;  ?>" >
+                            <input type="hidden" name="tkt_price" value="<?php echo $jTicketArr[4]; ?>" >
+                            <input type="hidden" name="destination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                            <?php
+                            if($jTicketArr[5]!=0)
+                            {
+                                ?>
+                                <button type="submit" class="addTOcart" name="addTOcart"> Add to cart </button>
+                                <?php
+                            }
+                            ?>   
+                        </form>
+                </div>
+            </div>
+
+        <?php
     }
 
 }   
 
-$abc= new ticketsService();
-// $abc->Test();
+
 
 
  ?>

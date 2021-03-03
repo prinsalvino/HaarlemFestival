@@ -210,6 +210,10 @@ tr:nth-child(even) {
 	cursor: pointer; 
 }
 
+.DQtyBtnDisabled{
+    color: #00000030 !important;
+}
+
 .quantityBox
 {
     width: 2vw;

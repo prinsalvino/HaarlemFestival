@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 session_start();
+include "AutoLoaderIncl.php";
+include "uiformat.php";
 
 ?>  
 <html class = "danceTimetable">
@@ -20,65 +22,19 @@ session_start();
 <?php include "header.php";?>
 
 
-<div class="danceTicketRow">
-  <a class="DanceTimetableFriday" href="DanceTimetableFriday.php">    
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    Friday
-  </div>
-  </a>
-
-  <a class="DanceTimetableSaturday" href="DanceTimetableSaturday.php"> 
-  <div class="danceTicketColumn" style=" text-align: center;margin-top:1vw">
-    Saturday
-  </div>
-  </a>
-
-  <a class="DanceTimetableSunday" href="DanceTimetableSunday.php">
-  <div class="danceTicketColumn" style=" text-align: center; margin-top:1vw">
-    Sunday 
-  </div>
-  </a>
-</div> 
-
-<a href="DanceTicket3Days.php" class="btnBuyTicket">Buy your tickets here!</a>
+<?php
+printTimetableMenuBar();
+?>
 
 <table>
-  <tr>
-    <td>Artist </td>
-    <td>Venue</td>
-    <td>Time</td>
-    <td>Session</td>
-  </tr>
-  <tr>
-  <td>Nicky Romero/ Afrojack</td>
-    <td>Lichtfabriek</td>
-    <td>20:00</td>
-    <td>Back2Back</td>
-  </tr>
-  <tr>
-  <td>Tiësto</td>
-    <td>Club Stalker</td>
-    <td>22:00</td>
-    <td>Club</td>
-  </tr>
-  <tr>
-  <td>Martin Garrix</td>
-    <td>Club Ruis</td>
-    <td>22:00</td>
-    <td>Club</td>
-  </tr>
-  <tr>
-  <td>Armin van Buuren</td>
-    <td>XO The Club</td>
-    <td>22:00</td>
-    <td>Club</td>
-  </tr>
-  <tr>
-  <td>Hardwell</td>
-    <td>JopenKerk</td>
-    <td>23:00</td>
-    <td>Club</td>
-  </tr>
+
+<?php
+
+$ticketController = new ticketsController();
+
+printTimetableLines($ticketController, [23,24,26,27,25]);
+
+?>
 </table>
   
 <?php include "footer.php";?> 
