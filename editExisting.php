@@ -1,6 +1,5 @@
-
+<?php ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); ?>
 <?php include "DB.php" ?>
-<?php session_start(); ?>
 <!doctype html>
 <html class = "dashboard">
 <head>
@@ -15,12 +14,12 @@
         <section id="Title">
     
         <div style="width: 1388px;">              
-                Adding Event
+                Editing Event
             </div>            
         </section>
         
 
-        <h1>Adding Event</h1> 
+        <h1>Editting Event</h1> 
   
   <div class="sidenav">
         <a href="dashboard.php">Dashboard</a>
@@ -58,58 +57,54 @@
     
 
 
-
-
-
-      <form action="admin.php?action=addEvent" method="post">
-        <input type="hidden" name="ticket_id" value="<?php echo $results['event']->ticket_id ?>"/>
+	<?php
+	$connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
+  $query = "SELECT * FROM tickets WHERE ticket_id=" . $_GET["id"];
+  
+	$result = $connect->query($query)->fetch_assoc();
+  $time = explode("-", $result['time']);
+	?>
+      <form action="admin.php?action=editEvent" method="post">
 
         <ul class="editor">
           
         <li class="formedit">
             <label for="event">Event Type</label>
-            <input type="text" name="event" id="event" placeholder="Type of Event" required maxlength= "20"<?php echo htmlspecialchars( $results['events']->event )?> />
+            <input type="text" name="event" id="event" placeholder="Type of Event" required maxlength= "20" value="<?= $result["event"] ?>" />
           </li>
 
           <li class="formedit">
             <label for="date">Date</label>
-            <input type="date" name="date" id="date" placeholder="YYYY-MM-DD" required maxlength="10" value="<?php echo $results['events']->date ? date( "Y-m-d", $results['events']->date ) : "" ?>" />
+            <input type="date" name="date" id="date" placeholder="YYYY-MM-DD" required maxlength="10" value="<?= $result["date"] ?>" />
           </li>
 
           <li class="formedit">
             <label for="Time">Start Time</label>
-            <input type="time" name= "start-time" id="time" placeholder="Time i.e. 18:00" required maxlength="8" value=""/>
+            <input type="time" name= "start-time" id="time" placeholder="Time i.e. 18:00" required maxlength="8" value="<?= $time[0] ?>"/>
           </li>
 
           <li class="formedit">
             <label for="Time">End Time</label>
-            <input type="time" name= "end-time" id="time" placeholder="Time i.e. 19:00" required maxlength="8" value=""/>
+            <input type="time" name= "end-time" id="time" placeholder="Time i.e. 19:00" required maxlength="8" value="<?= $time[1] ?>"/>
           </li>
 
           <li class="formedit">
             <label for="location">Location</label>
-            <input name="location" id="location" placeholder="Address or Restaurant Name" required maxlength="100"><?php echo htmlspecialchars( $results['events']->location )?>
+            <input name="location" id="location" placeholder="Address or Restaurant Name" required maxlength="100" value="<?= $result["location"] ?>">
           </li>
 
           <li class="formedit">
             <label for="special">Special</label>
-            <input name="special" id="special" placeholder="Artist/Type of Food/Language/Deal" required maxlength="100"><?php echo htmlspecialchars( $results['events']->special )?>
+            <input name="special" id="special" placeholder="Artist/Type of Food/Language/Deal" required maxlength="100" value="<?= $result["special"] ?>">
           </li>          
-
-
-
-          
-
-
         </ul>
 
         
-        <input type="submit" name="addEvent" value="Add Event" 
+        <input type="submit" name="saveChanges" value="Save Changes" 
         style="position: relative;
         left: 317px;
-        width: 160px;
-		top: 100px;">
-		
+            width: 160px;
+			top: 100px;" />
           <input type="submit" formnovalidate name="cancel" value="Cancel"
           style="position: relative;
             left: 317px;
@@ -120,8 +115,8 @@
       </form>
       </body>
       </html>
-<?php if ( $results['events']->id ) { ?>
-      <p><a href="admin.php?action=deleteEvent&amp;articleId=<?php echo $results['events']->id ?>" onclick="return confirm('Delete This Event?')">Delete This Event</a></p>
+<?php if ( $result['ticket_id'] ) { ?>
+      <p><a href="admin.php?ticket_id=<?php echo $result['ticket_id'] ?>&action=deleteEvent&amp;articleId=<?php echo $result['ticket_id'] ?>" onclick="return confirm('Delete This Event?')">Delete This Event</a></p>
 <?php } ?>
 
 <?php include "footer.php" ?>

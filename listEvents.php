@@ -57,6 +57,10 @@
 <html>
 <body>
 <?php 
+
+    if (isset($_GET['success'])) {
+        echo "Event was successfully edited!";
+    }
 $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
 $query = "SELECT * FROM tickets";
  
@@ -69,6 +73,7 @@ echo '<table border="0" cellspacing="2" cellpadding="2">
           <td> Time </td> 
           <td> Location </td> 
           <td> Special </td> 
+		  <td> Edit </td>
       </tr>';
  
 if ($result = $connect->query($query)) {
@@ -78,53 +83,53 @@ if ($result = $connect->query($query)) {
         $field3name = $row["date"];
         $field4name = $row["time"];
         $field5name = $row["location"]; 
-        $field6name = $row["special"]; 
+        $field6name = $row["special"]; 		
  
-        echo '<a href= "editEvent.php?id=$field1name"><tr> 
+        echo '<tr> 
                   <td>'.$field1name.'</td> 
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
                   <td>'.$field4name.'</td> 
                   <td>'.$field5name.'</td> 
                   <td>'.$field6name.'</td> 
-              </tr> </a>';
+				  <td> <a href="editExisting.php?id='.$field1name.'">Edit </a> </td> 
+               </tr>';
     }
     $result->free();
 } 
 
 
-$results_per_page = 20;
-
-$sql = 'SELECT * FROM tickets';
-$result = mysqli_query($connect,$sql);
-$number_of_results = mysqli_num_rows($result);
-
-
-
-$number_of_pages = ceil($number_of_results/$results_per_page);
-
-if (!isset($_GET['page'])) {
-  $page = 1;
-  else{
-    $page = $_GET['page'];
-  }
-}
-
-$this_page_first_result = ($page-1)*$results_per_page;
-
-$sql = 'SELECT * FROM tickets LIMIT ' . $this_page_first_result . ',' . $results_per_page;
-$result = mysqli_query($connect,$sql);
-
-while ($row = mysqli_fetch_array($result))
-{
-  echo $row['id'] . ' ' . $row['tickets'] . '<br>';
-}
-
-for ($page=1;$page<=$number_of_pages;$page++) {
-echo '<a href="listEvents.php?page=' . $page .'">' . $page . '</a> ';
-}
-
-?>
+//$results_per_page = 20;
+//
+//$sql = 'SELECT * FROM tickets';
+//$result = mysqli_query($connect,$sql);
+//$number_of_results = mysqli_num_rows($result);
+//
+//
+//
+//$number_of_pages = ceil($number_of_results/$results_per_page);
+//
+//if (!isset($_GET['page'])) {
+//  $page = 1;
+//}else{
+//    $page = $_GET['page'];
+//}
+//
+//$this_page_first_result = ($page-1)*$results_per_page;
+//
+//$sql = 'SELECT * FROM tickets LIMIT ' . $this_page_first_result . ',' . $results_per_page;
+//$result = mysqli_query($connect,$sql);
+//
+//while ($row = mysqli_fetch_array($result))
+//{
+//  echo $row['id'] . ' ' . $row['tickets'] . '<br>';
+//}
+//
+//for ($page=1;$page<=$number_of_pages;$page++) {
+//echo '<a href="listEvents.php?page=' . $page .'">' . $page . '</a> ';
+//}
+//
+//?>
 
 
 
@@ -133,4 +138,4 @@ echo '<a href="listEvents.php?page=' . $page .'">' . $page . '</a> ';
 
    
 
-<?php include "footer.php" ?>
+<?php include "footer.php"; ?>

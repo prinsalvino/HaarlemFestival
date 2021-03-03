@@ -31,7 +31,7 @@ function editExisting() {
 
 function dashboard() {
         require( "dashboard.php" );
-        //figure out how to makes views/sales and orders appear here along with messages.
+        
   }
    
 

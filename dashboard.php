@@ -15,7 +15,7 @@ session_start();
         </title> 
       
 <body>   
-<?php include "header.php" ; ?> <!---idk why you needed to include DB.php but i removed that and now you can see somehting hopefully-->
+<?php include "header.php" ; ?> 
      
 
     <section class="page_section">
@@ -73,39 +73,14 @@ session_start();
 <section>
 
             <div class="Sales_box" id="sales">
-                <div id="title">Sales</div>
+                <div id="title">Welcome</div>
                 <div id="amountsales">
-                    Stuff goes here.<br>
-                    For example, a bill-to address
+                    Welcome Employee!.                    
                 </div>
             </div>
-            
-            <div class="Statistics_box" id="stats">
-                <div id="title">Statistics</div>
-                <div id="statsis">
-                    View over past month.<br>    
-                    INSERT VIEWS                
-                </div>
-                <div id="statsis">
-                    Sales over past month.<br>   
-                    INSERT SALES                 
-                </div>
-                <div id="statsis">
-                    Items sold past month. 
-                    INSERT ORDERS               
-                </div>
-                
+                        
                     
-            </div>
-
-            <div class="message_box" id="messages">
-                <div id="title">Messages</div>
-                <div id="mails">
-                    Stuff goes here.<br>
-                    For example, a bill-to address
-                </div>
-            </div>
-            <script>
+             <script>
             function myFunction(text) {
                 alert(text);
                 }

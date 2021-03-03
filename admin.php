@@ -1,13 +1,9 @@
 <?php
+ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
 require("DB.php");
 session_start();
-$action = isset( $_GET['action'] ) ? $_GET['action'] : "";
-$username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
-
-if ( $procedure != "login" && $procedure != "logout" && !$username ) {
-    login();
-    exit;
-}
+$action = $_GET['action'];
+$username = $_SESSION ? $_SESSION['username'] : "";
 
 switch ( $action ) 
 {
@@ -20,8 +16,8 @@ switch ( $action )
         logout();
     break;
 
-    case 'newEvent':
-        newEvent();
+    case 'addEvent':
+        addEvent();
     break;
 
     case 'editEvent':
@@ -36,68 +32,56 @@ switch ( $action )
     dashboard();
 }
 
+if ( $action != "login" && $action != "logout" && !$username ) {
+  //login();
+  //exit;
+}
 
-function newEvent() {
 
-    $results = array();
-    $results['pageTitle'] = "New Event";
-    $results['formAction'] = "newEvent";
-  
-    if ( isset( $_POST['saveChanges'] ) ) {
-  
-      // User has posted a new event: save the new event form
-      $event = new EventPage;
-      $event->storeFormValues( $_POST );
-      $event->insert();
-      header( "Location: listEvents.php?status=changesSaved" );
-  
-    } elseif ( isset( $_POST['cancel'] ) ) {
-  
-      // User has cancelled their edits return to dashboard
-      header( "Location: listEvents.php" );
-    }
-  
-  }
+function addEvent() {
+  $time = $_POST['start-time'] . "-" . $_POST['end-time'];
+
+  $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
+  $query = "
+          INSERT INTO tickets (`event`, `date`, `time`, `location`, `special`)
+          VALUES('" . $_POST['event'] . "', '" . $_POST['date'] . "', '" . $time . "', '" . $_POST['location'] . "', '" . $_POST['special'] . "' ) 
+  ";
+  $connect->query($query);// building a query from the post variables
+  header('Location: listEvents.php?success=1');
+}
 
   function editEvent() {
-
-    $results = array();
-    $results['pageTitle'] = "Edit Event";
-    $results['formAction'] = "editEvent";
-  
     if ( isset( $_POST['saveChanges'] ) ) {
-  
-      // User has posted the edit, so save the  changes
-  
-      if ( !$event = EventPage::getId( (int)$_POST['ticket_id'] ) ) {
-        header( "Location: editEvents.php?error=EventNotFound" );
-        return;
-      }
-  
-      $event->storeFormValues( $_POST );
-      $event->update();
-      header( "Location: editEvents.php?status=changesSaved" );
-  
-    } elseif ( isset( $_POST['cancel'] ) ) {
-  
-      // User has cancelled their edits return to edits page
-      header( "Location: admin.php" );
-    } 
-  
+      $time = $_POST['start-time'] . "-" . $_POST['end-time'];
+
+      $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
+      $query = "UPDATE tickets 
+                SET `event` = '" . $_POST['event'] . "', " .
+                "   `date` = '" . $_POST['date'] . "', " . 
+                "   `time` = '" . $time . "', " . 
+                "   `location` = '" . $_POST['location'] . "', " .  // building a query from the post variables
+                "   `special` = '" . $_POST['special'] . "' " . 
+                "WHERE ticket_id = " . $_POST['ticket_id'];
+       $connect->query($query);
+       header('Location: listEvents.php?success=1');
+    }
   }
 
   function deleteEvent() {
 
-    if ( !$event = EventPage::getId( (int)$_GET['ticket_id'] ) ) {
-      header( "Location: editEvents.php?error=eventNotFound" );
-      return;
-    }
-  
-    $event->delete();
-    header( "Location: editEvents.php?status=EventDeleted" );
+    //if ( !$event = EventPage::getId( (int)$_GET['ticket_id'] ) ) {
+      $connect = mysqli_connect("localhost","hfitteam1","3FxmuBcR","hfitteam1_db");
+      $query = "DELETE FROM tickets 
+                WHERE ticket_id = " . $_GET['ticket_id'];
+       $connect->query($query);
+       header('Location: listEvents.php?success=1');
+    //} 
+    
   }
+
   
-  /*
+  
+  
   function listEvents() {
     $results = array();
     $data = EventPage::getList();
@@ -114,17 +98,11 @@ function newEvent() {
       if ( $_GET['status'] == "eventDeleted" ) $results['statusMessage'] = "Article deleted.";
     }
   
-    require( TEMPLATE_PATH . "/admin/listEventPage.php" );
+    require( TEMPLATE_PATH . "/admin/listEvents.php" );
     
   }
-  */
 
-
-
-
-
-
-
-
-
+  function dashboard() {
+    echo "Uh oh. Something went wrong!";
+  }
 ?>

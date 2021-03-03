@@ -22,7 +22,7 @@
 
       <?php 
 
-      session_start();
+    isset($_SESSION) || session_start();
 
 
 
