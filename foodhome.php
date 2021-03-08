@@ -76,7 +76,7 @@ foreach($restaurants as $data){
 	$times = $restaurant -> getSessionTime($restoname);
 	$price = $data['price'];
 	$restoid = $data['ticket_id'];
-	
+	$picture = '';
 	foreach ($pictures as $data) {
 		$picture = $data['picture'];
 	}
@@ -112,7 +112,9 @@ foreach($restaurants as $data){
 			<?php 
 			
 			foreach($times as $data){
-				$url="timeToSes.php?time=".$data['time']. "&&restoname=".$restoname. "&&price=".$price. "&&ticketid=".$ticketid;			
+				$arr = array("time"=>$data['time'], "restoname"=>$restoname, "price"=>$price, "ticketid"=>$ticketid);
+				$url="timeToSes.php?". http_build_query($arr);
+						
 			?>
 				
 				<button onClick = "window.location.href = '<?php echo $url; ?>';" id = "time" type = "submit" class="time" role = "button" style=" text-align: center;"> <?php echo $data['time'];  ?>   </button>
