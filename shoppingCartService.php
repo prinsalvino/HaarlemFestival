@@ -6,7 +6,13 @@ session_start();
 class shoppingCartService extends ticketsService
 
 {   
-    private $ticketsService = NULL; 
+    private $DB = NULL; 
+
+	public function __construct()	
+	{
+		$this->DB = DB::getInstance();
+    }	
+
     public function getOrderItems($session_id, $user_email) 
     {
         try{
@@ -31,9 +37,8 @@ class shoppingCartService extends ticketsService
     public function getAllTempOrder($ses_id) 
     {          
         try{
-            $sql = "SELECT * FROM `temp_Order_item` WHERE ExStaus = 'Session Active' && temp_id = '".$ses_id."' "; 
-            $result = mysqli_query($this->connect(), $sql);
-            $this->closeCon();
+            $sql = "SELECT * FROM `temp_order_item` WHERE ExStaus = 'Session Active' && temp_id = '".$ses_id."' "; 
+            $result = mysqli_query($this->DB->connect(), $sql);
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
@@ -50,9 +55,9 @@ class shoppingCartService extends ticketsService
     public function getAllOrderItems($user_email) //only get orders that are not confirmed by the user
     {          
         try{
-            $sql = "SELECT * FROM `order_Items` WHERE `status` = 'Unconfirmed' && `customer_email` = '".$user_email."' "; 
-            $result = mysqli_query($this->connect(), $sql);
-            $this->closeCon();
+            $sql = "SELECT * FROM `order_items` WHERE `status` = 'Unconfirmed' && `customer_email` = '".$user_email."' "; 
+            $result = mysqli_query($this->DB->connect(), $sql);
+            // $this->closeCon();
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
@@ -130,16 +135,16 @@ class shoppingCartService extends ticketsService
         try{
             if($customer_email==NULL) //temp user
             {
-                $stmtDel = $this->connect()->prepare  //deleting temp order items
-                ("DELETE FROM `temp_Order_item` WHERE `ticket_id` = ? && `temp_id` = ? ;");
+                $stmtDel = $this->DB->connect()->prepare  //deleting temp order items
+                ("DELETE FROM `temp_order_item` WHERE `ticket_id` = ? && `temp_id` = ? ;");
                 $stmtDel->bind_param("is",$ticket_id,$session_id );
                 
             }
             else if($session_id==NULL) //loggeed in user
             {
-                $stmtDel = $this->connect()->prepare  //deleting order items
+                $stmtDel = $this->DB->connect()->prepare  //deleting order items
                 //("DELETE FROM `order_Items` WHERE `customer_email` = ? && `ticket_id` = ? && `status` = 'Unconfirmed';"); 
-                ("UPDATE `order_Items` SET `status` = 'Item Deleted', `ticket_id` = 0 ".
+                ("UPDATE `order_items` SET `status` = 'Item Deleted', `ticket_id` = 0 ".
                  " WHERE `customer_email` = ? && `ticket_id` = ? && `status` = 'Unconfirmed';"); 
                 $stmtDel->bind_param("si",$customer_email,$ticket_id );
             }
@@ -179,15 +184,15 @@ class shoppingCartService extends ticketsService
             //update order_Items set order_Id=0,status="Unconfirmed" Where NOT status="Item Deleted"
             
             //add order to orders with details of all the order items
-            $stmt = $this->connect()->prepare
+            $stmt = $this->DB->connect()->prepare
             ("INSERT INTO `orders`(`customer_email`,`total_price`,`Item_Id`) VALUES (?,?,?) ;");
             $stmt->bind_param("sds", $customer_email,$total_price,$order_item_ids);
             $stmt->execute();
 
             //mark order as confirmed in order items table and assign order ID to order items who are 0 by default
-                $stmt2 = $this->connect()->prepare
+                $stmt2 = $this->DB->connect()->prepare
             ("UPDATE".
-                " order_Items t1".
+                " order_items t1".
                 " INNER JOIN orders t2 ON t1.customer_email = t2.customer_email".
             " SET".
                 " t1.status = 'Confirmed',".

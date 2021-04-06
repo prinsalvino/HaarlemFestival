@@ -46,10 +46,9 @@ foreach ($times as $time) {
               
                 Date:		
                 <select name="Date" class = "Date">
-                    <option value="26"><?php echo $restotime[0];?></option>
-                    <option value="27"><?php echo $restotime[1];?></option>
-                    <option value="28"><?php echo $restotime[2];?></option>
-                    <option value="29"><?php echo $restotime[3];?></option>
+                    <option value="27"><?php echo $restotime[0];?></option>
+                    <option value="28"><?php echo $restotime[1];?></option>
+                    <option value="29"><?php echo $restotime[2];?></option>
 
                 </select>
                 July 2020

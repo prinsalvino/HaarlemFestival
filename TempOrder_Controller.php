@@ -9,9 +9,9 @@ class TempOrder_Controller  {
 		$this->_TempOrder_Service = new TempOrder_Service();
     }
 
-    public function DeleteExpiredSessionToken() //delete entries from DB where session token has expired
+    public function DeleteExpiredSessionToken($ses) //delete entries from DB where session token has expired
     {
-        $this->_TempOrder_Service->DeleteExpiredSessionToken();
+        $this->_TempOrder_Service->DeleteExpiredSessionToken($ses);
     }
 
     public function InsertTempOrder($session_id,$ticket_id, $qty, $tkt_price, $Expire_Session) 

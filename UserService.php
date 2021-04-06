@@ -1,12 +1,19 @@
 <?php
-include "DB.php";
+include_once "DB.php";
 
-class UserService extends DB {
+class UserService {
+    private $DB = NULL; 
+
+    public function __construct()	
+	{
+		$this->DB = DB::getInstance();
+    }	
+
     public function getAllUsers() 
     { 
         $sql = "SELECT * FROM customer"; 
-        $result = $this->connect()->query($sql); 
-        $this->closeCon();
+        $result = $this->DB->connect()->query($sql); 
+        # $this->DB->closeCon();
 
         $numRows = $result->num_rows; 
             if ($numRows > 0) 
@@ -23,7 +30,7 @@ class UserService extends DB {
     //Sorry to put it at the top here, but it's just to test the ticket pull system
     public function getTicketById($id)
     {   
-        $conn = $this->connect();
+        $conn = $this->DB->connect();
         $stmt = $conn->prepare("SELECT * FROM tickets WHERE ticket_id = ? ;");
         $stmt->bind_param('s', $id);
 
@@ -50,13 +57,13 @@ class UserService extends DB {
 
     public function getCustomerEmail($email)
     {
-        $resultCustomer = $this->connect()->query("SELECT * FROM customer WHERE customer_mail LIKE '".$email."' ;");
+        $resultCustomer = $this->DB->connect()->query("SELECT * FROM customer WHERE customer_mail LIKE '".$email."' ;");
         return $resultCustomer;
     }
 
     public function getVolunteerEmail($email)
     {
-        $resultvolunteer = $this->connect()->query("SELECT * FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
+        $resultvolunteer = $this->DB->connect()->query("SELECT * FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
         return $resultvolunteer;
     }
 
@@ -64,7 +71,7 @@ class UserService extends DB {
         {
             try 
            {  
-                $email = mysqli_real_escape_string($this->connect(), $email);
+                $email = mysqli_real_escape_string($this->DB->connect(), $email);
                 $numRowsCustomer = $this->getCustomerEmail($email)->num_rows; 
                 $numRowsvolunteer = $this->getVolunteerEmail($email)->num_rows; 
 
@@ -80,7 +87,7 @@ class UserService extends DB {
 
                 else
                 {
-                    $this->closeCon();
+                    # $this->DB->closeCon();
                     return false;
                 }
             } 
@@ -94,7 +101,7 @@ class UserService extends DB {
         {
             try 
            {
-            $conn=$this->connect();
+            $conn=$this->DB->connect();
             $result = $conn->query("SELECT customer_password FROM customer WHERE customer_mail LIKE '".$email."' ;");
             $numRows = $result->num_rows; 
             if ($numRows > 0) 
@@ -106,13 +113,13 @@ class UserService extends DB {
             
                 if($a["customer_password"]==$password)  
                 {
-                    $this->closeCon();
+                    # $this->DB->closeCon();
                     // echo $a["customer_password"];
                     return true;
                 }
                 else
                 {
-                    $this->closeCon();
+                    # $this->DB->closeCon();
                     return false;
                 }
                 
@@ -126,7 +133,7 @@ class UserService extends DB {
         public function verifyVolunteerPassword($email,$password)
         {
             try{
-            $conn=$this->connect();
+            $conn=$this->DB->connect();
             $result = $conn->query("SELECT volunteer_password FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
            
             $numRows = $result->num_rows; 
@@ -139,12 +146,12 @@ class UserService extends DB {
                     
                     if($a["volunteer_password"]==$password)  
                     {
-                        $this->closeCon();
+                        # $this->DB->closeCon();
                         return true;
                     }
                     else
                     {
-                        $this->closeCon();
+                        # $this->DB->closeCon();
                         return false;
                     }
                 }
@@ -158,9 +165,9 @@ class UserService extends DB {
         {
             try 
             {
-                $email = mysqli_real_escape_string($this->connect(), $email);
+                $email = mysqli_real_escape_string($this->DB->connect(), $email);
                 $numRowsCustomer = $this->getCustomerEmail($email)->num_rows; 
-                $this->closeCon();
+                # $this->DB->closeCon();
 
                 if($numRowsCustomer > 0)
                 {  
@@ -180,9 +187,9 @@ class UserService extends DB {
         {
             try 
             {
-                $email = mysqli_real_escape_string($this->connect(), $email);
+                $email = mysqli_real_escape_string($this->DB->connect(), $email);
                 $numRowsvolunteer = $this->getVolunteerEmail($email)->num_rows; 
-                $this->closeCon();
+                # $this->DB->closeCon();
                 
                 if($numRowsvolunteer > 0)
                 {  
@@ -202,8 +209,8 @@ class UserService extends DB {
         {
             try 
             {
-                $email = mysqli_real_escape_string($this->connect(), $email);
-                $result = $this->connect()->query("SELECT volunteer_superadmin FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
+                $email = mysqli_real_escape_string($this->DB->connect(), $email);
+                $result = $this->DB->connect()->query("SELECT volunteer_superadmin FROM volunteer WHERE volunteer_mail LIKE '".$email."' ;");
            
                 $numRows = $result->num_rows; 
                     if ($numRows > 0) 
@@ -213,17 +220,17 @@ class UserService extends DB {
                         
                         if($a["volunteer_superadmin"]==1)  
                         {
-                            $this->closeCon();
+                            # $this->DB->closeCon();
                             return true;
                         }
                         else
                         {
-                            $this->closeCon();
+                            # $this->DB->closeCon();
                             return false;
                         }
                     }
 
-                $this->closeCon();
+                # $this->DB->closeCon();
             }
             catch (Exception $e) {
                 echo 'Caught exception: ',  $e->getMessage(), "\n";
@@ -260,9 +267,9 @@ class UserService extends DB {
             //user is customer
             try 
             {
-                $email = mysqli_real_escape_string($this->connect(), $email);
+                $email = mysqli_real_escape_string($this->DB->connect(), $email);
                 $sql = "SELECT * FROM customer WHERE customer_mail = '".$email."'; " ;          
-                $query = mysqli_query($this->connect(),$sql);
+                $query = mysqli_query($this->DB->connect(),$sql);
                 
                 while ($row[] = mysqli_fetch_object($query)) 
                 {
@@ -280,10 +287,10 @@ class UserService extends DB {
             //user is volunteer
             try 
             {
-                $email = mysqli_real_escape_string($this->connect(), $email);
+                $email = mysqli_real_escape_string($this->DB->connect(), $email);
 
                 $sql = "SELECT * FROM volunteer WHERE volunteer_mail = '".$email."'; " ;          
-                $query = mysqli_query($this->connect(),$sql);
+                $query = mysqli_query($this->DB->connect(),$sql);
                 
                 while ($row[] = mysqli_fetch_object($query)) 
                 {
@@ -300,7 +307,10 @@ class UserService extends DB {
         public function addNewCustomer($name, $email, $password)
         {
             try {
-                $stmt = $this->connect()->prepare("INSERT INTO `customer`(`customer_name`, `customer_mail`, `customer_password`) VALUES (?,?,?) ;");
+                echo $name;
+                echo $email;
+                echo $password;
+                $stmt = $this->DB->connect()->prepare("INSERT INTO `customer`(`customer_name`, `customer_mail`, `customer_password`) VALUES (?,?,?) ;");
                 $stmt->bind_param("sss",$name,$email, $password);    
                 // set parameters and execute
                 // $hashedPass = password_hash($password, PASSWORD_DEFAULT);
@@ -315,7 +325,7 @@ class UserService extends DB {
         public function addNewVolunteer($name, $email, $password, $age, $isAdmin, $isSuperadmin )
         {
             try {
-                $stmt = $this->connect()->prepare("INSERT INTO `volunteer` (`volunteer_name`,`volunteer_mail`, `volunteer_password`,  `volunteer_age`, `volunteer_admin`, `volunteer_superadmin`) VALUES (?,?,?,?,?,?) ;");
+                $stmt = $this->DB->connect()->prepare("INSERT INTO `volunteer` (`volunteer_name`,`volunteer_mail`, `volunteer_password`,  `volunteer_age`, `volunteer_admin`, `volunteer_superadmin`) VALUES (?,?,?,?,?,?) ;");
                 $stmt->bind_param("sssiii",$name,$email, $password, $age, $isAdmin, $isSuperadmin);    
                 // set parameters and execute
                 // $hashedPass = password_hash($password, PASSWORD_DEFAULT);

@@ -44,13 +44,12 @@ else{
         $timeToExpire =time()+$lifetime;       
         $TempOrder = new TempOrder_Controller();
         $ses_id=session_id();
-        $TempOrder->DeleteExpiredSessionToken(); //delete expired session tokens
-      
+        $TempOrder->DeleteExpiredSessionToken($ses_id); //delete expired session tokens
+        echo $ses_id;
         $TempOrder->InsertTempOrder($ses_id,$ticket_id,$qty,$tkt_price, $timeToExpire);
         //insert it into db table "temp_Order_item"
-        $TempOrder->ExportTempOrder($ticket_id,$customer_email);
+        # $TempOrder->ExportTempOrder($ticket_id,null,$ses_id);
     }
-
     else
     {
         //"user logged in";

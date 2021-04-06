@@ -1,12 +1,18 @@
 <?php 
 class DB 
 {
-    private $servername="localhost",
+    // private $servername="localhost",
+    //         $username="hf2021grpr_1", 
+	//         $password="Prins123",
+	//         $dbase="hf2021grpr_1",
+    //         $_mysqliConnectionObject; 
+    
+            private $servername="localhost",
             $username="root", 
 	        $password="",
 	        $dbase="test",
             $_mysqliConnectionObject; 
-    
+
             private static $_instance; //The single instance
             
             protected function __construct(){

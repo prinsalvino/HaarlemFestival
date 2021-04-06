@@ -125,7 +125,7 @@ class FoodService {
     public function getTicketId($date,$restoname, $time){
         try 
         {
-            $newdate = '2020-07-$date';
+            $newdate = "2020-07-$date";
             $conn = $this->DB->connect();
 			$stmt = $conn->prepare("SELECT ticket_id FROM tickets WHERE date = ? AND location = ? AND time = ?");
 			$stmt->bind_param('sss', $newdate, $restoname, $time);

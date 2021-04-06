@@ -2,12 +2,18 @@
 include "DB.php";
 //include "showErrors.php";
 
-class ticketsService extends DB {
+class ticketsService {
+    private $DB = NULL; 
+
+	public function __construct()	
+	{
+		$this->DB = DB::getInstance();
+    }	
     public function getTickets($t_id) 
     { 
         $sql = "SELECT * FROM `tickets` WHERE ticket_id = ".$t_id.""; 
-        $result = $this->connect()->query($sql); 
-        $this->closeCon();
+        $result = $this->DB->connect()->query($sql); 
+        // $this->closeCon();
 
         $numRows = $result->num_rows; 
             if ($numRows > 0) 
@@ -37,8 +43,8 @@ class ticketsService extends DB {
 
         //getting the event hall and event day from table jazz tickets where ticket_id is a foreign key
         $sql = "SELECT event_hall,event_day FROM `Jazz tickets` WHERE ticket_id = ".$t_id.""; 
-        $result = $this->connect()->query($sql); 
-        $this->closeCon();
+        $result = $this->DB->connect()->query($sql); 
+        // $this->closeCon();
 
         $numRows = $result->num_rows; 
             if ($numRows > 0) 
@@ -125,7 +131,7 @@ class ticketsService extends DB {
 
     public function deductQtyFromStock($ticket_id, $qty)
     {        
-        $stmt = $this->connect()->prepare  
+        $stmt = $this->DB->connect()->prepare  
         ("UPDATE `tickets` SET `stock`= stock-? WHERE `ticket_id` = ? ") ; 
         $stmt->bind_param("ii", $qty,$ticket_id );
         $stmt->execute();

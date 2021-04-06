@@ -28,8 +28,8 @@ $payment = $mollie->payments->create([
 
   "method"      => \Mollie\Api\Types\PaymentMethod::IDEAL,
   "description" => "$description",
-  "redirectUrl" => "http://hf20112020.infhaarlem.nl/Payment_confirmation_index.php", 
-  "webhookUrl"  => "http://hf20112020.infhaarlem.nl/confirm.php",
+  "redirectUrl" => "http://hf2021grpr.infhaarlem.nl/Payment_confirmation_index.php", 
+  "webhookUrl"  => "http://hf2021grpr.infhaarlem.nl/confirm.php",
 ]);
 
 unset($_SESSION['confirm']);
